@@ -1,8 +1,8 @@
-# FlyEnv - AI Agent Development Guide
+# SemarEnv - AI Agent Development Guide
 
 ## Project Overview
 
-**FlyEnv** is an All-In-One Full-Stack Environment Management Tool built with Electron and Vue 3. It provides a lightweight, modular development environment manager for Windows, macOS, and Linux, allowing developers to install and manage Apache, PHP, Node.js, Python, databases, and more—running natively without Docker.
+**SemarEnv** is an All-In-One Full-Stack Environment Management Tool built with Electron and Vue 3. It provides a lightweight, modular development environment manager for Windows, macOS, and Linux, allowing developers to install and manage Apache, PHP, Node.js, Python, databases, and more—running natively without Docker.
 
 - **Version**: 4.13.2
 - **Electron Version**: 35.7.5

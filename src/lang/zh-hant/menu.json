@@ -14,7 +14,7 @@
   "fullscreen": "全螢幕切換",
   "front": "視窗置頂",
   "dev": "開啟偵錯視窗",
-  "needInstallHelper": "FlyEnv 需要安裝輔助程式",
+  "needInstallHelper": "SemarEnv 需要安裝輔助程式",
   "helperInstalling": "輔助程式正在安裝，請稍候",
   "waitHelper": "輔助程式正在啟動，請稍候",
   "helperInstallFailTips": "輔助程式安裝失敗，請嘗試在彈出的終端中手動安裝",

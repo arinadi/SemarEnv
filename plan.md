@@ -1,10 +1,13 @@
-# Rencana Teknis Rebranding ke ArinanoEnv dan Drop AI Manager
+# Rencana Teknis Rebranding ke SemarEnv dan Drop AI Manager
 
 ## Tujuan
-1. Rebrand kode dan UI dari `FlyEnv` menjadi `ArinanoEnv`.
+1. Rebrand kode dan UI dari `FlyEnv` menjadi `SemarEnv`.
 2. Hapus atau disable semua fitur AI manager / MCP / AI coding CLI integration.
 3. Pertahankan fitur inti manajemen lokal: runtime, server, database, proxy, project workflows.
 4. Pastikan perubahan tetap kompilable dan dapat dibangun.
+
+## Branding
+- **SemarEnv**: nama lebih pendek dan filosofis. Semar meski berwujud "gemuk" (banyak fitur/utility di dalamnya), namun bijak dan menjadi penasihat andalan di balik layar — persis seperti role environment manager yang menangani banyak hal tapi tetap simpel dipakai.
 
 ## 1. Audit Teknis
 
@@ -28,29 +31,29 @@
 
 ### 2.1. Metadata dan aplikasi
 - `package.json`
-  - `name`: dari `FlyEnv` ke `ArinanoEnv`
-  - `description`: update deskripsi menjadi ArinanoEnv
+  - `name`: dari `FlyEnv` ke `SemarEnv`
+  - `description`: update deskripsi menjadi SemarEnv
   - `author` / `copyright` jika perlu
 - `src/main/configs/page.ts`
-  - `title`: `ArinanoEnv`
+  - `title`: `SemarEnv`
 - `src/main/ui/TrayManager.ts`
-  - `tray.setToolTip('FlyEnv')` → `tray.setToolTip('ArinanoEnv')`
+  - `tray.setToolTip('FlyEnv')` → `tray.setToolTip('SemarEnv')`
 - `src/main/index.ts`
-  - `FlyEnv-Data` → `ArinanoEnv-Data` (pertimbangkan migrasi data / compat)
+  - `FlyEnv-Data` → `SemarEnv-Data` (pertimbangkan migrasi data / compat)
 - `src/main/core/RunPath.ts`
   - `FlyEnv` path and data directory usage
 - `src/main/core/AppHelper.ts`
   - helper path and plist names containing `flyenv`
 - `src/main/core/ExceptionHandler.ts`
-  - log prefix dari `[FlyEnv]` ke `[ArinanoEnv]`
+  - log prefix dari `[FlyEnv]` ke `[SemarEnv]`
 - `src/main/core/AppNodeFn.ts` dan `src/main/core/Logger.ts`
   - jika ada nama aplikasi string
 - `src/main/Launcher.ts` dan `src/main/app.ts`
   - path launch flag atau paths yang menyimpan FlyEnv
 
 ### 2.2. UI dan dokumentasi
-- `README.md`, `AGENTS.md`, `DEV.md`
-  - semua referensi FlyEnv → ArinanoEnv
+-- `README.md`, `AGENTS.md`, `DEV.md`
+  - semua referensi FlyEnv → SemarEnv
 - `src/lang/*/menu.json`
   - pastikan teks menu app / hide / quit tidak menyebut FlyEnv jika hardcoded
 - `src/lang/*/setup.json`, `src/lang/*/common.json`, dan file lain dengan `FlyEnv` secara langsung
@@ -195,14 +198,14 @@
 - Jalankan grep untuk sisa `MCP` / `mcp` / `AI` / nama AI tools
 
 ### 5.3. Verifikasi UI
-- Pastikan menu aplikasi sekarang menampilkan `ArinanoEnv`.
-- Pastikan tray tooltip menampilkan `ArinanoEnv`.
+  - Pastikan menu aplikasi sekarang menampilkan `SemarEnv`.
+  - Pastikan tray tooltip menampilkan `SemarEnv`.
 - Pastikan halaman `MCP` dan semua AI tools tidak lagi tersedia di UI.
 - Pastikan setup module list hanya memuat modul lingkungan dev, bukan AI modules.
 
 ### 5.4. Data compatibility
 - Pastikan bila mempertahankan `flyenv-*` data keys, aplikasi masih dapat membaca data lama.
-- Jika mengganti data path ke `ArinanoEnv-Data`, buat migrasi atau fallback bila direktori lama ada.
+ - Jika mengganti data path ke `SemarEnv-Data`, buat migrasi atau fallback bila direktori lama ada.
 
 ## 6. Prioritas Pelaksanaan
 1. Audit semua referensi string dan file target.

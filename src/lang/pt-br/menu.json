@@ -14,7 +14,7 @@
   "fullscreen": "Alternar tela cheia",
   "front": "Trazer para a frente",
   "dev": "Abrir janela de depuração",
-  "needInstallHelper": "FlyEnv precisa instalar um programa auxiliar",
+  "needInstallHelper": "SemarEnv precisa instalar um programa auxiliar",
   "helperInstalling": "O programa auxiliar está sendo instalado, por favor, aguarde",
   "waitHelper": "O programa auxiliar está sendo iniciado, por favor, aguarde",
   "helperInstallFailTips": "Falha na instalação do programa auxiliar, por favor, tente instalá-lo manualmente no terminal que se abriu",

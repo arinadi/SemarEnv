@@ -1,14 +1,14 @@
-# FlyEnv
+# SemarEnv
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/xpf0000/FlyEnv/master/build/256x256.png" width="180" alt="FlyEnv Logo" />
+  <img src="https://raw.githubusercontent.com/xpf0000/FlyEnv/master/build/256x256.png" width="180" alt="SemarEnv Logo" />
 
   <h1>Manage Local Dev Stacks, AI Coding CLIs, and MCP Natively</h1>
 
   <p>
-    <strong>FlyEnv is a desktop app for managing local development environments on Windows, macOS, and Linux.</strong><br>
+    <strong>SemarEnv is a desktop app for managing local development environments on Windows, macOS, and Linux.</strong><br>
     Install and run PHP, Node.js, Python, Java, .NET, Flutter, web servers, databases, queues, AI tools, AI coding CLIs, SSL, local domains, reverse proxies, and cron jobs from one UI.<br>
-    Connect local services and project context to AI clients through the built-in FlyEnv MCP Server.<br>
+    Connect local services and project context to AI clients through the built-in SemarEnv MCP Server.<br>
     Use native binaries, switch versions per project, and keep your system PATH clean—<strong>no Docker required</strong>.
   </p>
 
@@ -21,7 +21,7 @@
   </p>
 </div>
 
-## What Can You Do With FlyEnv?
+## What Can You Do With SemarEnv?
 
 * **Install runtimes on demand:** PHP, Node.js, Python, Java, .NET, Flutter, Go, Rust, Ruby, Bun, Deno, and more.
 * **Run local services:** Nginx, Apache, Caddy, MySQL, PostgreSQL, MongoDB, Redis, RabbitMQ, Elasticsearch, Minio/RustFS, and other common development dependencies.

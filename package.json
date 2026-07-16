@@ -1,7 +1,7 @@
 {
-  "name": "FlyEnv",
+  "name": "SemarEnv",
   "version": "4.16.2",
-  "description": "All-In-One Full-Stack Environment Management Tool",
+  "description": "All-In-One Full-Stack Environment Management Tool (SemarEnv)",
   "author": {
     "name": "Pengfei Xu",
     "email": "250881478@qq.com"
