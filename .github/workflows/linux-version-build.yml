@@ -1,4 +1,4 @@
-name: Build FlyEnv Linux Packages
+name: Build SemarEnv Linux Packages
 on:
   push:
     paths:

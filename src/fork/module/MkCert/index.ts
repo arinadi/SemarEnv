@@ -137,7 +137,7 @@ class MkCertBase extends Base {
   }
 
   getConfigFiles(_version?: SoftInstalled): Array<{ name: string; path: string }> {
-    // mkcert is a one-shot CLI tool; FlyEnv does not generate or manage config files for it.
+    // mkcert is a one-shot CLI tool; SemarEnv does not generate or manage config files for it.
     return []
   }
 

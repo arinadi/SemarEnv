@@ -5,38 +5,47 @@ import { isMacOS, isWindows } from '@shared/utils'
 import is from 'electron-is'
 
 /**
- * 获取 macOS 运行路径
+ * èŽ·å– macOS è¿è¡Œè·¯å¾„
  */
 const getMacOSRunPath = (): string => {
   const userData = app.getPath('userData')
   const oldPath = resolve(userData, '../../PhpWebStudy')
-  const newPath = resolve(userData, '../../FlyEnv')
+  const SemarEnvPath = resolve(userData, '../../SemarEnv')
+  const newPath = resolve(userData, '../../SemarEnv')
 
   if (existsSync(oldPath) && oldPath.includes('PhpWebStudy')) {
     return oldPath
+  }
+  // Fallback: use old SemarEnv path if it exists and SemarEnv path doesn't
+  if (existsSync(SemarEnvPath) && !existsSync(newPath)) {
+    return SemarEnvPath
   }
   return newPath
 }
 
 /**
- * 获取 Windows 便携版路径
+ * èŽ·å– Windows ä¾¿æºç‰ˆè·¯å¾„
  */
 const getWindowsPortablePath = (): string => {
   const baseDir = process.env.PORTABLE_EXECUTABLE_DIR!
   const oldPath = join(baseDir, 'PhpWebStudy-Data')
-  const newPath = join(baseDir, 'FlyEnv-Data')
+  const SemarEnvPath = join(baseDir, 'SemarEnv-Data')
+  const newPath = join(baseDir, 'SemarEnv-Data')
 
-  return existsSync(oldPath) ? oldPath : newPath
+  if (existsSync(oldPath)) return oldPath
+  if (existsSync(SemarEnvPath)) return SemarEnvPath
+  return newPath
 }
 
 /**
- * 获取 Windows 安装版路径
+ * èŽ·å– Windows å®‰è£…ç‰ˆè·¯å¾„
  */
 const getWindowsInstalledPath = (): string => {
   const exePath = app.getPath('exe')
   const oldPath = resolve(exePath, '../../PhpWebStudy-Data').split('\\').join('/')
   const oldPath1 = resolve(oldPath, '../../PhpWebStudy-Data').split('\\').join('/')
-  const newPath = resolve(exePath, '../../FlyEnv-Data').split('\\').join('/')
+  const SemarEnvPath = resolve(exePath, '../../SemarEnv-Data').split('\\').join('/')
+  const newPath = resolve(exePath, '../../SemarEnv-Data').split('\\').join('/')
 
   if (existsSync(oldPath) && oldPath.includes('PhpWebStudy-Data')) {
     return oldPath
@@ -44,11 +53,12 @@ const getWindowsInstalledPath = (): string => {
   if (existsSync(oldPath1) && oldPath1.includes('PhpWebStudy-Data')) {
     return oldPath1
   }
+  if (existsSync(SemarEnvPath)) return SemarEnvPath
   return newPath
 }
 
 /**
- * 获取 Windows 运行路径
+ * èŽ·å– Windows è¿è¡Œè·¯å¾„
  */
 const getWindowsRunPath = (): string => {
   if (is.dev()) {
@@ -63,7 +73,7 @@ const getWindowsRunPath = (): string => {
 }
 
 /**
- * 确定运行路径
+ * ç¡®å®šè¿è¡Œè·¯å¾„
  */
 export const DetermineRunPath = (): string => {
   let runpath = ''
@@ -73,7 +83,9 @@ export const DetermineRunPath = (): string => {
   } else if (isWindows()) {
     runpath = getWindowsRunPath()
   } else {
-    runpath = resolve(app.getPath('userData'), '../FlyEnv')
+    const SemarEnvPath = resolve(app.getPath('userData'), '../SemarEnv')
+    const newPath = resolve(app.getPath('userData'), '../SemarEnv')
+    runpath = existsSync(SemarEnvPath) ? SemarEnvPath : newPath
   }
 
   return runpath

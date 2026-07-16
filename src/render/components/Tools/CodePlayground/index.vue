@@ -383,7 +383,7 @@
     document.removeEventListener('mouseup', mouseUp)
     maskDom.remove()
     handleMoving.value = false
-    localStorage.setItem('FlyEnv-CodePlay-LeftStyle', JSON.stringify(leftStyle.value))
+    localStorage.setItem('SemarEnv-CodePlay-LeftStyle', JSON.stringify(leftStyle.value))
   }
   const HandleMoveMouseDown = (e: MouseEvent) => {
     e?.stopPropagation?.()

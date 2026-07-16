@@ -8,18 +8,18 @@ import JSON5 from 'json5'
 import crypto from 'node:crypto'
 import { AppHelperError, type AppHelperErrorCode } from './WindowsHelperState'
 
-const SOCKET_PATH = '/tmp/flyenv-helper.sock'
-const Role_Path = '/tmp/flyenv.role'
-const Role_Path_Back = '/usr/local/share/FlyEnv/flyenv.role'
+const SOCKET_PATH = '/tmp/semarenv-helper.sock'
+const Role_Path = '/tmp/semarenv.role'
+const Role_Path_Back = '/usr/local/share/SemarEnv/semarenv.role'
 export const HelperVersion = 16
 
-const Key_Path_Unix = '/usr/local/share/FlyEnv/flyenv-helper.key'
-const WINDOWS_HELPER_FILE = 'flyenv-helper-windows-amd64-v1.exe'
+const Key_Path_Unix = '/usr/local/share/SemarEnv/semarenv-helper.key'
+const WINDOWS_HELPER_FILE = 'semarenv-helper-windows-amd64-v1.exe'
 
 const Helper_Check_Timeout = 3000
 
 export const HelperKeyPath = (): string => {
-  return isWindows() ? join(tmpdir(), 'flyenv-helper.key') : Key_Path_Unix
+  return isWindows() ? join(tmpdir(), 'semarenv-helper.key') : Key_Path_Unix
 }
 
 export const getHelperKey = async (): Promise<Buffer | null> => {
@@ -91,7 +91,7 @@ export const getWindowsHelperBinaryPath = (): string => {
     return ''
   }
   if (is.production()) {
-    return join(pathResolve(staticPath, '../../../../'), 'helper/flyenv-helper.exe')
+    return join(pathResolve(staticPath, '../../../../'), 'helper/semarenv-helper.exe')
   }
   const buildDir = pathResolve(staticPath, '../../../build/')
   return pathResolve(buildDir, `../src/helper-go/dist/${WINDOWS_HELPER_FILE}`)
@@ -130,7 +130,7 @@ export const createAppHelperChecker = (deps: Partial<AppHelperCheckDeps> = {}) =
 
       let timer: NodeJS.Timeout | undefined
       let settled = false
-      const key = 'flyenv-helper-version-check'
+      const key = 'semarenv-helper-version-check'
       const buffer: Buffer[] = []
 
       const resolveOnce = (value: boolean) => {

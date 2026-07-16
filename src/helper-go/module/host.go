@@ -75,7 +75,7 @@ func (h *HostManager) SslFindCertificate(cwd string, commonName ...string) (stri
 	if err := utils.ValidatePathForRead(cwd); err != nil {
 		return "", "", fmt.Errorf("path not allowed: %s: %w", cwd, err)
 	}
-	cn := "FlyEnv-Root-CA" // Default value
+	cn := "SemarEnv-Root-CA" // Default value
 	if len(commonName) > 0 {
 		cn = commonName[0]
 	}

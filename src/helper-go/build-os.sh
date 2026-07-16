@@ -2,7 +2,7 @@
 
 # --- Configuration ---
 BUILD_DIR="./dist"
-APP_NAME="flyenv-helper"
+APP_NAME="semarenv-helper"
 MAIN_PACKAGE="./main.go" # Or "." if your main.go is in the current directory and you're building the module
 
 # Determine architecture and set TARGET

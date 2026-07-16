@@ -13,7 +13,7 @@ const Meilisearch = reactive({
   volumes: [
     {
       type: 'bind',
-      source: './flyenv-docker-compose/meilisearch/data',
+      source: './semarenv-docker-compose/meilisearch/data',
       target: '/data.ms'
     }
   ],
@@ -32,12 +32,12 @@ const Meilisearch = reactive({
       image: `${mirror}${image}:${Meilisearch.version}`,
       ports: Meilisearch.ports.map((p) => `${p.out}:${p.in}`),
       environment: Meilisearch.environment,
-      networks: ['flyenv-network']
+      networks: ['semarenv-network']
     }
 
     if (Meilisearch.persistence) {
       meilisearch.volumes = Meilisearch.volumes
-      await fs.mkdirp(join(dirname(base.dir), 'flyenv-docker-compose/meilisearch/data'))
+      await fs.mkdirp(join(dirname(base.dir), 'semarenv-docker-compose/meilisearch/data'))
     }
 
     return { meilisearch }

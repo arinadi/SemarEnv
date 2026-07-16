@@ -1,60 +1,60 @@
 {
-  "description": "Giấy phép là sự công nhận và ủng hộ cho sự nỗ lực của FlyEnv và các tác giả của nó. Mục đích của nó không phải là hạn chế người dùng mà là nhắc nhở họ tôn trọng những nỗ lực của các nhà phát triển và tuân thủ các điều khoản liên quan khi sử dụng phần mềm. Bằng cách tuân thủ giấy phép, người dùng không chỉ hỗ trợ sự phát triển liên tục của dự án mà còn đóng góp vào tinh thần tin tưởng và hợp tác trong cộng đồng mã nguồn mở.",
+  "description": "Giáº¥y phÃ©p lÃ  sá»± cÃ´ng nháº­n vÃ  á»§ng há»™ cho sá»± ná»— lá»±c cá»§a SemarEnv vÃ  cÃ¡c tÃ¡c giáº£ cá»§a nÃ³. Má»¥c Ä‘Ã­ch cá»§a nÃ³ khÃ´ng pháº£i lÃ  háº¡n cháº¿ ngÆ°á»i dÃ¹ng mÃ  lÃ  nháº¯c nhá»Ÿ há» tÃ´n trá»ng nhá»¯ng ná»— lá»±c cá»§a cÃ¡c nhÃ  phÃ¡t triá»ƒn vÃ  tuÃ¢n thá»§ cÃ¡c Ä‘iá»u khoáº£n liÃªn quan khi sá»­ dá»¥ng pháº§n má»m. Báº±ng cÃ¡ch tuÃ¢n thá»§ giáº¥y phÃ©p, ngÆ°á»i dÃ¹ng khÃ´ng chá»‰ há»— trá»£ sá»± phÃ¡t triá»ƒn liÃªn tá»¥c cá»§a dá»± Ã¡n mÃ  cÃ²n Ä‘Ã³ng gÃ³p vÃ o tinh tháº§n tin tÆ°á»Ÿng vÃ  há»£p tÃ¡c trong cá»™ng Ä‘á»“ng mÃ£ nguá»“n má»Ÿ.",
   "restrictions": {
-    "title": "Người dùng không có giấy phép sẽ phải chịu các hạn chế sau:",
+    "title": "NgÆ°á»i dÃ¹ng khÃ´ng cÃ³ giáº¥y phÃ©p sáº½ pháº£i chá»‹u cÃ¡c háº¡n cháº¿ sau:",
     "items": {
-      "0": "Có thể tạo tối đa ba trang web.",
-      "1": "Tính năng trò chuyện AI chỉ khả dụng trong thời gian dùng thử ba ngày.",
-      "2": "Các hạn chế bổ sung có thể áp dụng cho các tính năng trong tương lai."
+      "0": "CÃ³ thá»ƒ táº¡o tá»‘i Ä‘a ba trang web.",
+      "1": "TÃ­nh nÄƒng trÃ² chuyá»‡n AI chá»‰ kháº£ dá»¥ng trong thá»i gian dÃ¹ng thá»­ ba ngÃ y.",
+      "2": "CÃ¡c háº¡n cháº¿ bá»• sung cÃ³ thá»ƒ Ã¡p dá»¥ng cho cÃ¡c tÃ­nh nÄƒng trong tÆ°Æ¡ng lai."
     }
   },
   "howToObtain": {
-    "title": "Cách Nhận Giấy phép",
-    "description": "FlyEnv cung cấp các cách linh hoạt để có được giấy phép. Người dùng có thể chọn bất kỳ phương pháp nào sau đây để đăng ký:",
+    "title": "CÃ¡ch Nháº­n Giáº¥y phÃ©p",
+    "description": "SemarEnv cung cáº¥p cÃ¡c cÃ¡ch linh hoáº¡t Ä‘á»ƒ cÃ³ Ä‘Æ°á»£c giáº¥y phÃ©p. NgÆ°á»i dÃ¹ng cÃ³ thá»ƒ chá»n báº¥t ká»³ phÆ°Æ¡ng phÃ¡p nÃ o sau Ä‘Ã¢y Ä‘á»ƒ Ä‘Äƒng kÃ½:",
     "methods": {
       "0": {
-        "title": "Quyên góp cho Dự án",
-        "description": "Không có số tiền cố định nào được yêu cầu cho các khoản quyên góp. Xem xét tình hình kinh tế khác nhau của người dùng ở các quốc gia khác nhau (ví dụ: nhiều người dùng là sinh viên), vui lòng chọn một số tiền phù hợp với hoàn cảnh của bạn."
+        "title": "QuyÃªn gÃ³p cho Dá»± Ã¡n",
+        "description": "KhÃ´ng cÃ³ sá»‘ tiá»n cá»‘ Ä‘á»‹nh nÃ o Ä‘Æ°á»£c yÃªu cáº§u cho cÃ¡c khoáº£n quyÃªn gÃ³p. Xem xÃ©t tÃ¬nh hÃ¬nh kinh táº¿ khÃ¡c nhau cá»§a ngÆ°á»i dÃ¹ng á»Ÿ cÃ¡c quá»‘c gia khÃ¡c nhau (vÃ­ dá»¥: nhiá»u ngÆ°á»i dÃ¹ng lÃ  sinh viÃªn), vui lÃ²ng chá»n má»™t sá»‘ tiá»n phÃ¹ há»£p vá»›i hoÃ n cáº£nh cá»§a báº¡n."
       },
       "1": {
-        "title": "Đóng góp cho Phát triển",
-        "description": "Tham gia vào dự án bằng cách gửi Yêu cầu Kéo. Bất kể số lượng mã, miễn là nó cải thiện tích cực dự án (ví dụ: sửa lỗi dịch thuật), nó đều đủ điều kiện."
+        "title": "ÄÃ³ng gÃ³p cho PhÃ¡t triá»ƒn",
+        "description": "Tham gia vÃ o dá»± Ã¡n báº±ng cÃ¡ch gá»­i YÃªu cáº§u KÃ©o. Báº¥t ká»ƒ sá»‘ lÆ°á»£ng mÃ£, miá»…n lÃ  nÃ³ cáº£i thiá»‡n tÃ­ch cá»±c dá»± Ã¡n (vÃ­ dá»¥: sá»­a lá»—i dá»‹ch thuáº­t), nÃ³ Ä‘á»u Ä‘á»§ Ä‘iá»u kiá»‡n."
       },
       "2": {
-        "title": "Quảng bá Dự án",
-        "description": "Hãy quảng bá FlyEnv bằng cách chia sẻ trải nghiệm thực tế qua bài viết, video, blog, vlog hoặc bình luận. Nội dung có thể bằng bất kỳ ngôn ngữ nào, miễn là công khai trên internet."
+        "title": "Quáº£ng bÃ¡ Dá»± Ã¡n",
+        "description": "HÃ£y quáº£ng bÃ¡ SemarEnv báº±ng cÃ¡ch chia sáº» tráº£i nghiá»‡m thá»±c táº¿ qua bÃ i viáº¿t, video, blog, vlog hoáº·c bÃ¬nh luáº­n. Ná»™i dung cÃ³ thá»ƒ báº±ng báº¥t ká»³ ngÃ´n ngá»¯ nÃ o, miá»…n lÃ  cÃ´ng khai trÃªn internet."
       }
     }
   },
-  "submitInfo": "Sau khi hoàn thành bất kỳ phương pháp nào ở trên, vui lòng điền kết quả vào hộp nhập liệu bên dưới và nhấp vào nút 'Yêu cầu Giấy phép' để gửi đơn đăng ký của bạn. Yêu cầu giấy phép được xem xét thủ công, vì vậy hãy kiên nhẫn. Chúng thường được xử lý kịp thời.",
-  "messageLabel": "Tin nhắn",
-  "messagePlaceholder": "Vui lòng gửi người hiến tặng, liên kết quyên góp hoặc ID đơn hàng khi chọn quyên góp.\nVui lòng gửi liên kết PR cho những người chọn tham gia vào phát triển dự án.\nVui lòng gửi liên kết bài viết/video nếu bạn chọn giúp quảng bá dự án",
-  "requestButton": "Yêu cầu Giấy phép",
-  "refreshButton": "Làm Mới Trạng Thái",
-  "licenseActivated": "Giấy phép được kích hoạt",
-  "licenseNoActivated": "Giấy phép chưa được kích hoạt",
-  "licenseInfo": "Giấy phép hiện được cung cấp là giấy phép vĩnh viễn, mỗi máy tính tương ứng với một giấy phép. Nếu bạn thay đổi máy tính, bạn cần liên kết uuid của thiết bị mới trong 'Giấy phép của tôi' hoặc nộp đơn xin giấy phép mới.",
-  "logoutTips": "Bạn có chắc chắn muốn đăng xuất không?",
-  "delBindTips": "Bạn có chắc chắn muốn hủy liên kết giấy phép với UUID này không?",
-  "addBindTips": "Bạn có chắc chắn muốn liên kết giấy phép với UUID này không?",
-  "currentLicenseState": "Trạng thái giấy phép trên thiết bị này",
-  "activeState": "Trạng thái Kích hoạt",
-  "myLicense": "Giấy phép của tôi",
-  "loginTips": "Vui lòng đăng nhập trước",
-  "logingTips": "Đang đăng nhập qua GitHub...",
-  "licenseNo": "Số giấy phép",
-  "licenseBindUUID": "UUID đã liên kết",
-  "delBind": "Hủy liên kết",
-  "bindCurrentUUID": "Liên kết thiết bị này",
-  "loginFail": "Đăng nhập thất bại",
-  "oauthCanceledTitle": "Ủy quyền đã bị hủy",
-  "oauthCanceledMessage": "Người dùng đã hủy quy trình ủy quyền",
-  "oauthFailedTitle": "Ủy quyền thất bại",
-  "oauthFailedMessage": "Ủy quyền thất bại. Lý do: {error}",
-  "oauthFailedByNoAuthCode": "Không nhận được mã ủy quyền",
-  "oauthTimeout": "Ủy quyền đã hết thời gian",
-  "oauthSuccessTitle": "Ủy quyền thành công",
-  "oauthSuccessMessage": "Trang này có thể đóng lại. Vui lòng quay lại FlyEnv để xem thông tin giấy phép.",
-  "trialExpiredTitle": "Giấy phép chưa được kích hoạt",
-  "trialExpiredTips": "Bạn đã sử dụng FlyEnv được {days} ngày. Nếu FlyEnv hữu ích cho bạn, hãy cân nhắc lấy giấy phép để hỗ trợ dự án."
+  "submitInfo": "Sau khi hoÃ n thÃ nh báº¥t ká»³ phÆ°Æ¡ng phÃ¡p nÃ o á»Ÿ trÃªn, vui lÃ²ng Ä‘iá»n káº¿t quáº£ vÃ o há»™p nháº­p liá»‡u bÃªn dÆ°á»›i vÃ  nháº¥p vÃ o nÃºt 'YÃªu cáº§u Giáº¥y phÃ©p' Ä‘á»ƒ gá»­i Ä‘Æ¡n Ä‘Äƒng kÃ½ cá»§a báº¡n. YÃªu cáº§u giáº¥y phÃ©p Ä‘Æ°á»£c xem xÃ©t thá»§ cÃ´ng, vÃ¬ váº­y hÃ£y kiÃªn nháº«n. ChÃºng thÆ°á»ng Ä‘Æ°á»£c xá»­ lÃ½ ká»‹p thá»i.",
+  "messageLabel": "Tin nháº¯n",
+  "messagePlaceholder": "Vui lÃ²ng gá»­i ngÆ°á»i hiáº¿n táº·ng, liÃªn káº¿t quyÃªn gÃ³p hoáº·c ID Ä‘Æ¡n hÃ ng khi chá»n quyÃªn gÃ³p.\nVui lÃ²ng gá»­i liÃªn káº¿t PR cho nhá»¯ng ngÆ°á»i chá»n tham gia vÃ o phÃ¡t triá»ƒn dá»± Ã¡n.\nVui lÃ²ng gá»­i liÃªn káº¿t bÃ i viáº¿t/video náº¿u báº¡n chá»n giÃºp quáº£ng bÃ¡ dá»± Ã¡n",
+  "requestButton": "YÃªu cáº§u Giáº¥y phÃ©p",
+  "refreshButton": "LÃ m Má»›i Tráº¡ng ThÃ¡i",
+  "licenseActivated": "Giáº¥y phÃ©p Ä‘Æ°á»£c kÃ­ch hoáº¡t",
+  "licenseNoActivated": "Giáº¥y phÃ©p chÆ°a Ä‘Æ°á»£c kÃ­ch hoáº¡t",
+  "licenseInfo": "Giáº¥y phÃ©p hiá»‡n Ä‘Æ°á»£c cung cáº¥p lÃ  giáº¥y phÃ©p vÄ©nh viá»…n, má»—i mÃ¡y tÃ­nh tÆ°Æ¡ng á»©ng vá»›i má»™t giáº¥y phÃ©p. Náº¿u báº¡n thay Ä‘á»•i mÃ¡y tÃ­nh, báº¡n cáº§n liÃªn káº¿t uuid cá»§a thiáº¿t bá»‹ má»›i trong 'Giáº¥y phÃ©p cá»§a tÃ´i' hoáº·c ná»™p Ä‘Æ¡n xin giáº¥y phÃ©p má»›i.",
+  "logoutTips": "Báº¡n cÃ³ cháº¯c cháº¯n muá»‘n Ä‘Äƒng xuáº¥t khÃ´ng?",
+  "delBindTips": "Báº¡n cÃ³ cháº¯c cháº¯n muá»‘n há»§y liÃªn káº¿t giáº¥y phÃ©p vá»›i UUID nÃ y khÃ´ng?",
+  "addBindTips": "Báº¡n cÃ³ cháº¯c cháº¯n muá»‘n liÃªn káº¿t giáº¥y phÃ©p vá»›i UUID nÃ y khÃ´ng?",
+  "currentLicenseState": "Tráº¡ng thÃ¡i giáº¥y phÃ©p trÃªn thiáº¿t bá»‹ nÃ y",
+  "activeState": "Tráº¡ng thÃ¡i KÃ­ch hoáº¡t",
+  "myLicense": "Giáº¥y phÃ©p cá»§a tÃ´i",
+  "loginTips": "Vui lÃ²ng Ä‘Äƒng nháº­p trÆ°á»›c",
+  "logingTips": "Äang Ä‘Äƒng nháº­p qua GitHub...",
+  "licenseNo": "Sá»‘ giáº¥y phÃ©p",
+  "licenseBindUUID": "UUID Ä‘Ã£ liÃªn káº¿t",
+  "delBind": "Há»§y liÃªn káº¿t",
+  "bindCurrentUUID": "LiÃªn káº¿t thiáº¿t bá»‹ nÃ y",
+  "loginFail": "ÄÄƒng nháº­p tháº¥t báº¡i",
+  "oauthCanceledTitle": "á»¦y quyá»n Ä‘Ã£ bá»‹ há»§y",
+  "oauthCanceledMessage": "NgÆ°á»i dÃ¹ng Ä‘Ã£ há»§y quy trÃ¬nh á»§y quyá»n",
+  "oauthFailedTitle": "á»¦y quyá»n tháº¥t báº¡i",
+  "oauthFailedMessage": "á»¦y quyá»n tháº¥t báº¡i. LÃ½ do: {error}",
+  "oauthFailedByNoAuthCode": "KhÃ´ng nháº­n Ä‘Æ°á»£c mÃ£ á»§y quyá»n",
+  "oauthTimeout": "á»¦y quyá»n Ä‘Ã£ háº¿t thá»i gian",
+  "oauthSuccessTitle": "á»¦y quyá»n thÃ nh cÃ´ng",
+  "oauthSuccessMessage": "Trang nÃ y cÃ³ thá»ƒ Ä‘Ã³ng láº¡i. Vui lÃ²ng quay láº¡i SemarEnv Ä‘á»ƒ xem thÃ´ng tin giáº¥y phÃ©p.",
+  "trialExpiredTitle": "Giáº¥y phÃ©p chÆ°a Ä‘Æ°á»£c kÃ­ch hoáº¡t",
+  "trialExpiredTips": "Báº¡n Ä‘Ã£ sá»­ dá»¥ng SemarEnv Ä‘Æ°á»£c {days} ngÃ y. Náº¿u SemarEnv há»¯u Ã­ch cho báº¡n, hÃ£y cÃ¢n nháº¯c láº¥y giáº¥y phÃ©p Ä‘á»ƒ há»— trá»£ dá»± Ã¡n."
 }

@@ -2,7 +2,7 @@
   <el-card>
     <template #header>
       <div class="flex items-baseline gap-3">
-        <span class="text-2xl">FlyEnv</span>
+        <span class="text-2xl">SemarEnv</span>
         <span>Version {{ version }}</span>
         <el-button type="primary" size="small" @click.stop="checkUpdate">{{
           I18nT('update.checkForUpdates')
@@ -16,17 +16,17 @@
         </div>
         <div class="mt-5">
           <a target="_blank" href="javascript:" rel="noopener noreferrer" @click="toHome($event)">
-            FlyEnv - https://flyenv.com
+            SemarEnv - https://flyenv.com
           </a>
         </div>
       </div>
       <template v-if="lang === 'zh'">
         <el-row style="padding: 0 20px; margin-top: 30px">
           <el-col>
-            感谢使用FlyEnv. 使用中的任何问题和建议. 都可以加入社群进行讨论. 也可以提交 GitHub Issues
+            æ„Ÿè°¢ä½¿ç”¨SemarEnv. ä½¿ç”¨ä¸­çš„ä»»ä½•é—®é¢˜å’Œå»ºè®®. éƒ½å¯ä»¥åŠ å…¥ç¤¾ç¾¤è¿›è¡Œè®¨è®º. ä¹Ÿå¯ä»¥æäº¤ GitHub Issues
           </el-col>
           <el-col style="margin-top: 12px">
-            如果FlyEnv有帮助到你. 为了项目更好的发展, 烦请star和赞助. 感谢
+            å¦‚æžœSemarEnvæœ‰å¸®åŠ©åˆ°ä½ . ä¸ºäº†é¡¹ç›®æ›´å¥½çš„å‘å±•, çƒ¦è¯·starå’ŒèµžåŠ©. æ„Ÿè°¢
           </el-col>
           <el-col style="margin-top: 12px">
             GitHub:
@@ -34,13 +34,13 @@
               target="_blank"
               href="javascript:"
               rel="noopener noreferrer"
-              @click="openUrl($event, 'https://github.com/xpf0000/FlyEnv')"
+              @click="openUrl($event, 'https://github.com/arinadi/SemarEnv')"
             >
-              https://github.com/xpf0000/FlyEnv
+              https://github.com/arinadi/SemarEnv
             </a>
           </el-col>
           <el-col style="margin-top: 12px">
-            赞助:
+            èµžåŠ©:
             <a
               target="_blank"
               href="javascript:"
@@ -55,11 +55,11 @@
       <template v-else>
         <el-row style="padding: 0 20px; margin-top: 30px">
           <el-col>
-            Thanks for using FlyEnv. If you have any questions or suggestions, you can join the
+            Thanks for using SemarEnv. If you have any questions or suggestions, you can join the
             community for discussion. You can also submit GitHub Issues
           </el-col>
           <el-col style="margin-top: 12px">
-            If FlyEnv is helpful to you, please star and sponsor for the project. Thanks
+            If SemarEnv is helpful to you, please star and sponsor for the project. Thanks
           </el-col>
           <el-col style="margin-top: 12px">
             GitHub:
@@ -67,9 +67,9 @@
               target="_blank"
               href="javascript:"
               rel="noopener noreferrer"
-              @click="openUrl($event, 'https://github.com/xpf0000/FlyEnv')"
+              @click="openUrl($event, 'https://github.com/arinadi/SemarEnv')"
             >
-              https://github.com/xpf0000/FlyEnv
+              https://github.com/arinadi/SemarEnv
             </a>
           </el-col>
           <el-col style="margin-top: 12px">

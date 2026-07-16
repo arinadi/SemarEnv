@@ -9,7 +9,7 @@ export const PostgreSqlSetup: {
   dir: {},
   init() {
     localForage
-      .getItem('flyenv-postgresql-storage-dir')
+      .getItem('semarenv-postgresql-storage-dir')
       .then((res: Record<string, string>) => {
         if (res) {
           PostgreSqlSetup.dir = reactive(res)
@@ -19,7 +19,7 @@ export const PostgreSqlSetup: {
   },
   save() {
     localForage
-      .setItem('flyenv-postgresql-storage-dir', JSON.parse(JSON.stringify(PostgreSqlSetup.dir)))
+      .setItem('semarenv-postgresql-storage-dir', JSON.parse(JSON.stringify(PostgreSqlSetup.dir)))
       .then()
       .catch()
   }

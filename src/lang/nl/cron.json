@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Geplande taken",
   "add": "Geplande taak toevoegen",
   "name": "Taaknaam",
@@ -101,7 +101,7 @@
   "allTasks": "Alle taken",
   "systemTasks": "Systeemtaken",
   "systemTask": "Systeemtaak",
-  "flyenvTask": "FlyEnv-taak",
+  "semarenvTask": "SemarEnv-taak",
   "otherTask": "Andere taak",
   "taskTrigger": "Trigger",
   "deleteSystemTaskTips": "Deze geplande systeemtaak verwijderen?",

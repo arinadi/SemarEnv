@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Ütemezett Feladatok",
   "add": "Ütemezett Feladat Hozzáadása",
   "name": "Feladat Neve",
@@ -101,7 +101,7 @@
   "allTasks": "Minden feladat",
   "systemTasks": "Rendszerfeladatok",
   "systemTask": "Rendszerfeladat",
-  "flyenvTask": "FlyEnv-feladat",
+  "semarenvTask": "SemarEnv-feladat",
   "otherTask": "Egyéb feladat",
   "taskTrigger": "Indító",
   "deleteSystemTaskTips": "Törli ezt a rendszerütemezett feladatot?",

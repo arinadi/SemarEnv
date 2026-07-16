@@ -9,7 +9,7 @@ export const TomcatSetup: {
   CATALINA_BASE: {},
   init() {
     localForage
-      .getItem('flyenv-tomcat-server-root')
+      .getItem('semarenv-tomcat-server-root')
       .then((res: Record<string, string>) => {
         if (res) {
           TomcatSetup.CATALINA_BASE = reactive(res)
@@ -19,7 +19,7 @@ export const TomcatSetup: {
   },
   save() {
     localForage
-      .setItem('flyenv-tomcat-server-root', JSON.parse(JSON.stringify(TomcatSetup.CATALINA_BASE)))
+      .setItem('semarenv-tomcat-server-root', JSON.parse(JSON.stringify(TomcatSetup.CATALINA_BASE)))
       .then()
       .catch()
   }

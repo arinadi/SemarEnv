@@ -16,7 +16,7 @@ const Elasticsearch = reactive({
   volumes: [
     {
       type: 'bind',
-      source: './flyenv-docker-compose/elasticsearch/data',
+      source: './semarenv-docker-compose/elasticsearch/data',
       target: '/usr/share/elasticsearch/data'
     }
   ],
@@ -41,7 +41,7 @@ const Elasticsearch = reactive({
       image: `${mirror}${image}:${Elasticsearch.version}`,
       ports: Elasticsearch.ports.map((p) => `${p.out}:${p.in}`),
       environment: Elasticsearch.environment,
-      networks: ['flyenv-network'],
+      networks: ['semarenv-network'],
       // Set ulimits needed by ES
       ulimits: {
         memlock: { soft: -1, hard: -1 }
@@ -50,7 +50,7 @@ const Elasticsearch = reactive({
 
     if (Elasticsearch.persistence) {
       elasticsearch.volumes = Elasticsearch.volumes
-      await fs.mkdirp(join(dirname(base.dir), 'flyenv-docker-compose/elasticsearch/data'))
+      await fs.mkdirp(join(dirname(base.dir), 'semarenv-docker-compose/elasticsearch/data'))
     }
 
     return { elasticsearch }

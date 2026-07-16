@@ -1,60 +1,60 @@
 {
-  "description": "Ez a licenc elismeri és támogatja a FlyEnv és szerzőinek munkáját. Nem célja a felhasználók korlátozása, hanem arra ösztönöz, hogy tiszteletben tartsák a fejlesztők munkáját és szellemi tulajdonát. Kérjük, gondoskodjon érvényes licenc beszerzéséről, mielőtt a FlyEnv-et kereskedelmi célokra használná.",
+  "description": "Ez a licenc elismeri Ã©s tÃ¡mogatja a SemarEnv Ã©s szerzÅ‘inek munkÃ¡jÃ¡t. Nem cÃ©lja a felhasznÃ¡lÃ³k korlÃ¡tozÃ¡sa, hanem arra Ã¶sztÃ¶nÃ¶z, hogy tiszteletben tartsÃ¡k a fejlesztÅ‘k munkÃ¡jÃ¡t Ã©s szellemi tulajdonÃ¡t. KÃ©rjÃ¼k, gondoskodjon Ã©rvÃ©nyes licenc beszerzÃ©sÃ©rÅ‘l, mielÅ‘tt a SemarEnv-et kereskedelmi cÃ©lokra hasznÃ¡lnÃ¡.",
   "restrictions": {
-    "title": "A licenccel nem rendelkező felhasználókra az alábbi korlátozások vonatkoznak:",
+    "title": "A licenccel nem rendelkezÅ‘ felhasznÃ¡lÃ³kra az alÃ¡bbi korlÃ¡tozÃ¡sok vonatkoznak:",
     "items": {
-      "0": "Legfeljebb három webhely hozható létre.",
-      "1": "Az AI chat funkció kizárólag háromnapos próbaidőszakban érhető el.",
-      "2": "A jövőbeli funkciókra további korlátozások vonatkozhatnak."
+      "0": "Legfeljebb hÃ¡rom webhely hozhatÃ³ lÃ©tre.",
+      "1": "Az AI chat funkciÃ³ kizÃ¡rÃ³lag hÃ¡romnapos prÃ³baidÅ‘szakban Ã©rhetÅ‘ el.",
+      "2": "A jÃ¶vÅ‘beli funkciÃ³kra tovÃ¡bbi korlÃ¡tozÃ¡sok vonatkozhatnak."
     }
   },
   "howToObtain": {
-    "title": "Licenc beszerzése",
-    "description": "A FlyEnv rugalmas módokat kínál a licenc beszerzésére. A felhasználók az alábbi módszerek bármelyikével jelentkezhetnek:",
+    "title": "Licenc beszerzÃ©se",
+    "description": "A SemarEnv rugalmas mÃ³dokat kÃ­nÃ¡l a licenc beszerzÃ©sÃ©re. A felhasznÃ¡lÃ³k az alÃ¡bbi mÃ³dszerek bÃ¡rmelyikÃ©vel jelentkezhetnek:",
     "methods": {
       "0": {
-        "title": "Adományozás a projektnek",
-        "description": "Az adományoknál nincs kötelező fix összeg. A különböző országok felhasználóinak eltérő gazdasági helyzetét figyelembe véve (például sok felhasználó diák), válasszon olyan összeget, amely Önnek kényelmes."
+        "title": "AdomÃ¡nyozÃ¡s a projektnek",
+        "description": "Az adomÃ¡nyoknÃ¡l nincs kÃ¶telezÅ‘ fix Ã¶sszeg. A kÃ¼lÃ¶nbÃ¶zÅ‘ orszÃ¡gok felhasznÃ¡lÃ³inak eltÃ©rÅ‘ gazdasÃ¡gi helyzetÃ©t figyelembe vÃ©ve (pÃ©ldÃ¡ul sok felhasznÃ¡lÃ³ diÃ¡k), vÃ¡lasszon olyan Ã¶sszeget, amely Ã–nnek kÃ©nyelmes."
       },
       "1": {
-        "title": "Hozzájárulás a fejlesztéshez",
-        "description": "Vegyen részt a projektben Pull Request beküldésével. A kód mennyiségétől függetlenül, ha a hozzájárulás pozitívan javítja a projektet (például fordítási hiba javítása), az hozzájárulásnak számít."
+        "title": "HozzÃ¡jÃ¡rulÃ¡s a fejlesztÃ©shez",
+        "description": "Vegyen rÃ©szt a projektben Pull Request bekÃ¼ldÃ©sÃ©vel. A kÃ³d mennyisÃ©gÃ©tÅ‘l fÃ¼ggetlenÃ¼l, ha a hozzÃ¡jÃ¡rulÃ¡s pozitÃ­van javÃ­tja a projektet (pÃ©ldÃ¡ul fordÃ­tÃ¡si hiba javÃ­tÃ¡sa), az hozzÃ¡jÃ¡rulÃ¡snak szÃ¡mÃ­t."
       },
       "2": {
-        "title": "A projekt népszerűsítése",
-        "description": "Népszerűsítse a FlyEnv-et tapasztalatainak megosztásával cikkekben, videókban, blogokon, vlogokban vagy hozzászólásokban. Előnyben részesül az őszinte felhasználói visszajelzés. A tartalom bármilyen nyelven és platformon lehet."
+        "title": "A projekt nÃ©pszerÅ±sÃ­tÃ©se",
+        "description": "NÃ©pszerÅ±sÃ­tse a SemarEnv-et tapasztalatainak megosztÃ¡sÃ¡val cikkekben, videÃ³kban, blogokon, vlogokban vagy hozzÃ¡szÃ³lÃ¡sokban. ElÅ‘nyben rÃ©szesÃ¼l az Å‘szinte felhasznÃ¡lÃ³i visszajelzÃ©s. A tartalom bÃ¡rmilyen nyelven Ã©s platformon lehet."
       }
     }
   },
-  "submitInfo": "A fenti módszerek bármelyikének teljesítése után töltse ki az eredményeket az alábbi beviteli mezőben, majd kattintson a „Licenc igénylése” gombra a jelentkezés elküldéséhez. A licenckérelmek feldolgozása általában 24 órán belül megtörténik.",
-  "messageLabel": "Üzenet",
-  "messagePlaceholder": "Adományozás választása esetén adja meg az adományozót, az adományozási linket vagy a rendelésazonosítót.\nA projektfejlesztésben való részvétel esetén adja meg a PR hivatkozását.\nNépszerűsítés választása esetén adja meg a cikk, videó, blog, vlog vagy hozzászólás hivatkozását.",
-  "requestButton": "Licenc igénylése",
-  "refreshButton": "Állapot frissítése",
-  "licenseActivated": "Licenc aktiválva",
-  "licenseNoActivated": "A licenc nincs aktiválva",
-  "licenseInfo": "A jelenleg biztosított licenc állandó licenc, és minden számítógéphez egy licenc tartozik. Ha számítógépet vált, az új eszköz uuid azonosítóját a „Saját licencek” részben kell kötni, vagy új licencet kell igényelni.",
+  "submitInfo": "A fenti mÃ³dszerek bÃ¡rmelyikÃ©nek teljesÃ­tÃ©se utÃ¡n tÃ¶ltse ki az eredmÃ©nyeket az alÃ¡bbi beviteli mezÅ‘ben, majd kattintson a â€žLicenc igÃ©nylÃ©seâ€ gombra a jelentkezÃ©s elkÃ¼ldÃ©sÃ©hez. A licenckÃ©relmek feldolgozÃ¡sa Ã¡ltalÃ¡ban 24 Ã³rÃ¡n belÃ¼l megtÃ¶rtÃ©nik.",
+  "messageLabel": "Ãœzenet",
+  "messagePlaceholder": "AdomÃ¡nyozÃ¡s vÃ¡lasztÃ¡sa esetÃ©n adja meg az adomÃ¡nyozÃ³t, az adomÃ¡nyozÃ¡si linket vagy a rendelÃ©sazonosÃ­tÃ³t.\nA projektfejlesztÃ©sben valÃ³ rÃ©szvÃ©tel esetÃ©n adja meg a PR hivatkozÃ¡sÃ¡t.\nNÃ©pszerÅ±sÃ­tÃ©s vÃ¡lasztÃ¡sa esetÃ©n adja meg a cikk, videÃ³, blog, vlog vagy hozzÃ¡szÃ³lÃ¡s hivatkozÃ¡sÃ¡t.",
+  "requestButton": "Licenc igÃ©nylÃ©se",
+  "refreshButton": "Ãllapot frissÃ­tÃ©se",
+  "licenseActivated": "Licenc aktivÃ¡lva",
+  "licenseNoActivated": "A licenc nincs aktivÃ¡lva",
+  "licenseInfo": "A jelenleg biztosÃ­tott licenc Ã¡llandÃ³ licenc, Ã©s minden szÃ¡mÃ­tÃ³gÃ©phez egy licenc tartozik. Ha szÃ¡mÃ­tÃ³gÃ©pet vÃ¡lt, az Ãºj eszkÃ¶z uuid azonosÃ­tÃ³jÃ¡t a â€žSajÃ¡t licencekâ€ rÃ©szben kell kÃ¶tni, vagy Ãºj licencet kell igÃ©nyelni.",
   "logoutTips": "Biztosan kijelentkezik?",
-  "delBindTips": "Biztosan leválasztja a licencet erről az UUID-ről?",
-  "addBindTips": "Biztosan ehhez az UUID-hez köti a licencet?",
-  "currentLicenseState": "Licenc állapota ezen az eszközön",
-  "activeState": "Aktiválási állapot",
-  "myLicense": "Saját licencek",
-  "loginTips": "Előbb jelentkezzen be",
-  "logingTips": "Bejelentkezés GitHubon keresztül...",
-  "licenseNo": "Licencszám",
-  "licenseBindUUID": "Hozzákötött UUID",
-  "delBind": "Leválasztás",
-  "bindCurrentUUID": "Eszköz hozzákötése",
-  "loginFail": "Bejelentkezés sikertelen",
-  "oauthCanceledTitle": "Engedélyezés megszakítva",
-  "oauthCanceledMessage": "A felhasználó megszakította az engedélyezési folyamatot",
-  "oauthFailedTitle": "Engedélyezés sikertelen",
-  "oauthFailedMessage": "Az engedélyezés sikertelen. Ok: {error}",
-  "oauthFailedByNoAuthCode": "Nem érkezett engedélyezési kód",
-  "oauthTimeout": "Engedélyezési időtúllépés",
-  "oauthSuccessTitle": "Engedélyezés sikeres",
-  "oauthSuccessMessage": "Ez az oldal bezárható. Térjen vissza a FlyEnv-be a licencinformációk megtekintéséhez.",
-  "trialExpiredTitle": "A licenc nincs aktiválva",
-  "trialExpiredTips": "{days} napja használja a FlyEnv-et. Ha a FlyEnv hasznos volt Önnek, fontolja meg a licenc megszerzését a projekt támogatásához."
+  "delBindTips": "Biztosan levÃ¡lasztja a licencet errÅ‘l az UUID-rÅ‘l?",
+  "addBindTips": "Biztosan ehhez az UUID-hez kÃ¶ti a licencet?",
+  "currentLicenseState": "Licenc Ã¡llapota ezen az eszkÃ¶zÃ¶n",
+  "activeState": "AktivÃ¡lÃ¡si Ã¡llapot",
+  "myLicense": "SajÃ¡t licencek",
+  "loginTips": "ElÅ‘bb jelentkezzen be",
+  "logingTips": "BejelentkezÃ©s GitHubon keresztÃ¼l...",
+  "licenseNo": "LicencszÃ¡m",
+  "licenseBindUUID": "HozzÃ¡kÃ¶tÃ¶tt UUID",
+  "delBind": "LevÃ¡lasztÃ¡s",
+  "bindCurrentUUID": "EszkÃ¶z hozzÃ¡kÃ¶tÃ©se",
+  "loginFail": "BejelentkezÃ©s sikertelen",
+  "oauthCanceledTitle": "EngedÃ©lyezÃ©s megszakÃ­tva",
+  "oauthCanceledMessage": "A felhasznÃ¡lÃ³ megszakÃ­totta az engedÃ©lyezÃ©si folyamatot",
+  "oauthFailedTitle": "EngedÃ©lyezÃ©s sikertelen",
+  "oauthFailedMessage": "Az engedÃ©lyezÃ©s sikertelen. Ok: {error}",
+  "oauthFailedByNoAuthCode": "Nem Ã©rkezett engedÃ©lyezÃ©si kÃ³d",
+  "oauthTimeout": "EngedÃ©lyezÃ©si idÅ‘tÃºllÃ©pÃ©s",
+  "oauthSuccessTitle": "EngedÃ©lyezÃ©s sikeres",
+  "oauthSuccessMessage": "Ez az oldal bezÃ¡rhatÃ³. TÃ©rjen vissza a SemarEnv-be a licencinformÃ¡ciÃ³k megtekintÃ©sÃ©hez.",
+  "trialExpiredTitle": "A licenc nincs aktivÃ¡lva",
+  "trialExpiredTips": "{days} napja hasznÃ¡lja a SemarEnv-et. Ha a SemarEnv hasznos volt Ã–nnek, fontolja meg a licenc megszerzÃ©sÃ©t a projekt tÃ¡mogatÃ¡sÃ¡hoz."
 }

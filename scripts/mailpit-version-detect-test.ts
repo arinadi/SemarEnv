@@ -8,7 +8,7 @@ import { join } from 'node:path'
 
 const { versionBinVersion } = await import('../src/fork/util/Version')
 
-const tempDir = await mkdtemp(join(tmpdir(), 'flyenv-mailpit-version-'))
+const tempDir = await mkdtemp(join(tmpdir(), 'semarenv-mailpit-version-'))
 const scriptFile = join(tempDir, 'mailpit-version-fixture.mjs')
 
 try {

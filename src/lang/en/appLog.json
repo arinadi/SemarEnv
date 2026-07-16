@@ -20,5 +20,5 @@
   "initDBDataDirSuccess": "Initialization of data folder successful, data folder path: {dir}",
   "initDBDataDirFail": "Initialization of data folder failed, reason: {error}",
   "newProjectFail": "Failed to create new project",
-  "processListFail": "Process list fetch fail. Please install FlyEnv Helper"
+  "processListFail": "Process list fetch fail. Please install SemarEnv Helper"
 }

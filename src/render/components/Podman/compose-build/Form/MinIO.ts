@@ -16,7 +16,7 @@ const MinIO = reactive({
   volumes: [
     {
       type: 'bind',
-      source: './flyenv-docker-compose/minio/data',
+      source: './semarenv-docker-compose/minio/data',
       target: '/data'
     }
   ],
@@ -36,12 +36,12 @@ const MinIO = reactive({
       image: `${mirror}${image}:${MinIO.version}`,
       ports: MinIO.ports.map((p) => `${p.out}:${p.in}`),
       environment: MinIO.environment,
-      networks: ['flyenv-network']
+      networks: ['semarenv-network']
     }
 
     if (MinIO.persistence) {
       minio.volumes = MinIO.volumes
-      await fs.mkdirp(join(dirname(base.dir), 'flyenv-docker-compose/minio/data'))
+      await fs.mkdirp(join(dirname(base.dir), 'semarenv-docker-compose/minio/data'))
     }
 
     return { minio }

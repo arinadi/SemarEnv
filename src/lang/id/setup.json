@@ -1,4 +1,4 @@
-{
+﻿{
   "tsinghua": "Sumber unduhan Universitas Tsinghua",
   "bfsu": "Sumber unduhan Universitas Studi Asing Beijing",
   "tencent": "Sumber unduhan Tencent",
@@ -11,9 +11,9 @@
   "autoHide": "Mulai Tersembunyi / Minimalkan ke Tray",
   "autoHideTips": "Apakah ingin menyembunyikan antarmuka utama dan hanya menampilkan ikon di tray sistem setelah layanan dimulai secara otomatis",
   "autoLaunch": "Luncurkan Otomatis Saat Boot",
-  "autoLaunchTips": "Apakah ingin meluncurkan FlyEnv secara otomatis saat komputer menyala",
+  "autoLaunchTips": "Apakah ingin meluncurkan SemarEnv secara otomatis saat komputer menyala",
   "passwordTips": "Tidak diperlukan. Kata sandi akan diisi otomatis saat menjalankan perintah. Misalnya, instalasi dan pencopotan dengan Macports, dll.",
-  "langTips": "Muat paket bahasa yang didefinisikan pengguna. Ini juga akan menginisialisasi paket bahasa default, memudahkan pengguna untuk menerjemahkan FlyEnv ke bahasa lain.",
+  "langTips": "Muat paket bahasa yang didefinisikan pengguna. Ini juga akan menginisialisasi paket bahasa default, memudahkan pengguna untuk menerjemahkan SemarEnv ke bahasa lain.",
   "openLangDir": "Buka folder paket bahasa",
   "moduleCateAddTips": "Tambahkan Kategori Modul",
   "moduleCateName": "Nama Kategori Modul",
@@ -39,10 +39,10 @@
     "licenseTips": "Lisensi tidak ditemukan. Hanya 3 modul/item eksekusi yang dapat dibuat.",
     "outputLog": "Log keluaran"
   },
-  "flyenvHelper": "Perbaikan Program Bantu FlyEnv",
-  "flyenvHelperBtn": "Perbaiki",
-  "flyenvHelperFixSuccess": "Perbaikan program bantu FlyEnv berhasil",
-  "flyenvHelperInstallFailTips": "Pemasangan FlyEnv helper gagal. Silakan coba jalankan FlyEnv dengan hak administrator, atau klik tombol OK dan jalankan program helper flyenv-helper.exe secara manual di folder yang terbuka.",
+  "semarenvHelper": "Perbaikan Program Bantu SemarEnv",
+  "semarenvHelperBtn": "Perbaiki",
+  "semarenvHelperFixSuccess": "Perbaikan program bantu SemarEnv berhasil",
+  "semarenvHelperInstallFailTips": "Pemasangan SemarEnv helper gagal. Silakan coba jalankan SemarEnv dengan hak administrator, atau klik tombol OK dan jalankan program helper semarenv-helper.exe secara manual di folder yang terbuka.",
   "appFont": "Font Antarmuka",
   "appFontTips": "Atur font yang digunakan untuk antarmuka aplikasi. Biarkan kosong untuk menggunakan font sistem default",
   "codeFont": "Font Kode",

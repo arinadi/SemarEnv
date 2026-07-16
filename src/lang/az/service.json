@@ -1,22 +1,22 @@
 {
-  "setaliase": "Ləqəb Təyin Et",
-  "env": "Mühit Dəyişəni",
-  "alias": "Ləqəb",
-  "envTips": "Yol mühit dəyişəninə əlavə edilibmi?",
-  "aliasTips": "Terminalda istifadə olunacaq ləqəb",
-  "useSysPHP": "Standart PHP versiyasını istifadə et",
-  "setByApp": "FlyEnv tərəfindən təyin edilmiş mühit dəyişənləri",
-  "setByNoApp": "FlyEnv tərəfindən təyin edilməmiş mühit dəyişənləri",
-  "ftpdNeedPasswordToStart": "Pure-FTPd işlətmək üçün sudo icazələri tələb olunur. Zəhmət olmasa istifadəçi parolunuzu daxil edin. Bu parol sonrakı avtomatik doldurma üçün saxlanacaq. Alternativ olaraq aşağıdakı düyməni klikləyərək terminalda əl ilə daxil edə bilərsiniz, lakin bu xəbərdarlıq yenidən görünə bilər.",
-  "bundleinVersionDelTips": "Bu versiya daxili versiyadır, göstərilməsin?",
-  "customDirVersionDelTips": "Bu versiya xüsusi yol versiyasıdır, göstərilməsin?",
+  "setaliase": "LÉ™qÉ™b TÉ™yin Et",
+  "env": "MÃ¼hit DÉ™yiÅŸÉ™ni",
+  "alias": "LÉ™qÉ™b",
+  "envTips": "Yol mÃ¼hit dÉ™yiÅŸÉ™ninÉ™ É™lavÉ™ edilibmi?",
+  "aliasTips": "Terminalda istifadÉ™ olunacaq lÉ™qÉ™b",
+  "useSysPHP": "Standart PHP versiyasÄ±nÄ± istifadÉ™ et",
+  "setByApp": "SemarEnv tÉ™rÉ™findÉ™n tÉ™yin edilmiÅŸ mÃ¼hit dÉ™yiÅŸÉ™nlÉ™ri",
+  "setByNoApp": "SemarEnv tÉ™rÉ™findÉ™n tÉ™yin edilmÉ™miÅŸ mÃ¼hit dÉ™yiÅŸÉ™nlÉ™ri",
+  "ftpdNeedPasswordToStart": "Pure-FTPd iÅŸlÉ™tmÉ™k Ã¼Ã§Ã¼n sudo icazÉ™lÉ™ri tÉ™lÉ™b olunur. ZÉ™hmÉ™t olmasa istifadÉ™Ã§i parolunuzu daxil edin. Bu parol sonrakÄ± avtomatik doldurma Ã¼Ã§Ã¼n saxlanacaq. Alternativ olaraq aÅŸaÄŸÄ±dakÄ± dÃ¼ymÉ™ni kliklÉ™yÉ™rÉ™k terminalda É™l ilÉ™ daxil edÉ™ bilÉ™rsiniz, lakin bu xÉ™bÉ™rdarlÄ±q yenidÉ™n gÃ¶rÃ¼nÉ™ bilÉ™r.",
+  "bundleinVersionDelTips": "Bu versiya daxili versiyadÄ±r, gÃ¶stÉ™rilmÉ™sin?",
+  "customDirVersionDelTips": "Bu versiya xÃ¼susi yol versiyasÄ±dÄ±r, gÃ¶stÉ™rilmÉ™sin?",
   "ErrorTips": {
     "VCRuntime": {
-      "title": "Sisteminizdə bu versiyanı işlətmək üçün tələb olunan Visual C++ Redistributable (DLL) yoxdur. VC Runtime-ı Microsoft-un rəsmi saytından endirib quraşdırmaq üçün aşağıdakı linkə klikləyin.",
-      "versionRelation": "Versiya uyğunluğu istinadı:",
+      "title": "SisteminizdÉ™ bu versiyanÄ± iÅŸlÉ™tmÉ™k Ã¼Ã§Ã¼n tÉ™lÉ™b olunan Visual C++ Redistributable (DLL) yoxdur. VC Runtime-Ä± Microsoft-un rÉ™smi saytÄ±ndan endirib quraÅŸdÄ±rmaq Ã¼Ã§Ã¼n aÅŸaÄŸÄ±dakÄ± linkÉ™ kliklÉ™yin.",
+      "versionRelation": "Versiya uyÄŸunluÄŸu istinadÄ±:",
       "software": "Software",
-      "versionRange": "Versiya aralığı",
-      "msvsVersion": "MSVC versiyası"
+      "versionRange": "Versiya aralÄ±ÄŸÄ±",
+      "msvsVersion": "MSVC versiyasÄ±"
     }
   }
 }

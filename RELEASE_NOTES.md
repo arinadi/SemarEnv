@@ -1,28 +1,28 @@
-# FlyEnv Release Notes
+# SemarEnv Release Notes
 
-All notable changes to FlyEnv will be documented in this file.
+All notable changes to SemarEnv will be documented in this file.
 
 ## [4.16.2] - 2026-07-12
 
-# **FlyEnv v4.16.2 Update Release Notes**
+# **SemarEnv v4.16.2 Update Release Notes**
 
 ## **🚀 New Features**
 
 ### **1. Added Startup Groups**
 
-FlyEnv now includes a dedicated **Startup Groups** module for organizing exact service versions and language projects into reusable development environments. Instead of starting every visible service or switching services one by one, you can create groups for specific projects and control only the runtimes, databases, and project services each workflow needs.
+SemarEnv now includes a dedicated **Startup Groups** module for organizing exact service versions and language projects into reusable development environments. Instead of starting every visible service or switching services one by one, you can create groups for specific projects and control only the runtimes, databases, and project services each workflow needs.
 
 This integration provides:
 - **Custom Environment Groups**: Create named, color-coded groups with descriptions for different projects or development scenarios
 - **Service and Project Selection**: Add installed service versions and independently runnable language projects to the same group
-- **Controlled Startup Order**: Arrange members in the required startup sequence; FlyEnv starts them in order and stops them in reverse order
+- **Controlled Startup Order**: Arrange members in the required startup sequence; SemarEnv starts them in order and stops them in reverse order
 - **Group and Member Controls**: Start or stop a complete group with one switch, or control an individual member without changing the rest of the group
-- **Default Group Integration**: Choose a default startup group for the top-left one-click control and automatic service startup when FlyEnv launches
+- **Default Group Integration**: Choose a default startup group for the top-left one-click control and automatic service startup when SemarEnv launches
 - **Live Status and Safety Feedback**: See stopped, running, partially running, executing, and invalid states, with warnings for potential module or port conflicts
 
 The same service can be reused across multiple groups, making it easy to share common infrastructure such as MySQL or Redis while keeping project-specific environments separate.
 
-Thanks to [@branll](https://github.com/branll), [@freenessfish](https://github.com/freenessfish), and [@SevenJoker](https://github.com/SevenJoker) for the feature requests! [Discussion #706](https://github.com/xpf0000/FlyEnv/discussions/706) [Issue #742](https://github.com/xpf0000/FlyEnv/issues/742) [Issue #757](https://github.com/xpf0000/FlyEnv/issues/757)
+Thanks to [@branll](https://github.com/branll), [@freenessfish](https://github.com/freenessfish), and [@SevenJoker](https://github.com/SevenJoker) for the feature requests! [Discussion #706](https://github.com/arinadi/SemarEnv/discussions/706) [Issue #742](https://github.com/arinadi/SemarEnv/issues/742) [Issue #757](https://github.com/arinadi/SemarEnv/issues/757)
 
 ---
 
@@ -30,17 +30,17 @@ Thanks to [@branll](https://github.com/branll), [@freenessfish](https://github.c
 
 ### **2. Fixed .NET Version Detection for Long Preview Versions**
 
-Resolved an issue where long .NET preview version strings such as `11.0.100-preview.5.26302.115` could leave the available-version view stuck on loading or crash the UI during version comparison. FlyEnv now normalizes these values safely for semantic version sorting, keeps download progress state reactive, and batches version-list updates to reduce unnecessary rendering work.
+Resolved an issue where long .NET preview version strings such as `11.0.100-preview.5.26302.115` could leave the available-version view stuck on loading or crash the UI during version comparison. SemarEnv now normalizes these values safely for semantic version sorting, keeps download progress state reactive, and batches version-list updates to reduce unnecessary rendering work.
 
 Long version names are also truncated cleanly in the table and can be viewed in full by hovering over them.
 
-Thanks to [@TanNhatCMS](https://github.com/TanNhatCMS) for the contribution! [Pull Request #770](https://github.com/xpf0000/FlyEnv/pull/770)
+Thanks to [@TanNhatCMS](https://github.com/TanNhatCMS) for the contribution! [Pull Request #770](https://github.com/arinadi/SemarEnv/pull/770)
 
 ---
 
 ### **3. Improved Startup Performance and Resource Usage**
 
-FlyEnv now performs less repeated work while detecting runtimes, synchronizing environment variables, and stopping services. These internal optimizations improve application startup and service-management responsiveness while reducing duplicate filesystem scans, process enumeration, and cross-process environment loading.
+SemarEnv now performs less repeated work while detecting runtimes, synchronizing environment variables, and stopping services. These internal optimizations improve application startup and service-management responsiveness while reducing duplicate filesystem scans, process enumeration, and cross-process environment loading.
 
 This improvement includes:
 - **Persistent Version Probe Cache**: Reuses runtime version results instead of repeatedly launching binaries or reading the same version files
@@ -52,30 +52,30 @@ This improvement includes:
 
 ## **📦 Build & Transparency**
 
-All FlyEnv installation packages are built using **[GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
+All SemarEnv installation packages are built using **[GitHub Actions](https://github.com/arinadi/SemarEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
 
-- **Global Build History:** [GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)
+- **Global Build History:** [GitHub Actions](https://github.com/arinadi/SemarEnv/actions)
 
 ---
 
-We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/xpf0000/FlyEnv/issues)
+We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/arinadi/SemarEnv/issues)
 
 **Enjoy the update!**
 
 ## [4.16.0] - 2026-07-02
 
-# **FlyEnv v4.16.0 Update Release Notes**
+# **SemarEnv v4.16.0 Update Release Notes**
 
 ## **🚀 New Features**
 
-### **1. Added FlyEnv MCP Server**
+### **1. Added SemarEnv MCP Server**
 
-FlyEnv now includes a built-in **MCP Server** that lets AI clients connect directly to your local FlyEnv environment. You can start the server from FlyEnv, generate ready-to-use client configuration snippets, and register the server into supported AI coding CLIs without editing everything by hand.
+SemarEnv now includes a built-in **MCP Server** that lets AI clients connect directly to your local SemarEnv environment. You can start the server from SemarEnv, generate ready-to-use client configuration snippets, and register the server into supported AI coding CLIs without editing everything by hand.
 
 This integration provides:
-- **MCP Service Control**: Start and stop the FlyEnv MCP server from the UI, configure host, port, access token, and local/remote access behavior
-- **Client Quick Config**: Generate HTTP and stdio-compatible configuration snippets and copy them directly from FlyEnv
-- **One-Click Client Registration**: Register the FlyEnv MCP server into Claude Code, Codex, OpenCode, Kimi, Antigravity CLI, and GitHub Copilot CLI
+- **MCP Service Control**: Start and stop the SemarEnv MCP server from the UI, configure host, port, access token, and local/remote access behavior
+- **Client Quick Config**: Generate HTTP and stdio-compatible configuration snippets and copy them directly from SemarEnv
+- **One-Click Client Registration**: Register the SemarEnv MCP server into Claude Code, Codex, OpenCode, Kimi, Antigravity CLI, and GitHub Copilot CLI
 - **Tool Policy Management**: Enable or disable individual MCP tools and require confirmation for risky operations such as service control, installation, or site changes
 - **Audit Logging**: Review MCP tool activity through the built-in audit log
 
@@ -83,16 +83,16 @@ This integration provides:
 
 ### **2. Added AI Coding CLI Modules**
 
-FlyEnv now includes dedicated modules for **Claude Code**, **Codex**, **OpenCode**, **Kimi**, **Antigravity CLI**, and **GitHub Copilot CLI**. These integrations bring AI coding CLIs into the same desktop workflow as your local runtimes and services, making them easier to install, inspect, and manage from one place.
+SemarEnv now includes dedicated modules for **Claude Code**, **Codex**, **OpenCode**, **Kimi**, **Antigravity CLI**, and **GitHub Copilot CLI**. These integrations bring AI coding CLIs into the same desktop workflow as your local runtimes and services, making them easier to install, inspect, and manage from one place.
 
 This integration provides:
-- **CLI Installation & Detection**: Install supported AI coding CLIs and check their installed version from FlyEnv
+- **CLI Installation & Detection**: Install supported AI coding CLIs and check their installed version from SemarEnv
 - **Config File Access**: View important config file paths and manage client configuration from the UI
 - **Session Management**: Browse saved sessions, reopen them in a terminal, and clean up old sessions when supported
-- **MCP Management**: List configured MCP servers and add or remove FlyEnv MCP connections directly from each client module
+- **MCP Management**: List configured MCP servers and add or remove SemarEnv MCP connections directly from each client module
 - **Client-Specific Extras**: Manage plugins for Claude Code and Codex, skills for Antigravity CLI and GitHub Copilot CLI, provider/stats views for OpenCode, and logs/session export workflows for Kimi
 
-[Issue #712](https://github.com/xpf0000/FlyEnv/issues/712)
+[Issue #712](https://github.com/arinadi/SemarEnv/issues/712)
 
 ---
 
@@ -100,31 +100,31 @@ This integration provides:
 
 ### **3. Updated MinIO Download Source**
 
-FlyEnv now uses the maintained **pgsty/minio** fork as the updated MinIO download source, improving install availability after upstream distribution changes and making MinIO version downloads more reliable.
+SemarEnv now uses the maintained **pgsty/minio** fork as the updated MinIO download source, improving install availability after upstream distribution changes and making MinIO version downloads more reliable.
 
-[Issue #626](https://github.com/xpf0000/FlyEnv/issues/626)
+[Issue #626](https://github.com/arinadi/SemarEnv/issues/626)
 
 ---
 
 ### **4. Fixed Windows Python Environment Variable Setup**
 
-Resolved a Windows issue where FlyEnv could register an incorrect Python environment path during setup. Python environment registration now points to the correct FlyEnv-managed runtime layout, so newly installed Python versions are exposed more reliably.
+Resolved a Windows issue where SemarEnv could register an incorrect Python environment path during setup. Python environment registration now points to the correct SemarEnv-managed runtime layout, so newly installed Python versions are exposed more reliably.
 
-[Issue #633](https://github.com/xpf0000/FlyEnv/issues/633)
+[Issue #633](https://github.com/arinadi/SemarEnv/issues/633)
 
 ---
 
 ### **5. Fixed Rust Toolchain Detection for Custom `CARGO_HOME` / `RUSTUP_HOME`**
 
-Resolved an issue where FlyEnv could miss Rust toolchains installed through `rustup` when `CARGO_HOME` or `RUSTUP_HOME` had been customized. FlyEnv now respects those environment variables when locating `rustup`, toolchains, and related runtime data.
+Resolved an issue where SemarEnv could miss Rust toolchains installed through `rustup` when `CARGO_HOME` or `RUSTUP_HOME` had been customized. SemarEnv now respects those environment variables when locating `rustup`, toolchains, and related runtime data.
 
-[Issue #691](https://github.com/xpf0000/FlyEnv/issues/691)
+[Issue #691](https://github.com/arinadi/SemarEnv/issues/691)
 
 ---
 
 ### **6. Improved Local Site Support for `localhost` + Port Workflows**
 
-FlyEnv site management now supports using **`localhost` with explicit ports** such as `localhost:8080` when adding or editing sites. This makes local multi-port workflows easier to model without creating extra fake domains just to separate ports.
+SemarEnv site management now supports using **`localhost` with explicit ports** such as `localhost:8080` when adding or editing sites. This makes local multi-port workflows easier to model without creating extra fake domains just to separate ports.
 
 This improvement includes:
 - **Port-Aware Duplicate Checks**: Sites with the same hostname are allowed as long as their listening ports do not conflict
@@ -132,65 +132,65 @@ This improvement includes:
 - **Cleaner Hosts File Behavior**: Pure loopback sites no longer require redundant hosts-file writes, which reduces unnecessary admin prompts
 - **Stable Vhost File Naming**: Generated vhost, rewrite, and log files now avoid same-name collisions across multi-port localhost sites
 
-[Issue #700](https://github.com/xpf0000/FlyEnv/issues/700)
+[Issue #700](https://github.com/arinadi/SemarEnv/issues/700)
 
 ---
 
-### **7. Fixed FlyEnv Environment Variable Ordering**
+### **7. Fixed SemarEnv Environment Variable Ordering**
 
-Resolved an issue where FlyEnv-managed environment variables could appear in the wrong order, allowing system or Homebrew Python binaries to take precedence over the version selected in FlyEnv. FlyEnv now rebuilds Python PATH entries with dedicated shims so `python` and `python3` resolve consistently to the active FlyEnv version.
+Resolved an issue where SemarEnv-managed environment variables could appear in the wrong order, allowing system or Homebrew Python binaries to take precedence over the version selected in SemarEnv. SemarEnv now rebuilds Python PATH entries with dedicated shims so `python` and `python3` resolve consistently to the active SemarEnv version.
 
-[Issue #713](https://github.com/xpf0000/FlyEnv/issues/713)
+[Issue #713](https://github.com/arinadi/SemarEnv/issues/713)
 
 ---
 
 ### **8. Fixed Windows Cron Jobs for Paths Containing Spaces**
 
-Resolved a Windows scheduled-task issue where cron jobs could fail when the generated task wrapper or working directory path contained spaces. FlyEnv now launches the PowerShell wrapper through a safer quoted command path, improving reliability for projects stored under directories such as `C:\\Program Files\\...` or other spaced workspace paths.
+Resolved a Windows scheduled-task issue where cron jobs could fail when the generated task wrapper or working directory path contained spaces. SemarEnv now launches the PowerShell wrapper through a safer quoted command path, improving reliability for projects stored under directories such as `C:\\Program Files\\...` or other spaced workspace paths.
 
-[Issue #728](https://github.com/xpf0000/FlyEnv/issues/728) [Issue #729](https://github.com/xpf0000/FlyEnv/issues/729)
+[Issue #728](https://github.com/arinadi/SemarEnv/issues/728) [Issue #729](https://github.com/arinadi/SemarEnv/issues/729)
 
 ---
 
 ## **📦 Build & Transparency**
 
-All FlyEnv installation packages are built using **[GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
+All SemarEnv installation packages are built using **[GitHub Actions](https://github.com/arinadi/SemarEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
 
-- **Global Build History:** [GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)
+- **Global Build History:** [GitHub Actions](https://github.com/arinadi/SemarEnv/actions)
 
 ---
 
-We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/xpf0000/FlyEnv/issues)
+We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/arinadi/SemarEnv/issues)
 
 **Enjoy the update!**
 
 ## [4.15.4] - 2026-06-15
 
-# **FlyEnv v4.15.4 Update Release Notes**
+# **SemarEnv v4.15.4 Update Release Notes**
 
 ## **🛠️ Improvements & Bug Fixes**
 
 ### **1. Improved Service Startup on Windows**
 
-Reworked how FlyEnv launches its services on Windows to reduce the chance of false positives from antivirus software. Services now start through a cleaner launch path, so security tools are less likely to flag normal FlyEnv operations.
+Reworked how SemarEnv launches its services on Windows to reduce the chance of false positives from antivirus software. Services now start through a cleaner launch path, so security tools are less likely to flag normal SemarEnv operations.
 
 ---
 
 ### **2. Improved Service Startup on macOS**
 
-Reworked how FlyEnv launches its services on macOS to resolve conflicts with certain terminal applications that modify the system default ZSH configuration. Those conflicts previously prevented FlyEnv-managed services from starting; services now launch reliably regardless of the host shell setup.
+Reworked how SemarEnv launches its services on macOS to resolve conflicts with certain terminal applications that modify the system default ZSH configuration. Those conflicts previously prevented SemarEnv-managed services from starting; services now launch reliably regardless of the host shell setup.
 
 ---
 
 ### **3. Fixed Startup-on-Boot for Paths Containing Spaces**
 
-Fixed the auto-start-on-boot logic on Windows and Linux so it works correctly when FlyEnv is installed in a folder whose path contains spaces. Boot startup is now registered correctly in these cases instead of failing silently.
+Fixed the auto-start-on-boot logic on Windows and Linux so it works correctly when SemarEnv is installed in a folder whose path contains spaces. Boot startup is now registered correctly in these cases instead of failing silently.
 
 ---
 
 ### **4. Fixed Mailpit Version Detection**
 
-Fixed an issue where FlyEnv could not correctly read the version number for newer Mailpit releases. Mailpit version detection now works as expected.
+Fixed an issue where SemarEnv could not correctly read the version number for newer Mailpit releases. Mailpit version detection now works as expected.
 
 ---
 
@@ -202,43 +202,43 @@ Fixed an issue where the RabbitMQ management plugin could not be enabled, which 
 
 ## **📦 Build & Transparency**
 
-All FlyEnv installation packages are built using **[GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
+All SemarEnv installation packages are built using **[GitHub Actions](https://github.com/arinadi/SemarEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
 
-- **Global Build History:** [GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)
+- **Global Build History:** [GitHub Actions](https://github.com/arinadi/SemarEnv/actions)
 
 ---
 
-We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/xpf0000/FlyEnv/issues)
+We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/arinadi/SemarEnv/issues)
 
 **Enjoy the update!**
 
 ## [4.15.3] - 2026-06-03
 
-# **FlyEnv v4.15.3 Update Release Notes**
+# **SemarEnv v4.15.3 Update Release Notes**
 
 ## **🚀 New Features**
 
 ### **1. Added RoadRunner Module**
 
-FlyEnv now includes a dedicated **RoadRunner** module for PHP application server workflows. You can install, detect, configure, and run RoadRunner directly from FlyEnv, then bind RoadRunner-backed projects into the standard project service experience.
+SemarEnv now includes a dedicated **RoadRunner** module for PHP application server workflows. You can install, detect, configure, and run RoadRunner directly from SemarEnv, then bind RoadRunner-backed projects into the standard project service experience.
 
 This integration provides:
 - **RoadRunner Version Management**: Discover, install, and manage RoadRunner releases from the Version Manager
 - **Standalone Service Mode**: Start RoadRunner with a generated `.rr.yaml` fileserver configuration for quick local testing
 - **PHP Project Services**: Manage RoadRunner projects from the project service view with start/stop, port, environment, log, and config workflows
 - **Project Presets**: Quickly configure PHP Worker, Existing Config, Laravel Octane, Fileserver, or Custom command projects
-- **PHP Runtime Binding**: Select a FlyEnv-managed PHP runtime for RoadRunner PHP Worker and Laravel Octane projects
+- **PHP Runtime Binding**: Select a SemarEnv-managed PHP runtime for RoadRunner PHP Worker and Laravel Octane projects
 - **Config File Sync**: Generate `.rr.yaml` files, detect existing RoadRunner configs, and keep project ports synchronized
 
 ---
 
 ### **2. Added Swoole CLI Module**
 
-FlyEnv now supports **Swoole CLI** as a first-class PHP runtime and project service module. You can install Swoole CLI versions, initialize the runtime files FlyEnv needs, and run Swoole-based PHP projects with purpose-built presets.
+SemarEnv now supports **Swoole CLI** as a first-class PHP runtime and project service module. You can install Swoole CLI versions, initialize the runtime files SemarEnv needs, and run Swoole-based PHP projects with purpose-built presets.
 
 This integration provides:
 - **Swoole CLI Version Management**: Discover, install, and manage Swoole CLI binaries across supported platforms
-- **Runtime Bootstrap**: Prepare `php.ini`, `php-fpm.conf`, Composer, and CA certificate files for FlyEnv-managed Swoole CLI runtimes
+- **Runtime Bootstrap**: Prepare `php.ini`, `php-fpm.conf`, Composer, and CA certificate files for SemarEnv-managed Swoole CLI runtimes
 - **Project Presets**: Run Native Swoole, Hyperf, EasySwoole, Laravel Octane, PHP Script, or Custom command projects
 - **Config Detection**: Automatically detect common framework config files such as Hyperf server/routes, EasySwoole configs, Laravel Octane config, and `server.php`
 - **Project Service Workflow**: Configure ports, startup commands, environment variables, config files, logs, and service lifecycle from the same project UI
@@ -253,24 +253,24 @@ This update makes PHP deployment workflows easier to understand:
 - **PHP-FPM Module**: Manage PHP-FPM services and PHP runtime versions separately
 - **PHP Project Services**: Start and stop PHP projects through the common project service workflow
 - **Cleaner Navigation**: Keep PHP runtime/service management separate from PHP project deployment
-- **Complete PHP Deployment Coverage**: FlyEnv now covers PHP, PHP-FPM, FrankenPHP, RoadRunner, and Swoole CLI deployment shapes in one desktop app
+- **Complete PHP Deployment Coverage**: SemarEnv now covers PHP, PHP-FPM, FrankenPHP, RoadRunner, and Swoole CLI deployment shapes in one desktop app
 
-Thanks to [@chunbo007](https://github.com/chunbo007) for the discussion! [Discussion #694](https://github.com/xpf0000/FlyEnv/discussions/694)
+Thanks to [@chunbo007](https://github.com/chunbo007) for the discussion! [Discussion #694](https://github.com/arinadi/SemarEnv/discussions/694)
 
 ---
 
 ### **4. Added ZincSearch Module**
 
-FlyEnv now includes a dedicated **ZincSearch** module for running the lightweight search engine locally. You can install ZincSearch, manage the service lifecycle, edit environment configuration, inspect logs, and open the ZincSearch UI directly from FlyEnv.
+SemarEnv now includes a dedicated **ZincSearch** module for running the lightweight search engine locally. You can install ZincSearch, manage the service lifecycle, edit environment configuration, inspect logs, and open the ZincSearch UI directly from SemarEnv.
 
 This integration provides:
-- **Service Management**: Start and stop ZincSearch through the standard FlyEnv service workflow
+- **Service Management**: Start and stop ZincSearch through the standard SemarEnv service workflow
 - **Version Management**: Install and manage ZincSearch releases from GitHub
 - **Environment Configuration**: Configure admin credentials, data path, bind address, port, and log level through `zincsearch.env`
 - **Log Access**: View standard and error logs directly in the ZincSearch module
 - **Quick UI Access**: Open the ZincSearch web UI using the configured host and port when the service is running
 
-Thanks to [@zzdboy](https://github.com/zzdboy) for the feature request! [Issue #440](https://github.com/xpf0000/FlyEnv/issues/440)
+Thanks to [@zzdboy](https://github.com/zzdboy) for the feature request! [Issue #440](https://github.com/arinadi/SemarEnv/issues/440)
 
 ---
 
@@ -282,13 +282,13 @@ Installed version lists now include a **Remark** column, making it easier to lab
 
 This helps prevent accidental deletion or confusion when multiple versions of the same runtime are installed for different projects.
 
-Thanks to [@Y0n3er](https://github.com/Y0n3er) for the feature request! [Issue #543](https://github.com/xpf0000/FlyEnv/issues/543)
+Thanks to [@Y0n3er](https://github.com/Y0n3er) for the feature request! [Issue #543](https://github.com/arinadi/SemarEnv/issues/543)
 
 ---
 
 ### **6. Fixed MariaDB 11.4+ / 12+ Startup Issue on Windows**
 
-Resolved a Windows startup failure affecting newer MariaDB builds that require PEM files for zero-configuration SSL and authentication key handling. FlyEnv now generates and supplies the required `ca.pem`, `server-cert.pem`, `server-key.pem`, `private_key.pem`, and `public_key.pem` files when needed, preventing MariaDB 12+ from failing to start because those files are missing.
+Resolved a Windows startup failure affecting newer MariaDB builds that require PEM files for zero-configuration SSL and authentication key handling. SemarEnv now generates and supplies the required `ca.pem`, `server-cert.pem`, `server-key.pem`, `private_key.pem`, and `public_key.pem` files when needed, preventing MariaDB 12+ from failing to start because those files are missing.
 
 ---
 
@@ -306,42 +306,42 @@ Resolved an issue on macOS where a service could remain stuck in the "starting" 
 
 ## **📦 Build & Transparency**
 
-All FlyEnv installation packages are built using **[GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
+All SemarEnv installation packages are built using **[GitHub Actions](https://github.com/arinadi/SemarEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
 
-- **Global Build History:** [GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)
+- **Global Build History:** [GitHub Actions](https://github.com/arinadi/SemarEnv/actions)
 
 ---
 
-We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/xpf0000/FlyEnv/issues)
+We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/arinadi/SemarEnv/issues)
 
 **Enjoy the update!**
 
 
 ## [4.15.2] - 2026-05-24
 
-# **FlyEnv v4.15.2 Update Release Notes**
+# **SemarEnv v4.15.2 Update Release Notes**
 
 ## **🚀 New Features**
 
 ### **1. Added .NET Module**
 
-FlyEnv now includes a dedicated **.NET** module for managing .NET development environments directly from the app. You can now discover, install, and manage .NET SDK versions alongside your other language runtimes and services.
+SemarEnv now includes a dedicated **.NET** module for managing .NET development environments directly from the app. You can now discover, install, and manage .NET SDK versions alongside your other language runtimes and services.
 
 This integration provides:
 - **Project Management**: Browse and manage .NET projects from the language project view
-- **VS Code Integration**: Open .NET projects directly in VS Code from FlyEnv
-- **Service Management**: Start and stop .NET services through the standard FlyEnv service workflow
+- **VS Code Integration**: Open .NET projects directly in VS Code from SemarEnv
+- **Service Management**: Start and stop .NET services through the standard SemarEnv service workflow
 - **Version Management**: Detect local .NET SDK installations and install platform-specific SDK packages from Microsoft release metadata
 - **Cross-Platform Support**: Works across Windows, macOS, and Linux with architecture-aware downloads
 - **Package Manager Support**: Includes Homebrew discovery support for macOS users
 
-Thanks to [@sky22333](https://github.com/sky22333) for the feature request! [Issue #662](https://github.com/xpf0000/FlyEnv/issues/662)
+Thanks to [@sky22333](https://github.com/sky22333) for the feature request! [Issue #662](https://github.com/arinadi/SemarEnv/issues/662)
 
 ---
 
 ### **2. Added Cron Jobs Module**
 
-FlyEnv now provides a full **Cron Jobs** module for scheduling and monitoring recurring commands from the desktop UI. You can create global jobs or bind jobs to specific sites, then let FlyEnv register them with the native system scheduler.
+SemarEnv now provides a full **Cron Jobs** module for scheduling and monitoring recurring commands from the desktop UI. You can create global jobs or bind jobs to specific sites, then let SemarEnv register them with the native system scheduler.
 
 This integration allows you to:
 - **Global & Site-Scoped Jobs**: Create scheduled commands globally or for a specific project/site
@@ -349,18 +349,18 @@ This integration allows you to:
 - **Cron Expression Helper**: Build and validate portable five-field cron expressions with presets and live previews
 - **Command Testing**: Run commands manually before saving and inspect exit code, duration, stdout, and stderr
 - **Run History**: Track last run time, next run time, output, errors, and execution status
-- **System Task View**: Browse FlyEnv-created tasks and existing system scheduled tasks in one place
+- **System Task View**: Browse SemarEnv-created tasks and existing system scheduled tasks in one place
 - **Command Templates**: Quickly insert common PHP, Node.js, Python, and shell command patterns
 
-Thanks to [@ibraimfarag](https://github.com/ibraimfarag) for the PR! [PR #674](https://github.com/xpf0000/FlyEnv/pull/674)
+Thanks to [@ibraimfarag](https://github.com/ibraimfarag) for the PR! [PR #674](https://github.com/arinadi/SemarEnv/pull/674)
 
 ---
 
 ### **3. Added Korean Translation**
 
-FlyEnv now supports **Korean** as an application language. The translation covers the core app interface, setup pages, service modules, toolbox entries, Cron Jobs, Flutter, and other module-specific text.
+SemarEnv now supports **Korean** as an application language. The translation covers the core app interface, setup pages, service modules, toolbox entries, Cron Jobs, Flutter, and other module-specific text.
 
-Thanks to [@vendeeglobe](https://github.com/vendeeglobe) for the PR! [PR #676](https://github.com/xpf0000/FlyEnv/pull/676)
+Thanks to [@vendeeglobe](https://github.com/vendeeglobe) for the PR! [PR #676](https://github.com/arinadi/SemarEnv/pull/676)
 
 ---
 
@@ -370,40 +370,40 @@ Thanks to [@vendeeglobe](https://github.com/vendeeglobe) for the PR! [PR #676](h
 
 Resolved an issue where MongoDB could fail to start on macOS. The MongoDB startup flow now uses the platform-appropriate service launch path with generated configuration, log, PID, and data directory handling, improving startup reliability on macOS.
 
-Thanks to [@leafspace](https://github.com/leafspace) for reporting this issue! [Issue #679](https://github.com/xpf0000/FlyEnv/issues/679)
+Thanks to [@leafspace](https://github.com/leafspace) for reporting this issue! [Issue #679](https://github.com/arinadi/SemarEnv/issues/679)
 
 ---
 
 ### **5. Fixed Flutter Installation Failure**
 
-Resolved an issue where Flutter SDK installation could fail after extraction. FlyEnv now normalizes the extracted SDK directory and initializes the installed Flutter SDK as a Git repository, preventing Flutter commands from failing with repository-related errors after installation.
+Resolved an issue where Flutter SDK installation could fail after extraction. SemarEnv now normalizes the extracted SDK directory and initializes the installed Flutter SDK as a Git repository, preventing Flutter commands from failing with repository-related errors after installation.
 
-Thanks to [@yljphp](https://github.com/yljphp) for reporting this issue! [Issue #682](https://github.com/xpf0000/FlyEnv/issues/682)
+Thanks to [@yljphp](https://github.com/yljphp) for reporting this issue! [Issue #682](https://github.com/arinadi/SemarEnv/issues/682)
 
 ---
 
 ## **📦 Build & Transparency**
 
-All FlyEnv installation packages are built using **[GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
+All SemarEnv installation packages are built using **[GitHub Actions](https://github.com/arinadi/SemarEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
 
-- **Global Build History:** [GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)
+- **Global Build History:** [GitHub Actions](https://github.com/arinadi/SemarEnv/actions)
 
 ---
 
-We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/xpf0000/FlyEnv/issues)
+We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/arinadi/SemarEnv/issues)
 
 **Enjoy the update!**
 
 
 ## [4.15.1] - 2026-05-15
 
-# **FlyEnv v4.15.1 Update Release Notes**
+# **SemarEnv v4.15.1 Update Release Notes**
 
 ## **🚀 New Features**
 
 ### **1. Added Flutter Module**
 
-FlyEnv now integrates **Flutter** support directly into your development environment! You can now easily manage Flutter SDK installations and perform common Flutter operations right from the FlyEnv UI.
+SemarEnv now integrates **Flutter** support directly into your development environment! You can now easily manage Flutter SDK installations and perform common Flutter operations right from the SemarEnv UI.
 
 This integration allows you to:
 - **SDK Management**: Install and manage Flutter SDK versions seamlessly
@@ -414,13 +414,13 @@ This integration allows you to:
 - **Advanced Commands**: Execute doctor, upgrade, channel switching, pub commands (get, upgrade, outdated, deps), clean, analyze, test, format, and platform-specific builds (web, Windows, APK release/debug)
 - **SDK Info**: View detailed Flutter and Dart version information, engine revision, and build date
 
-Thanks to [@ibraimfarag](https://github.com/ibraimfarag) for the PR! [PR #649](https://github.com/xpf0000/FlyEnv/pull/649)
+Thanks to [@ibraimfarag](https://github.com/ibraimfarag) for the PR! [PR #649](https://github.com/arinadi/SemarEnv/pull/649)
 
 ---
 
 ### **2. Added Git Module**
 
-FlyEnv now includes a dedicated **Git** module for managing your Git installation and environment. You can easily install, verify, and manage your Git setup directly from the FlyEnv interface.
+SemarEnv now includes a dedicated **Git** module for managing your Git installation and environment. You can easily install, verify, and manage your Git setup directly from the SemarEnv interface.
 
 This integration provides:
 - **One-Click Installation**: Install Git automatically using platform-native package managers — winget on Windows, Homebrew/MacPorts/xcode-select on macOS, and apt/yum/dnf/pacman on Linux
@@ -428,7 +428,7 @@ This integration provides:
 - **Environment Diagnostics**: Check Git path, SSH availability, and Git LFS status
 - **Cross-Platform Support**: Works on Windows, macOS, and Linux with platform-aware checks
 
-Thanks to [@Heyiki](https://github.com/Heyiki) for the PR! [PR #664](https://github.com/xpf0000/FlyEnv/pull/664)
+Thanks to [@Heyiki](https://github.com/Heyiki) for the PR! [PR #664](https://github.com/arinadi/SemarEnv/pull/664)
 
 ---
 
@@ -443,13 +443,13 @@ Features include:
 - Sample data loading for quick testing
 - Swap and clear actions for efficient workflow
 
-Thanks to [@Heyiki](https://github.com/Heyiki) and [@qaydt20250317](https://github.com/qaydt20250317) for the PRs! [PR #651](https://github.com/xpf0000/FlyEnv/pull/651) [PR #670](https://github.com/xpf0000/FlyEnv/pull/670)
+Thanks to [@Heyiki](https://github.com/Heyiki) and [@qaydt20250317](https://github.com/qaydt20250317) for the PRs! [PR #651](https://github.com/arinadi/SemarEnv/pull/651) [PR #670](https://github.com/arinadi/SemarEnv/pull/670)
 
 ---
 
 ### **4. Added WebSocket / SSE Tool to Toolbox**
 
-The Toolbox now features a **WebSocket and Server-Sent Events (SSE) testing tool**. You can now easily test and debug real-time connections directly within FlyEnv.
+The Toolbox now features a **WebSocket and Server-Sent Events (SSE) testing tool**. You can now easily test and debug real-time connections directly within SemarEnv.
 
 This tool provides:
 - **Protocol Support**: Switch between WebSocket and SSE protocols
@@ -458,7 +458,7 @@ This tool provides:
 - **Message Exchange**: Send messages and view received messages in a clean, organized interface
 - **Auto-Reconnect**: Automatically reconnect WebSocket connections when disconnected
 
-Thanks to [@Heyiki](https://github.com/Heyiki) for the PR! [PR #657](https://github.com/xpf0000/FlyEnv/pull/657)
+Thanks to [@Heyiki](https://github.com/Heyiki) for the PR! [PR #657](https://github.com/arinadi/SemarEnv/pull/657)
 
 ---
 
@@ -472,52 +472,52 @@ Optimized the Windows version to improve the stability and reliability of servic
 
 ## **📦 Build & Transparency**
 
-All FlyEnv installation packages are built using **[GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
+All SemarEnv installation packages are built using **[GitHub Actions](https://github.com/arinadi/SemarEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
 
-- **Global Build History:** [GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)
+- **Global Build History:** [GitHub Actions](https://github.com/arinadi/SemarEnv/actions)
 
 ---
 
-We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/xpf0000/FlyEnv/issues)
+We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/arinadi/SemarEnv/issues)
 
 **Enjoy the update!**
 
 
 ## [4.15.0] - 2026-05-04
 
-# **FlyEnv v4.15.0 Update Release Notes**
+# **SemarEnv v4.15.0 Update Release Notes**
 
 ## **🚀 New Features**
 
 ### **1. Added CliProxyAPI Module**
 
-FlyEnv now integrates **[CliProxyAPI](https://github.com/router-for-me/CLIProxyAPI)** — a lightweight CLI proxy API solution — directly into your development environment. You can now install, configure, and manage CliProxyAPI with just a few clicks from the FlyEnv UI.
+SemarEnv now integrates **[CliProxyAPI](https://github.com/router-for-me/CLIProxyAPI)** — a lightweight CLI proxy API solution — directly into your development environment. You can now install, configure, and manage CliProxyAPI with just a few clicks from the SemarEnv UI.
 
-Thanks to [@diinggos](https://github.com/diinggos) for the feature request! [Issue #640](https://github.com/xpf0000/FlyEnv/issues/640)
+Thanks to [@diinggos](https://github.com/diinggos) for the feature request! [Issue #640](https://github.com/arinadi/SemarEnv/issues/640)
 
 ---
 
 ### **2. Added Numa Module**
 
-Introducing **[Numa](https://numa.rs/)** support to FlyEnv! Numa is a powerful framework that you can now easily install and manage directly from the FlyEnv interface.
+Introducing **[Numa](https://numa.rs/)** support to SemarEnv! Numa is a powerful framework that you can now easily install and manage directly from the SemarEnv interface.
 
-Thanks to [@batcom](https://github.com/batcom) for the feature request! [Issue #616](https://github.com/xpf0000/FlyEnv/issues/616)
+Thanks to [@batcom](https://github.com/batcom) for the feature request! [Issue #616](https://github.com/arinadi/SemarEnv/issues/616)
 
 ---
 
 ### **3. Added Rnacos Module**
 
-FlyEnv now supports **[r-nacos](https://r-nacos.github.io/docs/intro/)** — a Rust implementation of the Nacos service discovery and configuration management platform. You can now install and manage Rnacos directly from the FlyEnv UI.
+SemarEnv now supports **[r-nacos](https://r-nacos.github.io/docs/intro/)** — a Rust implementation of the Nacos service discovery and configuration management platform. You can now install and manage Rnacos directly from the SemarEnv UI.
 
-Thanks to [@achunchunya](https://github.com/achunchunya) for the feature request! [Issue #641](https://github.com/xpf0000/FlyEnv/issues/641)
+Thanks to [@achunchunya](https://github.com/achunchunya) for the feature request! [Issue #641](https://github.com/arinadi/SemarEnv/issues/641)
 
 ---
 
 ### **4. Added FrankenPHP Module**
 
-We are excited to bring **[FrankenPHP](https://frankenphp.dev/)** to FlyEnv! FrankenPHP is a modern PHP application server written in Go. You can now easily install, configure, and run FrankenPHP directly from the FlyEnv interface.
+We are excited to bring **[FrankenPHP](https://frankenphp.dev/)** to SemarEnv! FrankenPHP is a modern PHP application server written in Go. You can now easily install, configure, and run FrankenPHP directly from the SemarEnv interface.
 
-Thanks to [@eqwt](https://github.com/eqwt) for the feature request! [Issue #642](https://github.com/xpf0000/FlyEnv/issues/642)
+Thanks to [@eqwt](https://github.com/eqwt) for the feature request! [Issue #642](https://github.com/arinadi/SemarEnv/issues/642)
 
 ---
 
@@ -525,15 +525,15 @@ Thanks to [@eqwt](https://github.com/eqwt) for the feature request! [Issue #642]
 
 Enhanced the Ollama module with hardware-based availability detection for online models. Models are now displayed with a color-coded indicator (red/yellow/green) based on your local hardware capabilities, helping you quickly identify which models are suitable for your machine.
 
-Thanks to [@ibraimfarag](https://github.com/ibraimfarag) for the PR! [PR #635](https://github.com/xpf0000/FlyEnv/pull/635)
+Thanks to [@ibraimfarag](https://github.com/ibraimfarag) for the PR! [PR #635](https://github.com/arinadi/SemarEnv/pull/635)
 
 ---
 
 ### **6. Added JWT Encoding & Decoding Tool to Toolbox**
 
-The Toolbox now includes a convenient **JWT encoding and decoding tool**. You can easily encode and decode JSON Web Tokens directly within FlyEnv, making it simpler to debug and work with JWT-based authentication during development.
+The Toolbox now includes a convenient **JWT encoding and decoding tool**. You can easily encode and decode JSON Web Tokens directly within SemarEnv, making it simpler to debug and work with JWT-based authentication during development.
 
-Thanks to [@Heyiki](https://github.com/Heyiki) for the PR! [PR #643](https://github.com/xpf0000/FlyEnv/pull/643)
+Thanks to [@Heyiki](https://github.com/Heyiki) for the PR! [PR #643](https://github.com/arinadi/SemarEnv/pull/643)
 
 ---
 
@@ -541,7 +541,7 @@ Thanks to [@Heyiki](https://github.com/Heyiki) for the PR! [PR #643](https://git
 
 The Toolbox now also features a **Cron expression parser and runtime calculator**. Enter any cron expression to see a human-readable description and calculate the next scheduled run times, streamlining your workflow when working with scheduled tasks.
 
-Thanks to [@Heyiki](https://github.com/Heyiki) for the PR! [PR #645](https://github.com/xpf0000/FlyEnv/pull/645)
+Thanks to [@Heyiki](https://github.com/Heyiki) for the PR! [PR #645](https://github.com/arinadi/SemarEnv/pull/645)
 
 ---
 
@@ -551,32 +551,32 @@ Thanks to [@Heyiki](https://github.com/Heyiki) for the PR! [PR #645](https://git
 
 Resolved an issue where Auto HTTPS certificate generation would fail when the current username contained a dot (`.`) character. Certificates will now be generated correctly regardless of special characters in the system username.
 
-Thanks to [@dkoychev](https://github.com/dkoychev) for reporting this issue! [Issue #639](https://github.com/xpf0000/FlyEnv/issues/639)
+Thanks to [@dkoychev](https://github.com/dkoychev) for reporting this issue! [Issue #639](https://github.com/arinadi/SemarEnv/issues/639)
 
 ---
 
 ## **📦 Build & Transparency**
 
-All FlyEnv installation packages are built using **[GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
+All SemarEnv installation packages are built using **[GitHub Actions](https://github.com/arinadi/SemarEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
 
-- **Global Build History:** [GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)
+- **Global Build History:** [GitHub Actions](https://github.com/arinadi/SemarEnv/actions)
 
 ---
 
-We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/xpf0000/FlyEnv/issues)
+We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/arinadi/SemarEnv/issues)
 
 **Enjoy the update!**
 
 
 ## [4.14.2] - 2026-04-23
 
-# **FlyEnv v4.14.2 Update Release Notes**
+# **SemarEnv v4.14.2 Update Release Notes**
 
 ## **🚀 New Features**
 
 ### **1. Added Hermes Agent Module**
 
-FlyEnv now integrates **[Hermes Agent](https://hermes-agent.nousresearch.com/)** — a powerful AI agent framework from Nous Research — directly into your development environment! You can now install, configure, and manage Hermes Agent with just a few clicks from the FlyEnv UI.
+SemarEnv now integrates **[Hermes Agent](https://hermes-agent.nousresearch.com/)** — a powerful AI agent framework from Nous Research — directly into your development environment! You can now install, configure, and manage Hermes Agent with just a few clicks from the SemarEnv UI.
 
 This integration allows you to:
 - **One-Click Installation**: Install Hermes Agent seamlessly using the built-in installer
@@ -602,26 +602,26 @@ Resolved a critical issue where exiting the application from the system tray was
 
 ## **📦 Build & Transparency**
 
-All FlyEnv installation packages are built using **[GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
+All SemarEnv installation packages are built using **[GitHub Actions](https://github.com/arinadi/SemarEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
 
-- **Global Build History:** [GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)
+- **Global Build History:** [GitHub Actions](https://github.com/arinadi/SemarEnv/actions)
 
 ---
 
-We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/xpf0000/FlyEnv/issues)
+We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/arinadi/SemarEnv/issues)
 
 **Enjoy the update!**
 
 
 ## [4.14.1] - 2026-04-11
 
-# **FlyEnv v4.14.1 Update Release Notes**
+# **SemarEnv v4.14.1 Update Release Notes**
 
 ## **🚀 New Features**
 
 ### **1. Added MkCert Module**
 
-You can now easily generate locally-trusted development certificates with MkCert directly from FlyEnv! MkCert is a simple tool for making locally-trusted development certificates. It automatically installs a local CA in the system root store, and generates locally-trusted certificates.
+You can now easily generate locally-trusted development certificates with MkCert directly from SemarEnv! MkCert is a simple tool for making locally-trusted development certificates. It automatically installs a local CA in the system root store, and generates locally-trusted certificates.
 
 This integration allows you to:
 - Generate trusted SSL/TLS certificates for local development with a single click
@@ -639,32 +639,32 @@ This integration allows you to:
 
 ### **2. Fixed PostgreSQL Shutdown Issue**
 
-Resolved a critical issue where PostgreSQL could not be properly stopped after starting. The service will now shut down gracefully when you stop it from the FlyEnv interface.
+Resolved a critical issue where PostgreSQL could not be properly stopped after starting. The service will now shut down gracefully when you stop it from the SemarEnv interface.
 
 ---
 
 ## **📦 Build & Transparency**
 
-All FlyEnv installation packages are built using **[GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
+All SemarEnv installation packages are built using **[GitHub Actions](https://github.com/arinadi/SemarEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
 
-- **Global Build History:** [GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)
+- **Global Build History:** [GitHub Actions](https://github.com/arinadi/SemarEnv/actions)
 
 ---
 
-We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/xpf0000/FlyEnv/issues)
+We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/arinadi/SemarEnv/issues)
 
 **Enjoy the update!**
 
 
 ## [4.14.0] - 2026-04-02
 
-# **FlyEnv v4.14.0 Update Release Notes**
+# **SemarEnv v4.14.0 Update Release Notes**
 
 ## **🚀 New Features**
 
 ### **1. Added RustFS Module**
 
-Introducing RustFS support to FlyEnv! RustFS is a high-performance, distributed object storage system written in Rust. You can now easily install, configure, and manage RustFS directly from the FlyEnv interface, making it simple to set up your own S3-compatible storage service for development and testing.
+Introducing RustFS support to SemarEnv! RustFS is a high-performance, distributed object storage system written in Rust. You can now easily install, configure, and manage RustFS directly from the SemarEnv interface, making it simple to set up your own S3-compatible storage service for development and testing.
 
 <img width="2534" height="1736" alt="image" src="https://github.com/user-attachments/assets/9944de88-446a-4667-a76e-7f1b1567e1a0" />
 
@@ -674,7 +674,7 @@ Introducing RustFS support to FlyEnv! RustFS is a high-performance, distributed 
 
 ### **2. Added SDKMAN Support**
 
-FlyEnv now integrates with SDKMAN!, the Software Development Kit Manager. This allows you to easily manage multiple SDK versions for Java, Kotlin, Scala, Groovy, and many other JVM-based languages. Switch between different SDK versions seamlessly within your development environment.
+SemarEnv now integrates with SDKMAN!, the Software Development Kit Manager. This allows you to easily manage multiple SDK versions for Java, Kotlin, Scala, Groovy, and many other JVM-based languages. Switch between different SDK versions seamlessly within your development environment.
 
 <img width="2534" height="1736" alt="image" src="https://github.com/user-attachments/assets/b7180a2b-2067-465b-8aa8-d6a52f57648f" />
 
@@ -686,7 +686,7 @@ You can now customize the application interface font according to your preferenc
 
 - Choose from system-installed fonts
 - Adjust font size for better readability
-- Personalize your FlyEnv workspace for optimal comfort during long development sessions
+- Personalize your SemarEnv workspace for optimal comfort during long development sessions
 
 <img width="2534" height="1736" alt="image" src="https://github.com/user-attachments/assets/63512cb2-4c11-43b4-9847-abc97069df28" />
 
@@ -721,26 +721,26 @@ Resolved an issue on Linux where changing directory (CD) to a project directory 
 
 ### **6. Fixed DNS Service Wildcard Domain Support**
 
-Fixed critical DNS service issues with wildcard domain resolution. FlyEnv's DNS service can now correctly resolve wildcard domains (e.g., `*.example.test`), making it much easier to work with multi-tenant applications and dynamic subdomain routing during local development.
+Fixed critical DNS service issues with wildcard domain resolution. SemarEnv's DNS service can now correctly resolve wildcard domains (e.g., `*.example.test`), making it much easier to work with multi-tenant applications and dynamic subdomain routing during local development.
 
 ---
 
 ## **📦 Build & Transparency**
 
-All FlyEnv installation packages are built using **[GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
+All SemarEnv installation packages are built using **[GitHub Actions](https://github.com/arinadi/SemarEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
 
-- **Global Build History:** [GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)
+- **Global Build History:** [GitHub Actions](https://github.com/arinadi/SemarEnv/actions)
 
 ---
 
-We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/xpf0000/FlyEnv/issues)
+We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/arinadi/SemarEnv/issues)
 
 **Enjoy the update!**
 
 
 ## [4.13.6] - 2026-03-20
 
-# **FlyEnv v4.13.6 Update Release Notes**
+# **SemarEnv v4.13.6 Update Release Notes**
 
 ## **🚀 New Features**
 
@@ -752,9 +752,9 @@ the n8n service with just a single click directly from the UI.
 Thanks to [@ibraimfarag](https://github.com/ibraimfarag) for the contribution! [PR #584](https://github.com/xpf0000/Fl
 yEnv/pull/584)
 
-<img width="2586" height="1778" alt="flyenv-capturer-1774008386" src="https://github.com/user-attachments/assets/3fc39d4b-1182-4959-acc2-c0d5300687ff" />
-<img width="2586" height="1778" alt="flyenv-capturer-1774008402" src="https://github.com/user-attachments/assets/70e8b94b-682d-41b8-8aad-e6ceb9c6ca0f" />
-<img width="2586" height="1778" alt="flyenv-capturer-1774013135" src="https://github.com/user-attachments/assets/cbc39d7d-145f-45f7-8c18-2b03289f7745" />
+<img width="2586" height="1778" alt="semarenv-capturer-1774008386" src="https://github.com/user-attachments/assets/3fc39d4b-1182-4959-acc2-c0d5300687ff" />
+<img width="2586" height="1778" alt="semarenv-capturer-1774008402" src="https://github.com/user-attachments/assets/70e8b94b-682d-41b8-8aad-e6ceb9c6ca0f" />
+<img width="2586" height="1778" alt="semarenv-capturer-1774013135" src="https://github.com/user-attachments/assets/cbc39d7d-145f-45f7-8c18-2b03289f7745" />
 
   ---
 
@@ -767,8 +767,8 @@ y within the UI, making it easier to customize your OpenClaw setup.
 #### **2.2 Quick Command Shortcuts**
 Added quick access shortcuts for all OpenClaw commands, streamlining your workflow and improving productivity.
 
-<img width="2586" height="1778" alt="flyenv-capturer-1774013359" src="https://github.com/user-attachments/assets/e93fd474-612f-492f-87d5-0da3628a1051" />
-<img width="2586" height="1778" alt="flyenv-capturer-1774013332" src="https://github.com/user-attachments/assets/a8f340a3-3772-438f-8292-fdd2bba8a682" />
+<img width="2586" height="1778" alt="semarenv-capturer-1774013359" src="https://github.com/user-attachments/assets/e93fd474-612f-492f-87d5-0da3628a1051" />
+<img width="2586" height="1778" alt="semarenv-capturer-1774013332" src="https://github.com/user-attachments/assets/a8f340a3-3772-438f-8292-fdd2bba8a682" />
 
   ---
 
@@ -777,7 +777,7 @@ Added quick access shortcuts for all OpenClaw commands, streamlining your workfl
 ### **3. Fixed fnm & nvm Issues**
 
 Resolved critical issues where fnm and nvm were not functioning properly. You can now use these Node version managers
-seamlessly within FlyEnv.
+seamlessly within SemarEnv.
 
 ### **4. General Bug Fixes & Stability**
 
@@ -788,20 +788,20 @@ seamlessly within FlyEnv.
 
 ## **📦 Build & Transparency**
 
-All FlyEnv installation packages are built using **[GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)**. You
+All SemarEnv installation packages are built using **[GitHub Actions](https://github.com/arinadi/SemarEnv/actions)**. You
 can verify the build process and download the artifacts directly from the following links:
 
-* **Global Build History:** [GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)
+* **Global Build History:** [GitHub Actions](https://github.com/arinadi/SemarEnv/actions)
 
   ---
 
-We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/xpf0000/FlyEnv/issues)
+We welcome your continued feedback and bug reports via [GitHub Issues](https://github.com/arinadi/SemarEnv/issues)
 
 **Enjoy the update!**
 
 ## [4.13.4] - 2026-03-03
 
-# **FlyEnv v4.13.4 Update Release Notes**
+# **SemarEnv v4.13.4 Update Release Notes**
 
 ## **🚀 New Features**
 
@@ -827,12 +827,12 @@ Resolved a critical issue in the Linux version where environment isolation was f
 
 ## **📦 Build & Transparency**
 
-All FlyEnv installation packages are built using **[[GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)](https://github.com/xpf0000/FlyEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
+All SemarEnv installation packages are built using **[[GitHub Actions](https://github.com/arinadi/SemarEnv/actions)](https://github.com/arinadi/SemarEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
 
-* **Global Build History:** [[GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)](https://github.com/xpf0000/FlyEnv/actions)
+* **Global Build History:** [[GitHub Actions](https://github.com/arinadi/SemarEnv/actions)](https://github.com/arinadi/SemarEnv/actions)
 
 ---
 
-We welcome your continued feedback and bug reports via [[[GitHub Issues](https://github.com/xpf0000/FlyEnv/issues)](https://github.com/xpf0000/FlyEnv/issues)](https://github.com/xpf0000/FlyEnv/issues)
+We welcome your continued feedback and bug reports via [[[GitHub Issues](https://github.com/arinadi/SemarEnv/issues)](https://github.com/arinadi/SemarEnv/issues)](https://github.com/arinadi/SemarEnv/issues)
 
 **Enjoy the update!**

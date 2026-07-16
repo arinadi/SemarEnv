@@ -1,9 +1,9 @@
 {
-  "checkForUpdates": "업데이트 확인",
-  "update-available-message": "FlyEnv의 새 버전이 있습니다. 지금 업데이트하시겠습니까?",
-  "update-not-available-message": "최신 버전입니다!",
-  "update-downloaded-message": "설치를 준비 중...",
-  "update-error-message": "업데이트 오류",
-  "view-update-log": "업데이트 기록 보기",
-  "download-new-version": "새 버전 다운로드"
+  "checkForUpdates": "ì—…ë°ì´íŠ¸ í™•ì¸",
+  "update-available-message": "SemarEnvì˜ ìƒˆ ë²„ì „ì´ ìžˆìŠµë‹ˆë‹¤. ì§€ê¸ˆ ì—…ë°ì´íŠ¸í•˜ì‹œê² ìŠµë‹ˆê¹Œ?",
+  "update-not-available-message": "ìµœì‹  ë²„ì „ìž…ë‹ˆë‹¤!",
+  "update-downloaded-message": "ì„¤ì¹˜ë¥¼ ì¤€ë¹„ ì¤‘...",
+  "update-error-message": "ì—…ë°ì´íŠ¸ ì˜¤ë¥˜",
+  "view-update-log": "ì—…ë°ì´íŠ¸ ê¸°ë¡ ë³´ê¸°",
+  "download-new-version": "ìƒˆ ë²„ì „ ë‹¤ìš´ë¡œë“œ"
 }

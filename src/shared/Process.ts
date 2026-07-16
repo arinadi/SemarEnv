@@ -160,9 +160,9 @@ export const ProcessCommandLooksLikeElectronChild = (command = '') => {
 }
 
 /**
- * 仅当 PID 当前仍归属于 FlyEnv 管理的服务时，才返回可安全回收的进程树。
+ * 仅当 PID 当前仍归属于 SemarEnv 管理的服务时，才返回可安全回收的进程树。
  * 这里既校验 root PID 精确存在，也要求 root command 仍包含服务自身路径标记，
- * 从而拦住 stale PID 复用到 VS Code / FlyEnv Electron 进程后的误杀问题。
+ * 从而拦住 stale PID 复用到 VS Code / SemarEnv Electron 进程后的误杀问题。
  */
 export const ProcessOwnedPidsByPid = (
   pid: string,

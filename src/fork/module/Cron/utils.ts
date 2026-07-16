@@ -118,7 +118,7 @@ export function taskScriptPath(cronRoot: string, jobId: string, ext: CronTaskScr
 }
 
 export function systemTaskName(jobId: string): string {
-  return `FlyEnv-Cron-${jobId}`
+  return `SemarEnv-Cron-${jobId}`
 }
 
 export function shellQuote(value: string): string {

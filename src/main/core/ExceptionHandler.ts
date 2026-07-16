@@ -20,9 +20,9 @@ export default class ExceptionHandler {
   setup() {
     process.on('uncaughtException', (err) => {
       const { message, stack } = err
-      logger.error(`[FlyEnv] Uncaught exception: ${message}`)
+      logger.error(`[SemarEnv] Uncaught exception: ${message}`)
       logger.error(stack)
-      appDebugLog('[FlyEnv-UncaughtException]', `${message}\n${stack}`).catch()
+      appDebugLog('[SemarEnv-UncaughtException]', `${message}\n${stack}`).catch()
       if (this.options.showDialog && app.isReady()) {
         dialog.showErrorBox('Error: ', message)
       }

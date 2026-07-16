@@ -18,7 +18,7 @@ import { existsSync, readdirSync, mkdirSync } from 'node:fs'
 import { homedir, arch as osArch } from 'node:os'
 
 const runpath = '/Users/x/Library/PhpWebStudy'
-const repo = '/Users/x/Desktop/WorkSpace/GitHub/FlyEnv'
+const repo = '/Users/x/Desktop/WorkSpace/GitHub/SemarEnv'
 // Use the BUILT static dir: it has platform-specific tmpl/sh files flattened into
 // tmpl/ and sh/ (production layout), matching what global.Server.Static points to at
 // runtime. The source static/ keeps them under tmpl/macOS, tmpl/Linux, etc.
@@ -198,7 +198,7 @@ async function doStart(name: string): Promise<string> {
   const r = REG[name]
   const version = mkVersion(name)
   const mod = (await import(`${repo}/src/fork/module/${r.dir}/index.ts`)).default
-  // Production calls module.init() before exec (BaseManager.doRun) — it sets pidPath etc.
+  // Production calls module.init() before exec (BaseManager.doRun) â€” it sets pidPath etc.
   mod?.init?.()
   const res: any = await new Promise((resolve, reject) => {
     mod
@@ -277,7 +277,7 @@ async function main() {
   // ---- orchestrator: spawn start child, then verify, then spawn stop child ----
   // The child phases kill the service process tree; because node lives under AppDir
   // and the service may transiently share our process group, the kill can deliver a
-  // signal back to us. We are the orchestrator and must survive it — ignore the
+  // signal back to us. We are the orchestrator and must survive it â€” ignore the
   // terminating signals and rely on explicit process.exit() at the end.
   process.on('SIGINT', () => {})
   process.on('SIGTERM', () => {})
@@ -324,7 +324,7 @@ async function main() {
     setTimeout(() => resolve(), 15000)
   })
   // Some services (Tomcat/JVM, databases) take a few seconds to shut down after the
-  // stop signal — poll for up to ~10s before declaring it still alive.
+  // stop signal â€” poll for up to ~10s before declaring it still alive.
   let aliveAfter = true
   for (let i = 0; i < 20; i++) {
     await new Promise((r) => setTimeout(r, 500))

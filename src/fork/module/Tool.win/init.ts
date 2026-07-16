@@ -5,23 +5,23 @@ import EnvSync from '@shared/EnvSync'
 
 export function initAllowDir(json: string) {
   return new ForkPromise(async (resolve) => {
-    const jsonFile = join(dirname(global.Server.AppDir!), 'bin/.flyenv.dir')
+    const jsonFile = join(dirname(global.Server.AppDir!), 'bin/.semarenv.dir')
     await mkdirp(dirname(jsonFile))
     await writeFile(jsonFile, json)
     resolve(true)
   })
 }
 
-export function initFlyEnvSH() {
+export function initSemarEnvSH() {
   return new ForkPromise(async (resolve) => {
     const psVersions = [
       { name: 'PowerShell 5.1', exe: 'powershell.exe', profileType: 'CurrentUserCurrentHost' },
       { name: 'PowerShell 7+', exe: 'pwsh.exe', profileType: 'CurrentUserAllHosts' }
     ]
 
-    const flyenvScriptPath = join(dirname(global.Server.AppDir!), 'bin/flyenv.ps1')
-    await mkdirp(dirname(flyenvScriptPath))
-    await copyFile(join(global.Server.Static!, 'sh/fly-env.ps1'), flyenvScriptPath)
+    const semarenvScriptPath = join(dirname(global.Server.AppDir!), 'bin/semarenv.ps1')
+    await mkdirp(dirname(semarenvScriptPath))
+    await copyFile(join(global.Server.Static!, 'sh/semar-env.ps1'), semarenvScriptPath)
 
     for (const version of psVersions) {
       try {
@@ -31,20 +31,20 @@ export function initFlyEnvSH() {
 
         if (!profilePath || profilePath === '') continue
 
-        // 写入配置（如果不存在）
+        // å†™å…¥é…ç½®ï¼ˆå¦‚æžœä¸å­˜åœ¨ï¼‰
         await mkdirp(dirname(profilePath))
-        const loadCommand = `. "${flyenvScriptPath.replace(/\\/g, '/')}"\n`
+        const loadCommand = `. "${semarenvScriptPath.replace(/\\/g, '/')}"\n`
 
         if (!existsSync(profilePath)) {
-          await writeFile(profilePath, `# FlyEnv Auto-Load\n${loadCommand}`)
+          await writeFile(profilePath, `# SemarEnv Auto-Load\n${loadCommand}`)
         } else {
           const content = await readFile(profilePath, 'utf-8')
           if (!content.includes(loadCommand.trim())) {
-            await writeFile(profilePath, `${content.trim()}\n\n# FlyEnv Auto-Load\n${loadCommand}`)
+            await writeFile(profilePath, `${content.trim()}\n\n# SemarEnv Auto-Load\n${loadCommand}`)
           }
         }
       } catch (err) {
-        console.log('initFlyEnvSH err: ', err)
+        console.log('initSemarEnvSH err: ', err)
       }
     }
     try {

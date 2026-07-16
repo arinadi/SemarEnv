@@ -1,9 +1,9 @@
 {
-  "checkForUpdates": "Güncellemeleri Kontrol Et",
-  "update-available-message": "FlyEnv'in daha yeni bir sürümü var, şimdi güncellemek ister misiniz?",
-  "update-not-available-message": "Uygulamanız zaten güncel!",
-  "update-downloaded-message": "Kurulum için hazır...",
-  "update-error-message": "Güncelleme Hatası",
-  "view-update-log": "Güncelleme Günlüğünü Görüntüle",
-  "download-new-version": "Yeni Sürümü İndir"
+  "checkForUpdates": "GÃ¼ncellemeleri Kontrol Et",
+  "update-available-message": "SemarEnv'in daha yeni bir sÃ¼rÃ¼mÃ¼ var, ÅŸimdi gÃ¼ncellemek ister misiniz?",
+  "update-not-available-message": "UygulamanÄ±z zaten gÃ¼ncel!",
+  "update-downloaded-message": "Kurulum iÃ§in hazÄ±r...",
+  "update-error-message": "GÃ¼ncelleme HatasÄ±",
+  "view-update-log": "GÃ¼ncelleme GÃ¼nlÃ¼ÄŸÃ¼nÃ¼ GÃ¶rÃ¼ntÃ¼le",
+  "download-new-version": "Yeni SÃ¼rÃ¼mÃ¼ Ä°ndir"
 }

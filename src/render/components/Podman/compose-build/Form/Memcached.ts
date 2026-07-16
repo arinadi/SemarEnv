@@ -22,7 +22,7 @@ export const Memcached = reactive({
       image: `${mirror}${image}:${Memcached.version}`,
       ports: Memcached.ports.map((p) => `${p.out}:${p.in}`),
       environment: Memcached.environment,
-      networks: ['flyenv-network']
+      networks: ['semarenv-network']
     }
     // No persistence directory needed for Memcached
 

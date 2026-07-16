@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Tugas Terjadwal",
   "add": "Tambah Tugas Terjadwal",
   "name": "Nama Tugas",
@@ -101,7 +101,7 @@
   "allTasks": "Semua tugas",
   "systemTasks": "Tugas Sistem",
   "systemTask": "Tugas Sistem",
-  "flyenvTask": "Tugas FlyEnv",
+  "semarenvTask": "Tugas SemarEnv",
   "otherTask": "Tugas Lainnya",
   "taskTrigger": "Pemicu",
   "deleteSystemTaskTips": "Hapus tugas terjadwal sistem ini?",

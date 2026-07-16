@@ -1,9 +1,9 @@
 {
-  "checkForUpdates": "更新をチェック",
-  "update-available-message": "FlyEnvの新しいバージョンが利用可能です。今すぐ更新しますか？",
-  "update-not-available-message": "最新版です！",
-  "update-downloaded-message": "インストール準備完了...",
-  "update-error-message": "更新エラー",
-  "view-update-log": "更新ログを表示",
-  "download-new-version": "新しいバージョンをダウンロード"
+  "checkForUpdates": "æ›´æ–°ã‚’ãƒã‚§ãƒƒã‚¯",
+  "update-available-message": "SemarEnvã®æ–°ã—ã„ãƒãƒ¼ã‚¸ãƒ§ãƒ³ãŒåˆ©ç”¨å¯èƒ½ã§ã™ã€‚ä»Šã™ãæ›´æ–°ã—ã¾ã™ã‹ï¼Ÿ",
+  "update-not-available-message": "æœ€æ–°ç‰ˆã§ã™ï¼",
+  "update-downloaded-message": "ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æº–å‚™å®Œäº†...",
+  "update-error-message": "æ›´æ–°ã‚¨ãƒ©ãƒ¼",
+  "view-update-log": "æ›´æ–°ãƒ­ã‚°ã‚’è¡¨ç¤º",
+  "download-new-version": "æ–°ã—ã„ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰"
 }

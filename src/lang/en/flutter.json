@@ -18,7 +18,7 @@
   "sourcePath": "System PATH",
   "sourceDefault": "Default SDK location",
   "sourceCustom": "Configured custom path",
-  "sourceFlyenv": "FlyEnv managed SDK",
+  "sourceSemarEnv": "SemarEnv managed SDK",
   "sourceUnknown": "Unknown",
   "createProjectTitle": "Create Flutter Project",
   "create": "Create",

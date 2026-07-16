@@ -129,7 +129,7 @@ const CodeLibrary: CodeLibraryType = reactive({
     }
     inited = true
     localForage
-      .getItem('flyenv-code-library')
+      .getItem('semarenv-code-library')
       .then((res: any) => {
         Object.assign(CodeLibrary, res)
         if (!CodeLibrary.langs.length) {
@@ -169,7 +169,7 @@ const CodeLibrary: CodeLibraryType = reactive({
       })
   },
   save() {
-    localForage.setItem('flyenv-code-library', JSON.parse(JSON.stringify(CodeLibrary))).catch()
+    localForage.setItem('semarenv-code-library', JSON.parse(JSON.stringify(CodeLibrary))).catch()
   }
 })
 

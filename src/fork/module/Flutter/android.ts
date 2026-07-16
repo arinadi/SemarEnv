@@ -76,7 +76,7 @@ export const androidMethods = {
 
       try {
         if (action === 'set-target') {
-          process.env.FLYENV_FLUTTER_TARGET_DEVICE = id
+          process.env.SemarEnv_FLUTTER_TARGET_DEVICE = id
           resolve({
             ok: true,
             action,
@@ -94,7 +94,7 @@ export const androidMethods = {
             ok: true,
             action,
             adbPath,
-            targetDevice: process.env.FLYENV_FLUTTER_TARGET_DEVICE ?? '',
+            targetDevice: process.env.SemarEnv_FLUTTER_TARGET_DEVICE ?? '',
             message: `${res.stdout ?? ''}${res.stderr ?? ''}`.trim() || `Disconnected ${id}`
           })
           return
@@ -110,7 +110,7 @@ export const androidMethods = {
           ok: true,
           action,
           adbPath,
-          targetDevice: process.env.FLYENV_FLUTTER_TARGET_DEVICE ?? '',
+          targetDevice: process.env.SemarEnv_FLUTTER_TARGET_DEVICE ?? '',
           state: `${stateRes.stdout ?? ''}${stateRes.stderr ?? ''}`.trim(),
           details: `${propRes.stdout ?? ''}${propRes.stderr ?? ''}`.trim(),
           message: `Fetched info for ${id}`
@@ -120,7 +120,7 @@ export const androidMethods = {
           ok: false,
           action,
           adbPath,
-          targetDevice: process.env.FLYENV_FLUTTER_TARGET_DEVICE ?? '',
+          targetDevice: process.env.SemarEnv_FLUTTER_TARGET_DEVICE ?? '',
           message: e?.message ?? `Failed to run action: ${action}`
         })
       }
@@ -250,7 +250,7 @@ export const androidMethods = {
           message: 'ADB not found',
           adbPath: '',
           devices: [],
-          targetDevice: process.env.FLYENV_FLUTTER_TARGET_DEVICE ?? '',
+          targetDevice: process.env.SemarEnv_FLUTTER_TARGET_DEVICE ?? '',
           summary: {
             total: 0,
             online: 0,
@@ -277,7 +277,7 @@ export const androidMethods = {
           message: e?.message ?? 'Failed to read ADB devices',
           adbPath,
           devices: [],
-          targetDevice: process.env.FLYENV_FLUTTER_TARGET_DEVICE ?? '',
+          targetDevice: process.env.SemarEnv_FLUTTER_TARGET_DEVICE ?? '',
           summary: {
             total: 0,
             online: 0,
@@ -335,7 +335,7 @@ export const androidMethods = {
         message: '',
         adbPath,
         devices,
-        targetDevice: process.env.FLYENV_FLUTTER_TARGET_DEVICE ?? '',
+        targetDevice: process.env.SemarEnv_FLUTTER_TARGET_DEVICE ?? '',
         summary
       })
     })

@@ -28,7 +28,6 @@ class Manager extends Base {
   Ruby: any
   Node: any
   Elasticsearch: any
-  Ollama: any
   Minio: any
   Rust: any
   MeiliSearch: any
@@ -42,11 +41,8 @@ class Manager extends Base {
   Typesense: any
   Zig: any
   Qdrant: any
-  Cloudflared: any
-  N8N: any
   RustFS: any
   MkCert: any
-  CliProxyAPI: any
   Numa: any
   Rnacos: any
   FrankenPHP: any
@@ -215,12 +211,6 @@ class Manager extends Base {
             this.Elasticsearch = res.default
           }
           versions.elasticsearch = this.Elasticsearch.allInstalledVersions(setup)
-        } else if (type === 'ollama') {
-          if (!this.Ollama) {
-            const res = await import('../Ollama')
-            this.Ollama = res.default
-          }
-          versions.ollama = this.Ollama.allInstalledVersions(setup)
         } else if (type === 'minio') {
           if (!this.Minio) {
             const res = await import('../Minio')
@@ -299,18 +289,6 @@ class Manager extends Base {
             this.Qdrant = res.default
           }
           versions.qdrant = this.Qdrant.allInstalledVersions(setup)
-        } else if (type === 'cloudflared') {
-          if (!this.Cloudflared) {
-            const res = await import('../Cloudflared')
-            this.Cloudflared = res.default
-          }
-          versions.cloudflared = this.Cloudflared.allInstalledVersions(setup)
-        } else if (type === 'n8n') {
-          if (!this.N8N) {
-            const res = await import('../N8N')
-            this.N8N = res.default
-          }
-          versions.n8n = this.N8N.allInstalledVersions(setup)
         } else if (type === 'rustfs') {
           if (!this.RustFS) {
             const res = await import('../RustFS')
@@ -323,12 +301,6 @@ class Manager extends Base {
             this.MkCert = res.default
           }
           versions.mkcert = this.MkCert.allInstalledVersions(setup)
-        } else if (type === 'cliproxyapi') {
-          if (!this.CliProxyAPI) {
-            const res = await import('../CliProxyAPI')
-            this.CliProxyAPI = res.default
-          }
-          versions.cliproxyapi = this.CliProxyAPI.allInstalledVersions(setup)
         } else if (type === 'numa') {
           if (!this.Numa) {
             const res = await import('../Numa')

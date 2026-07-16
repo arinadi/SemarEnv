@@ -4,7 +4,7 @@
       <div class="card-header">
         <div class="left">
           <el-radio-group v-model="currentTool" size="small">
-            <el-radio-button value="default">FlyEnv</el-radio-button>
+            <el-radio-button value="default">SemarEnv</el-radio-button>
             <el-radio-button value="fnm">fnm</el-radio-button>
             <el-radio-button value="nvm">nvm</el-radio-button>
           </el-radio-group>

@@ -9,7 +9,7 @@ import { dirname } from '@/util/path-browserify'
 import { handleHost, hostAlias, hostDefaultSSLCert } from '@/util/Host'
 import localForage from 'localforage'
 
-const MKCERT_STORE_KEY = 'flyenv-mkcert-store'
+const MKCERT_STORE_KEY = 'semarenv-mkcert-store'
 
 class MkCertStore {
   mkcertBin: string = 'mkcert'

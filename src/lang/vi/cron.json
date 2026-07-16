@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Tác vụ Cron",
   "add": "Thêm Cron Job",
   "name": "Tên tác vụ",
@@ -101,7 +101,7 @@
   "allTasks": "Tất cả tác vụ",
   "systemTasks": "Tác vụ hệ thống",
   "systemTask": "Tác vụ hệ thống",
-  "flyenvTask": "Tác vụ FlyEnv",
+  "semarenvTask": "Tác vụ SemarEnv",
   "otherTask": "Tác vụ khác",
   "taskTrigger": "Trình kích hoạt",
   "deleteSystemTaskTips": "Xóa tác vụ hệ thống đã lên lịch này?",

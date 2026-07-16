@@ -70,8 +70,8 @@ export const CapturerStore = defineStore('capturerStore', {
   getters: {},
   actions: {
     initTheme() {
-      localForage.getItem('flyenv-app-theme').then((res: any) => {
-        console.log('flyenv-app-theme: ', res)
+      localForage.getItem('semarenv-app-theme').then((res: any) => {
+        console.log('semarenv-app-theme: ', res)
         if (res) {
           const html = document.documentElement
           html.classList.remove('dark', 'light')

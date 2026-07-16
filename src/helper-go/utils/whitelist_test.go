@@ -50,16 +50,16 @@ func TestValidateScalarInputs(t *testing.T) {
 }
 
 func TestValidateNamesAndUsers(t *testing.T) {
-	if err := ValidateCertificateName("FlyEnv-Root-CA.crt"); err != nil {
+	if err := ValidateCertificateName("SemarEnv-Root-CA.crt"); err != nil {
 		t.Fatalf("ValidateCertificateName returned error: %v", err)
 	}
-	for _, name := range []string{"../FlyEnv-Root-CA.crt", "FlyEnv.pem", "bad/name.crt"} {
+	for _, name := range []string{"../SemarEnv-Root-CA.crt", "SemarEnv.pem", "bad/name.crt"} {
 		if err := ValidateCertificateName(name); err == nil {
 			t.Fatalf("ValidateCertificateName(%q) should fail", name)
 		}
 	}
 
-	if err := ValidateCommonName("FlyEnv-Root-CA"); err != nil {
+	if err := ValidateCommonName("SemarEnv-Root-CA"); err != nil {
 		t.Fatalf("ValidateCommonName returned error: %v", err)
 	}
 	for _, name := range []string{"bad\nname", strings.Repeat("a", 129)} {
@@ -81,8 +81,8 @@ func TestValidateNamesAndUsers(t *testing.T) {
 }
 
 func TestValidateSystemEnv(t *testing.T) {
-	if err := ValidateSystemEnvKey("FLYENV_ALIAS", false); err != nil {
-		t.Fatalf("FLYENV_ALIAS should be allowed: %v", err)
+	if err := ValidateSystemEnvKey("SEMARENV_ALIAS", false); err != nil {
+		t.Fatalf("SEMARENV_ALIAS should be allowed: %v", err)
 	}
 	if err := ValidateSystemEnvKey("JAVA_HOME", true); err != nil {
 		t.Fatalf("JAVA_HOME should be allowed when whitelisted: %v", err)
@@ -97,7 +97,7 @@ func TestValidateSystemEnv(t *testing.T) {
 func TestValidateSystemPathEntry(t *testing.T) {
 	absolutePath := "/usr/local/bin"
 	if runtime.GOOS == "windows" {
-		absolutePath = `C:\FlyEnv\bin`
+		absolutePath = `C:\SemarEnv\bin`
 	}
 
 	valid := []string{absolutePath, `%SystemRoot%\System32`, `%APPDATA%\Composer\vendor\bin`}
@@ -111,8 +111,8 @@ func TestValidateSystemPathEntry(t *testing.T) {
 		"",
 		`relative\bin`,
 		`$env:SystemRoot\System32`,
-		`C:\FlyEnv;"bad"`,
-		`C:\FlyEnv\..\Windows`,
+		`C:\SemarEnv;"bad"`,
+		`C:\SemarEnv\..\Windows`,
 		`%BAD`,
 		`%BAD%\..\Windows`,
 	}
@@ -130,14 +130,14 @@ func TestAllowedRootsFilePresentDisablesNameFallback(t *testing.T) {
 	}()
 
 	dir := t.TempDir()
-	managedPath := filepath.Join(dir, "FlyEnv-Data", "app")
+	managedPath := filepath.Join(dir, "SemarEnv-Data", "app")
 
 	allowedRootsFilePathForTesting = filepath.Join(dir, "missing.allowed-roots")
 	if !isBusinessPathAllowed(managedPath) {
 		t.Fatal("missing allowed-roots file should keep managed-name fallback")
 	}
 
-	allowedRootsFilePathForTesting = filepath.Join(dir, "flyenv.allowed-roots")
+	allowedRootsFilePathForTesting = filepath.Join(dir, "semarenv.allowed-roots")
 	oversized := strings.Repeat("a", 64*1024+1)
 	if err := os.WriteFile(allowedRootsFilePathForTesting, []byte(oversized), 0600); err != nil {
 		t.Fatal(err)

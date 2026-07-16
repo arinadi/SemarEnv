@@ -80,7 +80,7 @@ const defaultHeader = formatJson({
 
 const defaultPayload = formatJson({
   sub: '1234567890',
-  name: 'FlyEnv',
+  name: 'SemarEnv',
   iat: 1516239022
 })
 

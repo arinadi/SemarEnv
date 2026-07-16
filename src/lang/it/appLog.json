@@ -7,7 +7,7 @@
   "apachePortHandleBegin": "Inizio acquisizione di tutte le porte di ascolto Apache dai siti",
   "apachePortHandleEnd": "Acquisizione delle porte di ascolto Apache completata, scrittura del file di configurazione riuscita",
   "execStartCommand": "Inizio esecuzione del comando di avvio",
-  "execStartCommandSuccess": "Comando di avvio eseguito con successo, verifica dell’avvio in corso",
+  "execStartCommandSuccess": "Comando di avvio eseguito con successo, verifica dellâ€™avvio in corso",
   "execStartCommandFail": "Esecuzione del comando di avvio fallita, motivo: {error}, avvio del servizio {service} non riuscito",
   "startServiceSuccess": "Servizio {service} avviato con successo, pid: {pid}",
   "startServiceFail": "Avvio del servizio {service} fallito, motivo: {error}",
@@ -20,5 +20,5 @@
   "initDBDataDirSuccess": "Cartella dati inizializzata con successo, percorso: {dir}",
   "initDBDataDirFail": "Inizializzazione della cartella dati fallita, motivo: {error}",
   "newProjectFail": "Impossibile creare un nuovo progetto",
-  "processListFail": "Recupero lista processi fallito. Si prega di installare FlyEnv Helper"
+  "processListFail": "Recupero lista processi fallito. Si prega di installare SemarEnv Helper"
 }

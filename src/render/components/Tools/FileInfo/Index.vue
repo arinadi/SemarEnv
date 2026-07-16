@@ -191,7 +191,7 @@
       e.preventDefault()
       e.stopPropagation()
       if (e.dataTransfer?.files.length) {
-        path.value = window.FlyEnvNodeAPI.showFilePath(e.dataTransfer.files[0])
+        path.value = window.SemarEnvNodeAPI.showFilePath(e.dataTransfer.files[0])
       }
     }
 

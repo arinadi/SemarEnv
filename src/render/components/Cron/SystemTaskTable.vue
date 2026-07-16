@@ -12,7 +12,7 @@
 
       <el-select v-model="taskFilter" class="w-full md:w-[160px]">
         <el-option :label="I18nT('cron.allTasks')" value="all" />
-        <el-option :label="I18nT('cron.flyenvTask')" value="flyenv" />
+        <el-option :label="I18nT('cron.semarenvTask')" value="semarenv" />
         <el-option :label="I18nT('cron.otherTask')" value="other" />
       </el-select>
 
@@ -42,11 +42,11 @@
       <el-table-column :label="I18nT('common.label.source')" width="130" align="center">
         <template #default="{ row }">
           <el-tag
-            :type="row.isFlyEnv ? 'success' : 'info'"
+            :type="row.isSemarEnv ? 'success' : 'info'"
             effect="plain"
             class="max-w-full truncate whitespace-nowrap"
           >
-            {{ row.isFlyEnv ? I18nT('cron.flyenvTask') : I18nT('cron.systemTask') }}
+            {{ row.isSemarEnv ? I18nT('cron.semarenvTask') : I18nT('cron.systemTask') }}
           </el-tag>
         </template>
       </el-table-column>
@@ -112,15 +112,15 @@
   const loading = ref(false)
   const tasks = computed(() => cronStore.systemTasks)
   const searchText = ref('')
-  const taskFilter = ref<'all' | 'flyenv' | 'other'>('all')
+  const taskFilter = ref<'all' | 'semarenv' | 'other'>('all')
 
   const filteredTasks = computed(() => {
     const keyword = searchText.value.trim().toLowerCase()
     return tasks.value.filter((item) => {
       const hitTaskType =
         taskFilter.value === 'all' ||
-        (taskFilter.value === 'flyenv' && item.isFlyEnv) ||
-        (taskFilter.value === 'other' && !item.isFlyEnv)
+        (taskFilter.value === 'semarenv' && item.isSemarEnv) ||
+        (taskFilter.value === 'other' && !item.isSemarEnv)
 
       const content = [
         item.name,
@@ -145,7 +145,7 @@
   }
 
   const taskName = (row: SystemScheduledTask): string => {
-    if (row.isFlyEnv) {
+    if (row.isSemarEnv) {
       return row.name || row.fullName || '-'
     }
     return row.fullName || row.name || '-'

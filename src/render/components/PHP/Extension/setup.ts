@@ -20,7 +20,7 @@ export const ExtensionSetup = reactive<{
 })
 
 export const Setup = (version: SoftInstalled) => {
-  const lib: Ref<'flyenv' | 'macports' | 'homebrew' | 'loaded' | 'local' | 'lib'> = ref('loaded')
+  const lib: Ref<'semarenv' | 'macports' | 'homebrew' | 'loaded' | 'local' | 'lib'> = ref('loaded')
 
   const showFooter = computed(() => {
     if (lib.value === 'homebrew') {

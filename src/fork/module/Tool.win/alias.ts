@@ -62,10 +62,10 @@ chcp 65001>nul
     }
 
     try {
-      await Helper.send('tools', 'setSystemEnv', 'FLYENV_ALIAS', aliasDir)
+      await Helper.send('tools', 'setSystemEnv', 'SemarEnv_ALIAS', aliasDir)
     } catch {}
 
-    await addPath('%FLYENV_ALIAS%')
+    await addPath('%SemarEnv_ALIAS%')
 
     const res = await cleanAlias(alias)
 

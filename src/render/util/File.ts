@@ -54,7 +54,7 @@ export function initFileDroper(
       })
     }
 
-    const paths = dirs.map((f) => window.FlyEnvNodeAPI.showFilePath(f))
+    const paths = dirs.map((f) => window.SemarEnvNodeAPI.showFilePath(f))
     console.log('paths: ', paths)
 
     callback?.({ files: paths, ondrag: false })

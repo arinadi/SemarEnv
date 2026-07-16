@@ -49,7 +49,7 @@ class Numa extends Base {
         const isZh = global.Server.Lang === 'zh'
         const tmplFile = join(global.Server.Static!, isZh ? 'tmpl/numa.zh.toml' : 'tmpl/numa.toml')
         let content = await readFile(tmplFile, 'utf-8')
-        content = content.replace(/#FLYENV_DATA_DIR#/g, join(baseDir, 'data').replace(/\\/g, '/'))
+        content = content.replace(/#SemarEnv_DATA_DIR#/g, join(baseDir, 'data').replace(/\\/g, '/'))
         await writeFile(configFile, content)
         const defaultConfigFile = join(baseDir, 'numa.default.toml')
         await writeFile(defaultConfigFile, content)

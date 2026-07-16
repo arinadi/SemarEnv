@@ -26,7 +26,7 @@ func decodePowerShellPayloadForTest(t *testing.T, payload string) string {
 }
 
 func TestPowerShellEncodedArgsAvoidScriptFiles(t *testing.T) {
-	script := "[Console]::OutputEncoding = [Text.Encoding]::UTF8; Write-Output 'FlyEnv 环境同步'"
+	script := "[Console]::OutputEncoding = [Text.Encoding]::UTF8; Write-Output 'SemarEnv 环境同步'"
 
 	args := powerShellEncodedArgs(script)
 	joined := strings.Join(args, " ")
@@ -71,9 +71,9 @@ func TestAutoStartRunLevel(t *testing.T) {
 		taskName string
 		want     string
 	}{
-		{name: "FlyEnv app uses normal user integrity", taskName: "FlyEnvStartup", want: "limited"},
-		{name: "helper task keeps elevated integrity", taskName: "FlyEnvHelperTask", want: "highest"},
-		{name: "legacy helper task keeps elevated integrity", taskName: "flyenv-helper", want: "highest"},
+		{name: "SemarEnv app uses normal user integrity", taskName: "SemarEnvStartup", want: "limited"},
+		{name: "helper task keeps elevated integrity", taskName: "SemarEnvHelperTask", want: "highest"},
+		{name: "legacy helper task keeps elevated integrity", taskName: "semarenv-helper", want: "highest"},
 	}
 
 	for _, tt := range tests {

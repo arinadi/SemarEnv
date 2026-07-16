@@ -24,13 +24,13 @@ export const makeTomcatServerXML = (cnfDir: string, serverContent: string, hostA
   const handlePort = (host: AppHost) => {
     const port = host?.port?.tomcat ?? 80
     if (!serverXML.Server.Service.Connector) {
-      const xml = `<Connector appFlag="FlyEnv" port="${port}" protocol="HTTP/1.1" connectionTimeout="60000"/>`
+      const xml = `<Connector appFlag="SemarEnv" port="${port}" protocol="HTTP/1.1" connectionTimeout="60000"/>`
       const xmlObj = parser.parse(xml)
       serverXML.Server.Service.Connector = xmlObj.Connector
     } else if (!Array.isArray(serverXML.Server.Service.Connector)) {
       if (`${serverXML.Server.Service.Connector.port}` !== `${port}`) {
         serverXML.Server.Service.Connector = [serverXML.Server.Service.Connector]
-        const xml = `<Connector appFlag="FlyEnv" port="${port}" protocol="HTTP/1.1" connectionTimeout="60000"/>`
+        const xml = `<Connector appFlag="SemarEnv" port="${port}" protocol="HTTP/1.1" connectionTimeout="60000"/>`
         const xmlObj = parser.parse(xml)
         serverXML.Server.Service.Connector.push(xmlObj.Connector)
       }
@@ -47,7 +47,7 @@ export const makeTomcatServerXML = (cnfDir: string, serverContent: string, hostA
       console.log('find: ', find)
       if (!find) {
         const arr = [
-          `<Connector appFlag="FlyEnv" port="${port}" protocol="org.apache.coyote.http11.Http11NioProtocol"
+          `<Connector appFlag="SemarEnv" port="${port}" protocol="org.apache.coyote.http11.Http11NioProtocol"
                    maxThreads="150" SSLEnabled="true" scheme="https">`,
           `<SSLHostConfig sslProtocol="TLS" certificateVerification="false">
                 <Certificate certificateFile="${host.ssl.cert}"
@@ -56,7 +56,7 @@ export const makeTomcatServerXML = (cnfDir: string, serverContent: string, hostA
             </SSLHostConfig>`
         ]
         hostAlias(host).forEach((h) => {
-          arr.push(`<SSLHostConfig appFlag="FlyEnv" hostName="${h}" sslProtocol="TLS" certificateVerification="false">
+          arr.push(`<SSLHostConfig appFlag="SemarEnv" hostName="${h}" sslProtocol="TLS" certificateVerification="false">
                 <Certificate certificateFile="${host.ssl.cert}"
                              certificateKeyFile="${host.ssl.key}"
                              type="RSA"/>
@@ -69,7 +69,7 @@ export const makeTomcatServerXML = (cnfDir: string, serverContent: string, hostA
         const hostConfig = find.SSLHostConfig
         if (!hostConfig) {
           const arr = [
-            `<Connector appFlag="FlyEnv" port="${port}" protocol="org.apache.coyote.http11.Http11NioProtocol"
+            `<Connector appFlag="SemarEnv" port="${port}" protocol="org.apache.coyote.http11.Http11NioProtocol"
                    maxThreads="150" SSLEnabled="true" scheme="https">`,
             `<SSLHostConfig sslProtocol="TLS" certificateVerification="false">
                 <Certificate certificateFile="${host.ssl.cert}"
@@ -78,7 +78,7 @@ export const makeTomcatServerXML = (cnfDir: string, serverContent: string, hostA
             </SSLHostConfig>`
           ]
           hostAlias(host).forEach((h) => {
-            arr.push(`<SSLHostConfig appFlag="FlyEnv" hostName="${h}" sslProtocol="TLS" certificateVerification="false">
+            arr.push(`<SSLHostConfig appFlag="SemarEnv" hostName="${h}" sslProtocol="TLS" certificateVerification="false">
                 <Certificate certificateFile="${host.ssl.cert}"
                              certificateKeyFile="${host.ssl.key}"
                              type="RSA"/>
@@ -91,7 +91,7 @@ export const makeTomcatServerXML = (cnfDir: string, serverContent: string, hostA
           hostAlias(host).forEach((h) => {
             const findHost = hostConfig.find((c: any) => c.hostName === h)
             if (!findHost) {
-              const str = `<SSLHostConfig appFlag="FlyEnv" hostName="${h}" sslProtocol="TLS" certificateVerification="false">
+              const str = `<SSLHostConfig appFlag="SemarEnv" hostName="${h}" sslProtocol="TLS" certificateVerification="false">
                 <Certificate certificateFile="${host.ssl.cert}"
                              certificateKeyFile="${host.ssl.key}"
                              type="RSA"/>
@@ -120,7 +120,7 @@ export const makeTomcatServerXML = (cnfDir: string, serverContent: string, hostA
     if (!hosts) {
       const arr: string[] = []
       hostAlias(host).forEach((h) => {
-        arr.push(`<Host name="${h}" appBase="${host.root}" appFlag="FlyEnv"
+        arr.push(`<Host name="${h}" appBase="${host.root}" appFlag="SemarEnv"
                   unpackWARs="true" autoDeploy="true">
                 <Context path="" docBase=""></Context>
                 <Valve className="org.apache.catalina.valves.AccessLogValve" directory="${logDir}"
@@ -140,7 +140,7 @@ export const makeTomcatServerXML = (cnfDir: string, serverContent: string, hostA
         if (findHost) {
           findHost.appBase = host.root
         } else {
-          const str = `<Host name="${h}" appBase="${host.root}" appFlag="FlyEnv"
+          const str = `<Host name="${h}" appBase="${host.root}" appFlag="SemarEnv"
                   unpackWARs="true" autoDeploy="true">
                   <Context path="" docBase=""></Context>
                 <Valve className="org.apache.catalina.valves.AccessLogValve" directory="${logDir}"
@@ -161,7 +161,7 @@ export const makeTomcatServerXML = (cnfDir: string, serverContent: string, hostA
     if (!Array.isArray(serverXML.Server.Service.Connector)) {
       return
     }
-    const allApp = serverXML.Server.Service.Connector.filter((c: any) => c.appFlag === 'FlyEnv')
+    const allApp = serverXML.Server.Service.Connector.filter((c: any) => c.appFlag === 'SemarEnv')
     const dels: any[] = []
     for (const c of allApp) {
       const port = Number(c.port)
@@ -180,7 +180,7 @@ export const makeTomcatServerXML = (cnfDir: string, serverContent: string, hostA
   const cleanVhost = (allName: Set<string>) => {
     if (Array.isArray(serverXML.Server.Service.Engine.Host)) {
       const allHost = serverXML.Server.Service.Engine.Host.filter(
-        (c: any) => c.appFlag === 'FlyEnv'
+        (c: any) => c.appFlag === 'SemarEnv'
       )
       const dels: any[] = []
       for (const c of allHost) {
@@ -198,7 +198,7 @@ export const makeTomcatServerXML = (cnfDir: string, serverContent: string, hostA
     }
     if (Array.isArray(serverXML.Server.Service.Connector)) {
       for (const Connector of serverXML.Server.Service.Connector) {
-        if (Connector?.appFlag !== 'FlyEnv') {
+        if (Connector?.appFlag !== 'SemarEnv') {
           continue
         }
         const SSLHostConfig = Connector.SSLHostConfig
@@ -207,7 +207,7 @@ export const makeTomcatServerXML = (cnfDir: string, serverContent: string, hostA
         }
         const dels: any[] = []
         for (const c of SSLHostConfig) {
-          if (c?.appFlag !== 'FlyEnv') {
+          if (c?.appFlag !== 'SemarEnv') {
             continue
           }
           const name = c.hostName
@@ -257,7 +257,7 @@ export const makeGlobalTomcatServerXML = async (version: SoftInstalled) => {
 
   const configFile = join(version.path, 'conf/server.xml')
   let serverContent = await readFile(configFile, 'utf-8')
-  serverContent = serverContent.replace(new RegExp('PhpWebStudy', 'g'), 'FlyEnv')
+  serverContent = serverContent.replace(new RegExp('PhpWebStudy', 'g'), 'SemarEnv')
 
   const defaultFile = join(version.path, 'conf/server.xml.default')
   if (!existsSync(defaultFile)) {
@@ -304,7 +304,7 @@ export const makeCustomTomcatServerXML = async (host: AppHost) => {
   let serverContent = ''
   if (existsSync(configFile)) {
     serverContent = await readFile(configFile, 'utf-8')
-    serverContent = serverContent.replace(new RegExp('PhpWebStudy', 'g'), 'FlyEnv')
+    serverContent = serverContent.replace(new RegExp('PhpWebStudy', 'g'), 'SemarEnv')
   } else {
     const configFile = pathResolve(tomcatDir, '../../conf/server.xml')
     serverContent = await readFile(configFile, 'utf-8')

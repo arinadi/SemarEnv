@@ -44,22 +44,22 @@ class Rnacos extends Base {
         })
         const isZh = global.Server.Lang === 'zh'
         const content = isZh
-          ? `# R-Nacos 环境变量配置
-# 参考文档: https://r-nacos.github.io/docs/env_config/
+          ? `# R-Nacos çŽ¯å¢ƒå˜é‡é…ç½®
+# å‚è€ƒæ–‡æ¡£: https://r-nacos.github.io/docs/env_config/
 
-# === 端口配置 ===
+# === ç«¯å£é…ç½® ===
 # RNACOS_HTTP_PORT=8848
 # RNACOS_GRPC_PORT=9848
 # RNACOS_HTTP_CONSOLE_PORT=10848
 
-# === 数据目录 (由 FlyEnv 自动管理) ===
+# === æ•°æ®ç›®å½• (ç”± SemarEnv è‡ªåŠ¨ç®¡ç†) ===
 # RNACOS_DATA_DIR=${join(baseDir, 'data')}
 
-# === 控制台账号 ===
+# === æŽ§åˆ¶å°è´¦å· ===
 # RNACOS_INIT_ADMIN_USERNAME=admin
 # RNACOS_INIT_ADMIN_PASSWORD=admin
 
-# === 日志等级: debug, info, warn, error ===
+# === æ—¥å¿—ç­‰çº§: debug, info, warn, error ===
 # RUST_LOG=info
 `
           : `# R-Nacos Environment Variables
@@ -70,7 +70,7 @@ class Rnacos extends Base {
 # RNACOS_GRPC_PORT=9848
 # RNACOS_HTTP_CONSOLE_PORT=10848
 
-# === Data Directory (Managed by FlyEnv) ===
+# === Data Directory (Managed by SemarEnv) ===
 # RNACOS_DATA_DIR=${join(baseDir, 'data')}
 
 # === Console Account ===

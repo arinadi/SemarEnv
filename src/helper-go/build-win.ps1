@@ -2,12 +2,12 @@
 
 <#
 .SYNOPSIS
-Build script for flyenv-helper Go application with cross-compilation support.
+Build script for semarenv-helper Go application with cross-compilation support.
 #>
 
 # --- Configuration ---
 $BUILD_DIR = "./dist"
-$APP_NAME = "flyenv-helper"
+$APP_NAME = "semarenv-helper"
 
 # Determine architecture and set TARGET
 $ARCH = (Get-WmiObject Win32_Processor).Architecture

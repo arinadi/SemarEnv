@@ -21,7 +21,7 @@ import { getPidsByKey, killPids, getPortPids, killPorts } from './process'
 import { fetchPATH, removePATH, updatePATH, envPathList, envPathUpdate } from './path'
 import { setAlias, cleanAlias } from './alias'
 import { openPathByApp } from './ide'
-import { initAllowDir, initFlyEnvSH } from './init'
+import { initAllowDir, initSemarEnvSH } from './init'
 import EnvSync from '@shared/EnvSync'
 import { appDebugLog } from '@shared/utils'
 
@@ -210,7 +210,7 @@ subjectAltName=@alt_names
   openPathByApp = openPathByApp
 
   initAllowDir = initAllowDir
-  initFlyEnvSH = initFlyEnvSH
+  initSemarEnvSH = initSemarEnvSH
 
   openSysdmCpl() {
     return new ForkPromise(async (resolve, reject) => {

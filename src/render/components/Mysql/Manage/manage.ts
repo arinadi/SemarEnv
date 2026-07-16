@@ -37,7 +37,7 @@ type MySQLManageType = {
   backupDatabase: (item: ModuleInstalledItem, databases: string[]) => Promise<boolean>
 }
 
-const MySQLManageKey = 'flyenv-mysql-manage-key'
+const MySQLManageKey = 'semarenv-mysql-manage-key'
 
 const MySQLManage = reactive<MySQLManageType>({
   userPassword: {},

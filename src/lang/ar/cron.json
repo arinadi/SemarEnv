@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "مهام مجدولة",
   "add": "إضافة مهمة مجدولة",
   "name": "اسم المهمة",
@@ -101,7 +101,7 @@
   "allTasks": "كل المهام",
   "systemTasks": "مهام النظام",
   "systemTask": "مهمة نظام",
-  "flyenvTask": "مهمة FlyEnv",
+  "semarenvTask": "مهمة SemarEnv",
   "otherTask": "مهمة أخرى",
   "taskTrigger": "المشغّل",
   "deleteSystemTaskTips": "هل تريد حذف مهمة النظام المجدولة هذه؟",

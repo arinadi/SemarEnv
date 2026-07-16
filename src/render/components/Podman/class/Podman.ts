@@ -36,7 +36,7 @@ class Podman {
     if (Object.keys(this.imageVersion).length > 0) {
       return
     }
-    const storeKey = 'flyenv-podman-image-version'
+    const storeKey = 'semarenv-podman-image-version'
     const doFetch = () => {
       IPC.send('app-fork:podman', 'fetchImagesVersion').then((key: string, res: any) => {
         IPC.off(key)
@@ -103,7 +103,7 @@ class Podman {
   async loadComposeList() {
     this.ComposeFetching = true
     const all = []
-    const storeKey = 'flyenv-podman-compose-list'
+    const storeKey = 'semarenv-podman-compose-list'
     try {
       const arr = await StorageGetAsync(storeKey)
       this.compose = []
@@ -137,7 +137,7 @@ class Podman {
   }
 
   async saveComposeList() {
-    const storeKey = 'flyenv-podman-compose-list'
+    const storeKey = 'semarenv-podman-compose-list'
     await StorageSetAsync(storeKey, JSON.parse(JSON.stringify(this.compose)))
   }
 

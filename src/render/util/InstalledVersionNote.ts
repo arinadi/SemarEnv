@@ -6,7 +6,7 @@ import { StorageGetAsync, StorageSetAsync } from '@/util/Storage'
 
 export type InstalledVersionNotes = Record<string, string>
 
-const storageKey = 'flyenv-installed-version-notes'
+const storageKey = 'semarenv-installed-version-notes'
 const notes = reactive<InstalledVersionNotes>({})
 
 let loaded = false

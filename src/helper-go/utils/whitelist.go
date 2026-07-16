@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-const allowedRootsFileUnix = "/usr/local/share/FlyEnv/flyenv.allowed-roots"
+const allowedRootsFileUnix = "/usr/local/share/SemarEnv/semarenv.allowed-roots"
 
 var (
 	envKeyPattern       = regexp.MustCompile(`^[A-Z][A-Z0-9_]{0,63}$`)
@@ -38,9 +38,9 @@ var allowedEnvKeys = map[string]bool{
 }
 
 var allowedAutoStartTasks = map[string]bool{
-	"FlyEnvHelperTask": true,
-	"FlyEnvStartup":    true,
-	"flyenv-helper":    true,
+	"SemarEnvHelperTask": true,
+	"SemarEnvStartup":    true,
+	"semarenv-helper":    true,
 }
 
 type configuredAllowedRoots struct {
@@ -124,7 +124,7 @@ func allowedRootsFilePath() string {
 		if programData == "" {
 			programData = `C:\ProgramData`
 		}
-		return filepath.Join(programData, "FlyEnv", "flyenv.allowed-roots")
+		return filepath.Join(programData, "SemarEnv", "semarenv.allowed-roots")
 	}
 	return allowedRootsFileUnix
 }
@@ -134,22 +134,22 @@ func readConfiguredAllowedRoots() configuredAllowedRoots {
 	info, err := os.Lstat(path)
 	if err != nil {
 		if !os.IsNotExist(err) {
-			fmt.Printf("Warning: failed to inspect FlyEnv allowed roots file '%s': %v\n", path, err)
+			fmt.Printf("Warning: failed to inspect SemarEnv allowed roots file '%s': %v\n", path, err)
 			return configuredAllowedRoots{filePresent: true}
 		}
 		return configuredAllowedRoots{}
 	}
 	if info.Mode()&os.ModeSymlink != 0 || !info.Mode().IsRegular() || info.Size() > 64*1024 {
-		fmt.Printf("Warning: ignoring invalid FlyEnv allowed roots file: %s\n", path)
+		fmt.Printf("Warning: ignoring invalid SemarEnv allowed roots file: %s\n", path)
 		return configuredAllowedRoots{filePresent: true}
 	}
 	if err := validateAllowedRootsFileSecurity(path, info); err != nil {
-		fmt.Printf("Warning: ignoring insecure FlyEnv allowed roots file '%s': %v\n", path, err)
+		fmt.Printf("Warning: ignoring insecure SemarEnv allowed roots file '%s': %v\n", path, err)
 		return configuredAllowedRoots{filePresent: true}
 	}
 	data, err := os.ReadFile(path)
 	if err != nil {
-		fmt.Printf("Warning: failed to read FlyEnv allowed roots file '%s': %v\n", path, err)
+		fmt.Printf("Warning: failed to read SemarEnv allowed roots file '%s': %v\n", path, err)
 		return configuredAllowedRoots{filePresent: true}
 	}
 
@@ -157,14 +157,14 @@ func readConfiguredAllowedRoots() configuredAllowedRoots {
 	roots := make([]string, 0, len(lines))
 	seen := make(map[string]bool)
 	for _, line := range lines {
-		line = strings.TrimPrefix(line, "\ufeff")
+		line = strings.TrimPrefix(line, "﻿")
 		line = strings.TrimSpace(line)
 		if line == "" || strings.HasPrefix(line, "#") {
 			continue
 		}
 		clean, err := cleanAbsPath(line)
 		if err != nil {
-			fmt.Printf("Warning: ignoring invalid FlyEnv allowed root '%s': %v\n", line, err)
+			fmt.Printf("Warning: ignoring invalid SemarEnv allowed root '%s': %v\n", line, err)
 			continue
 		}
 		key := comparePath(clean)
@@ -260,8 +260,8 @@ func isSensitiveSystemPath(path string) bool {
 func isManagedPathByName(path string) bool {
 	p := strings.ToLower(filepath.ToSlash(path))
 	fragments := []string{
-		"/flyenv",
-		"/flyenv.app",
+		"/semarenv",
+		"/semarenv.app",
 		"/php-web-study",
 		"/phpwebstudy",
 		"/phpwebstudy-data",
@@ -283,7 +283,7 @@ func isManagedPathByExecutable(path string) bool {
 	dir := filepath.Dir(exe)
 	for {
 		base := strings.ToLower(filepath.Base(dir))
-		if strings.Contains(base, "flyenv") || strings.Contains(base, "phpwebstudy") || strings.Contains(base, "php-web-study") {
+		if strings.Contains(base, "semarenv") || strings.Contains(base, "phpwebstudy") || strings.Contains(base, "php-web-study") {
 			return pathInDir(path, dir)
 		}
 		parent := filepath.Dir(dir)
@@ -295,7 +295,7 @@ func isManagedPathByExecutable(path string) bool {
 	return false
 }
 
-func isWindowsProgramFilesFlyEnvPath(path string) bool {
+func isWindowsProgramFilesSemarEnvPath(path string) bool {
 	if runtime.GOOS != "windows" {
 		return false
 	}
@@ -308,7 +308,7 @@ func isWindowsProgramFilesFlyEnvPath(path string) bool {
 			continue
 		}
 		p := strings.ToLower(filepath.ToSlash(path))
-		return strings.Contains(p, "/flyenv") || strings.Contains(p, "/phpwebstudy") || strings.Contains(p, "/php-web-study")
+		return strings.Contains(p, "/semarenv") || strings.Contains(p, "/phpwebstudy") || strings.Contains(p, "/php-web-study")
 	}
 	return false
 }
@@ -374,14 +374,14 @@ func isHomebrewPackagePath(path, packageName string) bool {
 	return false
 }
 
-func isFlyEnvSharedPath(path string) bool {
+func isSemarEnvSharedPath(path string) bool {
 	if runtime.GOOS == "windows" {
 		return false
 	}
 	allowed := []string{
-		"/Applications/FlyEnv.app",
-		"/Library/Application Support/FlyEnv",
-		"/usr/local/share/FlyEnv",
+		"/Applications/SemarEnv.app",
+		"/Library/Application Support/SemarEnv",
+		"/usr/local/share/SemarEnv",
 	}
 	for _, dir := range allowed {
 		if pathInDir(path, dir) {
@@ -415,7 +415,7 @@ func isBusinessPathAllowed(path string) bool {
 	configured := readConfiguredAllowedRoots()
 	if isConfiguredAllowedRoot(path, configured.roots) ||
 		isExplicitSystemFile(path) ||
-		isFlyEnvSharedPath(path) ||
+		isSemarEnvSharedPath(path) ||
 		isMacPortsPath(path) ||
 		isHomebrewPHPPath(path) ||
 		isUserHomeProfilePath(path) {
@@ -424,7 +424,7 @@ func isBusinessPathAllowed(path string) bool {
 	if !configured.filePresent {
 		return isManagedPathByName(path) ||
 			isManagedPathByExecutable(path) ||
-			isWindowsProgramFilesFlyEnvPath(path)
+			isWindowsProgramFilesSemarEnvPath(path)
 	}
 	return false
 }
@@ -474,7 +474,7 @@ func validatePathAccess(path string, forWrite bool) error {
 		return fmt.Errorf("sensitive system path is not allowed: %s", path)
 	}
 	if !isBusinessPathAllowed(clean) {
-		return fmt.Errorf("path outside FlyEnv allowed scope: %s", path)
+		return fmt.Errorf("path outside SemarEnv allowed scope: %s", path)
 	}
 	hasSymlink, err := PathHasSymlinkComponent(clean)
 	if err != nil {
@@ -546,7 +546,7 @@ func ValidateSymlinkPair(oldname, newname string) error {
 		}
 	}
 	if !isPythonExecutableSymlink(oldClean, newClean) {
-		return fmt.Errorf("symlink pair outside FlyEnv allowed scope: %s -> %s", oldname, newname)
+		return fmt.Errorf("symlink pair outside SemarEnv allowed scope: %s -> %s", oldname, newname)
 	}
 	if isSensitiveSystemPath(oldClean) || isSensitiveSystemPath(newClean) {
 		return fmt.Errorf("sensitive system path is not allowed")
@@ -574,7 +574,7 @@ func ValidateRabbitMQPluginDir(cwd string) error {
 		return err
 	}
 	if !isBusinessPathAllowed(clean) && !isHomebrewPackagePath(clean, "rabbitmq") {
-		return fmt.Errorf("RabbitMQ plugin directory outside FlyEnv allowed scope: %s", cwd)
+		return fmt.Errorf("RabbitMQ plugin directory outside SemarEnv allowed scope: %s", cwd)
 	}
 	if isSensitiveSystemPath(clean) {
 		return fmt.Errorf("sensitive system path is not allowed: %s", cwd)
@@ -702,7 +702,7 @@ func ValidateSystemEnvKey(key string, allowWhitelisted bool) error {
 	if !envKeyPattern.MatchString(key) {
 		return fmt.Errorf("invalid environment variable key: %s", key)
 	}
-	if strings.HasPrefix(key, "FLYENV_") {
+	if strings.HasPrefix(key, "SEMARENV_") {
 		return nil
 	}
 	if allowWhitelisted && allowedEnvKeys[key] {
@@ -775,16 +775,16 @@ func ValidateAutoStartTask(enabled bool, taskName, exePath string) error {
 	}
 	base := strings.ToLower(filepath.Base(clean))
 	allowedExe := map[string]bool{
-		"electron.exe":      true,
-		"flyenv-helper.exe": true,
-		"flyenv.exe":        true,
-		"phpwebstudy.exe":   true,
+		"electron.exe":         true,
+		"semarenv-helper.exe":  true,
+		"semarenv.exe":         true,
+		"phpwebstudy.exe":      true,
 	}
 	if !allowedExe[base] {
 		return fmt.Errorf("invalid auto-start executable: %s", base)
 	}
 	if !isBusinessPathAllowed(clean) && !isManagedPathByName(clean) {
-		return fmt.Errorf("auto-start executable outside FlyEnv allowed scope: %s", exePath)
+		return fmt.Errorf("auto-start executable outside SemarEnv allowed scope: %s", exePath)
 	}
 	return nil
 }

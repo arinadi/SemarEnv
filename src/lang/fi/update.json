@@ -1,9 +1,9 @@
 {
-  "checkForUpdates": "Tarkista päivitykset",
-  "update-available-message": "Uudempi versio FlyEnv on saatavilla, päivitetään nyt?",
+  "checkForUpdates": "Tarkista pÃ¤ivitykset",
+  "update-available-message": "Uudempi versio SemarEnv on saatavilla, pÃ¤ivitetÃ¤Ã¤n nyt?",
   "update-not-available-message": "Olet ajan tasalla!",
   "update-downloaded-message": "Valmis asentamaan...",
-  "update-error-message": "Virhe Päivityksessä",
-  "view-update-log": "Näytä Päivitysloki",
+  "update-error-message": "Virhe PÃ¤ivityksessÃ¤",
+  "view-update-log": "NÃ¤ytÃ¤ PÃ¤ivitysloki",
   "download-new-version": "Lataa Uusi Versio"
 }

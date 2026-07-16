@@ -1,39 +1,39 @@
 {
-  "description": "La licenza è un riconoscimento e un supporto al lavoro svolto da FlyEnv e dai suoi autori. Il suo scopo non è limitare gli utenti, ma ricordare loro di rispettare il lavoro degli sviluppatori e di attenersi ai termini previsti durante l'utilizzo del software. Rispettando la licenza, gli utenti non solo sostengono lo sviluppo continuo del progetto, ma contribuiscono anche allo spirito di fiducia e collaborazione nella comunità open-source.",
+  "description": "La licenza Ã¨ un riconoscimento e un supporto al lavoro svolto da SemarEnv e dai suoi autori. Il suo scopo non Ã¨ limitare gli utenti, ma ricordare loro di rispettare il lavoro degli sviluppatori e di attenersi ai termini previsti durante l'utilizzo del software. Rispettando la licenza, gli utenti non solo sostengono lo sviluppo continuo del progetto, ma contribuiscono anche allo spirito di fiducia e collaborazione nella comunitÃ  open-source.",
   "restrictions": {
     "title": "Gli utenti senza licenza saranno soggetti alle seguenti limitazioni:",
     "items": {
-      "0": "È possibile creare un massimo di tre siti.",
-      "1": "La funzione di chat AI è disponibile solo per un periodo di prova di tre giorni.",
-      "2": "Potrebbero essere applicate ulteriori restrizioni a funzionalità future."
+      "0": "Ãˆ possibile creare un massimo di tre siti.",
+      "1": "La funzione di chat AI Ã¨ disponibile solo per un periodo di prova di tre giorni.",
+      "2": "Potrebbero essere applicate ulteriori restrizioni a funzionalitÃ  future."
     }
   },
   "howToObtain": {
     "title": "Come Ottenere una Licenza",
-    "description": "FlyEnv offre diverse modalità flessibili per ottenere una licenza. Gli utenti possono scegliere uno dei seguenti metodi per fare richiesta:",
+    "description": "SemarEnv offre diverse modalitÃ  flessibili per ottenere una licenza. Gli utenti possono scegliere uno dei seguenti metodi per fare richiesta:",
     "methods": {
       "0": {
         "title": "Fai una Donazione al Progetto",
-        "description": "Non è richiesto un importo fisso per le donazioni. Considerando le diverse situazioni economiche degli utenti (es. studenti), ti invitiamo a scegliere un importo in base alle tue possibilità."
+        "description": "Non Ã¨ richiesto un importo fisso per le donazioni. Considerando le diverse situazioni economiche degli utenti (es. studenti), ti invitiamo a scegliere un importo in base alle tue possibilitÃ ."
       },
       "1": {
         "title": "Contribuisci allo Sviluppo",
-        "description": "Partecipa al progetto inviando una Pull Request. Qualsiasi contributo positivo (anche una correzione di una traduzione) è valido, indipendentemente dalla quantità di codice."
+        "description": "Partecipa al progetto inviando una Pull Request. Qualsiasi contributo positivo (anche una correzione di una traduzione) Ã¨ valido, indipendentemente dalla quantitÃ  di codice."
       },
       "2": {
         "title": "Promuovi il Progetto",
-        "description": "Promuovi FlyEnv condividendo la tua esperienza tramite articoli, video, blog, vlog o commenti. È preferita una testimonianza autentica. Il contenuto può essere in qualsiasi lingua e su qualsiasi piattaforma, purché sia pubblico."
+        "description": "Promuovi SemarEnv condividendo la tua esperienza tramite articoli, video, blog, vlog o commenti. Ãˆ preferita una testimonianza autentica. Il contenuto puÃ² essere in qualsiasi lingua e su qualsiasi piattaforma, purchÃ© sia pubblico."
       }
     }
   },
   "submitInfo": "Dopo aver completato uno dei metodi sopra elencati, inserisci i dettagli nel campo sottostante e clicca sul pulsante 'Richiedi Licenza' per inviare la tua richiesta. Le richieste vengono esaminate manualmente, quindi ti chiediamo di avere un po' di pazienza. Di solito vengono gestite rapidamente.",
   "messageLabel": "Messaggio",
-  "messagePlaceholder": "Se hai scelto di donare, inserisci il nome, il link della donazione o l'ID dell'ordine.\nSe hai contribuito allo sviluppo, inserisci il link della Pull Request.\nSe hai promosso il progetto, inserisci il link all’articolo/video.",
+  "messagePlaceholder": "Se hai scelto di donare, inserisci il nome, il link della donazione o l'ID dell'ordine.\nSe hai contribuito allo sviluppo, inserisci il link della Pull Request.\nSe hai promosso il progetto, inserisci il link allâ€™articolo/video.",
   "requestButton": "Richiedi Licenza",
   "refreshButton": "Aggiorna Stato",
   "licenseActivated": "Licenza attivata",
   "licenseNoActivated": "Licenza non attivata",
-  "licenseInfo": "La licenza attualmente fornita è una licenza permanente, ogni computer corrisponde a una licenza. Se si cambia computer, è necessario associare l'uuid del nuovo dispositivo in 'Le Mie Licenze', o richiedere una nuova licenza.",
+  "licenseInfo": "La licenza attualmente fornita Ã¨ una licenza permanente, ogni computer corrisponde a una licenza. Se si cambia computer, Ã¨ necessario associare l'uuid del nuovo dispositivo in 'Le Mie Licenze', o richiedere una nuova licenza.",
   "logoutTips": "Sei sicuro di voler uscire?",
   "delBindTips": "Sei sicuro di voler rimuovere l'associazione della licenza da questo UUID?",
   "addBindTips": "Sei sicuro di voler associare la licenza a questo UUID?",
@@ -54,7 +54,7 @@
   "oauthFailedByNoAuthCode": "Codice di autorizzazione non ricevuto",
   "oauthTimeout": "Timeout autorizzazione",
   "oauthSuccessTitle": "Autorizzazione Riuscita",
-  "oauthSuccessMessage": "Questa pagina può essere chiusa. Torna su FlyEnv per visualizzare le informazioni sulla licenza.",
+  "oauthSuccessMessage": "Questa pagina puÃ² essere chiusa. Torna su SemarEnv per visualizzare le informazioni sulla licenza.",
   "trialExpiredTitle": "Licenza non attivata",
-  "trialExpiredTips": "Stai usando FlyEnv da {days} giorni. Se FlyEnv ti è stato utile, considera di ottenere una licenza per supportare il progetto."
+  "trialExpiredTips": "Stai usando SemarEnv da {days} giorni. Se SemarEnv ti Ã¨ stato utile, considera di ottenere una licenza per supportare il progetto."
 }

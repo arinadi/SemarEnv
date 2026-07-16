@@ -67,7 +67,7 @@ declare global {
     openDir: (dir: string) => void
     openUrl: (url: string) => void
     queryLocalFonts: () => any
-    FlyEnvNodeAPI: {
+    SemarEnvNodeAPI: {
       ipcSendToMain: (...args: any[]) => void
       ipcReceiveFromMain: (callback: (event: any, ...args: any[]) => void) => void
       showFilePath: (file: File) => string

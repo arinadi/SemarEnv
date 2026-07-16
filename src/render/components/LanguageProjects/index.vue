@@ -436,7 +436,7 @@
 
   const showConfig = (item: ProjectItem) => {
     AsyncComponentShow(ConfigVM, {
-      file: join(item.path, '.flyenv'),
+      file: join(item.path, '.semarenv'),
       fileExt: 'ps1',
       typeFlag: props.typeFlag
     }).then()

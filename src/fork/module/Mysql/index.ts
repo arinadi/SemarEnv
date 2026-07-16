@@ -176,7 +176,7 @@ class Mysql extends Base {
 
         let success = false
         /**
-         * ./mysqladmin.exe --defaults-file="C:\Program Files\FlyEnv-Data\server\mysql\my-5.7.cnf" -v --connect-timeout=1 --shutdown-timeout=1 --protocol=tcp --host="127.0.0.1" -uroot -proot001 shutdown
+         * ./mysqladmin.exe --defaults-file="C:\Program Files\SemarEnv-Data\server\mysql\my-5.7.cnf" -v --connect-timeout=1 --shutdown-timeout=1 --protocol=tcp --host="127.0.0.1" -uroot -proot001 shutdown
          */
         const command = `"${bin}" --defaults-file="${m}" --connect-timeout=1 --shutdown-timeout=1 --protocol=tcp --host="127.0.0.1" --port=${port} -uroot -p${password} shutdown`
         console.log('mysql _stopServer command: ', command)
@@ -303,7 +303,7 @@ datadir=${pathFixedToUnix(dataDir)}`
             }
           } else {
             // Use the real `mysqld` (foreground) instead of the `mysqld_safe` wrapper
-            // that version.bin points to — serviceStartSpawn backgrounds the process
+            // that version.bin points to â€” serviceStartSpawn backgrounds the process
             // itself and needs a foreground server (no fork-and-exit wrapper).
             const serverBin = join(dirname(bin), 'mysqld')
             const params = [
@@ -1183,7 +1183,7 @@ sql-mode=NO_ENGINE_SUBSTITUTION`
 
       try {
         await connection.query('FLUSH PRIVILEGES')
-        // 1. 创建数据库
+        // 1. åˆ›å»ºæ•°æ®åº“
         await connection.query(
           `CREATE DATABASE IF NOT EXISTS \`${data.database}\` CHARACTER SET ${data.charset}`
         )
@@ -1202,7 +1202,7 @@ sql-mode=NO_ENGINE_SUBSTITUTION`
               `CREATE USER IF NOT EXISTS '${data.user}'@'localhost' IDENTIFIED WITH caching_sha2_password BY '${data.password}'`
             )
           } else {
-            // MySQL 5.7.5及以下版本
+            // MySQL 5.7.5åŠä»¥ä¸‹ç‰ˆæœ¬
             await connection.query(`CREATE USER ?@'localhost' IDENTIFIED BY ?`, [
               data.user,
               data.password
@@ -1231,12 +1231,12 @@ sql-mode=NO_ENGINE_SUBSTITUTION`
           userExists = true
         }
 
-        // 3. 授予用户对数据库的所有权限
+        // 3. æŽˆäºˆç”¨æˆ·å¯¹æ•°æ®åº“çš„æ‰€æœ‰æƒé™
         await connection.query(
           `GRANT ALL PRIVILEGES ON \`${data.database}\`.* TO '${data.user}'@'localhost'`
         )
 
-        // 4. 刷新权限
+        // 4. åˆ·æ–°æƒé™
         await connection.query('FLUSH PRIVILEGES')
         await connection?.end()
       } catch (e) {

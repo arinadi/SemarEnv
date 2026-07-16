@@ -160,8 +160,8 @@
                 <el-button
                   type="primary"
                   link
-                  @click.stop="toUrl('https://github.com/xpf0000/FlyEnv')"
-                  >https://github.com/xpf0000/FlyEnv</el-button
+                  @click.stop="toUrl('https://github.com/arinadi/SemarEnv')"
+                  >https://github.com/arinadi/SemarEnv</el-button
                 ></p
               >
               <p> 3. {{ I18nT('licenses.howToObtain.methods.2.title') }} </p>

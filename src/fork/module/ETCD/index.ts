@@ -42,7 +42,7 @@ class Etcd extends Base {
         on({
           'APP-On-Log': AppLog('info', I18nT('appLog.confInit'))
         })
-        const content = `name: "etcd-flyenv-test"
+        const content = `name: "etcd-semarenv-test"
 listen-client-urls: "http://0.0.0.0:2379"
 listen-peer-urls: "http://0.0.0.0:2380"
 advertise-client-urls: "http://127.0.0.1:2379"

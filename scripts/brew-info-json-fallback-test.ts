@@ -10,7 +10,7 @@ import EnvSync from '../src/shared/EnvSync'
 
 const { brewInfoJson } = await import('../src/fork/util/Version')
 
-const tempDir = await mkdtemp(join(tmpdir(), 'flyenv-brew-info-'))
+const tempDir = await mkdtemp(join(tmpdir(), 'semarenv-brew-info-'))
 const brew = join(tempDir, 'brew')
 
 try {

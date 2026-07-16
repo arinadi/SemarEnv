@@ -205,7 +205,6 @@ export class ForkManager {
   forks: Array<ForkItem> = []
   ftpsrvFork?: ForkItem
   dnsFork?: ForkItem
-  ollamaChatFork?: ForkItem
 
   _on: Callback = () => {}
   private readonly envSyncCoordinator = new EnvSyncCoordinator(fetchEnvSyncLocal, {
@@ -247,7 +246,7 @@ export class ForkManager {
   private broadcastEnvSyncInvalidated(revision: number) {
     const message: EnvSyncInvalidated = { type: 'env-sync-invalidated', revision }
     const forks = new Set(
-      [this.ftpsrvFork, this.dnsFork, this.ollamaChatFork, ...this.forks].filter(
+      [this.ftpsrvFork, this.dnsFork, ...this.forks].filter(
         (item): item is ForkItem => !!item
       )
     )
@@ -293,18 +292,6 @@ export class ForkManager {
       return this.dnsFork!.send(...args)
     }
     const fn = param.shift()
-    if (module === 'ollama' && ['chat', 'stopOutput'].includes(fn)) {
-      if (!this.ollamaChatFork) {
-        this.ollamaChatFork = new ForkItem(
-          this.file,
-          true,
-          this.envSyncBridge,
-          this.stopProcessListBridge,
-          this.binVersionCacheBridge
-        )
-      }
-      return this.ollamaChatFork!.send(...args)
-    }
     /**
      * Find a thread with no tasks
      * If not found, and the number of threads is less than the number of CPU cores, create a new thread that will automatically destroy itself 10 seconds after completing the task.
@@ -345,7 +332,6 @@ export class ForkManager {
     EnvSync.setProvider(undefined)
     this?.dnsFork?.destroy()
     this?.ftpsrvFork?.destroy()
-    this?.ollamaChatFork?.destroy()
     this.forks.forEach((fork) => {
       fork.destroy()
     })

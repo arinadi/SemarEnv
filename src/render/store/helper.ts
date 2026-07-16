@@ -28,7 +28,7 @@ class Helper {
       type: 'warning'
     })
       .then(() => {
-        IPC.send('APP-FlyEnv-Helper-Install').then((key: string) => {
+        IPC.send('APP-SemarEnv-Helper-Install').then((key: string) => {
           IPC.off(key)
           this.show = false
         })
@@ -43,7 +43,7 @@ class Helper {
       const message =
         reason === 'helper_binary_missing'
           ? I18nT('menu.helperInstallFailTips')
-          : I18nT('setup.flyenvHelperInstallFailTips')
+          : I18nT('setup.semarenvHelperInstallFailTips')
       dialog
         .showMessageBox({
           type: 'info',
@@ -56,12 +56,12 @@ class Helper {
             return
           }
           app.getPath('exe').then((path: string) => {
-            const item = join(path, 'resources/helper/flyenv-helper.exe')
+            const item = join(path, 'resources/helper/semarenv-helper.exe')
             shell.showItemInFolder(item).catch()
           })
         })
     } else {
-      import('@/components/FlyEnvHelper/index.vue').then((m) => {
+      import('@/components/SemarEnvHelper/index.vue').then((m) => {
         AsyncComponentShow(m.default).then()
       })
     }

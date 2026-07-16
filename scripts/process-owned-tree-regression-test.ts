@@ -1,16 +1,16 @@
 import assert from 'node:assert/strict'
 import { ProcessOwnedPidsByPid, type PItem } from '../src/shared/Process'
 
-const flyEnvBaseDir = '/Users/test/Library/FlyEnv/server'
-const flyEnvAppDir = '/Users/test/Library/FlyEnv/app'
-const phpBin = `${flyEnvAppDir}/static-php-8.4.10/sbin/php-fpm`
+const semarEnvBaseDir = '/Users/test/Library/SemarEnv/server'
+const semarEnvAppDir = '/Users/test/Library/SemarEnv/app'
+const phpBin = `${semarEnvAppDir}/static-php-8.4.10/sbin/php-fpm`
 
 const processList: PItem[] = [
   {
     USER: 'user',
     PID: '4200',
     PPID: '1',
-    COMMAND: `${phpBin} --fpm-config ${flyEnvBaseDir}/php/84/conf/php-fpm.conf`
+    COMMAND: `${phpBin} --fpm-config ${semarEnvBaseDir}/php/84/conf/php-fpm.conf`
   },
   {
     USER: 'user',
@@ -36,17 +36,17 @@ const processList: PItem[] = [
     PID: '6101',
     PPID: '6100',
     COMMAND:
-      '/Applications/FlyEnv.app/Contents/Frameworks/FlyEnv Helper (Renderer).app/Contents/MacOS/FlyEnv Helper (Renderer) --type=renderer'
+      '/Applications/SemarEnv.app/Contents/Frameworks/SemarEnv Helper (Renderer).app/Contents/MacOS/SemarEnv Helper (Renderer) --type=renderer'
   }
 ]
 
 assert.deepEqual(
-  ProcessOwnedPidsByPid('4200', processList, [phpBin, flyEnvBaseDir, flyEnvAppDir]).sort(),
+  ProcessOwnedPidsByPid('4200', processList, [phpBin, semarEnvBaseDir, semarEnvAppDir]).sort(),
   ['4200', '4201']
 )
 
-assert.deepEqual(ProcessOwnedPidsByPid('5100', processList, [phpBin, flyEnvBaseDir, flyEnvAppDir]), [])
+assert.deepEqual(ProcessOwnedPidsByPid('5100', processList, [phpBin, semarEnvBaseDir, semarEnvAppDir]), [])
 
-assert.deepEqual(ProcessOwnedPidsByPid('6100', processList, [phpBin, flyEnvBaseDir, flyEnvAppDir]), [])
+assert.deepEqual(ProcessOwnedPidsByPid('6100', processList, [phpBin, semarEnvBaseDir, semarEnvAppDir]), [])
 
 console.log('process-owned-tree-regression-test: ok')

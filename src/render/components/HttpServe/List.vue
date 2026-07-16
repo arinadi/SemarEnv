@@ -138,7 +138,7 @@
             })
           }
 
-          const paths = dirs.map((f) => window.FlyEnvNodeAPI.showFilePath(f))
+          const paths = dirs.map((f) => window.SemarEnvNodeAPI.showFilePath(f))
           console.log('paths: ', paths)
 
           if (paths.length === 0) {

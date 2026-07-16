@@ -24,9 +24,6 @@
         <div class="col">
           <ForceStart />
         </div>
-        <div class="col">
-          <ShowAI />
-        </div>
       </div>
       <div class="row-2">
         <div class="col">
@@ -60,7 +57,7 @@
           <TrayStyle />
         </div>
         <div class="col">
-          <FlyEnvHelperFix />
+          <SemarEnvHelperFix />
         </div>
       </div>
     </div>
@@ -76,14 +73,13 @@
   import { AppStore } from '@/store/app'
   import { computed, watch } from 'vue'
   import ForceStart from './ForceStart/index.vue'
-  import ShowAI from './AI/index.vue'
   import MacPortsSrc from './MacPortsSrc/index.vue'
   import ThemeSet from './Theme/index.vue'
   import Tool from './Tool/index.vue'
   import AutoLanch from './AutoLanch/index.vue'
   import AutoHide from './AutoHide/index.vue'
   import AutoStartService from './AutoStartService/index.vue'
-  import FlyEnvHelperFix from '@/components/Setup/FlyEnvHelper/index.vue'
+  import SemarEnvHelperFix from '@/components/Setup/SemarEnvHelper/index.vue'
   import TrayStyle from './TrayStyle/index.vue'
 
   const isMacOS = computed(() => {

@@ -1,11 +1,11 @@
 version: 4.16.2
 files:
-  - url: FlyEnv-4.16.2-arm64.deb
+  - url: SemarEnv-4.16.2-arm64.deb
     sha512: 09w0XEjhynQ4dorGOFBArAYx8ZpyEsATWI0HSlfGSCe4NkEXdz5npgcKXkHLcgu7RuMGPeUoGf+fhwSlCUB0qQ==
     size: 134606168
-  - url: FlyEnv-4.16.2-arm64.rpm
+  - url: SemarEnv-4.16.2-arm64.rpm
     sha512: MGUvagSqRFzcF0KAbbhGZ6S7dHusYltmwLuAzS0AYb9h1UAm0ZyXUhA8uEX9lajICnk8hxCVzzytHqphVEoOVA==
     size: 112369905
-path: FlyEnv-4.16.2-arm64.deb
+path: SemarEnv-4.16.2-arm64.deb
 sha512: 09w0XEjhynQ4dorGOFBArAYx8ZpyEsATWI0HSlfGSCe4NkEXdz5npgcKXkHLcgu7RuMGPeUoGf+fhwSlCUB0qQ==
 releaseDate: '2026-07-12T11:23:51.274Z'

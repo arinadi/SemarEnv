@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Tâches planifiées",
   "add": "Ajouter une tâche planifiée",
   "name": "Nom de la tâche",
@@ -101,7 +101,7 @@
   "allTasks": "Toutes les tâches",
   "systemTasks": "Tâches système",
   "systemTask": "Tâche système",
-  "flyenvTask": "Tâche FlyEnv",
+  "semarenvTask": "Tâche SemarEnv",
   "otherTask": "Autre tâche",
   "taskTrigger": "Déclencheur",
   "deleteSystemTaskTips": "Supprimer cette tâche planifiée système ?",

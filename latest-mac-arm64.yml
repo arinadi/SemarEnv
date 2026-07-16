@@ -1,11 +1,11 @@
 version: 4.16.2
 files:
-  - url: FlyEnv-4.16.2-arm64-mac.zip
+  - url: SemarEnv-4.16.2-arm64-mac.zip
     sha512: Q44q8vKbJBKbGRO2AwYHR6l0dv95fKdketEy8oJxskT7wVkrMcJwAPrkN3wvpgXGQ1mt2VG/F6NeuWLsNG95Ag==
     size: 165201885
-  - url: FlyEnv-4.16.2-arm64.dmg
+  - url: SemarEnv-4.16.2-arm64.dmg
     sha512: dAkqygku6WtWFnDNgxBedCHFOV/dKMRTFFUDQ/+XPEpk8fNSr44jw2iuvIlx5gomwwkGvDpfm8N33g+AWBxtYg==
     size: 173442879
-path: FlyEnv-4.16.2-arm64-mac.zip
+path: SemarEnv-4.16.2-arm64-mac.zip
 sha512: Q44q8vKbJBKbGRO2AwYHR6l0dv95fKdketEy8oJxskT7wVkrMcJwAPrkN3wvpgXGQ1mt2VG/F6NeuWLsNG95Ag==
 releaseDate: '2026-07-12T11:27:30.457Z'

@@ -1,4 +1,4 @@
-{
+﻿{
   "tsinghua": "Tsinghua Universiteti yükləmə mənbəyi",
   "bfsu": "Pekin Xarici Dillər Universiteti yükləmə mənbəyi",
   "tencent": "Tencent yükləmə mənbəyi",
@@ -11,9 +11,9 @@
   "autoHide": "Başlanğıcda Gizlət / Sistem Çekməcəsinə Kiçilt",
   "autoHideTips": "Xidmət avtomatik başladıqdan sonra əsas interfeysin gizlədilməsi və yalnız sistem çekməcəsində işləməsi",
   "autoLaunch": "Kompüter Açıldıqda Avtomatik Başlat",
-  "autoLaunchTips": "Kompüter açıldıqda FlyEnv-in avtomatik olaraq işə salınıb-salınmayacağı",
+  "autoLaunchTips": "Kompüter açıldıqda SemarEnv-in avtomatik olaraq işə salınıb-salınmayacağı",
   "passwordTips": "Vacib deyil. Əmrləri icra edərkən parolu avtomatik doldurur. Məsələn, Macports ilə proqram quraşdırma və ya silmə zamanı.",
-  "langTips": "İstifadəçi tərəfindən müəyyən edilən dil paketlərini yüklə. Bu əməliyyat həmçinin standart dil paketini işə salır, beləliklə FlyEnv-i digər dillərə çevirmək daha asan olur.",
+  "langTips": "İstifadəçi tərəfindən müəyyən edilən dil paketlərini yüklə. Bu əməliyyat həmçinin standart dil paketini işə salır, beləliklə SemarEnv-i digər dillərə çevirmək daha asan olur.",
   "openLangDir": "Dil paketi qovluğunu aç",
   "moduleCateAddTips": "Modul Kateqoriyası Əlavə Et",
   "moduleCateName": "Modul Kateqoriya Adı",
@@ -39,10 +39,10 @@
     "licenseTips": "Lisenziya tapılmadı. Yalnız 3 modul və ya icra elementi yaradıla bilər.",
     "outputLog": "Çıxış Jurnalı"
   },
-  "flyenvHelper": "FlyEnv Yardımçı Proqramını Bərpa Et",
-  "flyenvHelperBtn": "Bərpa Et",
-  "flyenvHelperFixSuccess": "FlyEnv yardımçı proqramı uğurla bərpa edildi",
-  "flyenvHelperInstallFailTips": "FlyEnv köməkçi proqramının quraşdırılması uğursuz oldu. Zəhmət olmasa FlyEnv-i administrator səlahiyyətləri ilə işə salmağa cəhd edin, ya da OK düyməsini basıb açılan qovluqda flyenv-helper.exe köməkçi proqramını əl ilə işə salın.",
+  "semarenvHelper": "SemarEnv Yardımçı Proqramını Bərpa Et",
+  "semarenvHelperBtn": "Bərpa Et",
+  "semarenvHelperFixSuccess": "SemarEnv yardımçı proqramı uğurla bərpa edildi",
+  "semarenvHelperInstallFailTips": "SemarEnv köməkçi proqramının quraşdırılması uğursuz oldu. Zəhmət olmasa SemarEnv-i administrator səlahiyyətləri ilə işə salmağa cəhd edin, ya da OK düyməsini basıb açılan qovluqda semarenv-helper.exe köməkçi proqramını əl ilə işə salın.",
   "appFont": "İnterfeys şrifti",
   "appFontTips": "Tətbiq interfeysi üçün istifadə olunan şrifti təyin edin. Standart sistem şriftini istifadə etmək üçün boş buraxın",
   "codeFont": "Kod şrifti",

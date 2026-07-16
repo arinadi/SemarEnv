@@ -41,12 +41,12 @@ async function main() {
   const directFirstFetch = createFetchRawPATH({
     readSystemPathDirect: async () => {
       directReadCalls += 1
-      return 'C:\\FlyEnv\\bin;%SystemRoot%\\System32;'
+      return 'C:\\SemarEnv\\bin;%SystemRoot%\\System32;'
     }
   })
 
   const directFirst = await directFirstFetch()
-  assert.deepEqual(directFirst, ['C:\\FlyEnv\\bin', '%SystemRoot%\\System32'])
+  assert.deepEqual(directFirst, ['C:\\SemarEnv\\bin', '%SystemRoot%\\System32'])
   assert.equal(directReadCalls, 1)
 
   let readFailures = 0

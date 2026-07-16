@@ -31,8 +31,6 @@ class BaseManager {
   Erlang: any
   Ruby: any
   Elasticsearch: any
-  Ollama: any
-  Ai: any
   Minio: any
   Rust: any
   MeiliSearch: any
@@ -53,25 +51,13 @@ class BaseManager {
   Image: any
   Zig: any
   Qdrant: any
-  CloudflareTunnel: any
-  Cloudflared: any
-  OpenClaw: any
-  Hermes: any
-  N8N: any
   RustFS: any
   MkCert: any
   Flutter: any
   Sdkman: any
   LanguageProject: any
-  CliProxyAPI: any
   Numa: any
   Rnacos: any
-  Kimi: any
-  ClaudeCode: any
-  Codex: any
-  OpenCode: any
-  Antigravity: any
-  CopilotCli: any
   FrankenPHP: any
   RoadRunner: any
   SwooleCli: any
@@ -333,18 +319,6 @@ class BaseManager {
         this.Elasticsearch = res.default
       }
       doRun(this.Elasticsearch)
-    } else if (module === 'ollama') {
-      if (!this.Ollama) {
-        const res = await import('./module/Ollama')
-        this.Ollama = res.default
-      }
-      doRun(this.Ollama)
-    } else if (module === 'ai') {
-      if (!this.Ai) {
-        const res = await import('./module/Ai')
-        this.Ai = res.default
-      }
-      doRun(this.Ai)
     } else if (module === 'minio') {
       if (!this.Minio) {
         const res = await import('./module/Minio')
@@ -467,36 +441,6 @@ class BaseManager {
         this.Qdrant = res.default
       }
       doRun(this.Qdrant)
-    } else if (module === 'cloudflare-tunnel') {
-      if (!this.CloudflareTunnel) {
-        const res = await import('./module/CloudflareTunnel')
-        this.CloudflareTunnel = res.default
-      }
-      doRun(this.CloudflareTunnel)
-    } else if (module === 'cloudflared') {
-      if (!this.Cloudflared) {
-        const res = await import('./module/Cloudflared')
-        this.Cloudflared = res.default
-      }
-      doRun(this.Cloudflared)
-    } else if (module === 'openclaw') {
-      if (!this.OpenClaw) {
-        const res = await import('./module/OpenClaw')
-        this.OpenClaw = res.default
-      }
-      doRun(this.OpenClaw)
-    } else if (module === 'hermes') {
-      if (!this.Hermes) {
-        const res = await import('./module/Hermes')
-        this.Hermes = res.default
-      }
-      doRun(this.Hermes)
-    } else if (module === 'n8n') {
-      if (!this.N8N) {
-        const res = await import('./module/N8N')
-        this.N8N = res.default
-      }
-      doRun(this.N8N)
     } else if (module === 'rustfs') {
       if (!this.RustFS) {
         const res = await import('./module/RustFS')
@@ -521,12 +465,6 @@ class BaseManager {
         this.LanguageProject = res.default
       }
       doRun(this.LanguageProject)
-    } else if (module === 'cliproxyapi') {
-      if (!this.CliProxyAPI) {
-        const res = await import('./module/CliProxyAPI')
-        this.CliProxyAPI = res.default
-      }
-      doRun(this.CliProxyAPI)
     } else if (module === 'numa') {
       if (!this.Numa) {
         const res = await import('./module/Numa')
@@ -575,42 +513,6 @@ class BaseManager {
         this.DotNet = res.default
       }
       doRun(this.DotNet)
-    } else if (module === 'kimi') {
-      if (!this.Kimi) {
-        const res = await import('./module/Kimi')
-        this.Kimi = res.default
-      }
-      doRun(this.Kimi)
-    } else if (module === 'claudeCode') {
-      if (!this.ClaudeCode) {
-        const res = await import('./module/ClaudeCode')
-        this.ClaudeCode = res.default
-      }
-      doRun(this.ClaudeCode)
-    } else if (module === 'codex') {
-      if (!this.Codex) {
-        const res = await import('./module/Codex')
-        this.Codex = res.default
-      }
-      doRun(this.Codex)
-    } else if (module === 'openCode') {
-      if (!this.OpenCode) {
-        const res = await import('./module/OpenCode')
-        this.OpenCode = res.default
-      }
-      doRun(this.OpenCode)
-    } else if (module === 'antigravity') {
-      if (!this.Antigravity) {
-        const res = await import('./module/Antigravity')
-        this.Antigravity = res.default
-      }
-      doRun(this.Antigravity)
-    } else if (module === 'copilotCli') {
-      if (!this.CopilotCli) {
-        const res = await import('./module/CopilotCli')
-        this.CopilotCli = res.default
-      }
-      doRun(this.CopilotCli)
     } else {
       ProcessSendError(ipcCommandKey, 'No Found Module')
     }

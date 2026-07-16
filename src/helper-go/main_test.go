@@ -84,11 +84,11 @@ func TestVerifySignatureIncludesAuthFields(t *testing.T) {
 		Key:       "request-1",
 		Module:    "tools",
 		Function:  "readFileByRoot",
-		Args:      []interface{}{"/tmp/FlyEnv/test.txt"},
+		Args:      []interface{}{"/tmp/SemarEnv/test.txt"},
 		Ts:        time.Now().UnixMilli(),
 		Nonce:     "nonce-verify",
 		ClientPid: 12345,
-		ClientExe: "/Applications/FlyEnv.app/Contents/MacOS/FlyEnv",
+		ClientExe: "/Applications/SemarEnv.app/Contents/MacOS/SemarEnv",
 	}
 	item.Sig = signTaskForTest(helperKey, item)
 
@@ -103,7 +103,7 @@ func TestVerifySignatureIncludesAuthFields(t *testing.T) {
 	}
 
 	tampered = item
-	tampered.Args = []interface{}{"/tmp/FlyEnv/other.txt"}
+	tampered.Args = []interface{}{"/tmp/SemarEnv/other.txt"}
 	if app.verifySignature(tampered) {
 		t.Fatal("signature should fail when args change")
 	}

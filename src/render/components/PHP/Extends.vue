@@ -42,7 +42,7 @@
                       <el-radio-button value="macports">Macports</el-radio-button>
                     </template>
                     <template v-else-if="!isStatic">
-                      <el-radio-button value="flyenv">{{
+                      <el-radio-button value="semarenv">{{
                         I18nT('common.value.default')
                       }}</el-radio-button>
                     </template>
@@ -101,7 +101,7 @@
           <template v-else-if="lib === 'lib'">
             <LibVM :version="version" />
           </template>
-          <template v-else-if="lib === 'flyenv'"> </template>
+          <template v-else-if="lib === 'semarenv'"> </template>
 
           <template v-if="showFooter" #footer>
             <template v-if="taskEnd">

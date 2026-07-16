@@ -227,7 +227,7 @@ class Image extends Base {
    */
   initTestImage() {
     return new ForkPromise(async (resolve, reject) => {
-      const url = 'https://oss.macphpstudy.com/image/flyenv-image-compress-test.png'
+      const url = 'https://oss.macphpstudy.com/image/semarenv-image-compress-test.png'
 
       try {
         const response = await axios({

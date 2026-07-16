@@ -1,4 +1,4 @@
-# FlyEnv Helper Contract
+# SemarEnv Helper Contract
 
 `helper-contract.json` is the machine-readable contract for the Go helper API.
 

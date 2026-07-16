@@ -17,7 +17,7 @@
   "passwordFormatError": "Wachtwoord van de database mag geen Chinese of speciale tekens bevatten",
   "savePassword": "Wachtwoord bijwerken",
   "resetPasswordTips": "Deze bewerking zal het wachtwoord van de root gebruiker van de database wijzigen",
-  "savePasswordTips": "Alleen het wachtwoord dat is opgeslagen in FlyEnv, verandert niet het wachtwoord van de root gebruiker van de database. Dit wachtwoord wordt voornamelijk gebruikt om {app} instanties veilig te stoppen.",
+  "savePasswordTips": "Alleen het wachtwoord dat is opgeslagen in SemarEnv, verandert niet het wachtwoord van de root gebruiker van de database. Dit wachtwoord wordt voornamelijk gebruikt om {app} instanties veilig te stoppen.",
   "resetPasswordConfirm": "Deze bewerking zal het wachtwoord van de root gebruiker van de database wijzigen, weet u zeker dat u wilt doorgaan?",
   "mysqlNeedRunTips": "Voer {app} eerst uit",
   "databaseName": "Naam database",

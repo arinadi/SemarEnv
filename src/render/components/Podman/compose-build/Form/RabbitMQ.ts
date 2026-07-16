@@ -17,7 +17,7 @@ export const RabbitMQ = reactive({
   volumes: [
     {
       type: 'bind',
-      source: './flyenv-docker-compose/rabbitmq/data',
+      source: './semarenv-docker-compose/rabbitmq/data',
       target: '/var/lib/rabbitmq'
     }
   ],
@@ -36,12 +36,12 @@ export const RabbitMQ = reactive({
       image: `${mirror}${image}:${RabbitMQ.version}`,
       ports: RabbitMQ.ports.map((p) => `${p.out}:${p.in}`),
       environment: RabbitMQ.environment,
-      networks: ['flyenv-network']
+      networks: ['semarenv-network']
     }
 
     if (RabbitMQ.persistence) {
       rabbitmq.volumes = RabbitMQ.volumes
-      await fs.mkdirp(join(dirname(base.dir), 'flyenv-docker-compose/rabbitmq/data'))
+      await fs.mkdirp(join(dirname(base.dir), 'semarenv-docker-compose/rabbitmq/data'))
     }
 
     return { rabbitmq }

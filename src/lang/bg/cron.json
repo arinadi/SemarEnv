@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Cron задачи",
   "add": "Добавяне на Cron задача",
   "name": "Име на задачата",
@@ -101,7 +101,7 @@
   "allTasks": "Всички задачи",
   "systemTasks": "Системни задачи",
   "systemTask": "Системна задача",
-  "flyenvTask": "Задача на FlyEnv",
+  "semarenvTask": "Задача на SemarEnv",
   "otherTask": "Друга задача",
   "taskTrigger": "Тригер",
   "deleteSystemTaskTips": "Да се изтрие ли тази системна планирана задача?",

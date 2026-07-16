@@ -9,7 +9,7 @@ export const MeiliSearchSetup: {
   dir: {},
   init() {
     localForage
-      .getItem('flyenv-meilisearch-storage-dir')
+      .getItem('semarenv-meilisearch-storage-dir')
       .then((res: Record<string, string>) => {
         if (res) {
           MeiliSearchSetup.dir = reactive(res)
@@ -19,7 +19,7 @@ export const MeiliSearchSetup: {
   },
   save() {
     localForage
-      .setItem('flyenv-meilisearch-storage-dir', JSON.parse(JSON.stringify(MeiliSearchSetup.dir)))
+      .setItem('semarenv-meilisearch-storage-dir', JSON.parse(JSON.stringify(MeiliSearchSetup.dir)))
       .then()
       .catch()
   }

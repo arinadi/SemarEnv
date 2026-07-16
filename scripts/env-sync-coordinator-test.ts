@@ -17,7 +17,7 @@ import type { EnvSyncResponse } from '../src/shared/EnvSyncProtocol'
 
 const snapshot: EnvSyncSnapshot = {
   revision: 3,
-  env: { PATH: '/usr/bin', HOME: '/Users/flyenv' },
+  env: { PATH: '/usr/bin', HOME: '/Users/semarenv' },
   cmdPath: 'C:/Windows/System32/cmd.exe',
   powerShellPath: 'C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe',
   systemPath: 'C:/Windows/System32',

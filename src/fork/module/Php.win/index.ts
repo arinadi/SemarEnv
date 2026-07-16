@@ -62,9 +62,9 @@ class Php extends Base {
         let content = await readFile(file, 'utf-8')
         content = content.replace(';extension_dir = "ext"', 'extension_dir = "ext"')
         const extensions = [
-          // 核心扩展
+          // æ ¸å¿ƒæ‰©å±•
           { name: 'php_redis.dll', type: 'extension' },
-          { name: 'php_xdebug.dll', type: 'zend_extension' }, // 唯一的 zend_extension
+          { name: 'php_xdebug.dll', type: 'zend_extension' }, // å”¯ä¸€çš„ zend_extension
           { name: 'php_mongodb.dll', type: 'extension' },
           { name: 'php_memcache.dll', type: 'extension' },
           { name: 'php_pdo_sqlsrv.dll', type: 'extension' },
@@ -78,7 +78,7 @@ class Php extends Base {
           { name: 'php_pdo_mysql.dll', type: 'extension' },
           { name: 'php_pdo_odbc.dll', type: 'extension' },
 
-          // 新增的必需扩展
+          // æ–°å¢žçš„å¿…éœ€æ‰©å±•
           { name: 'php_intl.dll', type: 'extension' },
           { name: 'php_exif.dll', type: 'extension' },
           { name: 'php_simplexml.dll', type: 'extension' },
@@ -86,7 +86,7 @@ class Php extends Base {
           { name: 'php_dom.dll', type: 'extension' },
           { name: 'php_xmlreader.dll', type: 'extension' },
           { name: 'php_xmlwriter.dll', type: 'extension' },
-          { name: 'php_json.dll', type: 'extension' }, // PHP 7.x 需要，8.0+ 内置
+          { name: 'php_json.dll', type: 'extension' }, // PHP 7.x éœ€è¦ï¼Œ8.0+ å†…ç½®
           { name: 'php_bcmath.dll', type: 'extension' },
           { name: 'php_sodium.dll', type: 'extension' },
           { name: 'php_soap.dll', type: 'extension' },
@@ -102,7 +102,7 @@ class Php extends Base {
           { name: 'php_shmop.dll', type: 'extension' }
         ]
 
-        // 循环检查并添加存在的扩展
+        // å¾ªçŽ¯æ£€æŸ¥å¹¶æ·»åŠ å­˜åœ¨çš„æ‰©å±•
         extensions.forEach((ext) => {
           const dll = join(version.path, 'ext', ext.name)
           if (existsSync(dll)) {
@@ -427,7 +427,7 @@ class Php extends Base {
         content = content.replace(regex, ``).trim()
         if (item.name === 'php_xdebug') {
           content = content
-            .replace(/;\[FlyEnv-xdebug-ini-begin\]([\s\S]*?);\[FlyEnv-xdebug-ini-end\]/g, ``)
+            .replace(/;\[SemarEnv-xdebug-ini-begin\]([\s\S]*?);\[SemarEnv-xdebug-ini-end\]/g, ``)
             .trim()
         }
       } else {
@@ -440,7 +440,7 @@ class Php extends Base {
         if (item.name === 'php_xdebug') {
           const output_dir = join(global.Server.PhpDir!, 'xdebug')
           await mkdirp(output_dir)
-          content += `\n;[FlyEnv-xdebug-ini-begin]
+          content += `\n;[SemarEnv-xdebug-ini-begin]
 xdebug.idekey = "PHPSTORM"
 xdebug.client_host = localhost
 xdebug.client_port = 9003
@@ -450,7 +450,7 @@ xdebug.profiler_output_name = cachegrind.out.%p
 xdebug.start_with_request = yes
 xdebug.trigger_value=StartProfileForMe
 xdebug.output_dir = "${output_dir}"
-;[FlyEnv-xdebug-ini-end]`
+;[SemarEnv-xdebug-ini-end]`
         }
       }
 
@@ -567,7 +567,7 @@ xdebug.output_dir = "${output_dir}"
         content = content.replace(regex, ``).trim()
         if (name === 'php_xdebug') {
           content = content
-            .replace(/;\[FlyEnv-xdebug-ini-begin\]([\s\S]*?);\[FlyEnv-xdebug-ini-end\]/g, ``)
+            .replace(/;\[SemarEnv-xdebug-ini-begin\]([\s\S]*?);\[SemarEnv-xdebug-ini-end\]/g, ``)
             .trim()
         }
       } else {
@@ -675,7 +675,7 @@ xdebug.output_dir = "${output_dir}"
         if (name === 'php_xdebug') {
           const output_dir = join(global.Server.PhpDir!, 'xdebug')
           await mkdirp(output_dir)
-          content += `\n;[FlyEnv-xdebug-ini-begin]
+          content += `\n;[SemarEnv-xdebug-ini-begin]
 xdebug.idekey = "PHPSTORM"
 xdebug.client_host = localhost
 xdebug.client_port = 9003
@@ -685,7 +685,7 @@ xdebug.profiler_output_name = cachegrind.out.%p
 xdebug.start_with_request = yes
 xdebug.trigger_value=StartProfileForMe
 xdebug.output_dir = "${output_dir}"
-;[FlyEnv-xdebug-ini-end]`
+;[SemarEnv-xdebug-ini-end]`
         }
       }
 

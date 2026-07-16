@@ -9,7 +9,7 @@ export const MinioSetup: {
   dir: {},
   init() {
     localForage
-      .getItem('flyenv-minio-storage-dir')
+      .getItem('semarenv-minio-storage-dir')
       .then((res: Record<string, string>) => {
         if (res) {
           MinioSetup.dir = reactive(res)
@@ -19,7 +19,7 @@ export const MinioSetup: {
   },
   save() {
     localForage
-      .setItem('flyenv-minio-storage-dir', JSON.parse(JSON.stringify(MinioSetup.dir)))
+      .setItem('semarenv-minio-storage-dir', JSON.parse(JSON.stringify(MinioSetup.dir)))
       .then()
       .catch()
   }

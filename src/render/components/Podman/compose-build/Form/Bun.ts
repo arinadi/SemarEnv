@@ -31,7 +31,7 @@ const Bun = reactive({
       image: `${mirror}${image}:${Bun.version}`,
       ports: Bun.ports.map((p) => `${p.out}:${p.in}`),
       environment,
-      networks: ['flyenv-network'],
+      networks: ['semarenv-network'],
       working_dir: '/app',
       command: Bun.command
     }

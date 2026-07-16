@@ -3,8 +3,8 @@ import AfterSign from '../build/afterSign'
 import AfterPackSign, { customSign } from '../build/afterPackSign'
 
 const conf: Configuration = {
-  productName: 'FlyEnv',
-  executableName: 'FlyEnv',
+  productName: 'SemarEnv',
+  executableName: 'SemarEnv',
   buildVersion: '4.16.2',
   electronVersion: '39.8.7',
   appId: 'phpstudy.xpfme.com',
@@ -24,14 +24,14 @@ const conf: Configuration = {
     '!**/node_modules/node-pty/prebuilds/{darwin-arm64,darwin-x64,linux-arm64,linux-x64,win32-arm64}/**',
     '!**/node_modules/node-pty/third_party/conpty/*/win10-arm64/**'
   ],
-  artifactName: 'FlyEnv-Setup-${version}.${ext}',
+  artifactName: 'SemarEnv-Setup-${version}.${ext}',
   win: {
-    artifactName: 'FlyEnv-Setup-${version}.${ext}',
+    artifactName: 'SemarEnv-Setup-${version}.${ext}',
     asarUnpack: ['**/*.node', '**/node_modules/sharp/**/*', '**/node_modules/@img/**/*'],
     extraResources: [
       {
-        from: 'src/helper-go/dist/flyenv-helper-windows-amd64-v1.exe',
-        to: 'app.asar.unpacked/node_modules/helper/flyenv-helper.exe'
+        from: 'src/helper-go/dist/semarenv-helper-windows-amd64-v1.exe',
+        to: 'app.asar.unpacked/node_modules/helper/semarenv-helper.exe'
       }
     ],
     // helper 由 SignPath 在打包前预签(见 .github/workflows + build/signpath),
@@ -59,13 +59,13 @@ const conf: Configuration = {
     allowElevation: true
   },
   portable: {
-    artifactName: 'FlyEnv-Portable-${version}.${ext}',
-    unpackDirName: 'FlyEnv-Portable-${version}'
+    artifactName: 'SemarEnv-Portable-${version}.${ext}',
+    unpackDirName: 'SemarEnv-Portable-${version}'
   },
   publish: [],
-  // 注意顺序:electron-builder 的 signApp 会对 FlyEnv.exe 跑 rcedit 改写版本号/图标/manifest,
+  // 注意顺序:electron-builder 的 signApp 会对 SemarEnv.exe 跑 rcedit 改写版本号/图标/manifest,
   // 这会抹掉签名。因此签名必须放在 afterSign(rcedit 之后):先移动 helper 到最终位置,
-  // 再对整个 win-unpacked 做 SignPath 签名,确保 FlyEnv.exe 等所有 PE 的签名是最后落定的。
+  // 再对整个 win-unpacked 做 SignPath 签名,确保 SemarEnv.exe 等所有 PE 的签名是最后落定的。
   afterSign: async (context) => {
     await AfterSign(context)
     await AfterPackSign(context)

@@ -179,7 +179,7 @@ export const Setup = (version: SoftInstalled) => {
   const copyXDebugTmpl = (row: any) => {
     const output_dir = join(window.Server.PhpDir!, 'xdebug')
     const txt = `zend_extension = "${row.soname}"
-;[FlyEnv-xdebug-ini-begin]
+;[SemarEnv-xdebug-ini-begin]
 [xdebug]
 xdebug.idekey = "PHPSTORM"
 xdebug.client_host = localhost
@@ -190,7 +190,7 @@ xdebug.profiler_output_name = cachegrind.out.%p
 xdebug.start_with_request = yes
 xdebug.trigger_value=StartProfileForMe
 xdebug.output_dir = "${output_dir}"
-;[FlyEnv-xdebug-ini-end]`
+;[SemarEnv-xdebug-ini-end]`
     clipboard.writeText(txt)
     MessageSuccess(I18nT('php.xdebugConfCopySuccess'))
   }

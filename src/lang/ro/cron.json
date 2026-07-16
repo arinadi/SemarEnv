@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Sarcini Programate",
   "add": "Adaugă Sarcină Programată",
   "name": "Nume Sarcină",
@@ -101,7 +101,7 @@
   "allTasks": "Toate sarcinile",
   "systemTasks": "Sarcini de sistem",
   "systemTask": "Sarcină de sistem",
-  "flyenvTask": "Sarcină FlyEnv",
+  "semarenvTask": "Sarcină SemarEnv",
   "otherTask": "Altă sarcină",
   "taskTrigger": "Declanșator",
   "deleteSystemTaskTips": "Ștergeți această sarcină programată de sistem?",

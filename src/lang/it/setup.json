@@ -1,4 +1,4 @@
-{
+﻿{
   "tsinghua": "Sorgente di download Università Tsinghua",
   "bfsu": "Sorgente di download Università di Studi Stranieri di Pechino",
   "tencent": "Sorgente di download Tencent",
@@ -11,9 +11,9 @@
   "autoHide": "Avvia nascosto / Ridotto a icona nella tray",
   "autoHideTips": "Nascondi l'interfaccia principale e lascia solo l'icona nella tray di sistema dopo l'avvio automatico dei servizi",
   "autoLaunch": "Avvio automatico all'accensione",
-  "autoLaunchTips": "Avvia FlyEnv automaticamente all'accensione del computer",
+  "autoLaunchTips": "Avvia SemarEnv automaticamente all'accensione del computer",
   "passwordTips": "Non obbligatorio. Inserisce automaticamente la password quando vengono eseguiti comandi che la richiedono (es. installazione/disinstallazione con Macports)",
-  "langTips": "Carica pacchetti lingua personalizzati. Inizializzerà anche il pacchetto lingua predefinito, facilitando la traduzione di FlyEnv in altre lingue.",
+  "langTips": "Carica pacchetti lingua personalizzati. Inizializzerà anche il pacchetto lingua predefinito, facilitando la traduzione di SemarEnv in altre lingue.",
   "openLangDir": "Apri la cartella dei pacchetti lingua",
   "moduleCateAddTips": "Aggiungi categoria modulo",
   "moduleCateName": "Nome categoria modulo",
@@ -39,10 +39,10 @@
     "licenseTips": "Licenza non trovata. È possibile creare solo 3 moduli/elementi di esecuzione.",
     "outputLog": "Log di output"
   },
-  "flyenvHelper": "Riparazione del programma di supporto FlyEnv",
-  "flyenvHelperBtn": "Ripara",
-  "flyenvHelperFixSuccess": "Riparazione del programma di supporto FlyEnv riuscita",
-  "flyenvHelperInstallFailTips": "Installazione dell'helper FlyEnv non riuscita. Prova a eseguire FlyEnv con privilegi di amministratore oppure fai clic sul pulsante OK ed esegui manualmente il programma helper flyenv-helper.exe nella cartella aperta.",
+  "semarenvHelper": "Riparazione del programma di supporto SemarEnv",
+  "semarenvHelperBtn": "Ripara",
+  "semarenvHelperFixSuccess": "Riparazione del programma di supporto SemarEnv riuscita",
+  "semarenvHelperInstallFailTips": "Installazione dell'helper SemarEnv non riuscita. Prova a eseguire SemarEnv con privilegi di amministratore oppure fai clic sul pulsante OK ed esegui manualmente il programma helper semarenv-helper.exe nella cartella aperta.",
   "appFont": "Font interfaccia",
   "appFontTips": "Imposta il carattere usato per l'interfaccia utente dell'applicazione. Lasciare vuoto per usare il carattere di sistema predefinito",
   "codeFont": "Font del codice",

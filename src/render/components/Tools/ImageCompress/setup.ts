@@ -248,7 +248,7 @@ class ImageCompressSetup implements SharpConfig {
     dialog
       .showSaveDialog({
         properties: ['createDirectory', 'showOverwriteConfirmation'],
-        defaultPath: `flyenv-compress-test.${ext}`
+        defaultPath: `semarenv-compress-test.${ext}`
       })
       .then(({ canceled, filePath }: any) => {
         if (canceled || !filePath) {
@@ -279,7 +279,7 @@ class ImageBatchProcess {
 
   processing = false
 
-  private storeKey = 'flyenv-tools-imagecompress'
+  private storeKey = 'semarenv-tools-imagecompress'
   private inited: boolean = false
 
   init() {

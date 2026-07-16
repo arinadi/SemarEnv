@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Cron Jobs",
   "add": "Add Cron Job",
   "name": "Job Name",
@@ -101,7 +101,7 @@
   "allTasks": "All Tasks",
   "systemTasks": "System Tasks",
   "systemTask": "System Task",
-  "flyenvTask": "FlyEnv Task",
+  "semarenvTask": "SemarEnv Task",
   "otherTask": "Other Task",
   "taskTrigger": "Trigger",
   "deleteSystemTaskTips": "Delete this system scheduled task?",

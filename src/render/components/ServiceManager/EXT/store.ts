@@ -153,7 +153,7 @@ export const ServiceActionStore: {
 
         if (window.Server.isWindows) {
           localForage
-            .getItem(`flyenv-app-env-dir`)
+            .getItem(`semarenv-app-env-dir`)
             .then((res: Record<string, string>) => {
               const list = res || {}
               const set = new Set([...Object.values(list), ...app])
@@ -189,7 +189,7 @@ export const ServiceActionStore: {
 
             if (window.Server.isWindows) {
               localForage
-                .getItem(`flyenv-app-env-dir`)
+                .getItem(`semarenv-app-env-dir`)
                 .then((res: Record<string, string>) => {
                   const list = res || {}
                   if (action === 'removePATH') {
@@ -200,7 +200,7 @@ export const ServiceActionStore: {
 
                   const set = new Set([...Object.values(list), ...app])
                   const appList = Array.from(set)
-                  localForage.setItem(`flyenv-app-env-dir`, list).then().catch()
+                  localForage.setItem(`semarenv-app-env-dir`, list).then().catch()
                   ServiceActionStore.appPath = reactive([...appList])
                 })
                 .catch()

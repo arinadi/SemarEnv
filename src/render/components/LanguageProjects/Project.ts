@@ -184,7 +184,7 @@ export class Project {
 
   saveProject() {
     localForage
-      .setItem(`flyenv-${this.flagType}-projects`, JSON.parse(JSON.stringify(this.project)))
+      .setItem(`semarenv-${this.flagType}-projects`, JSON.parse(JSON.stringify(this.project)))
       .then()
       .catch()
   }
@@ -194,7 +194,7 @@ export class Project {
     }
     this.fetching = true
     this.fetchProjectPromise = localForage
-      .getItem(`flyenv-${this.flagType}-projects`)
+      .getItem(`semarenv-${this.flagType}-projects`)
       .then((res: ProjectItem[]) => {
         if (res) {
           this.project.splice(0)
@@ -244,7 +244,7 @@ export class Project {
   }
   initDirs() {
     localForage
-      .getItem('flyenv-projects-dirs')
+      .getItem('semarenv-projects-dirs')
       .then((res: string[]) => {
         if (res) {
           this.allDirs = res
@@ -259,7 +259,7 @@ export class Project {
       })
   }
   saveDirs(): Promise<any> {
-    return localForage.setItem('flyenv-projects-dirs', JSON.parse(JSON.stringify(this.allDirs)))
+    return localForage.setItem('semarenv-projects-dirs', JSON.parse(JSON.stringify(this.allDirs)))
   }
   delProject(index: number) {
     Base._Confirm(I18nT('base.delAlertContent'), undefined, {
@@ -283,7 +283,7 @@ export class Project {
   }
   async setDirEnv(item: ProjectItem) {
     await this.syncRoadRunnerConfigPort(item)
-    IPC.send('app-fork:tools', 'initFlyEnvSH').then((key: string, res: any) => {
+    IPC.send('app-fork:tools', 'initSemarEnvSH').then((key: string, res: any) => {
       IPC.off(key)
       if (res?.code === 1) {
         MessageError(res?.msg ?? '')
@@ -297,7 +297,7 @@ export class Project {
     })
     if (window.Server.isWindows) {
       try {
-        const envFile = join(item.path, '.flyenv')
+        const envFile = join(item.path, '.semarenv')
         const exists = await fs.existsSync(envFile)
         if (!exists) {
           if (!item.binVersion) {
@@ -314,7 +314,7 @@ export class Project {
             if (arr.length) {
               await fs.writeFile(
                 envFile,
-                `[Console]::OutputEncoding = [System.Text.Encoding]::UTF8\n$env:PATH = "${arr.join(';')};" + $env:PATH #FlyEnv-ID-${item.id}`
+                `[Console]::OutputEncoding = [System.Text.Encoding]::UTF8\n$env:PATH = "${arr.join(';')};" + $env:PATH #SemarEnv-ID-${item.id}`
               )
             }
           }
@@ -325,7 +325,7 @@ export class Project {
             .split('\n')
             .filter((s: string) => {
               const line = s.trim()
-              return !!line && !line.includes(`#FlyEnv-ID-${item.id}`)
+              return !!line && !line.includes(`#SemarEnv-ID-${item.id}`)
             })
           if (item.binVersion) {
             const arr: string[] = []
@@ -337,7 +337,7 @@ export class Project {
               }
             }
             if (arr.length) {
-              lines.push(`$env:PATH = "${arr.join(';')};" + $env:PATH #FlyEnv-ID-${item.id}`)
+              lines.push(`$env:PATH = "${arr.join(';')};" + $env:PATH #SemarEnv-ID-${item.id}`)
             }
           }
           await fs.writeFile(envFile, lines.join('\n'))
@@ -347,7 +347,7 @@ export class Project {
       }
     } else {
       try {
-        const envFile = join(item.path, '.flyenv')
+        const envFile = join(item.path, '.semarenv')
         const exists = await fs.existsSync(envFile)
         if (!exists) {
           if (!item.binVersion) {
@@ -364,7 +364,7 @@ export class Project {
             if (arr.length) {
               await fs.writeFile(
                 envFile,
-                `#!/bin/zsh\nexport PATH="${arr.join(':')}:$PATH" #FlyEnv-ID-${item.id}`
+                `#!/bin/zsh\nexport PATH="${arr.join(':')}:$PATH" #SemarEnv-ID-${item.id}`
               )
             }
           }
@@ -375,7 +375,7 @@ export class Project {
             .split('\n')
             .filter((s: string) => {
               const line = s.trim()
-              return !!line && !line.includes(`#FlyEnv-ID-${item.id}`)
+              return !!line && !line.includes(`#SemarEnv-ID-${item.id}`)
             })
           if (item.binVersion) {
             const arr: string[] = []
@@ -387,7 +387,7 @@ export class Project {
               }
             }
             if (arr.length) {
-              lines.push(`export PATH="${arr.join(':')}:$PATH" #FlyEnv-ID-${item.id}`)
+              lines.push(`export PATH="${arr.join(':')}:$PATH" #SemarEnv-ID-${item.id}`)
             }
           }
           await fs.writeFile(envFile, lines.join('\n'))

@@ -31,8 +31,8 @@ const ptyPrebuildExcludes = [
  * One Environ
  */
 const conf: Configuration = {
-  productName: 'FlyEnv',
-  executableName: 'FlyEnv',
+  productName: 'SemarEnv',
+  executableName: 'SemarEnv',
   buildVersion: '4.16.2',
   electronVersion: '39.8.7',
   appId: 'phpstudy.xpfme.com',
@@ -85,8 +85,8 @@ const conf: Configuration = {
     asarUnpack: ['**/*.node', '**/node_modules/sharp/**/*', '**/node_modules/@img/**/*'],
     extendInfo: {
       'Icon file': 'icon.icns',
-      CFBundleDisplayName: 'FlyEnv',
-      CFBundleExecutable: 'FlyEnv'
+      CFBundleDisplayName: 'SemarEnv',
+      CFBundleExecutable: 'SemarEnv'
     },
     type: 'distribution',
     darkModeSupport: true,

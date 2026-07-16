@@ -1,4 +1,4 @@
-{
+﻿{
   "tsinghua": "Tsinghua University nedladdningskälla",
   "bfsu": "Beijing Foreign Studies University nedladdningskälla",
   "tencent": "Tencent nedladdningskälla",
@@ -39,10 +39,10 @@
     "licenseTips": "Ingen licens hittades. Endast 3 moduler/utföringsobjekt kan skapas.",
     "outputLog": "Utlogg"
   },
-  "flyenvHelper": "Reparera FlyEnv-hjälpprogram",
-  "flyenvHelperBtn": "Reparera",
-  "flyenvHelperFixSuccess": "Reparation av FlyEnv-hjälpprogram lyckades",
-  "flyenvHelperInstallFailTips": "Installationen av FlyEnv-hjälpprogrammet misslyckades. Försök att köra FlyEnv med administratörsbehörighet eller klicka på OK-knappen och kör hjälpprogrammet flyenv-helper.exe manuellt i den öppnade mappen.",
+  "semarenvHelper": "Reparera SemarEnv-hjälpprogram",
+  "semarenvHelperBtn": "Reparera",
+  "semarenvHelperFixSuccess": "Reparation av SemarEnv-hjälpprogram lyckades",
+  "semarenvHelperInstallFailTips": "Installationen av SemarEnv-hjälpprogrammet misslyckades. Försök att köra SemarEnv med administratörsbehörighet eller klicka på OK-knappen och kör hjälpprogrammet semarenv-helper.exe manuellt i den öppnade mappen.",
   "appFont": "UI-typsnitt",
   "appFontTips": "Ange typsnitt som används för programgränssnittet. Lämna tomt för att använda systemets standardtypsnitt",
   "codeFont": "Kodtypsnitt",

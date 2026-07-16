@@ -1,4 +1,4 @@
-# FlyEnv 开启中 Issues 梳理与处理方案
+# SemarEnv 开启中 Issues 梳理与处理方案
 
 > 梳理时间：2026-06-17 ｜ 数据来源：GitHub Open Issues（共 40 个，已排除 PR）
 > 分类：① 已直接修复　② 需进一步排查/复现　③ 特性需求-可支持(附方案)　④ 特性需求-暂不建议/待定　⑤ 翻译/分发/流程类
@@ -28,13 +28,13 @@
 |---|------|---------|-----------|
 | #724 | Host Files Are Not Applied Correctly (Win11) | 日志显示 nginx 反复 stop/start，hosts 未生效。疑似 helper 写 hosts 权限/时机问题，或多 PHP 实例触发反复重启。 | 需 Windows 复现：确认 helper 是否成功写入 `C:\Windows\System32\drivers\etc\hosts`、是否被安全软件拦截。 |
 | #715 | "Failed to start" 首次启动报错但服务正常 (macOS) | 服务实际已起，仅首启误报。疑似启动成功探测（端口/pid 检测）有时序竞态，首启时检测早于服务就绪。 | 需 macOS 复现 + 开启 debug 日志，定位是哪个服务的 check 超时返回 false。 |
-| #710 | 设置环境变量失败 (Windows，已管理员) | helper 与主程序均管理员仍失败。需看具体报错与 helper-go 写注册表/环境变量的返回。 | 需完整错误日志、FlyEnv 版本、是否域账户/组策略限制。 |
+| #710 | 设置环境变量失败 (Windows，已管理员) | helper 与主程序均管理员仍失败。需看具体报错与 helper-go 写注册表/环境变量的返回。 | 需完整错误日志、SemarEnv 版本、是否域账户/组策略限制。 |
 | #690 | MySQL 启动后窗口卡死、Chrome/VSCode 崩溃 (macOS 26) | “最近几个版本才出现”，连带其他 App 崩溃异常，疑似系统级资源/GPU 或某次启动逻辑变更。 | 需定位回归版本区间（哪个版本开始）、崩溃日志、是否 Apple Silicon。 |
 | #636 | 切换菜单风格后报 IDE/AdBlock 出错、界面空白 (Win) | “经典↔现代”切换触发渲染进程崩溃。报错名借用了浏览器插件名，疑似菜单重渲染时空引用。 | 需复现并抓渲染进程 devtools 报错堆栈，定位菜单风格切换的组件。 |
 | #633 | python 环境变量架构问题 (Windows v4.14.1) | 与 #713 同源（python PATH/软链）。当前已引入 `PythonShim` + PATH 真实长度排序重构，可能已修复。 | 需在最新版 Windows 复测确认是否仍存在。 |
 | #713 | 设置 Python 后 python3 未生效 (macOS) | 根因明确（perl→/usr 软链使 `/usr/bin` 抢先）。当前代码已用 `createPythonBinShims` 建 python/python3 shim + 排序，**大概率已修复**。 | 需 macOS 最新版复测 `python3 -V` / `pip3 -V`。未复现则关闭。 |
 | #685 | ollama 下载卡住 | 主要是下载速度/网络问题；但用户指出“无取消入口”是真实 UX 缺口。 | 取消按钮可做（见 ④）。下载加速需评估镜像源。 |
-| #689 | thaw 应用更新后 FlyEnv 跑到隐藏 (macOS) | 极小众。疑似窗口绑定依赖 Bundle ID/AX 属性，目标 App 更新后失配。 | 需复现，优先级低。 |
+| #689 | thaw 应用更新后 SemarEnv 跑到隐藏 (macOS) | 极小众。疑似窗口绑定依赖 Bundle ID/AX 属性，目标 App 更新后失配。 | 需复现，优先级低。 |
 | #585 | Fedora43-gnome 托盘菜单显示在屏幕左侧 | Linux 托盘定位问题，依赖 GNOME/Electron tray 行为。 | 需 Fedora43-gnome 环境复现。 |
 | #702 | 已激活仍要求激活 license | 涉及授权校验逻辑（可能服务端/本地缓存），非纯前端。 | 需结合授权校验实现与该用户激活态排查，单独处理。 |
 
@@ -85,12 +85,12 @@
 
 ### #687 / #442 CLI 支持 + 框架自动检测
 **方向认可，工作量大，建议分期。**
-- #687 提议 `flyenv php park / use 8.4 / host add / reload` 等运行时导向 CLI，并对 Laravel(`/public`)、Symfony(`/public`)、Yii(`/web`)、Tomcat、Node 等做 docroot 默认值检测。
+- #687 提议 `semarenv php park / use 8.4 / host add / reload` 等运行时导向 CLI，并对 Laravel(`/public`)、Symfony(`/public`)、Yii(`/web`)、Tomcat、Node 等做 docroot 默认值检测。
 - #442（葡萄牙语）提供了 Laravel 项目创建的 PowerShell 脚本，本质是“建站时更多定制项（starter kit / DB / migrations）”。
 - **建议**：先做“框架自动检测 docroot”这一可独立落地的小切片（建站时按项目特征推荐根目录），CLI 体系作为中长期规划单独立项。
 
 ### #448 发布到 Scoop
-**可做（分发，小）。** 用户已提供 `flyenv.json` bucket 元文件。
+**可做（分发，小）。** 用户已提供 `semarenv.json` bucket 元文件。
 - **方案**：建立 scoop bucket 仓库，加 GitHub Action 在 release 后自动更新 manifest（版本号 + hash）。属 CI/发布流程改动，不涉及应用代码。
 
 ---
@@ -99,14 +99,14 @@
 
 | # | 需求 | 评估 |
 |---|------|------|
-| #712 | 集成 AI 编程 CLI 工具管理面板（Claude Code/Codex/OpenCode 等 + Ollama/云 API 对接） | 体量大、想法完整。FlyEnv 已有 `Ai` / `Ollama` / `CliProxyAPI` 模块基础，技术可行，但属重量级新模块，需产品立项排期。建议先支持 1-2 个主流 CLI + Ollama 本地对接做 MVP。 |
+| #712 | 集成 AI 编程 CLI 工具管理面板（Claude Code/Codex/OpenCode 等 + Ollama/云 API 对接） | 体量大、想法完整。SemarEnv 已有 `Ai` / `Ollama` / `CliProxyAPI` 模块基础，技术可行，但属重量级新模块，需产品立项排期。建议先支持 1-2 个主流 CLI + Ollama 本地对接做 MVP。 |
 | #669 | 大模型切换工具（类 cc switch） | 与 #712 高度重叠，可并入 AI 模块规划，做“provider/model 快速切换 + 配置持久化”。 |
 | #726 | Redis 集群（3 节点）一键启动 | 可做但偏小众，用户已自带脚本。可作为 Redis 模块的“集群模式”选项排期，非紧急。 |
 | #719 | 图数据库支持（Neo4j） | 新服务模块，技术可行。看需求热度排期。 |
 | #722 | 集成 llama.cpp | 新模块，与 AI 方向一致，可纳入 AI 规划。 |
 | #653 | 集成 NexaSDK（多模态推理） | 新模块，小众，观望需求量。 |
 | #680 | 浏览器内访问 pgAdmin | 可做（类似已有 web 工具集成方式），看优先级。 |
-| #648 | Plexum 集成（Cloudflare quick tunnel P2P 故障转移） | 第三方项目方提议，依赖外部 P2P 网络与签名身份，涉及隐私（向种子网络广播签名 URL）。技术上 FlyEnv 已有 cloudflared 基础，但属第三方生态绑定，建议谨慎、保持 opt-in，需与项目方进一步沟通后再定。 |
+| #648 | Plexum 集成（Cloudflare quick tunnel P2P 故障转移） | 第三方项目方提议，依赖外部 P2P 网络与签名身份，涉及隐私（向种子网络广播签名 URL）。技术上 SemarEnv 已有 cloudflared 基础，但属第三方生态绑定，建议谨慎、保持 opt-in，需与项目方进一步沟通后再定。 |
 | #684 | Flutter 的 Android SDK 安装引导 | 当前需手动装 Android Studio。可做“产品提示/引导”小改进（明确告知需另装 Android SDK 及路径配置）。 |
 | #483 | PHP7.2 的 phalcon 组件（Win 无效 + ARM Linux） | 属静态扩展包构建/分发，用户已提供可用 zip。需在扩展包仓库补充对应平台二进制，非主程序代码改动。 |
 | #587 | 静态 PHP 包缺 pdo_sqlite 扩展 | 属静态包构建配置问题（macOS PHP-8.2.30）。需在静态编译配置中确认/补入 pdo_sqlite，归构建侧处理。 |

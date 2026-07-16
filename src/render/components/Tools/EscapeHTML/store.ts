@@ -5,7 +5,7 @@ import { escape, unescape } from 'lodash-es'
 import { clipboard } from '@/util/NodeFn'
 
 const store = reactive({
-  encodeInput: '<title>FlyEnv</title>',
+  encodeInput: '<title>SemarEnv</title>',
   encodeOutput: '',
   doEncode() {
     this.encodeOutput = escape(this.encodeInput)
@@ -14,7 +14,7 @@ const store = reactive({
     clipboard.writeText(this.encodeOutput)
     MessageSuccess(I18nT('base.success'))
   },
-  decodeInput: '&lt;title&gt;FlyEnv&lt;/title&gt;',
+  decodeInput: '&lt;title&gt;SemarEnv&lt;/title&gt;',
   decodeOutput: '',
   doDecode() {
     this.decodeOutput = unescape(this.decodeInput)

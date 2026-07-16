@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Tareas programadas",
   "add": "Agregar tarea programada",
   "name": "Nombre de la tarea",
@@ -101,7 +101,7 @@
   "allTasks": "Todas las tareas",
   "systemTasks": "Tareas del sistema",
   "systemTask": "Tarea del sistema",
-  "flyenvTask": "Tarea de FlyEnv",
+  "semarenvTask": "Tarea de SemarEnv",
   "otherTask": "Otra tarea",
   "taskTrigger": "Disparador",
   "deleteSystemTaskTips": "¿Eliminar esta tarea programada del sistema?",

@@ -138,13 +138,13 @@ class Ruby extends Base {
   }
 
   getConfigFiles(_version?: SoftInstalled): Array<{ name: string; path: string }> {
-    // Ruby is managed as a language/runtime interpreter; FlyEnv does not generate or manage
+    // Ruby is managed as a language/runtime interpreter; SemarEnv does not generate or manage
     // any Ruby-specific configuration files for this module.
     return []
   }
 
   getLogFiles(_version?: SoftInstalled): Array<{ name: string; path: string }> {
-    // Ruby is managed as a language/runtime interpreter; FlyEnv does not generate or manage
+    // Ruby is managed as a language/runtime interpreter; SemarEnv does not generate or manage
     // any Ruby-specific log files for this module.
     return []
   }

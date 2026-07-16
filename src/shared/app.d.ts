@@ -76,7 +76,7 @@ export interface SystemScheduledTask {
   enabled?: boolean
   description?: string
   author?: string
-  isFlyEnv?: boolean
+  isSemarEnv?: boolean
   jobId?: string
   raw?: string
 }

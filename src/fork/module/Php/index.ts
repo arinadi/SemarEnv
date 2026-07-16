@@ -194,7 +194,7 @@ class Php extends Base {
         content = content.replace(regex, ``).trim()
         if (name === 'xdebug.so') {
           content = content
-            .replace(/;\[FlyEnv-xdebug-ini-begin\]([\s\S]*?);\[FlyEnv-xdebug-ini-end\]/g, ``)
+            .replace(/;\[SemarEnv-xdebug-ini-begin\]([\s\S]*?);\[SemarEnv-xdebug-ini-end\]/g, ``)
             .trim()
         }
       } else {
@@ -202,7 +202,7 @@ class Php extends Base {
         if (name === 'xdebug.so') {
           const output_dir = join(global.Server.PhpDir!, 'xdebug')
           await mkdirp(output_dir)
-          content += `\n;[FlyEnv-xdebug-ini-begin]
+          content += `\n;[SemarEnv-xdebug-ini-begin]
 xdebug.idekey = "PHPSTORM"
 xdebug.client_host = localhost
 xdebug.client_port = 9003
@@ -212,7 +212,7 @@ xdebug.profiler_output_name = cachegrind.out.%p
 xdebug.start_with_request = yes
 xdebug.trigger_value=StartProfileForMe
 xdebug.output_dir = "${output_dir}"
-;[FlyEnv-xdebug-ini-end]`
+;[SemarEnv-xdebug-ini-end]`
         }
       }
       content = content.trim()

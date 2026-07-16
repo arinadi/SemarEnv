@@ -13,7 +13,7 @@ const MariaDB = reactive({
   volumes: [
     {
       type: 'bind',
-      source: './flyenv-docker-compose/mariadb/data',
+      source: './semarenv-docker-compose/mariadb/data',
       target: '/var/lib/mysql'
     }
   ],
@@ -42,13 +42,13 @@ const MariaDB = reactive({
       image: `${mirror}mariadb:${MariaDB.version}`,
       ports: MariaDB.ports.map((p) => `${p.out}:${p.in}`),
       environment,
-      networks: ['flyenv-network']
+      networks: ['semarenv-network']
     }
 
     // 如果需要持久化数据，创建数据目录
     if (MariaDB.persistence) {
       mariadb.volumes = MariaDB.volumes
-      await fs.mkdirp(join(dirname(base.dir), 'flyenv-docker-compose/mariadb/data'))
+      await fs.mkdirp(join(dirname(base.dir), 'semarenv-docker-compose/mariadb/data'))
     }
 
     return {

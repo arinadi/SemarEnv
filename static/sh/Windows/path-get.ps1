@@ -1,4 +1,4 @@
-[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+﻿[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $regPath = "SYSTEM\CurrentControlSet\Control\Session Manager\Environment"
 try {
     $regKey = [Microsoft.Win32.RegistryKey]::OpenBaseKey('LocalMachine', [Microsoft.Win32.RegistryView]::Registry64)
@@ -8,9 +8,9 @@ try {
             $rawValue = $subKey.GetValue("Path", $null, [Microsoft.Win32.RegistryValueOptions]::DoNotExpandEnvironmentNames)
             $subKey.Close()
 		          $regKey.Close()
-		          Write-Host "##FlyEnv-PATH-GET"
+		          Write-Host "##SemarEnv-PATH-GET"
             $rawValue
-            Write-Host "FlyEnv-PATH-GET##"
+            Write-Host "SemarEnv-PATH-GET##"
         } else {
             $regKey.Close()
             exit 1

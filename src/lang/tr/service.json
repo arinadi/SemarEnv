@@ -1,22 +1,22 @@
 {
   "setaliase": "Takma Ad Ayarla",
-  "env": "Ortam Değişkeni",
+  "env": "Ortam DeÄŸiÅŸkeni",
   "alias": "Takma Ad",
-  "envTips": "Yol, ortam değişkenine eklendi mi?",
-  "aliasTips": "Terminalde kullanılacak takma ad",
-  "useSysPHP": "Varsayılan PHP sürümünü kullan",
-  "setByApp": "FlyEnv tarafından ayarlanmış ortam değişkenleri",
-  "setByNoApp": "FlyEnv tarafından ayarlanmamış ortam değişkenleri",
-  "ftpdNeedPasswordToStart": "Pure-FTPd çalıştırmak için sudo yetkileri gereklidir. Lütfen kullanıcı şifrenizi girin. Bu şifre daha sonra otomatik doldurma için kullanılacaktır. Veya aşağıdaki butona tıklayarak terminalde manuel olarak girebilirsiniz, ancak bu uyarı tekrar görünebilir.",
-  "bundleinVersionDelTips": "Bu sürüm yerleşik bir sürümdür, görüntülenmediğini doğruluyor musunuz?",
-  "customDirVersionDelTips": "Bu sürüm özel bir yol sürümüdür, görüntülenmediğini doğruluyor musunuz?",
+  "envTips": "Yol, ortam deÄŸiÅŸkenine eklendi mi?",
+  "aliasTips": "Terminalde kullanÄ±lacak takma ad",
+  "useSysPHP": "VarsayÄ±lan PHP sÃ¼rÃ¼mÃ¼nÃ¼ kullan",
+  "setByApp": "SemarEnv tarafÄ±ndan ayarlanmÄ±ÅŸ ortam deÄŸiÅŸkenleri",
+  "setByNoApp": "SemarEnv tarafÄ±ndan ayarlanmamÄ±ÅŸ ortam deÄŸiÅŸkenleri",
+  "ftpdNeedPasswordToStart": "Pure-FTPd Ã§alÄ±ÅŸtÄ±rmak iÃ§in sudo yetkileri gereklidir. LÃ¼tfen kullanÄ±cÄ± ÅŸifrenizi girin. Bu ÅŸifre daha sonra otomatik doldurma iÃ§in kullanÄ±lacaktÄ±r. Veya aÅŸaÄŸÄ±daki butona tÄ±klayarak terminalde manuel olarak girebilirsiniz, ancak bu uyarÄ± tekrar gÃ¶rÃ¼nebilir.",
+  "bundleinVersionDelTips": "Bu sÃ¼rÃ¼m yerleÅŸik bir sÃ¼rÃ¼mdÃ¼r, gÃ¶rÃ¼ntÃ¼lenmediÄŸini doÄŸruluyor musunuz?",
+  "customDirVersionDelTips": "Bu sÃ¼rÃ¼m Ã¶zel bir yol sÃ¼rÃ¼mÃ¼dÃ¼r, gÃ¶rÃ¼ntÃ¼lenmediÄŸini doÄŸruluyor musunuz?",
   "ErrorTips": {
     "VCRuntime": {
-      "title": "Bu sürümü çalıştırmak için sisteminizde Visual C++ Redistributable (DLL) eksik. Lütfen aşağıdaki bağlantıdan Microsoft'un resmi sitesinden VC Runtime'ı indirip kurun.",
-      "versionRelation": "Sürüm Uyumluluk Referansı:",
-      "software": "Yazılım",
-      "versionRange": "Sürüm Aralığı",
-      "msvsVersion": "MSVC Sürümü"
+      "title": "Bu sÃ¼rÃ¼mÃ¼ Ã§alÄ±ÅŸtÄ±rmak iÃ§in sisteminizde Visual C++ Redistributable (DLL) eksik. LÃ¼tfen aÅŸaÄŸÄ±daki baÄŸlantÄ±dan Microsoft'un resmi sitesinden VC Runtime'Ä± indirip kurun.",
+      "versionRelation": "SÃ¼rÃ¼m Uyumluluk ReferansÄ±:",
+      "software": "YazÄ±lÄ±m",
+      "versionRange": "SÃ¼rÃ¼m AralÄ±ÄŸÄ±",
+      "msvsVersion": "MSVC SÃ¼rÃ¼mÃ¼"
     }
   }
 }

@@ -7,8 +7,7 @@
 - **Version**: 4.13.2
 - **Electron Version**: 35.7.5
 - **License**: MIT
-- **Author**: Pengfei Xu
-- **Repository**: <https://github.com/xpf0000/FlyEnv>
+- **Repository**: <https://github.com/arinadi/SemarEnv>
 
 ## Technology Stack
 
@@ -34,7 +33,7 @@
 
 ## Project Architecture
 
-FlyEnv follows Electron's multi-process architecture with three main components:
+SemarEnv follows Electron's multi-process architecture with three main components:
 
 ### 1. Main Process (`/src/main`)
 
@@ -278,8 +277,8 @@ Contains various test files and utilities:
 
 ```bash
 # Clone and install
-git clone git@github.com:xpf0000/FlyEnv.git
-cd FlyEnv
+git clone git@github.com:arinadi/SemarEnv.git
+cd SemarEnv
 yarn install
 
 # Development
@@ -294,11 +293,11 @@ yarn build
 **macOS**:
 
 - May require `sudo xattr -dr "com.apple.quarantine"` for helper binaries
-- Uses `flyenv-helper` for privileged operations
+- Uses `semarenv-helper` for privileged operations
 
 **Windows**:
 
-- Uses `flyenv-helper-windows-amd64-v1.exe` Go binary for admin tasks
+- Uses `semarenv-helper-windows-amd64-v1.exe` Go binary for admin tasks
 - PowerShell scripts in `/scripts/`
 
 **Linux**:
@@ -331,7 +330,7 @@ yarn build
 
 ```bash
 # Fix macOS helper permissions
-yarn fix-flyenv-helper
+yarn fix-semarenv-helper
 
 # Kill running Electron processes (Windows)
 npx tsx scripts/electron-process-kill.ts
@@ -349,6 +348,6 @@ yarn upgrade-interactive
 ## Resources
 
 - **Website**: <https://www.flyenv.com>
-- **Documentation**: <https://deepwiki.com/xpf0000/FlyEnv>
+- **Documentation**: <https://deepwiki.com/arinadi/SemarEnv>
 - **Discord**: <https://discord.gg/u5SuMGxjPE>
-- **Releases**: <https://github.com/xpf0000/FlyEnv/releases>
+- **Releases**: <https://github.com/arinadi/SemarEnv/releases>

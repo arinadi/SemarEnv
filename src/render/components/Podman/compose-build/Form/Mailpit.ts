@@ -28,7 +28,7 @@ const Mailpit = reactive({
       image: `${mirror}${image}:${Mailpit.version}`,
       ports: Mailpit.ports.map((p) => `${p.out}:${p.in}`),
       environment: Mailpit.environment,
-      networks: ['flyenv-network']
+      networks: ['semarenv-network']
     }
 
     return { mailpit }

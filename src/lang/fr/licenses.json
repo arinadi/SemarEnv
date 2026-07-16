@@ -1,60 +1,60 @@
 {
-  "description": "La licence est une reconnaissance et un soutien pour le travail acharné de FlyEnv et de ses auteurs. Son objectif n'est pas de restreindre les utilisateurs mais de leur rappeler de respecter les efforts des développeurs et de se conformer aux termes pertinents lors de l'utilisation du logiciel. En respectant la licence, les utilisateurs soutiennent non seulement le développement continu du projet, mais contribuent également à l'esprit de confiance et de collaboration au sein de la communauté open source.",
+  "description": "La licence est une reconnaissance et un soutien pour le travail acharnÃ© de SemarEnv et de ses auteurs. Son objectif n'est pas de restreindre les utilisateurs mais de leur rappeler de respecter les efforts des dÃ©veloppeurs et de se conformer aux termes pertinents lors de l'utilisation du logiciel. En respectant la licence, les utilisateurs soutiennent non seulement le dÃ©veloppement continu du projet, mais contribuent Ã©galement Ã  l'esprit de confiance et de collaboration au sein de la communautÃ© open source.",
   "restrictions": {
     "title": "Les utilisateurs sans licence seront soumis aux restrictions suivantes :",
     "items": {
-      "0": "Un maximum de trois sites peut être créés.",
-      "1": "La fonctionnalité de chat IA est disponible pour une période d'essai de trois jours seulement.",
-      "2": "Des restrictions supplémentaires peuvent s'appliquer aux fonctionnalités futures."
+      "0": "Un maximum de trois sites peut Ãªtre crÃ©Ã©s.",
+      "1": "La fonctionnalitÃ© de chat IA est disponible pour une pÃ©riode d'essai de trois jours seulement.",
+      "2": "Des restrictions supplÃ©mentaires peuvent s'appliquer aux fonctionnalitÃ©s futures."
     }
   },
   "howToObtain": {
     "title": "Comment obtenir une licence",
-    "description": "FlyEnv propose des moyens flexibles pour obtenir une licence. Les utilisateurs peuvent choisir l'une des méthodes suivantes pour postuler :",
+    "description": "SemarEnv propose des moyens flexibles pour obtenir une licence. Les utilisateurs peuvent choisir l'une des mÃ©thodes suivantes pour postuler :",
     "methods": {
       "0": {
         "title": "Faire un don au projet",
-        "description": "Aucun montant fixe n'est requis pour les dons. Compte tenu des situations économiques variées des utilisateurs dans différents pays (par exemple, de nombreux utilisateurs sont des étudiants), veuillez choisir un montant adapté à vos circonstances."
+        "description": "Aucun montant fixe n'est requis pour les dons. Compte tenu des situations Ã©conomiques variÃ©es des utilisateurs dans diffÃ©rents pays (par exemple, de nombreux utilisateurs sont des Ã©tudiants), veuillez choisir un montant adaptÃ© Ã  vos circonstances."
       },
       "1": {
-        "title": "Contribuer au développement",
-        "description": "Participez au projet en soumettant une Pull Request. Quelle que soit la quantité de code, tant qu'elle améliore positivement le projet (par exemple, corriger une erreur de traduction), elle est éligible."
+        "title": "Contribuer au dÃ©veloppement",
+        "description": "Participez au projet en soumettant une Pull Request. Quelle que soit la quantitÃ© de code, tant qu'elle amÃ©liore positivement le projet (par exemple, corriger une erreur de traduction), elle est Ã©ligible."
       },
       "2": {
         "title": "Promouvoir le projet",
-        "description": "Promouvez FlyEnv en partageant votre expérience dans des articles, vidéos, blogs, vlogs ou commentaires. Les retours d'utilisateurs authentiques sont préférés. Le contenu peut être dans n'importe quelle langue et sur n'importe quelle plateforme, tant qu'il est disponible publiquement en ligne."
+        "description": "Promouvez SemarEnv en partageant votre expÃ©rience dans des articles, vidÃ©os, blogs, vlogs ou commentaires. Les retours d'utilisateurs authentiques sont prÃ©fÃ©rÃ©s. Le contenu peut Ãªtre dans n'importe quelle langue et sur n'importe quelle plateforme, tant qu'il est disponible publiquement en ligne."
       }
     }
   },
-  "submitInfo": "Après avoir complété l'une des méthodes ci-dessus, veuillez remplir les résultats dans la fenêtre de saisie ci-dessous et cliquez sur le bouton 'Demander une licence' pour soumettre votre demande. Les demandes de licence sont examinées manuellement, alors soyez patient. Elles sont généralement traitées rapidement.",
+  "submitInfo": "AprÃ¨s avoir complÃ©tÃ© l'une des mÃ©thodes ci-dessus, veuillez remplir les rÃ©sultats dans la fenÃªtre de saisie ci-dessous et cliquez sur le bouton 'Demander une licence' pour soumettre votre demande. Les demandes de licence sont examinÃ©es manuellement, alors soyez patient. Elles sont gÃ©nÃ©ralement traitÃ©es rapidement.",
   "messageLabel": "Message",
-  "messagePlaceholder": "Veuillez soumettre le donateur, le lien de don ou l'ID de commande lors du choix de faire un don.\nVeuillez soumettre le lien PR pour ceux qui choisissent de participer au développement du projet.\nVeuillez soumettre le lien de l'article/vidéo si vous choisissez d'aider à promouvoir le projet",
+  "messagePlaceholder": "Veuillez soumettre le donateur, le lien de don ou l'ID de commande lors du choix de faire un don.\nVeuillez soumettre le lien PR pour ceux qui choisissent de participer au dÃ©veloppement du projet.\nVeuillez soumettre le lien de l'article/vidÃ©o si vous choisissez d'aider Ã  promouvoir le projet",
   "requestButton": "Demander une licence",
-  "refreshButton": "Actualiser l'état",
-  "licenseActivated": "Licence activée",
-  "licenseNoActivated": "Licence non activée",
-  "licenseInfo": "La licence actuellement fournie est une licence permanente, chaque ordinateur correspond à une licence. Si vous changez d'ordinateur, vous devez lier l'uuid du nouvel appareil dans 'Mes Licences', ou demander une nouvelle licence.",
-  "logoutTips": "Êtes-vous sûr de vouloir vous déconnecter ?",
-  "delBindTips": "Êtes-vous sûr de vouloir dissocier la licence de cet UUID ?",
-  "addBindTips": "Êtes-vous sûr de vouloir lier la licence à cet UUID ?",
-  "currentLicenseState": "État de la licence sur cet appareil",
-  "activeState": "État d'Activation",
+  "refreshButton": "Actualiser l'Ã©tat",
+  "licenseActivated": "Licence activÃ©e",
+  "licenseNoActivated": "Licence non activÃ©e",
+  "licenseInfo": "La licence actuellement fournie est une licence permanente, chaque ordinateur correspond Ã  une licence. Si vous changez d'ordinateur, vous devez lier l'uuid du nouvel appareil dans 'Mes Licences', ou demander une nouvelle licence.",
+  "logoutTips": "ÃŠtes-vous sÃ»r de vouloir vous dÃ©connecter ?",
+  "delBindTips": "ÃŠtes-vous sÃ»r de vouloir dissocier la licence de cet UUID ?",
+  "addBindTips": "ÃŠtes-vous sÃ»r de vouloir lier la licence Ã  cet UUID ?",
+  "currentLicenseState": "Ã‰tat de la licence sur cet appareil",
+  "activeState": "Ã‰tat d'Activation",
   "myLicense": "Mes Licences",
   "loginTips": "Veuillez d'abord vous connecter",
   "logingTips": "Connexion via GitHub en cours...",
-  "licenseNo": "Numéro de Licence",
-  "licenseBindUUID": "UUID lié",
+  "licenseNo": "NumÃ©ro de Licence",
+  "licenseBindUUID": "UUID liÃ©",
   "delBind": "Dissocier",
   "bindCurrentUUID": "Lier cet Appareil",
-  "loginFail": "Échec de la connexion",
-  "oauthCanceledTitle": "Autorisation annulée",
-  "oauthCanceledMessage": "L'utilisateur a annulé le processus d'autorisation",
-  "oauthFailedTitle": "Échec de l'autorisation",
-  "oauthFailedMessage": "L'autorisation a échoué. Raison : {error}",
-  "oauthFailedByNoAuthCode": "Code d'autorisation non reçu",
-  "oauthTimeout": "Délai d'autorisation expiré",
-  "oauthSuccessTitle": "Autorisation réussie",
-  "oauthSuccessMessage": "Cette page peut être fermée. Veuillez retourner dans FlyEnv pour consulter les informations de licence.",
-  "trialExpiredTitle": "Licence non activée",
-  "trialExpiredTips": "Vous utilisez FlyEnv depuis {days} jours. Si FlyEnv vous a été utile, veuillez envisager d'obtenir une licence pour soutenir le projet."
+  "loginFail": "Ã‰chec de la connexion",
+  "oauthCanceledTitle": "Autorisation annulÃ©e",
+  "oauthCanceledMessage": "L'utilisateur a annulÃ© le processus d'autorisation",
+  "oauthFailedTitle": "Ã‰chec de l'autorisation",
+  "oauthFailedMessage": "L'autorisation a Ã©chouÃ©. Raison : {error}",
+  "oauthFailedByNoAuthCode": "Code d'autorisation non reÃ§u",
+  "oauthTimeout": "DÃ©lai d'autorisation expirÃ©",
+  "oauthSuccessTitle": "Autorisation rÃ©ussie",
+  "oauthSuccessMessage": "Cette page peut Ãªtre fermÃ©e. Veuillez retourner dans SemarEnv pour consulter les informations de licence.",
+  "trialExpiredTitle": "Licence non activÃ©e",
+  "trialExpiredTips": "Vous utilisez SemarEnv depuis {days} jours. Si SemarEnv vous a Ã©tÃ© utile, veuillez envisager d'obtenir une licence pour soutenir le projet."
 }

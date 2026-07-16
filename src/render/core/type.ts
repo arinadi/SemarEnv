@@ -12,10 +12,7 @@ export enum AppModuleTypeEnum {
   ftpServer = 'ftpServer',
   other = 'other',
   objectStorage = 'objectStorage',
-  aiCoding = 'aiCoding',
-  ai = 'ai',
-  containerRuntime = 'containerRuntime',
-  networkTunnel = 'networkTunnel'
+  containerRuntime = 'containerRuntime'
 }
 
 export type AllAppModuleType = keyof typeof AppModuleTypeEnum
@@ -23,10 +20,7 @@ export type AllAppModuleType = keyof typeof AppModuleTypeEnum
 export const AppModuleTypeList: AllAppModuleType[] = [
   'console',
   'site',
-  'aiCoding',
-  'ai',
   'containerRuntime',
-  'networkTunnel',
   'webServer',
   'language',
   'dataBaseServer',
@@ -71,7 +65,6 @@ export enum AppModuleEnum {
   erlang = 'erlang',
   ruby = 'ruby',
   elasticsearch = 'elasticsearch',
-  ollama = 'ollama',
   minio = 'minio',
   rust = 'rust',
   meilisearch = 'meilisearch',
@@ -87,14 +80,8 @@ export enum AppModuleEnum {
   podman = 'podman',
   zig = 'zig',
   qdrant = 'qdrant',
-  'cloudflare-tunnel' = 'cloudflare-tunnel',
-  cloudflared = 'cloudflared',
-  openclaw = 'openclaw',
-  hermes = 'hermes',
-  n8n = 'n8n',
   rustfs = 'rustfs',
   mkcert = 'mkcert',
-  cliproxyapi = 'cliproxyapi',
   numa = 'numa',
   rnacos = 'rnacos',
   frankenphp = 'frankenphp',
@@ -102,14 +89,7 @@ export enum AppModuleEnum {
   'swoole-cli' = 'swoole-cli',
   flutter = 'flutter',
   git = 'git',
-  dotnet = 'dotnet',
-  kimi = 'kimi',
-  claudeCode = 'claudeCode',
-  codex = 'codex',
-  openCode = 'openCode',
-  antigravity = 'antigravity',
-  copilotCli = 'copilotCli',
-  mcp = 'mcp'
+  dotnet = 'dotnet'
 }
 
 export type AllAppModule = keyof typeof AppModuleEnum

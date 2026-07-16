@@ -311,7 +311,7 @@
     const compose = {
       services,
       networks: {
-        'flyenv-network': {
+        'semarenv-network': {
           driver: 'bridge'
         }
       }

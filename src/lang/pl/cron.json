@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Zaplanowane zadania",
   "add": "Dodaj zaplanowane zadanie",
   "name": "Nazwa zadania",
@@ -101,7 +101,7 @@
   "allTasks": "Wszystkie zadania",
   "systemTasks": "Zadania systemowe",
   "systemTask": "Zadanie systemowe",
-  "flyenvTask": "Zadanie FlyEnv",
+  "semarenvTask": "Zadanie SemarEnv",
   "otherTask": "Inne zadanie",
   "taskTrigger": "Wyzwalacz",
   "deleteSystemTaskTips": "Usunąć to zaplanowane zadanie systemowe?",

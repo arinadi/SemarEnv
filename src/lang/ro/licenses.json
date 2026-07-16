@@ -1,60 +1,60 @@
 {
-  "description": "Această licență recunoaște și sprijină eforturile lui FlyEnv și ale autorilor săi. Aceasta nu este destinată restricţionării utilizatorilor, ci încurajării respectului pentru activitatea dezvoltatorilor şi pentru proprietatea intelectuală. Asigurați-vă că obțineți o licență valabilă înainte de a utiliza FlyEnv în scopuri comerciale.",
+  "description": "AceastÄƒ licenÈ›Äƒ recunoaÈ™te È™i sprijinÄƒ eforturile lui SemarEnv È™i ale autorilor sÄƒi. Aceasta nu este destinatÄƒ restricÅ£ionÄƒrii utilizatorilor, ci Ã®ncurajÄƒrii respectului pentru activitatea dezvoltatorilor ÅŸi pentru proprietatea intelectualÄƒ. AsiguraÈ›i-vÄƒ cÄƒ obÈ›ineÈ›i o licenÈ›Äƒ valabilÄƒ Ã®nainte de a utiliza SemarEnv Ã®n scopuri comerciale.",
   "restrictions": {
-    "title": "Utilizatorii care nu dețin o licență vor face obiectul următoarelor restricții:",
+    "title": "Utilizatorii care nu deÈ›in o licenÈ›Äƒ vor face obiectul urmÄƒtoarelor restricÈ›ii:",
     "items": {
       "0": "Pot fi create maximum trei situri.",
-      "1": "Funcția de chat AI este disponibilă doar pentru o perioadă de probă de trei zile.",
-      "2": "Se pot aplica restricții suplimentare caracteristicilor viitoare."
+      "1": "FuncÈ›ia de chat AI este disponibilÄƒ doar pentru o perioadÄƒ de probÄƒ de trei zile.",
+      "2": "Se pot aplica restricÈ›ii suplimentare caracteristicilor viitoare."
     }
   },
   "howToObtain": {
-    "title": "Cum să obții o licență",
-    "description": "FlyEnv oferă modalități flexibile de a obține o licență. Utilizatorii pot alege oricare dintre următoarele metode de aplicat:",
+    "title": "Cum sÄƒ obÈ›ii o licenÈ›Äƒ",
+    "description": "SemarEnv oferÄƒ modalitÄƒÈ›i flexibile de a obÈ›ine o licenÈ›Äƒ. Utilizatorii pot alege oricare dintre urmÄƒtoarele metode de aplicat:",
     "methods": {
       "0": {
-        "title": "Donează pentru Proiect",
-        "description": "Nu este necesară o sumă fixă pentru donații. Luând în considerare situațiile economice diferite ale utilizatorilor din diferite țări (e. ., mulți utilizatori sunt elevi), vă rugăm să alegeți o sumă confortabilă pentru dvs."
+        "title": "DoneazÄƒ pentru Proiect",
+        "description": "Nu este necesarÄƒ o sumÄƒ fixÄƒ pentru donaÈ›ii. LuÃ¢nd Ã®n considerare situaÈ›iile economice diferite ale utilizatorilor din diferite È›Äƒri (e. ., mulÈ›i utilizatori sunt elevi), vÄƒ rugÄƒm sÄƒ alegeÈ›i o sumÄƒ confortabilÄƒ pentru dvs."
       },
       "1": {
         "title": "Contribuie la dezvoltare",
-        "description": "Participă la proiect prin depunerea unei solicitări Pull Request. Indiferent de cantitatea de cod, atât timp cât îmbunătățește pozitiv proiectul (e. ., reparând o eroare de traducere), contribuţia ta contează."
+        "description": "ParticipÄƒ la proiect prin depunerea unei solicitÄƒri Pull Request. Indiferent de cantitatea de cod, atÃ¢t timp cÃ¢t Ã®mbunÄƒtÄƒÈ›eÈ™te pozitiv proiectul (e. ., reparÃ¢nd o eroare de traducere), contribuÅ£ia ta conteazÄƒ."
       },
       "2": {
         "title": "Promovarea proiectului",
-        "description": "Promovează FlyEnv partajând experiența ta în articole, videoclipuri, bloguri, vlog-uri sau comentarii. Feedback-ul utilizatorului autentic este preferat. Conținutul poate fi în orice limbă și pe orice platformă."
+        "description": "PromoveazÄƒ SemarEnv partajÃ¢nd experienÈ›a ta Ã®n articole, videoclipuri, bloguri, vlog-uri sau comentarii. Feedback-ul utilizatorului autentic este preferat. ConÈ›inutul poate fi Ã®n orice limbÄƒ È™i pe orice platformÄƒ."
       }
     }
   },
-  "submitInfo": "după completarea oricăruia dintre metodele de mai sus, vă rugăm să completați rezultatele în caseta de mai jos și să faceți clic pe butonul 'Solicitare licență' pentru a remite cererea dvs. Cererile de licenţă sunt de obicei procesate în 24 de ore.",
+  "submitInfo": "dupÄƒ completarea oricÄƒruia dintre metodele de mai sus, vÄƒ rugÄƒm sÄƒ completaÈ›i rezultatele Ã®n caseta de mai jos È™i sÄƒ faceÈ›i clic pe butonul 'Solicitare licenÈ›Äƒ' pentru a remite cererea dvs. Cererile de licenÅ£Äƒ sunt de obicei procesate Ã®n 24 de ore.",
   "messageLabel": "Mesaj",
-  "messagePlaceholder": "Vă rugăm să trimiteți link-ul de donație, sau ID-ul comenzii atunci când alegeți să donați.\nVă rugăm să trimiteți link-ul PR pentru cei care aleg să participe la dezvoltarea proiectului.\nVă rugăm să trimiteți un link către articole, video, blog, vlog, sau să comentați pentru cei care aleg să promoveze.",
-  "requestButton": "Solicită licență",
-  "refreshButton": "Reîmprospătare stare",
-  "licenseActivated": "Licență activată",
+  "messagePlaceholder": "VÄƒ rugÄƒm sÄƒ trimiteÈ›i link-ul de donaÈ›ie, sau ID-ul comenzii atunci cÃ¢nd alegeÈ›i sÄƒ donaÈ›i.\nVÄƒ rugÄƒm sÄƒ trimiteÈ›i link-ul PR pentru cei care aleg sÄƒ participe la dezvoltarea proiectului.\nVÄƒ rugÄƒm sÄƒ trimiteÈ›i un link cÄƒtre articole, video, blog, vlog, sau sÄƒ comentaÈ›i pentru cei care aleg sÄƒ promoveze.",
+  "requestButton": "SolicitÄƒ licenÈ›Äƒ",
+  "refreshButton": "ReÃ®mprospÄƒtare stare",
+  "licenseActivated": "LicenÈ›Äƒ activatÄƒ",
   "licenseNoActivated": "Licenta nu este activata",
-  "licenseInfo": "Licența oferită în prezent este o licență permanentă, fiecare computer corespunde unei licențe. Dacă schimbați computerul, trebuie să legați uuid-ul noului dispozitiv în 'Licențele mele' sau să solicitați o licență nouă.",
-  "logoutTips": "Sigur doriți să vă deconectați?",
-  "delBindTips": "Sigur doriți să dezlegați licența de acest UUID?",
-  "addBindTips": "Sigur doriți să legați licența la acest UUID?",
-  "currentLicenseState": "Starea licenței pe acest dispozitiv",
+  "licenseInfo": "LicenÈ›a oferitÄƒ Ã®n prezent este o licenÈ›Äƒ permanentÄƒ, fiecare computer corespunde unei licenÈ›e. DacÄƒ schimbaÈ›i computerul, trebuie sÄƒ legaÈ›i uuid-ul noului dispozitiv Ã®n 'LicenÈ›ele mele' sau sÄƒ solicitaÈ›i o licenÈ›Äƒ nouÄƒ.",
+  "logoutTips": "Sigur doriÈ›i sÄƒ vÄƒ deconectaÈ›i?",
+  "delBindTips": "Sigur doriÈ›i sÄƒ dezlegaÈ›i licenÈ›a de acest UUID?",
+  "addBindTips": "Sigur doriÈ›i sÄƒ legaÈ›i licenÈ›a la acest UUID?",
+  "currentLicenseState": "Starea licenÈ›ei pe acest dispozitiv",
   "activeState": "Stare Activare",
-  "myLicense": "Licențele mele",
-  "loginTips": "Vă rugăm să vă conectați mai întâi",
+  "myLicense": "LicenÈ›ele mele",
+  "loginTips": "VÄƒ rugÄƒm sÄƒ vÄƒ conectaÈ›i mai Ã®ntÃ¢i",
   "logingTips": "Conectare prin GitHub...",
-  "licenseNo": "Număr Licență",
+  "licenseNo": "NumÄƒr LicenÈ›Äƒ",
   "licenseBindUUID": "UUID Legat",
-  "delBind": "Dezleagă",
-  "bindCurrentUUID": "Leagă acest Dispozitiv",
-  "loginFail": "Autentificare eșuată",
-  "oauthCanceledTitle": "Autorizare anulată",
+  "delBind": "DezleagÄƒ",
+  "bindCurrentUUID": "LeagÄƒ acest Dispozitiv",
+  "loginFail": "Autentificare eÈ™uatÄƒ",
+  "oauthCanceledTitle": "Autorizare anulatÄƒ",
   "oauthCanceledMessage": "Utilizatorul a anulat procesul de autorizare",
-  "oauthFailedTitle": "Autorizare eșuată",
-  "oauthFailedMessage": "Autorizare eșuată. Motiv: {error}",
+  "oauthFailedTitle": "Autorizare eÈ™uatÄƒ",
+  "oauthFailedMessage": "Autorizare eÈ™uatÄƒ. Motiv: {error}",
   "oauthFailedByNoAuthCode": "Cod de autorizare neprimit",
-  "oauthTimeout": "Autorizare expirată",
-  "oauthSuccessTitle": "Autorizare reușită",
-  "oauthSuccessMessage": "Această pagină poate fi închisă. Vă rugăm să reveniți la FlyEnv pentru a vizualiza informațiile despre licență.",
-  "trialExpiredTitle": "Licența nu este activată",
-  "trialExpiredTips": "Folosești FlyEnv de {days} zile. Dacă FlyEnv ți-a fost de ajutor, ia în considerare obținerea unei licențe pentru a susține proiectul."
+  "oauthTimeout": "Autorizare expiratÄƒ",
+  "oauthSuccessTitle": "Autorizare reuÈ™itÄƒ",
+  "oauthSuccessMessage": "AceastÄƒ paginÄƒ poate fi Ã®nchisÄƒ. VÄƒ rugÄƒm sÄƒ reveniÈ›i la SemarEnv pentru a vizualiza informaÈ›iile despre licenÈ›Äƒ.",
+  "trialExpiredTitle": "LicenÈ›a nu este activatÄƒ",
+  "trialExpiredTips": "FoloseÈ™ti SemarEnv de {days} zile. DacÄƒ SemarEnv È›i-a fost de ajutor, ia Ã®n considerare obÈ›inerea unei licenÈ›e pentru a susÈ›ine proiectul."
 }

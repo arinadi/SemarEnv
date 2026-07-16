@@ -20,5 +20,5 @@
   "initDBDataDirSuccess": "Initialisatie van de gegevensmap succesvol, gegevensmap pad: {dir}",
   "initDBDataDirFail": "Initialisatie van gegevensmap is mislukt, reden: {error}",
   "newProjectFail": "Nieuw project maken mislukt",
-  "processListFail": "Proceslijst ophalen mislukt. Installeer FlyEnv Helper"
+  "processListFail": "Proceslijst ophalen mislukt. Installeer SemarEnv Helper"
 }

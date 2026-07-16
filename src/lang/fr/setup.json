@@ -1,4 +1,4 @@
-{
+﻿{
   "tsinghua": "Source de téléchargement de l'Université Tsinghua",
   "bfsu": "Source de téléchargement de l'Université des Études Étrangères de Pékin",
   "tencent": "Source de téléchargement Tencent",
@@ -11,9 +11,9 @@
   "autoHide": "Démarrage masqué / Réduire dans la barre système",
   "autoHideTips": "Masquer l'interface principale et afficher uniquement l'icône dans la barre système après le démarrage automatique des services",
   "autoLaunch": "Lancement automatique au démarrage",
-  "autoLaunchTips": "Lancer FlyEnv automatiquement au démarrage de l'ordinateur",
+  "autoLaunchTips": "Lancer SemarEnv automatiquement au démarrage de l'ordinateur",
   "passwordTips": "Non requis. Le mot de passe sera automatiquement rempli lors de l'exécution des commandes. Par exemple, pour l'installation et la désinstallation avec Macports, etc",
-  "langTips": "Charger des packs de langue définis par l'utilisateur. Cela initialisera également le pack de langue par défaut, facilitant ainsi la traduction de FlyEnv dans d'autres langues.",
+  "langTips": "Charger des packs de langue définis par l'utilisateur. Cela initialisera également le pack de langue par défaut, facilitant ainsi la traduction de SemarEnv dans d'autres langues.",
   "openLangDir": "Ouvrir le dossier des packs de langue",
   "moduleCateAddTips": "Ajouter une catégorie de module",
   "moduleCateName": "Nom de la catégorie de module",
@@ -39,10 +39,10 @@
     "licenseTips": "Aucune licence trouvée. Seuls 3 modules/éléments d'exécution peuvent être créés.",
     "outputLog": "Journal de sortie"
   },
-  "flyenvHelper": "Réparer l'application d'assistance FlyEnv",
-  "flyenvHelperBtn": "Réparer",
-  "flyenvHelperFixSuccess": "Réparation de l'application d'assistance FlyEnv réussie",
-  "flyenvHelperInstallFailTips": "L'installation de l'assistant FlyEnv a échoué. Veuillez essayer d'exécuter FlyEnv avec les privilèges d'administrateur, ou cliquez sur le bouton OK et exécutez manuellement le programme d'assistance flyenv-helper.exe dans le dossier ouvert.",
+  "semarenvHelper": "Réparer l'application d'assistance SemarEnv",
+  "semarenvHelperBtn": "Réparer",
+  "semarenvHelperFixSuccess": "Réparation de l'application d'assistance SemarEnv réussie",
+  "semarenvHelperInstallFailTips": "L'installation de l'assistant SemarEnv a échoué. Veuillez essayer d'exécuter SemarEnv avec les privilèges d'administrateur, ou cliquez sur le bouton OK et exécutez manuellement le programme d'assistance semarenv-helper.exe dans le dossier ouvert.",
   "appFont": "Police de l'interface",
   "appFontTips": "Définir la police utilisée pour l'interface de l'application. Laisser vide pour utiliser la police système par défaut",
   "codeFont": "Police de code",

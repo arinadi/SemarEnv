@@ -27,7 +27,7 @@ const Java = reactive({
       image: `${mirror}Javalang:${Java.version}`,
       ports: Java.ports.map((p) => `${p.out}:${p.in}`),
       environment,
-      networks: ['flyenv-network'],
+      networks: ['semarenv-network'],
       working_dir: '/app',
       command: Java.command
     }

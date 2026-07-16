@@ -83,8 +83,8 @@ export type CustomerModuleItem = {
   item: ModuleCustomerExecItem[]
 }
 
-const APPCustomerModuleCateKey = 'flyenv-customer-module-cate'
-const APPCustomerModuleKey = 'flyenv-customer-module'
+const APPCustomerModuleCateKey = 'semarenv-customer-module-cate'
+const APPCustomerModuleKey = 'semarenv-customer-module'
 
 export const AppCustomerModule: {
   index: number

@@ -2,15 +2,11 @@
   "name": "SemarEnv",
   "version": "4.16.2",
   "description": "All-In-One Full-Stack Environment Management Tool (SemarEnv)",
-  "author": {
-    "name": "Pengfei Xu",
-    "email": "250881478@qq.com"
-  },
-  "copyright": "Copyright © Pengfei Xu",
+  "author": "Pengfei Xu <250881478@qq.com>",
   "scripts": {
     "clean:dev": "npx rimraf dist",
     "clean": "npx rimraf node_modules/node-pty/build",
-    "fix-flyenv-helper": "sudo xattr -dr \"com.apple.quarantine\" ./build/bin/arm/flyenv-helper && sudo xattr -dr \"com.apple.quarantine\" ./build/bin/x86/flyenv-helper",
+    "fix-semarenv-helper": "sudo xattr -dr \"com.apple.quarantine\" ./build/bin/arm/semarenv-helper && sudo xattr -dr \"com.apple.quarantine\" ./build/bin/x86/semarenv-helper",
     "build-dev-runner": "npx esbuild --platform=node --bundle --packages=external --inject:scripts/shim-dynamic-require.mjs --format=esm scripts/dev-runner.ts --outfile=electron/dev-runner.mjs",
     "dev": "yarn run clean:dev && yarn run build-dev-runner && cross-env NODE_ENV=development node electron/dev-runner.mjs",
     "build": "yarn run clean:dev && yarn run clean && cross-env NODE_ENV=production npx esbuild --platform=node --bundle --packages=external --inject:scripts/shim-dynamic-require.mjs --format=esm scripts/app-builder.ts --outfile=electron/app-builder.mjs && cross-env NODE_ENV=production node electron/app-builder.mjs",
@@ -42,7 +38,7 @@
     "@mdit-vue/plugin-title": "^2.1.4",
     "@mdit-vue/plugin-toc": "^2.1.4",
     "@mdit-vue/shared": "^2.1.4",
-    "@modelcontextprotocol/sdk": "1.29.0",
+
     "@regexper/render": "^1.0.0",
     "@shikijs/core": "^3.4.2",
     "@shikijs/transformers": "^3.4.2",

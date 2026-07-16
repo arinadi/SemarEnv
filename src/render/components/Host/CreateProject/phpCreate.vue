@@ -238,29 +238,29 @@
         command.push(`export PATH="${form.php}:$PATH"`)
         command.push(`"${form.php}" "${form.composer}" self-update`)
         command.push(
-          `"${form.php}" "${form.composer}" create-project --prefer-dist "${name}" "flyenv-created-project" "${form.version}"`
+          `"${form.php}" "${form.composer}" create-project --prefer-dist "${name}" "semarenv-created-project" "${form.version}"`
         )
       } else if (form.php) {
         command.push(`export PATH="${form.php}:$PATH"`)
         command.push(`composer self-update`)
         command.push(
-          `composer create-project --prefer-dist "${name}" "flyenv-created-project" "${form.version}"`
+          `composer create-project --prefer-dist "${name}" "semarenv-created-project" "${form.version}"`
         )
       } else if (form.composer) {
         command.push(`php "${form.composer}" self-update`)
         command.push(
-          `php "${form.composer}" create-project --prefer-dist "${name}" "flyenv-created-project" "${form.version}"`
+          `php "${form.composer}" create-project --prefer-dist "${name}" "semarenv-created-project" "${form.version}"`
         )
       } else {
         command.push(`composer self-update`)
         command.push(
-          `composer create-project --prefer-dist "${name}" "flyenv-created-project" "${form.version}"`
+          `composer create-project --prefer-dist "${name}" "semarenv-created-project" "${form.version}"`
         )
       }
-      command.push(`cd flyenv-created-project`)
+      command.push(`cd semarenv-created-project`)
       command.push(`mv ./* ../`)
       command.push(`cd ../`)
-      command.push(`rm -rf flyenv-created-project`)
+      command.push(`rm -rf semarenv-created-project`)
     }
 
     nextTick().then(() => {

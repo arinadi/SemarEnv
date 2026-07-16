@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Zamanlanan Görevler",
   "add": "Zamanlanan Görev Ekle",
   "name": "Görev Adı",
@@ -101,7 +101,7 @@
   "allTasks": "Tüm görevler",
   "systemTasks": "Sistem Görevleri",
   "systemTask": "Sistem Görevi",
-  "flyenvTask": "FlyEnv Görevi",
+  "semarenvTask": "SemarEnv Görevi",
   "otherTask": "Diğer Görev",
   "taskTrigger": "Tetikleyici",
   "deleteSystemTaskTips": "Bu sistem zamanlanmış görevi silinsin mi?",

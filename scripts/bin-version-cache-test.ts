@@ -17,7 +17,7 @@ import type { BinVersionCacheGetResponse } from '../src/shared/BinVersionCache'
 import { BinVersionCacheAccess, normalizeBinVersionPath } from '../src/fork/util/BinVersionCache'
 
 const nginxFingerprint: BinVersionFingerprint = {
-  path: '/opt/flyenv/nginx',
+  path: '/opt/semarenv/nginx',
   mtimeMs: 100,
   size: 200
 }
@@ -51,7 +51,7 @@ assert.equal(
   isBinVersionCacheFile({
     schemaVersion: 1,
     entries: {
-      '/opt/flyenv/nginx': {
+      '/opt/semarenv/nginx': {
         mtimeMs: 100,
         size: 200,
         value: { version: '1.27.4' }
@@ -73,7 +73,7 @@ const persistence: BinVersionCachePersistence = {
   load: () => ({
     schemaVersion: 1,
     entries: {
-      '/opt/flyenv/nginx': {
+      '/opt/semarenv/nginx': {
         mtimeMs: 100,
         size: 200,
         value: { version: '1.27.4' }
@@ -106,7 +106,7 @@ assert.deepEqual(await store.get({ ...nginxFingerprint, mtimeMs: 101 }), { hit: 
 assert.deepEqual(await store.get({ ...nginxFingerprint, size: 201 }), { hit: false })
 
 await store.set(nginxFingerprint, { version: '1.27.5' })
-await store.set({ path: '/opt/flyenv/php', mtimeMs: 300, size: 400 }, { version: '8.4.1' })
+await store.set({ path: '/opt/semarenv/php', mtimeMs: 300, size: 400 }, { version: '8.4.1' })
 assert.equal(saveCount, 0)
 scheduledSave?.()
 await new Promise((resolve) => setTimeout(resolve, 0))
@@ -114,12 +114,12 @@ assert.equal(saveCount, 1)
 assert.deepEqual(savedValue, {
   schemaVersion: 1,
   entries: {
-    '/opt/flyenv/nginx': {
+    '/opt/semarenv/nginx': {
       mtimeMs: 100,
       size: 200,
       value: { version: '1.27.5' }
     },
-    '/opt/flyenv/php': {
+    '/opt/semarenv/php': {
       mtimeMs: 300,
       size: 400,
       value: { version: '8.4.1' }
@@ -189,7 +189,7 @@ assert.equal(concurrentSavedValues.length, 2)
 assert.deepEqual(concurrentSavedValues[1], {
   schemaVersion: 1,
   entries: {
-    '/opt/flyenv/nginx': {
+    '/opt/semarenv/nginx': {
       mtimeMs: 100,
       size: 200,
       value: { version: '1.27.5' }
@@ -301,8 +301,8 @@ const isVersionResult = (value: unknown): value is { version: string } =>
   typeof (value as { version?: unknown }).version === 'string' &&
   (value as { version: string }).version.length > 0
 
-assert.equal(normalizeBinVersionPath('C:\\FlyEnv\\PHP.EXE', true), 'c:/flyenv/php.exe')
-assert.equal(normalizeBinVersionPath('/Opt/FlyEnv/php', false), '/Opt/FlyEnv/php')
+assert.equal(normalizeBinVersionPath('C:\\SemarEnv\\PHP.EXE', true), 'c:/semarenv/php.exe')
+assert.equal(normalizeBinVersionPath('/Opt/SemarEnv/php', false), '/Opt/SemarEnv/php')
 
 const cachedAccess = new BinVersionCacheAccess(async () => nginxFingerprint, {
   get: async () => ({ hit: true, value: { version: '1.27.4' } }),
@@ -310,7 +310,7 @@ const cachedAccess = new BinVersionCacheAccess(async () => nginxFingerprint, {
 })
 assert.deepEqual(
   await cachedAccess.run(
-    '/opt/flyenv/nginx',
+    '/opt/semarenv/nginx',
     async () => {
       throw new Error('loader must not run')
     },
@@ -327,13 +327,13 @@ const missedAccess = new BinVersionCacheAccess(async () => nginxFingerprint, {
   }
 })
 assert.deepEqual(
-  await missedAccess.run('/opt/flyenv/nginx', async () => ({ version: '1.27.5' }), isVersionResult),
+  await missedAccess.run('/opt/semarenv/nginx', async () => ({ version: '1.27.5' }), isVersionResult),
   { version: '1.27.5' }
 )
 assert.deepEqual(setValue, { version: '1.27.5' })
 
 setValue = undefined
-await missedAccess.run('/opt/flyenv/nginx', async () => ({ version: '' }), isVersionResult)
+await missedAccess.run('/opt/semarenv/nginx', async () => ({ version: '' }), isVersionResult)
 assert.equal(setValue, undefined)
 
 const noFingerprintAccess = new BinVersionCacheAccess(async () => undefined, {

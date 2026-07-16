@@ -27,8 +27,8 @@ async function main() {
   const buildUnixPath = (EnvSyncLocal as any).buildUnixPath
   assert.equal(typeof buildUnixPath, 'function')
   assert.equal(
-    buildUnixPath('$HOME/.linuxbrew/bin:${HOME}/bin:/usr/bin', '/home/flyenv'),
-    '/home/flyenv/.linuxbrew/bin:/home/flyenv/bin:/usr/bin:/opt/podman/bin:/home/linuxbrew/.linuxbrew/bin:/opt:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/Homebrew/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/sbin'
+    buildUnixPath('$HOME/.linuxbrew/bin:${HOME}/bin:/usr/bin', '/home/semarenv'),
+    '/home/semarenv/.linuxbrew/bin:/home/semarenv/bin:/usr/bin:/opt/podman/bin:/home/linuxbrew/.linuxbrew/bin:/opt:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/Homebrew/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/sbin'
   )
 
   console.log('windows env sync script test passed')

@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "নির্ধারিত কাজগুলি",
   "add": "নির্ধারিত কাজ যোগ করুন",
   "name": "কাজের নাম",
@@ -101,7 +101,7 @@
   "allTasks": "সব কাজ",
   "systemTasks": "সিস্টেম টাস্কসমূহ",
   "systemTask": "সিস্টেম টাস্ক",
-  "flyenvTask": "FlyEnv টাস্ক",
+  "semarenvTask": "SemarEnv টাস্ক",
   "otherTask": "অন্যান্য টাস্ক",
   "taskTrigger": "ট্রিগার",
   "deleteSystemTaskTips": "এই সিস্টেম নির্ধারিত টাস্কটি মুছবেন?",

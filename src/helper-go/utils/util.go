@@ -58,7 +58,7 @@ func AppDebugLog(flag string, info string) {
 	fmt.Printf("appDebugLog: %s %s\n", flag, info)
 	debugLogMutex.Lock()
 	defer debugLogMutex.Unlock()
-	debugFile := filepath.Join(os.TempDir(), "flyenv-debug.log")
+	debugFile := filepath.Join(os.TempDir(), "semarenv-debug.log")
 	f, err := os.OpenFile(debugFile, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		return

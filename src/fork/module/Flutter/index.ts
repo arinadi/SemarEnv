@@ -74,7 +74,7 @@ class Flutter extends Base {
 
   private async _resolveFlutterBinInfo(setup?: any): Promise<{
     bin: string
-    source: 'path' | 'default' | 'custom' | 'flyenv' | 'unknown'
+    source: 'path' | 'default' | 'custom' | 'SemarEnv' | 'unknown'
     searchDirs: string[]
   }> {
     try {
@@ -135,7 +135,7 @@ class Flutter extends Base {
       ) {
         return {
           bin: resolved,
-          source: 'flyenv',
+          source: 'SemarEnv',
           searchDirs
         }
       }
@@ -205,7 +205,7 @@ class Flutter extends Base {
         return
       }
 
-      const targetDevice = process.env.FLYENV_FLUTTER_TARGET_DEVICE ?? ''
+      const targetDevice = process.env.SemarEnv_FLUTTER_TARGET_DEVICE ?? ''
       let command = ''
       if (action === 'run') {
         const deviceArg = targetDevice ? ` -d "${targetDevice}"` : ''
@@ -295,9 +295,9 @@ class Flutter extends Base {
           raw = `${textRes.stdout ?? ''}${textRes.stderr ?? ''}`
           const flutterMatch = raw.match(/Flutter\s+([\d.\w-]+)/)
           const dartMatch = raw.match(/Dart\s+([\d.\w-]+)/)
-          const channelMatch = raw.match(/[•·]\s*channel\s+(\w+)/i) ?? raw.match(/channel\s+(\w+)/i)
+          const channelMatch = raw.match(/[â€¢Â·]\s*channel\s+(\w+)/i) ?? raw.match(/channel\s+(\w+)/i)
           const engineMatch =
-            raw.match(/Engine\s+[•·]\s*revision\s+([a-f0-9]+)/i) ??
+            raw.match(/Engine\s+[â€¢Â·]\s*revision\s+([a-f0-9]+)/i) ??
             raw.match(/engine revision\s+([a-f0-9]+)/i)
           const buildMatch = raw.match(/([0-9]{4}-[0-9]{2}-[0-9]{2}\s+[0-9]{2}:[0-9]{2})/)
           flutterVersion = flutterMatch?.[1] ?? ''
@@ -574,7 +574,7 @@ class Flutter extends Base {
       const normalizeMark = (line: string): string => {
         const m = line.trim().match(/^\[([^\]]+)\]/)
         const raw = `${m?.[1] ?? ''}`
-        if (raw.includes('√') || raw.includes('✓') || raw.toLowerCase().includes('ok')) {
+        if (raw.includes('âˆš') || raw.includes('âœ“') || raw.toLowerCase().includes('ok')) {
           return '+'
         }
         if (raw.includes('!')) {
@@ -582,8 +582,8 @@ class Flutter extends Base {
         }
         if (
           raw.toLowerCase().includes('x') ||
-          raw.includes('✗') ||
-          raw.includes('×') ||
+          raw.includes('âœ—') ||
+          raw.includes('Ã—') ||
           raw.toLowerCase().includes('fail')
         ) {
           return 'X'
@@ -835,14 +835,14 @@ class Flutter extends Base {
   }
 
   getConfigFiles(_version?: SoftInstalled): Array<{ name: string; path: string }> {
-    // Flutter 是 SDK/项目工具链，不是常驻服务；
-    // pubspec.yaml / build.gradle / analysis_options.yaml 等配置均在具体项目目录下，
-    // 不存在版本级或模块级固定配置文件路径。
+    // Flutter æ˜¯ SDK/é¡¹ç›®å·¥å…·é“¾ï¼Œä¸æ˜¯å¸¸é©»æœåŠ¡ï¼›
+    // pubspec.yaml / build.gradle / analysis_options.yaml ç­‰é…ç½®å‡åœ¨å…·ä½“é¡¹ç›®ç›®å½•ä¸‹ï¼Œ
+    // ä¸å­˜åœ¨ç‰ˆæœ¬çº§æˆ–æ¨¡å—çº§å›ºå®šé…ç½®æ–‡ä»¶è·¯å¾„ã€‚
     return []
   }
 
   getLogFiles(_version?: SoftInstalled): Array<{ name: string; path: string }> {
-    // Flutter 命令直接输出到 stdout/stderr，没有固定版本级/模块级日志文件路径。
+    // Flutter å‘½ä»¤ç›´æŽ¥è¾“å‡ºåˆ° stdout/stderrï¼Œæ²¡æœ‰å›ºå®šç‰ˆæœ¬çº§/æ¨¡å—çº§æ—¥å¿—æ–‡ä»¶è·¯å¾„ã€‚
     return []
   }
 }

@@ -5,7 +5,7 @@ import { app, dialog } from 'electron'
 export const AppStartErrorCallback = async (error: Error) => {
   const info = userInfo()
   const homedir = info.homedir
-  const file = join(homedir, '.flyenv-launch-flag')
+  const file = join(homedir, '.semarenv-launch-flag')
   if (!existsSync(file)) {
     await writeFile(file, `${error}`)
     app.relaunch()
@@ -18,6 +18,6 @@ export const AppStartErrorCallback = async (error: Error) => {
 export const AppStartFlagChech = () => {
   const info = userInfo()
   const homedir = info.homedir
-  const file = join(homedir, '.flyenv-launch-flag')
+  const file = join(homedir, '.semarenv-launch-flag')
   return existsSync(file)
 }

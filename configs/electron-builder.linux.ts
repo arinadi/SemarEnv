@@ -22,10 +22,10 @@ const ptyPrebuildExcludes = [
   .map((d) => `!**/node_modules/node-pty/prebuilds/${d}/**`)
 
 const desktop: any = {
-  Name: 'FlyEnv',
+  Name: 'SemarEnv',
   Comment: 'All-In-One Full-Stack Environment Management Tool',
-  // Exec: 'FlyEnv', // 确保这里与 executableName 一致
-  // Icon: 'com.xpf0000.flyenv', // 通常是 executableName 的小写，或者你的应用ID
+  // Exec: 'SemarEnv', // 确保这里与 executableName 一致
+  // Icon: 'com.arinadi.semarenv', // 通常是 executableName 的小写，或者你的应用ID
   Terminal: false,
   StartupNotify: true,
   Type: 'Application',
@@ -33,11 +33,11 @@ const desktop: any = {
 }
 
 const conf: Configuration = {
-  productName: 'FlyEnv',
-  executableName: 'FlyEnv',
+  productName: 'SemarEnv',
+  executableName: 'SemarEnv',
   buildVersion: '4.16.2',
   electronVersion: '39.8.7',
-  appId: 'com.xpf0000.flyenv',
+  appId: 'com.arinadi.semarenv',
   asar: true,
   directories: {
     output: 'release'
@@ -56,10 +56,10 @@ const conf: Configuration = {
     '!**/node_modules/node-pty/third_party/**'
   ],
   deb: {
-    packageName: 'flyenv'
+    packageName: 'semarenv'
   },
   rpm: {
-    packageName: 'flyenv'
+    packageName: 'semarenv'
   },
   artifactName: `\${productName}-\${version}-${archName}.\${ext}`, // 自定义打包文件名格式
   linux: {

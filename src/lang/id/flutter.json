@@ -18,7 +18,7 @@
   "sourcePath": "PATH Sistem",
   "sourceDefault": "Lokasi SDK default",
   "sourceCustom": "Path kustom yang dikonfigurasi",
-  "sourceFlyenv": "SDK yang dikelola FlyEnv",
+  "sourceSemarEnv": "SDK yang dikelola SemarEnv",
   "sourceUnknown": "Tidak diketahui",
   "createProjectTitle": "Buat Proyek Flutter",
   "create": "Buat",

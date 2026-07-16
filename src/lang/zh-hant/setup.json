@@ -1,4 +1,4 @@
-{
+﻿{
   "tsinghua": "清華大學下載源",
   "bfsu": "北京外國語大學下載源",
   "tencent": "騰訊下載源",
@@ -39,10 +39,10 @@
     "licenseTips": "未取得許可證，只可以建立三個模組和模組執行項",
     "outputLog": "輸出日誌"
   },
-  "flyenvHelper": "FlyEnv 輔助程式修復",
-  "flyenvHelperBtn": "修復",
-  "flyenvHelperFixSuccess": "FlyEnv 輔助程式修復成功",
-  "flyenvHelperInstallFailTips": "FlyEnv 輔助程式安裝失敗，請嘗試使用管理員權限啟動 FlyEnv，或者點擊確定按鈕，在開啟的資料夾中，手動執行 flyenv-helper.exe 輔助程式",
+  "semarenvHelper": "SemarEnv 輔助程式修復",
+  "semarenvHelperBtn": "修復",
+  "semarenvHelperFixSuccess": "SemarEnv 輔助程式修復成功",
+  "semarenvHelperInstallFailTips": "SemarEnv 輔助程式安裝失敗，請嘗試使用管理員權限啟動 SemarEnv，或者點擊確定按鈕，在開啟的資料夾中，手動執行 semarenv-helper.exe 輔助程式",
   "appFont": "介面字型",
   "appFontTips": "設定應用程式介面使用的字型，留空則使用預設系統字型",
   "codeFont": "程式碼區塊字型",

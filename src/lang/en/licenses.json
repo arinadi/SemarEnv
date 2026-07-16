@@ -1,5 +1,5 @@
 {
-  "description": "This license acknowledges and supports the efforts of FlyEnv and its authors. It is not intended to restrict users, but to encourage respect for the developers’ work and intellectual property. Please ensure you obtain a valid license before using FlyEnv for commercial purposes.",
+  "description": "This license acknowledges and supports the efforts of SemarEnv and its authors. It is not intended to restrict users, but to encourage respect for the developersâ€™ work and intellectual property. Please ensure you obtain a valid license before using SemarEnv for commercial purposes.",
   "restrictions": {
     "title": "Users without a license will be subject to the following restrictions:",
     "items": {
@@ -10,7 +10,7 @@
   },
   "howToObtain": {
     "title": "How to Obtain a License",
-    "description": "FlyEnv provides flexible ways to obtain a license. Users can choose any of the following methods to apply:",
+    "description": "SemarEnv provides flexible ways to obtain a license. Users can choose any of the following methods to apply:",
     "methods": {
       "0": {
         "title": "Donate to the Project",
@@ -22,7 +22,7 @@
       },
       "2": {
         "title": "Promote the Project",
-        "description": "Promote FlyEnv by sharing your experience in articles, videos, blogs, vlogs, or comments. Authentic user feedback is preferred. Content can be in any language and on any platform."
+        "description": "Promote SemarEnv by sharing your experience in articles, videos, blogs, vlogs, or comments. Authentic user feedback is preferred. Content can be in any language and on any platform."
       }
     }
   },
@@ -54,7 +54,7 @@
   "oauthFailedByNoAuthCode": "Authorization code not received",
   "oauthTimeout": "Authorization timeout",
   "oauthSuccessTitle": "Authorization Successful",
-  "oauthSuccessMessage": "This page can be closed. Please return to FlyEnv to view the license information.",
+  "oauthSuccessMessage": "This page can be closed. Please return to SemarEnv to view the license information.",
   "trialExpiredTitle": "License Not Activated",
-  "trialExpiredTips": "You have been using FlyEnv for {days} days. If FlyEnv has been helpful to you, please consider obtaining a license to support the project."
+  "trialExpiredTips": "You have been using SemarEnv for {days} days. If SemarEnv has been helpful to you, please consider obtaining a license to support the project."
 }

@@ -90,7 +90,7 @@ export class Base {
   /**
    * 配置文件清单。各服务模块覆写自己的（部分服务按版本，故接收 version）。
    * 返回 [] 表示该模块不支持/无配置文件。name 是人类可读标识（如 'main' / 'error'）。
-   * 只返回 name + path，不返回内容——FlyEnv 是本地工具，AI 代理自行读文件。
+   * 只返回 name + path，不返回内容——SemarEnv 是本地工具，AI 代理自行读文件。
    */
   getConfigFiles(_version?: SoftInstalled): Array<{ name: string; path: string }> {
     return []
@@ -127,7 +127,7 @@ export class Base {
     const pidDir = join(global.Server.BaseDir!, 'pid')
     const probeFile = join(
       pidDir,
-      `.flyenv-write-test-${this.type}-${process.pid}-${Date.now()}.tmp`
+      `.semarenv-write-test-${this.type}-${process.pid}-${Date.now()}.tmp`
     )
     let lastError: any
 
@@ -306,7 +306,6 @@ export class Base {
         tomcat: 'org.apache.catalina.startup.Bootstrap',
         rabbitmq: 'rabbit',
         elasticsearch: 'org.elasticsearch.server/org.elasticsearch.bootstrap.Elasticsearch',
-        ollama: 'ollama',
         cliproxyapi: 'cli-proxy-api',
         rnacos: 'rnacos',
         frankenphp: 'frankenphp',
@@ -320,7 +319,7 @@ export class Base {
           const all = ProcessSearch(serverName, false, plist)
             .filter(
               (item) =>
-                item.COMMAND.includes('PhpWebStudy-Data') || item.COMMAND.includes('FlyEnv-Data')
+                item.COMMAND.includes('PhpWebStudy-Data') || item.COMMAND.includes('SemarEnv-Data')
             )
             .map((m) => `${m.PID}`)
           allPid.push(...all)

@@ -149,7 +149,7 @@
   })
 
   function addContainer() {
-    const id = 'FlyEnv-Podman-Container-Create'
+    const id = 'SemarEnv-Podman-Container-Create'
     const xtermExec = XTermExecCache?.[id]
     if (xtermExec) {
       import('@/components/XTermExecDialog/index.vue').then((res) => {

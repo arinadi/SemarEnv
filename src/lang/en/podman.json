@@ -2,7 +2,7 @@
   "podmanInstall": "Install Podman",
   "installPodmanByHomebrew": "Install Podman via Homebrew",
   "noPodmanFound": "No <a href=\"javascript:void();\" onclick=\"openUrl('https://podman.io/')\">Podman</a> detected.\nTo install Podman, you can click the install button.\nYou can also click this link\n<a href=\"javascript:void();\" onclick=\"openUrl('https://podman.io/docs/installation')\">https://podman.io/docs/installation</a>\nand follow the documentation to install it manually.",
-  "podmanErrorTips": "At location {bin}, a Podman executable was detected.\nBut FlyEnv cannot invoke it. Error message:\n{error}",
+  "podmanErrorTips": "At location {bin}, a Podman executable was detected.\nBut SemarEnv cannot invoke it. Error message:\n{error}",
   "removeContainerTips": "Are you sure you want to remove this container?",
   "removeMachineTips": "Are you sure you want to remove this virtual machine?",
   "removeImageTips": "Are you sure you want to remove this image?",

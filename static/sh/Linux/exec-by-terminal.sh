@@ -24,7 +24,7 @@ open_terminal_with_command() {
         local temp_script=$(mktemp /tmp/term-cmd.XXXXXX)
         echo '#!/bin/bash' > "$temp_script"
         echo 'echo "========================================"' >> "$temp_script"
-        echo 'echo "FlyEnv Command Execution"' >> "$temp_script"
+        echo 'echo "SemarEnv Command Execution"' >> "$temp_script"
         echo 'echo "========================================"' >> "$temp_script"
         echo 'echo ""' >> "$temp_script"
         printf 'echo "\$ %s"\n' "$decoded_command" >> "$temp_script"
@@ -34,7 +34,7 @@ open_terminal_with_command() {
         chmod +x "$temp_script"
         exec_cmd="set +H; bash \"$temp_script\"; echo \"$temp_script\""
     else
-        exec_cmd="set +H; echo '========================================'; echo 'FlyEnv Command Execution'; echo '========================================'; echo ''; echo '\$ $decoded_command'; echo ''; $decoded_command; bash"
+        exec_cmd="set +H; echo '========================================'; echo 'SemarEnv Command Execution'; echo '========================================'; echo ''; echo '\$ $decoded_command'; echo ''; $decoded_command; bash"
     fi
 
     echo "command: $exec_cmd"

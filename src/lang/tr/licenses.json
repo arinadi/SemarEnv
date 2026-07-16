@@ -1,60 +1,60 @@
 {
-  "description": "Lisans, FlyEnv ve yazarlarının emeğine bir takdir ve destektir. Amacı kullanıcıları kısıtlamak değil, geliştiricilerin çabalarına saygı gösterilmesini ve yazılımı kullanırken ilgili koşullara uyulmasını hatırlatmaktır. Lisansa uyarak, kullanıcılar sadece projenin sürekli gelişimini desteklemekle kalmaz, aynı zamanda açık kaynak topluluğundaki güven ve iş birliği ruhuna katkıda bulunurlar.",
+  "description": "Lisans, SemarEnv ve yazarlarÄ±nÄ±n emeÄŸine bir takdir ve destektir. AmacÄ± kullanÄ±cÄ±larÄ± kÄ±sÄ±tlamak deÄŸil, geliÅŸtiricilerin Ã§abalarÄ±na saygÄ± gÃ¶sterilmesini ve yazÄ±lÄ±mÄ± kullanÄ±rken ilgili koÅŸullara uyulmasÄ±nÄ± hatÄ±rlatmaktÄ±r. Lisansa uyarak, kullanÄ±cÄ±lar sadece projenin sÃ¼rekli geliÅŸimini desteklemekle kalmaz, aynÄ± zamanda aÃ§Ä±k kaynak topluluÄŸundaki gÃ¼ven ve iÅŸ birliÄŸi ruhuna katkÄ±da bulunurlar.",
   "restrictions": {
-    "title": "Lisansı olmayan kullanıcılar aşağıdaki kısıtlamalara tabi olacaktır:",
+    "title": "LisansÄ± olmayan kullanÄ±cÄ±lar aÅŸaÄŸÄ±daki kÄ±sÄ±tlamalara tabi olacaktÄ±r:",
     "items": {
-      "0": "En fazla üç site oluşturulabilir.",
-      "1": "Yapay zeka sohbet özelliği yalnızca üç günlük deneme süresiyle kullanılabilir.",
-      "2": "Gelecekteki özelliklerde ek kısıtlamalar olabilir."
+      "0": "En fazla Ã¼Ã§ site oluÅŸturulabilir.",
+      "1": "Yapay zeka sohbet Ã¶zelliÄŸi yalnÄ±zca Ã¼Ã§ gÃ¼nlÃ¼k deneme sÃ¼resiyle kullanÄ±labilir.",
+      "2": "Gelecekteki Ã¶zelliklerde ek kÄ±sÄ±tlamalar olabilir."
     }
   },
   "howToObtain": {
-    "title": "Lisans Nasıl Alınır?",
-    "description": "FlyEnv lisans almak için esnek yollar sunar. Kullanıcılar aşağıdaki yöntemlerden herhangi birini seçerek başvurabilir:",
+    "title": "Lisans NasÄ±l AlÄ±nÄ±r?",
+    "description": "SemarEnv lisans almak iÃ§in esnek yollar sunar. KullanÄ±cÄ±lar aÅŸaÄŸÄ±daki yÃ¶ntemlerden herhangi birini seÃ§erek baÅŸvurabilir:",
     "methods": {
       "0": {
-        "title": "Projeye Bağış Yapın",
-        "description": "Bağış için belirli bir tutar zorunlu değildir. Farklı ülkelerdeki kullanıcıların ekonomik durumları (örneğin birçok kullanıcı öğrencidir) göz önüne alındığında, size uygun bir tutarı seçebilirsiniz."
+        "title": "Projeye BaÄŸÄ±ÅŸ YapÄ±n",
+        "description": "BaÄŸÄ±ÅŸ iÃ§in belirli bir tutar zorunlu deÄŸildir. FarklÄ± Ã¼lkelerdeki kullanÄ±cÄ±larÄ±n ekonomik durumlarÄ± (Ã¶rneÄŸin birÃ§ok kullanÄ±cÄ± Ã¶ÄŸrencidir) gÃ¶z Ã¶nÃ¼ne alÄ±ndÄ±ÄŸÄ±nda, size uygun bir tutarÄ± seÃ§ebilirsiniz."
       },
       "1": {
-        "title": "Geliştirmeye Katkıda Bulunun",
-        "description": "Projeye Pull Request göndererek katkıda bulunun. Kod miktarı önemli değil, projeye olumlu katkı sağladığı sürece (örneğin bir çeviri hatasını düzeltmek gibi) yeterlidir."
+        "title": "GeliÅŸtirmeye KatkÄ±da Bulunun",
+        "description": "Projeye Pull Request gÃ¶ndererek katkÄ±da bulunun. Kod miktarÄ± Ã¶nemli deÄŸil, projeye olumlu katkÄ± saÄŸladÄ±ÄŸÄ± sÃ¼rece (Ã¶rneÄŸin bir Ã§eviri hatasÄ±nÄ± dÃ¼zeltmek gibi) yeterlidir."
       },
       "2": {
-        "title": "Projeyi Tanıtın",
-        "description": "FlyEnv’i tanıtmak için makale, video, blog veya yorumlarda gerçek deneyimlerinizi paylaşın. Dürüst kullanıcı görüşleri tercih edilir. İçerik her dilde ve her platformda olabilir, yeter ki internette herkese açık olsun."
+        "title": "Projeyi TanÄ±tÄ±n",
+        "description": "SemarEnvâ€™i tanÄ±tmak iÃ§in makale, video, blog veya yorumlarda gerÃ§ek deneyimlerinizi paylaÅŸÄ±n. DÃ¼rÃ¼st kullanÄ±cÄ± gÃ¶rÃ¼ÅŸleri tercih edilir. Ä°Ã§erik her dilde ve her platformda olabilir, yeter ki internette herkese aÃ§Ä±k olsun."
       }
     }
   },
-  "submitInfo": "Yukarıdaki yöntemlerden herhangi birini tamamladıktan sonra, aşağıdaki giriş kutusuna sonucu yazın ve 'Lisans Talep Et' butonuna tıklayarak başvurunuzu gönderin. Lisans başvuruları manuel olarak incelenir, lütfen sabırlı olun. Genellikle kısa sürede yanıt verilir.",
+  "submitInfo": "YukarÄ±daki yÃ¶ntemlerden herhangi birini tamamladÄ±ktan sonra, aÅŸaÄŸÄ±daki giriÅŸ kutusuna sonucu yazÄ±n ve 'Lisans Talep Et' butonuna tÄ±klayarak baÅŸvurunuzu gÃ¶nderin. Lisans baÅŸvurularÄ± manuel olarak incelenir, lÃ¼tfen sabÄ±rlÄ± olun. Genellikle kÄ±sa sÃ¼rede yanÄ±t verilir.",
   "messageLabel": "Mesaj",
-  "messagePlaceholder": "Bağış yaptıysanız lütfen bağışçı adı, bağış bağlantısı veya sipariş numarasını girin.\nProje geliştirmeye katkıda bulunduysanız lütfen PR bağlantısını gönderin.\nProjeyi tanıttıysanız lütfen makale/video bağlantısını gönderin.",
+  "messagePlaceholder": "BaÄŸÄ±ÅŸ yaptÄ±ysanÄ±z lÃ¼tfen baÄŸÄ±ÅŸÃ§Ä± adÄ±, baÄŸÄ±ÅŸ baÄŸlantÄ±sÄ± veya sipariÅŸ numarasÄ±nÄ± girin.\nProje geliÅŸtirmeye katkÄ±da bulunduysanÄ±z lÃ¼tfen PR baÄŸlantÄ±sÄ±nÄ± gÃ¶nderin.\nProjeyi tanÄ±ttÄ±ysanÄ±z lÃ¼tfen makale/video baÄŸlantÄ±sÄ±nÄ± gÃ¶nderin.",
   "requestButton": "Lisans Talep Et",
   "refreshButton": "Durumu Yenile",
-  "licenseActivated": "Lisans etkinleştirildi",
-  "licenseNoActivated": "Lisans etkinleştirilmedi",
-  "licenseInfo": "Mevcut sağlanan lisans kalıcı bir lisandır, her bilgisayar bir lisansla eşleşir. Bilgisayar değiştirirseniz, 'Lisanslarım'da yeni cihazın uuid'sini bağlamanız veya yeni lisans başvurusunda bulunmanız gerekir.",
-  "logoutTips": "Oturumu kapatmak istediğinizden emin misiniz?",
-  "delBindTips": "Lisansı bu UUID'den bağlamayı kaldırmak istediğinizden emin misiniz?",
-  "addBindTips": "Lisansı bu UUID'ye bağlamak istediğinizden emin misiniz?",
+  "licenseActivated": "Lisans etkinleÅŸtirildi",
+  "licenseNoActivated": "Lisans etkinleÅŸtirilmedi",
+  "licenseInfo": "Mevcut saÄŸlanan lisans kalÄ±cÄ± bir lisandÄ±r, her bilgisayar bir lisansla eÅŸleÅŸir. Bilgisayar deÄŸiÅŸtirirseniz, 'LisanslarÄ±m'da yeni cihazÄ±n uuid'sini baÄŸlamanÄ±z veya yeni lisans baÅŸvurusunda bulunmanÄ±z gerekir.",
+  "logoutTips": "Oturumu kapatmak istediÄŸinizden emin misiniz?",
+  "delBindTips": "LisansÄ± bu UUID'den baÄŸlamayÄ± kaldÄ±rmak istediÄŸinizden emin misiniz?",
+  "addBindTips": "LisansÄ± bu UUID'ye baÄŸlamak istediÄŸinizden emin misiniz?",
   "currentLicenseState": "Bu cihazdaki lisans durumu",
-  "activeState": "Etkinleştirme Durumu",
-  "myLicense": "Lisanslarım",
-  "loginTips": "Lütfen önce giriş yapın",
-  "logingTips": "GitHub üzerinden giriş yapılıyor...",
-  "licenseNo": "Lisans Numarası",
-  "licenseBindUUID": "Bağlı UUID",
-  "delBind": "Bağlamayı Kaldır",
-  "bindCurrentUUID": "Bu Cihazı Bağla",
-  "loginFail": "Giriş başarısız",
-  "oauthCanceledTitle": "Yetkilendirme İptal Edildi",
-  "oauthCanceledMessage": "Kullanıcı yetkilendirme sürecini iptal etti",
-  "oauthFailedTitle": "Yetkilendirme Başarısız",
-  "oauthFailedMessage": "Yetkilendirme başarısız oldu. Sebep: {error}",
-  "oauthFailedByNoAuthCode": "Yetkilendirme kodu alınmadı",
-  "oauthTimeout": "Yetkilendirme zaman aşımı",
-  "oauthSuccessTitle": "Yetkilendirme Başarılı",
-  "oauthSuccessMessage": "Bu sayfa kapatılabilir. Lütfen lisans bilgilerini görüntülemek için FlyEnv'ye dönün.",
-  "trialExpiredTitle": "Lisans Aktif Değil",
-  "trialExpiredTips": "FlyEnv'i {days} gündür kullanıyorsunuz. FlyEnv size yardımcı olduysa, projeyi desteklemek için bir lisans edinmeyi düşünün."
+  "activeState": "EtkinleÅŸtirme Durumu",
+  "myLicense": "LisanslarÄ±m",
+  "loginTips": "LÃ¼tfen Ã¶nce giriÅŸ yapÄ±n",
+  "logingTips": "GitHub Ã¼zerinden giriÅŸ yapÄ±lÄ±yor...",
+  "licenseNo": "Lisans NumarasÄ±",
+  "licenseBindUUID": "BaÄŸlÄ± UUID",
+  "delBind": "BaÄŸlamayÄ± KaldÄ±r",
+  "bindCurrentUUID": "Bu CihazÄ± BaÄŸla",
+  "loginFail": "GiriÅŸ baÅŸarÄ±sÄ±z",
+  "oauthCanceledTitle": "Yetkilendirme Ä°ptal Edildi",
+  "oauthCanceledMessage": "KullanÄ±cÄ± yetkilendirme sÃ¼recini iptal etti",
+  "oauthFailedTitle": "Yetkilendirme BaÅŸarÄ±sÄ±z",
+  "oauthFailedMessage": "Yetkilendirme baÅŸarÄ±sÄ±z oldu. Sebep: {error}",
+  "oauthFailedByNoAuthCode": "Yetkilendirme kodu alÄ±nmadÄ±",
+  "oauthTimeout": "Yetkilendirme zaman aÅŸÄ±mÄ±",
+  "oauthSuccessTitle": "Yetkilendirme BaÅŸarÄ±lÄ±",
+  "oauthSuccessMessage": "Bu sayfa kapatÄ±labilir. LÃ¼tfen lisans bilgilerini gÃ¶rÃ¼ntÃ¼lemek iÃ§in SemarEnv'ye dÃ¶nÃ¼n.",
+  "trialExpiredTitle": "Lisans Aktif DeÄŸil",
+  "trialExpiredTips": "SemarEnv'i {days} gÃ¼ndÃ¼r kullanÄ±yorsunuz. SemarEnv size yardÄ±mcÄ± olduysa, projeyi desteklemek iÃ§in bir lisans edinmeyi dÃ¼ÅŸÃ¼nÃ¼n."
 }

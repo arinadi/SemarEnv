@@ -31,18 +31,18 @@ const Python = reactive({
       image: `${mirror}python:${Python.version}`,
       ports: Python.ports.map((p) => `${p.out}:${p.in}`),
       environment,
-      networks: ['flyenv-network'],
+      networks: ['semarenv-network'],
       working_dir: '/app',
       command: Python.command
     }
 
     const volumes: any[] = []
 
-    const flyenvPythonDir = join(dirname(base.dir), 'flyenv-docker-compose/python')
-    await fs.mkdirp(flyenvPythonDir)
+    const semarenvPythonDir = join(dirname(base.dir), 'semarenv-docker-compose/python')
+    await fs.mkdirp(semarenvPythonDir)
 
     // 1. 挂载 Pip 缓存目录 (PIP_CACHE_DIR)
-    const pythonCacheHostPath = join(flyenvPythonDir, 'pip_cache')
+    const pythonCacheHostPath = join(semarenvPythonDir, 'pip_cache')
     await fs.mkdirp(pythonCacheHostPath)
 
     volumes.push({

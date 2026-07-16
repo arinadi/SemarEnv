@@ -186,7 +186,7 @@ class Memcached extends Base {
   }
 
   getLogFiles(_version?: SoftInstalled): Array<{ name: string; path: string }> {
-    // Memcached logs to stdout/stderr (-vv); no log file is written by FlyEnv.
+    // Memcached logs to stdout/stderr (-vv); no log file is written by SemarEnv.
     return []
   }
 }

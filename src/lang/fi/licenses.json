@@ -1,60 +1,60 @@
 {
-  "description": "Tämä lisenssi tunnustaa FlyEnvin ja sen kirjoittajien pyrkimykset ja tukee niitä. Tarkoituksena ei ole rajoittaa käyttäjiä, vaan edistää kehittäjien työn ja henkisen omaisuuden kunnioittamista. Varmista, että saat voimassa olevan lisenssin ennen kuin käytät FlyEnv kaupallisiin tarkoituksiin.",
+  "description": "TÃ¤mÃ¤ lisenssi tunnustaa SemarEnvin ja sen kirjoittajien pyrkimykset ja tukee niitÃ¤. Tarkoituksena ei ole rajoittaa kÃ¤yttÃ¤jiÃ¤, vaan edistÃ¤Ã¤ kehittÃ¤jien tyÃ¶n ja henkisen omaisuuden kunnioittamista. Varmista, ettÃ¤ saat voimassa olevan lisenssin ennen kuin kÃ¤ytÃ¤t SemarEnv kaupallisiin tarkoituksiin.",
   "restrictions": {
-    "title": "Käyttäjiin, joilla ei ole lisenssiä, sovelletaan seuraavia rajoituksia:",
+    "title": "KÃ¤yttÃ¤jiin, joilla ei ole lisenssiÃ¤, sovelletaan seuraavia rajoituksia:",
     "items": {
-      "0": "Voidaan luoda enintään kolme kohdetta.",
-      "1": "AI chat -ominaisuus on saatavilla vain kolmen päivän kokeilujaksolle.",
-      "2": "Tuleviin ominaisuuksiin voidaan soveltaa lisärajoituksia."
+      "0": "Voidaan luoda enintÃ¤Ã¤n kolme kohdetta.",
+      "1": "AI chat -ominaisuus on saatavilla vain kolmen pÃ¤ivÃ¤n kokeilujaksolle.",
+      "2": "Tuleviin ominaisuuksiin voidaan soveltaa lisÃ¤rajoituksia."
     }
   },
   "howToObtain": {
     "title": "Miten hankkia lisenssi",
-    "description": "FlyEnv tarjoaa joustavia tapoja saada lisenssi. Käyttäjät voivat valita minkä tahansa seuraavista menetelmistä:",
+    "description": "SemarEnv tarjoaa joustavia tapoja saada lisenssi. KÃ¤yttÃ¤jÃ¤t voivat valita minkÃ¤ tahansa seuraavista menetelmistÃ¤:",
     "methods": {
       "0": {
         "title": "Lahjoita projektille",
-        "description": "Lahjoituksia varten ei tarvita kiinteää summaa, kun otetaan huomioon eri maiden käyttäjien erilaiset taloudelliset tilanteet (esim. ., monet käyttäjät ovat opiskelijoita), valitse summa, joka on mukava sinulle."
+        "description": "Lahjoituksia varten ei tarvita kiinteÃ¤Ã¤ summaa, kun otetaan huomioon eri maiden kÃ¤yttÃ¤jien erilaiset taloudelliset tilanteet (esim. ., monet kÃ¤yttÃ¤jÃ¤t ovat opiskelijoita), valitse summa, joka on mukava sinulle."
       },
       "1": {
         "title": "Osallistu kehitykseen",
-        "description": "Osallistu projektiin lähettämällä Pull Request. Riippumatta koodin määrästä, niin kauan kuin se positiivisesti parantaa projektia (e. ., vahvistamisesta käännösvirhe), maksuosuus laskee."
+        "description": "Osallistu projektiin lÃ¤hettÃ¤mÃ¤llÃ¤ Pull Request. Riippumatta koodin mÃ¤Ã¤rÃ¤stÃ¤, niin kauan kuin se positiivisesti parantaa projektia (e. ., vahvistamisesta kÃ¤Ã¤nnÃ¶svirhe), maksuosuus laskee."
       },
       "2": {
-        "title": "Hankkeen edistäminen",
-        "description": "Edistää FlyEnv jakamalla kokemuksesi artikkeleita, videoita, blogeja, vlogs, tai kommentteja. Aito käyttäjän palaute on suositeltavaa. Sisältö voi olla millä tahansa kielellä ja millä tahansa alustalla."
+        "title": "Hankkeen edistÃ¤minen",
+        "description": "EdistÃ¤Ã¤ SemarEnv jakamalla kokemuksesi artikkeleita, videoita, blogeja, vlogs, tai kommentteja. Aito kÃ¤yttÃ¤jÃ¤n palaute on suositeltavaa. SisÃ¤ltÃ¶ voi olla millÃ¤ tahansa kielellÃ¤ ja millÃ¤ tahansa alustalla."
       }
     }
   },
-  "submitInfo": "Sen jälkeen kun jokin edellä mainituista menetelmistä on suoritettu, ole hyvä ja täytä tulokset alla olevaan kenttään ja lähetä hakemuksesi klikkaamalla 'Request License' -painiketta. Lisenssipyynnöt käsitellään yleensä 24 tunnin kuluessa.",
+  "submitInfo": "Sen jÃ¤lkeen kun jokin edellÃ¤ mainituista menetelmistÃ¤ on suoritettu, ole hyvÃ¤ ja tÃ¤ytÃ¤ tulokset alla olevaan kenttÃ¤Ã¤n ja lÃ¤hetÃ¤ hakemuksesi klikkaamalla 'Request License' -painiketta. LisenssipyynnÃ¶t kÃ¤sitellÃ¤Ã¤n yleensÃ¤ 24 tunnin kuluessa.",
   "messageLabel": "Viesti",
-  "messagePlaceholder": "Ole hyvä ja lähetä lahjoittaja, lahjoituslinkki tai tilaushenkilöllisyystodistus, kun päätät lahjoittaa.\nOle hyvä ja lähetä PR-linkki niille, jotka haluavat osallistua projektin kehittämiseen.\nOle hyvä ja lähetä linkki artikkeliisi, videoihisi, blogiisi, vlogisiisi tai kommentoi niille, jotka haluavat markkinoida.",
-  "requestButton": "Pyydä Lisenssiä",
-  "refreshButton": "Päivitä Tila",
+  "messagePlaceholder": "Ole hyvÃ¤ ja lÃ¤hetÃ¤ lahjoittaja, lahjoituslinkki tai tilaushenkilÃ¶llisyystodistus, kun pÃ¤Ã¤tÃ¤t lahjoittaa.\nOle hyvÃ¤ ja lÃ¤hetÃ¤ PR-linkki niille, jotka haluavat osallistua projektin kehittÃ¤miseen.\nOle hyvÃ¤ ja lÃ¤hetÃ¤ linkki artikkeliisi, videoihisi, blogiisi, vlogisiisi tai kommentoi niille, jotka haluavat markkinoida.",
+  "requestButton": "PyydÃ¤ LisenssiÃ¤",
+  "refreshButton": "PÃ¤ivitÃ¤ Tila",
   "licenseActivated": "Lisenssi aktivoitu",
-  "licenseNoActivated": "Lisenssiä ei ole aktivoitu",
-  "licenseInfo": "Nykyinen tarjottu lisenssi on pysyvä lisenssi, jokainen tietokone vastaa yhtä lisenssiä. Jos vaihdat tietokonetta, sinun on sidottava uuden laitteen uuid kohdassa 'Lisenssini' tai haettava uutta lisenssiä.",
+  "licenseNoActivated": "LisenssiÃ¤ ei ole aktivoitu",
+  "licenseInfo": "Nykyinen tarjottu lisenssi on pysyvÃ¤ lisenssi, jokainen tietokone vastaa yhtÃ¤ lisenssiÃ¤. Jos vaihdat tietokonetta, sinun on sidottava uuden laitteen uuid kohdassa 'Lisenssini' tai haettava uutta lisenssiÃ¤.",
   "logoutTips": "Haluatko varmasti kirjautua ulos?",
-  "delBindTips": "Haluatko varmasti irrottaa lisenssin tästä UUID:stä?",
-  "addBindTips": "Haluatko varmasti sitoa lisenssin tähän UUID:hen?",
-  "currentLicenseState": "Lisenssin tila tässä laitteessa",
+  "delBindTips": "Haluatko varmasti irrottaa lisenssin tÃ¤stÃ¤ UUID:stÃ¤?",
+  "addBindTips": "Haluatko varmasti sitoa lisenssin tÃ¤hÃ¤n UUID:hen?",
+  "currentLicenseState": "Lisenssin tila tÃ¤ssÃ¤ laitteessa",
   "activeState": "Aktivointitila",
   "myLicense": "Lisenssini",
-  "loginTips": "Kirjaudu sisään ensin",
-  "logingTips": "Kirjaudutaan sisään GitHubin kautta...",
+  "loginTips": "Kirjaudu sisÃ¤Ã¤n ensin",
+  "logingTips": "Kirjaudutaan sisÃ¤Ã¤n GitHubin kautta...",
   "licenseNo": "Lisenssinumero",
   "licenseBindUUID": "Sidottu UUID",
   "delBind": "Irrota sidos",
-  "bindCurrentUUID": "Sido tämä laite",
-  "loginFail": "Sisäänkirjautuminen epäonnistui",
+  "bindCurrentUUID": "Sido tÃ¤mÃ¤ laite",
+  "loginFail": "SisÃ¤Ã¤nkirjautuminen epÃ¤onnistui",
   "oauthCanceledTitle": "Valtuutus peruutettu",
-  "oauthCanceledMessage": "Käyttäjä peruutti valtuutusprosessin",
-  "oauthFailedTitle": "Valtuutus epäonnistui",
-  "oauthFailedMessage": "Valtuutus epäonnistui. Syy: {error}",
+  "oauthCanceledMessage": "KÃ¤yttÃ¤jÃ¤ peruutti valtuutusprosessin",
+  "oauthFailedTitle": "Valtuutus epÃ¤onnistui",
+  "oauthFailedMessage": "Valtuutus epÃ¤onnistui. Syy: {error}",
   "oauthFailedByNoAuthCode": "Valtuutuskoodia ei vastaanotettu",
   "oauthTimeout": "Valtuutuksen aikakatkaisu",
   "oauthSuccessTitle": "Valtuutus onnistui",
-  "oauthSuccessMessage": "Tämä sivu voidaan sulkea. Palaa FlyEnv:n puoleen tarkastellaksesi lisenssitietoja.",
-  "trialExpiredTitle": "Lisenssiä ei ole aktivoitu",
-  "trialExpiredTips": "Olet käyttänyt FlyEnv:iä {days} päivää. Jos FlyEnv on ollut sinulle hyödyllinen, harkitse lisenssin hankkimista projektin tukemiseksi."
+  "oauthSuccessMessage": "TÃ¤mÃ¤ sivu voidaan sulkea. Palaa SemarEnv:n puoleen tarkastellaksesi lisenssitietoja.",
+  "trialExpiredTitle": "LisenssiÃ¤ ei ole aktivoitu",
+  "trialExpiredTips": "Olet kÃ¤yttÃ¤nyt SemarEnv:iÃ¤ {days} pÃ¤ivÃ¤Ã¤. Jos SemarEnv on ollut sinulle hyÃ¶dyllinen, harkitse lisenssin hankkimista projektin tukemiseksi."
 }

@@ -16,7 +16,7 @@ import { killPorts, killPids, getPortPids, getPidsByKey } from './process'
 import { fetchEnvPath, fetchPATH, handleUpdatePath, updatePATH, removePATH } from './path'
 import { setAlias, cleanAlias } from './alias'
 import { runInTerminal, openPathByApp } from './terminal'
-import { initAllowDir, initFlyEnvSH } from './init'
+import { initAllowDir, initSemarEnvSH } from './init'
 import type { SoftInstalled } from '@shared/app'
 
 class Manager extends Base {
@@ -158,15 +158,15 @@ class Manager extends Base {
   openPathByApp = openPathByApp
 
   initAllowDir = initAllowDir
-  initFlyEnvSH = initFlyEnvSH
+  initSemarEnvSH = initSemarEnvSH
 
   getConfigFiles(_version?: SoftInstalled): Array<{ name: string; path: string }> {
-    // Tool 是通用工具模块，不管理具体服务，没有固定的配置文件
+    // Tool æ˜¯é€šç”¨å·¥å…·æ¨¡å—ï¼Œä¸ç®¡ç†å…·ä½“æœåŠ¡ï¼Œæ²¡æœ‰å›ºå®šçš„é…ç½®æ–‡ä»¶
     return []
   }
 
   getLogFiles(_version?: SoftInstalled): Array<{ name: string; path: string }> {
-    // Tool 是通用工具模块，不产生专属的日志文件
+    // Tool æ˜¯é€šç”¨å·¥å…·æ¨¡å—ï¼Œä¸äº§ç”Ÿä¸“å±žçš„æ—¥å¿—æ–‡ä»¶
     return []
   }
 }

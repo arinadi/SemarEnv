@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Planlagte oppgaver",
   "add": "Legg til planlagt oppgave",
   "name": "Oppgavenavn",
@@ -101,7 +101,7 @@
   "allTasks": "Alle oppgaver",
   "systemTasks": "Systemoppgaver",
   "systemTask": "Systemoppgave",
-  "flyenvTask": "FlyEnv-oppgave",
+  "semarenvTask": "SemarEnv-oppgave",
   "otherTask": "Annen oppgave",
   "taskTrigger": "Utløser",
   "deleteSystemTaskTips": "Slette denne planlagte systemoppgaven?",

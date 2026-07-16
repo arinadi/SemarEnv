@@ -13,7 +13,7 @@ const MySQL = reactive({
   volumes: [
     {
       type: 'bind',
-      source: './flyenv-docker-compose/mysql/data',
+      source: './semarenv-docker-compose/mysql/data',
       target: '/var/lib/mysql'
     }
   ],
@@ -42,13 +42,13 @@ const MySQL = reactive({
       image: `${mirror}mysql:${MySQL.version}`,
       ports: MySQL.ports.map((p) => `${p.out}:${p.in}`),
       environment,
-      networks: ['flyenv-network']
+      networks: ['semarenv-network']
     }
 
     // 如果需要持久化数据，创建数据目录
     if (MySQL.persistence) {
       mysql.volumes = MySQL.volumes
-      await fs.mkdirp(join(dirname(base.dir), 'flyenv-docker-compose/mysql/data'))
+      await fs.mkdirp(join(dirname(base.dir), 'semarenv-docker-compose/mysql/data'))
     }
 
     return {

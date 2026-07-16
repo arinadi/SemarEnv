@@ -349,7 +349,7 @@
     machine.value!.containerCreating = true
     const content = generateComposeFile(form.value)
     await fs.writeFile(form.value.dir, content)
-    const id = 'FlyEnv-Podman-Container-Create'
+    const id = 'SemarEnv-Podman-Container-Create'
     let xtermExec = XTermExecCache?.[id]
     if (!xtermExec) {
       xtermExec = reactiveBind(new XTermExec())

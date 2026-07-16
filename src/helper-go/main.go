@@ -26,10 +26,10 @@ import (
 // Constants for socket paths
 const (
 	Helper_Version   = 16
-	SOCKET_PATH      = "/tmp/flyenv-helper.sock"
-	Role_Path        = "/tmp/flyenv.role"
-	Role_Path_Back   = "/usr/local/share/FlyEnv/flyenv.role"
-	Key_Path_Unix    = "/usr/local/share/FlyEnv/flyenv-helper.key"
+	SOCKET_PATH      = "/tmp/semarenv-helper.sock"
+	Role_Path        = "/tmp/semarenv.role"
+	Role_Path_Back   = "/usr/local/share/SemarEnv/semarenv.role"
+	Key_Path_Unix    = "/usr/local/share/SemarEnv/semarenv-helper.key"
 	READ_BUFFER_SIZE = 4096 // Buffer size for reading from socket
 )
 
@@ -37,7 +37,7 @@ var rolePattern = regexp.MustCompile(`^([0-9]+):([0-9]+)$`)
 
 func getKeyPath() string {
 	if runtime.GOOS == "windows" {
-		return filepath.Join(os.TempDir(), "flyenv-helper.key")
+		return filepath.Join(os.TempDir(), "semarenv-helper.key")
 	}
 	return Key_Path_Unix
 }
@@ -155,7 +155,7 @@ func readAllowedRole() (roleInfo, error) {
 		}
 		fmt.Printf("Warning: ignoring invalid primary role file '%s': %v\n", Role_Path, err)
 	}
-	return roleInfo{}, fmt.Errorf("no valid FlyEnv role file found")
+	return roleInfo{}, fmt.Errorf("no valid SemarEnv role file found")
 }
 
 func ensureSecureDir(path string) error {
@@ -481,7 +481,7 @@ func (a *AppHelper) setupUnixPermissions() {
 	if err != nil {
 		fmt.Printf("Warning: failed to read valid role for socket permissions: %v\n", err)
 	} else {
-		fmt.Printf("Read FlyEnv role: '%s'\n", role.Raw)
+		fmt.Printf("Read SemarEnv role: '%s'\n", role.Raw)
 		if err := writeFileNoSymlink(Role_Path_Back, []byte(role.Raw), 0644); err != nil {
 			fmt.Printf("Warning: failed to write role file backup '%s': %v\n", Role_Path_Back, err)
 		}

@@ -1,5 +1,4 @@
-﻿import aiIT from './ai.json'
-import apacheIT from './apache.json'
+﻿import apacheIT from './apache.json'
 import appLogIT from './appLog.json'
 import asideIT from './aside.json'
 import baseIT from './base.json'
@@ -12,7 +11,6 @@ import menuIT from './menu.json'
 import mysqlIT from './mysql.json'
 import nginxIT from './nginx.json'
 import nodejsIT from './nodejs.json'
-import ollamaIT from './ollama.json'
 import phpIT from './php.json'
 import promptIT from './prompt.json'
 import redisIT from './redis.json'
@@ -30,44 +28,23 @@ import requestTimer from './requestTimer.json'
 import meilisearch from './meilisearch.json'
 import minio from './minio.json'
 import podman from './podman.json'
-import openclawIT from './openclaw.json'
-import n8n from './n8n.json'
 import rustfsIT from './rustfs.json'
 import mkcert from './mkcert.json'
-import hermes from './hermes.json'
 import flutter from './flutter.json'
 import cronIT from './cron.json'
-import kimi from './kimi.json'
-import claudeCode from './claude-code.json'
-import codex from './codex.json'
-import openCode from './opencode.json'
-import antigravity from './antigravity.json'
-import copilotCli from './copilot-cli.json'
 import common from './common.json'
-import mcp from './mcp.json'
 export default {
   it: {
     common,
-    kimi,
-    claudeCode,
-    codex,
-    openCode,
-    antigravity,
-    copilotCli,
-    mcp,
     cron: cronIT,
     rustfs: rustfsIT,
     mkcert,
     flutter,
-    hermes,
-    n8n,
-    openclaw: openclawIT,
     podman,
     minio,
     meilisearch,
     requestTimer,
     licenses: licensesIT,
-    ai: aiIT,
     apache: apacheIT,
     appLog: appLogIT,
     aside: asideIT,
@@ -81,7 +58,6 @@ export default {
     mysql: mysqlIT,
     nginx: nginxIT,
     nodejs: nodejsIT,
-    ollama: ollamaIT,
     php: phpIT,
     prompt: promptIT,
     redis: redisIT,

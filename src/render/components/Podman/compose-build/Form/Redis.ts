@@ -14,7 +14,7 @@ const Redis = reactive({
   volumes: [
     {
       type: 'bind',
-      source: './flyenv-docker-compose/redis/data',
+      source: './semarenv-docker-compose/redis/data',
       target: '/data' // Redis persistence directory
     }
   ],
@@ -32,12 +32,12 @@ const Redis = reactive({
       image: `${mirror}${image}:${Redis.version}`,
       ports: Redis.ports.map((p) => `${p.out}:${p.in}`),
       environment: Redis.environment,
-      networks: ['flyenv-network']
+      networks: ['semarenv-network']
     }
 
     if (Redis.persistence) {
       redis.volumes = Redis.volumes
-      await fs.mkdirp(join(dirname(base.dir), 'flyenv-docker-compose/redis/data'))
+      await fs.mkdirp(join(dirname(base.dir), 'semarenv-docker-compose/redis/data'))
     }
 
     return { redis }

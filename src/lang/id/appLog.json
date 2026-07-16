@@ -20,5 +20,5 @@
   "initDBDataDirSuccess": "Folder data berhasil dibuat. Lokasi folder: {dir}",
   "initDBDataDirFail": "Gagal membuat folder data. Alasan: {error}",
   "newProjectFail": "Gagal membuat proyek baru",
-  "processListFail": "Daftar proses tidak dapat diambil. Silakan instal FlyEnv Helper"
+  "processListFail": "Daftar proses tidak dapat diambil. Silakan instal SemarEnv Helper"
 }

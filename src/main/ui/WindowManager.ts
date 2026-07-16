@@ -251,8 +251,8 @@ export default class WindowManager extends EventEmitter {
         gpuInfo
       }
       const message = JSON.stringify(payload)
-      logger.error(`[FlyEnv][WindowDiagnostics] ${message}`)
-      appDebugLog('[FlyEnv-WindowDiagnostics]', message).catch()
+      logger.error(`[SemarEnv][WindowDiagnostics] ${message}`)
+      appDebugLog('[SemarEnv-WindowDiagnostics]', message).catch()
     }
 
     window.webContents.on('render-process-gone', (_event, details) => {

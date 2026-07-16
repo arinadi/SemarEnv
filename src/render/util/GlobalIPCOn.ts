@@ -1,7 +1,6 @@
-import { setupMcpIpc } from '@/util/MCP'
 import IPC from '@/util/IPC'
 import { MessageError, MessageSuccess, MessageWarning } from '@/util/Element'
-import { FlyEnvHelperSetup } from '@/components/FlyEnvHelper/setup'
+import { SemarEnvHelperSetup } from '@/components/SemarEnvHelper/setup'
 import HelperStore from '@/store/helper'
 import { nativeTheme } from '@/util/NodeFn'
 import { isEqual } from 'lodash-es'
@@ -42,12 +41,12 @@ class GlobalIPCOn {
       SetupStore().init()
     })
 
-    IPC.on('APP-FlyEnv-Helper-Notice').then((key: string, res: any) => {
+    IPC.on('APP-SemarEnv-Helper-Notice').then((key: string, res: any) => {
       if (res?.code === 0) {
         MessageSuccess(res?.msg)
       } else if (res.code === 1) {
         MessageError(res?.msg)
-        if (res?.status === 'installFaild' && this.inited && !FlyEnvHelperSetup.show) {
+        if (res?.status === 'installFaild' && this.inited && !SemarEnvHelperSetup.show) {
           HelperStore.showInstallFailDialog(res?.reason)
         } else if (!res?.status && HelperStore.shouldShowNeedInstallDialog(res?.reason)) {
           HelperStore.showNeedInstallDialog(res?.reason)
@@ -57,7 +56,6 @@ class GlobalIPCOn {
       }
     })
 
-    setupMcpIpc()
   }
 }
 

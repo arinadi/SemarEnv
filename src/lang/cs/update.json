@@ -1,9 +1,9 @@
 {
   "checkForUpdates": "Zkontrolovat aktualizace",
-  "update-available-message": "Je k dispozici novější verze FlyEnvu, aktualizovat?",
-  "update-not-available-message": "Jste aktuální!",
-  "update-downloaded-message": "Připraveno k instalaci...",
+  "update-available-message": "Je k dispozici novÄ›jÅ¡Ã­ verze SemarEnvu, aktualizovat?",
+  "update-not-available-message": "Jste aktuÃ¡lnÃ­!",
+  "update-downloaded-message": "PÅ™ipraveno k instalaci...",
   "update-error-message": "Chyba aktualizace",
-  "view-update-log": "Zobrazit protokol aktualizací",
-  "download-new-version": "Stáhnout novou verzi"
+  "view-update-log": "Zobrazit protokol aktualizacÃ­",
+  "download-new-version": "StÃ¡hnout novou verzi"
 }

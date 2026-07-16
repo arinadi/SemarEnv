@@ -28,7 +28,7 @@ const NodeJS = reactive({
       image: `${mirror}node:${NodeJS.version}`,
       ports: NodeJS.ports.map((p) => `${p.out}:${p.in}`),
       environment,
-      networks: ['flyenv-network'],
+      networks: ['semarenv-network'],
       working_dir: '/app',
       command: NodeJS.command
     }

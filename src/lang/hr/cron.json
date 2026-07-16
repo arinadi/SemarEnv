@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Zakazani poslovi",
   "add": "Dodaj zakazani posao",
   "name": "Naziv posla",
@@ -101,7 +101,7 @@
   "allTasks": "Svi zadaci",
   "systemTasks": "Sistemski zadaci",
   "systemTask": "Sistemski zadatak",
-  "flyenvTask": "FlyEnv zadatak",
+  "semarenvTask": "SemarEnv zadatak",
   "otherTask": "Drugi zadatak",
   "taskTrigger": "Okidač",
   "deleteSystemTaskTips": "Izbrisati ovaj sistemski zakazani zadatak?",

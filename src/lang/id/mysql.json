@@ -17,7 +17,7 @@
   "passwordFormatError": "Kata sandi database tidak boleh mengandung karakter Cina atau karakter khusus",
   "savePassword": "Perbarui kata sandi",
   "resetPasswordTips": "Operasi ini akan mengubah kata sandi pengguna root database",
-  "savePasswordTips": "Hanya memperbarui kata sandi yang disimpan di FlyEnv, tidak mengubah kata sandi pengguna root database. Kata sandi ini terutama digunakan untuk menghentikan instance {app} dengan aman.",
+  "savePasswordTips": "Hanya memperbarui kata sandi yang disimpan di SemarEnv, tidak mengubah kata sandi pengguna root database. Kata sandi ini terutama digunakan untuk menghentikan instance {app} dengan aman.",
   "resetPasswordConfirm": "Operasi ini akan mengubah kata sandi pengguna root database, yakin ingin melanjutkan?",
   "mysqlNeedRunTips": "Harap jalankan {app} terlebih dahulu",
   "databaseName": "Nama database",

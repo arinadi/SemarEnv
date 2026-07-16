@@ -27,12 +27,12 @@ const Caddy = reactive({
     const caddy: any = {
       image: `${mirror}caddy:${Caddy.version}`,
       ports: Caddy.ports.map((p) => `${p.out}:${p.in}`),
-      networks: ['flyenv-network']
+      networks: ['semarenv-network']
     }
 
-    const flyenvDir = join(dirname(base.dir), 'flyenv-docker-compose/caddy')
-    await fs.mkdirp(flyenvDir)
-    await fs.mkdirp(join(flyenvDir, 'config'))
+    const semarenvDir = join(dirname(base.dir), 'semarenv-docker-compose/caddy')
+    await fs.mkdirp(semarenvDir)
+    await fs.mkdirp(join(semarenvDir, 'config'))
 
     const root = Caddy.wwwRoot
     const volumes = [
@@ -44,7 +44,7 @@ const Caddy = reactive({
       },
       {
         type: 'bind',
-        source: './flyenv-docker-compose/caddy/config/Caddyfile',
+        source: './semarenv-docker-compose/caddy/config/Caddyfile',
         target: '/etc/caddy/Caddyfile',
         read_only: false
       }
@@ -76,7 +76,7 @@ const Caddy = reactive({
       caddyfileContent += `    file_server\n}\n`
     }
 
-    await fs.writeFile(join(flyenvDir, 'config/Caddyfile'), caddyfileContent)
+    await fs.writeFile(join(semarenvDir, 'config/Caddyfile'), caddyfileContent)
 
     const environment: any = {
       ...Caddy.environment

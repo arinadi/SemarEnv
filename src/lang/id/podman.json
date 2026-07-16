@@ -2,7 +2,7 @@
   "podmanInstall": "Pasang Podman",
   "installPodmanByHomebrew": "Pasang Podman melalui Homebrew",
   "noPodmanFound": "<a href=\"javascript:void();\" onclick=\"openUrl('https://podman.io/')\">Podman</a> tidak ditemukan.\nAnda dapat menekan tombol pasang untuk memasangnya.\nAnda juga dapat mengklik tautan ini\n<a href=\"javascript:void();\" onclick=\"openUrl('https://podman.io/docs/installation')\">https://podman.io/docs/installation</a>\ndan mengikuti petunjuk dokumentasi untuk memasang secara manual.",
-  "podmanErrorTips": "Di lokasi {bin}, ditemukan eksekutable Podman.\nTapi FlyEnv tidak bisa memanggilnya. Pesan kesalahan:\n{error}",
+  "podmanErrorTips": "Di lokasi {bin}, ditemukan eksekutable Podman.\nTapi SemarEnv tidak bisa memanggilnya. Pesan kesalahan:\n{error}",
   "removeContainerTips": "Anda yakin ingin menghapus kontainer ini?",
   "removeMachineTips": "Anda yakin ingin menghapus mesin virtual ini?",
   "removeImageTips": "Anda yakin ingin menghapus citra ini?",

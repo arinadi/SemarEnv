@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Tarefa Agendada",
   "add": "Adicionar Tarefa Agendada",
   "name": "Nome da Tarefa",
@@ -101,7 +101,7 @@
   "allTasks": "Todas as tarefas",
   "systemTasks": "Tarefas do sistema",
   "systemTask": "Tarefa do sistema",
-  "flyenvTask": "Tarefa do FlyEnv",
+  "semarenvTask": "Tarefa do SemarEnv",
   "otherTask": "Outra tarefa",
   "taskTrigger": "Acionador",
   "deleteSystemTaskTips": "Excluir esta tarefa agendada do sistema?",

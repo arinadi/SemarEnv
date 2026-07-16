@@ -100,7 +100,7 @@ export const PHPSetup = reactive<{
     }
     this.libFetching[item.bin] = true
 
-    const saveKey = `flyenv-php-extend`
+    const saveKey = `semarenv-php-extend`
     let saved: any = localStorage.getItem(saveKey)
     if (saved) {
       saved = JSON.parse(saved)

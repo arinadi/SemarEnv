@@ -51,7 +51,7 @@ async function main() {
   } as any
 
   await assert.rejects(
-    missingBinaryHelper.send('tools', 'writeFileByRoot', 'C:\\FlyEnv\\test.txt', 'content'),
+    missingBinaryHelper.send('tools', 'writeFileByRoot', 'C:\\SemarEnv\\test.txt', 'content'),
     (error: any) => {
       assert.equal(error?.code, 'helper_binary_missing')
       return true
@@ -61,7 +61,7 @@ async function main() {
   assert.equal(promptCalls, 0)
 
   await assert.rejects(
-    missingBinaryHelper.send('tools', 'readFileByRoot', 'C:\\FlyEnv\\test.txt'),
+    missingBinaryHelper.send('tools', 'readFileByRoot', 'C:\\SemarEnv\\test.txt'),
     (error: any) => {
       assert.equal(error?.code, 'helper_binary_missing')
       return true
@@ -89,7 +89,7 @@ async function main() {
   } as any
 
   await assert.rejects(
-    unavailableHelper.send('tools', 'setSystemEnv', 'FLYENV_ALIAS', 'C:\\FlyEnv\\alias'),
+    unavailableHelper.send('tools', 'setSystemEnv', 'FLYENV_ALIAS', 'C:\\SemarEnv\\alias'),
     (error: any) => {
       assert.equal(error?.code, 'helper_unreachable')
       return true
@@ -125,7 +125,7 @@ async function main() {
     'tools',
     'setSystemEnv',
     'FLYENV_ALIAS',
-    'C:\\FlyEnv\\alias'
+    'C:\\SemarEnv\\alias'
   )
   assert.equal(socketFallbackResult, true)
   assert.equal(socketFallbackCalls, 1)
@@ -149,7 +149,7 @@ async function main() {
   } as any)
 
   const noResponseResult = await Promise.race([
-    noResponseHelper.send('tools', 'writeFileByRoot', 'C:\\FlyEnv\\slow.txt', 'x'),
+    noResponseHelper.send('tools', 'writeFileByRoot', 'C:\\SemarEnv\\slow.txt', 'x'),
     new Promise((resolve) => setTimeout(() => resolve('timeout'), 2500))
   ])
   assert.equal(noResponseResult, 'timeout')

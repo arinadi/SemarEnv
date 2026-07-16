@@ -315,8 +315,8 @@ $tasks = @(Get-ScheduledTask | Sort-Object TaskPath, TaskName | ForEach-Object {
     }
   } catch {}
   $fullName = "$($_.TaskPath)$($_.TaskName)"
-  $isFlyEnv = $_.TaskName -like 'FlyEnv-Cron-*'
-  $jobId = if ($isFlyEnv) { $_.TaskName.Substring('FlyEnv-Cron-'.Length) } else { $null }
+  $isSemarEnv = $_.TaskName -like 'SemarEnv-Cron-*'
+  $jobId = if ($isSemarEnv) { $_.TaskName.Substring('SemarEnv-Cron-'.Length) } else { $null }
   [PSCustomObject]@{
     id = $fullName
     platform = 'windows'
@@ -330,7 +330,7 @@ $tasks = @(Get-ScheduledTask | Sort-Object TaskPath, TaskName | ForEach-Object {
     enabled = [bool]($_.State -ne 'Disabled')
     description = [string]$_.Description
     author = [string]$_.Author
-    isFlyEnv = [bool]$isFlyEnv
+    isSemarEnv = [bool]$isSemarEnv
     jobId = $jobId
     raw = $fullName
   }

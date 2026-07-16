@@ -15,7 +15,7 @@ const Consul = reactive({
   volumes: [
     {
       type: 'bind',
-      source: './flyenv-docker-compose/consul/data',
+      source: './semarenv-docker-compose/consul/data',
       target: '/consul/data'
     }
   ],
@@ -40,14 +40,14 @@ const Consul = reactive({
       image: `${mirror}consul:${Consul.version}`,
       ports: Consul.ports.map((p) => `${p.out}:${p.in}${p.protocol ? '/' + p.protocol : ''}`),
       environment,
-      networks: ['flyenv-network'],
+      networks: ['semarenv-network'],
       command: 'agent -ui -client=0.0.0.0'
     }
 
     // 如果需要持久化数据，创建数据目录
     if (Consul.persistence) {
       consul.volumes = Consul.volumes
-      await fs.mkdirp(join(dirname(base.dir), 'flyenv-docker-compose/consul/data'))
+      await fs.mkdirp(join(dirname(base.dir), 'semarenv-docker-compose/consul/data'))
     }
 
     return {

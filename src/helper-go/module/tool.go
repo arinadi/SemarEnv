@@ -500,8 +500,8 @@ func (t *ToolManager) SetSystemPath(paths []string, otherVars map[string]string)
 		}
 	}
 
-	if err := windowsSetMachineEnv("FLYENV_ENV_FLUSH", "0"); err != nil {
-		return false, fmt.Errorf("failed to set FLYENV_ENV_FLUSH: %w", err)
+	if err := windowsSetMachineEnv("SEMARENV_ENV_FLUSH", "0"); err != nil {
+		return false, fmt.Errorf("failed to set SEMARENV_ENV_FLUSH: %w", err)
 	}
 	windowsNotifyEnvironmentChanged()
 	return true, nil
@@ -541,7 +541,7 @@ func (t *ToolManager) RunScript(shell, scriptPath string) (ExecResult, error) {
 }
 
 func autoStartRunLevel(taskName string) string {
-	if taskName == "FlyEnvStartup" {
+	if taskName == "SemarEnvStartup" {
 		return "limited"
 	}
 	return "highest"
@@ -583,9 +583,9 @@ func (t *ToolManager) RemoveLoginItemMac(name string) (bool, error) {
 	if !utils.IsMacOS() {
 		return false, fmt.Errorf("RemoveLoginItemMac is only supported on macOS")
 	}
-	// 只允许删除 FlyEnv 或 Electron 的登录项
-	if name != "FlyEnv" && name != "Electron" {
-		return false, fmt.Errorf("invalid login item name: %s (only FlyEnv or Electron allowed)", name)
+	// 只允许删除 SemarEnv 或 Electron 的登录项
+	if name != "SemarEnv" && name != "Electron" {
+		return false, fmt.Errorf("invalid login item name: %s (only SemarEnv or Electron allowed)", name)
 	}
 	// AppleScript strings escape double quotes by doubling them: " -> ""
 	escapedName := strings.ReplaceAll(name, `"`, `""`)

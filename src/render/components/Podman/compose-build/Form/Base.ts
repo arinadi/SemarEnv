@@ -37,7 +37,7 @@ const base = reactive({
     return `${url.host}/`
   },
   initMirrors() {
-    const storeKey = 'flyenv-podman-mirrors'
+    const storeKey = 'semarenv-podman-mirrors'
     StorageGetAsync<string[]>(storeKey)
       .then((res) => {
         const mirrors: string[] = this.mirrors as any
@@ -52,7 +52,7 @@ const base = reactive({
   saveMirrors() {
     if (this.mirror.trim()) {
       const mirrors = Array.from(new Set([this.mirror.trim(), ...this.mirrors])).slice(0, 10)
-      const storeKey = 'flyenv-podman-mirrors'
+      const storeKey = 'semarenv-podman-mirrors'
       StorageSetAsync(storeKey, mirrors).catch()
     }
   }

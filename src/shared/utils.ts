@@ -8,7 +8,7 @@ import { normalize } from 'pathe'
 export async function appDebugLog(flag: string, info: string) {
   console.log('appDebugLog: ', flag, info)
   try {
-    const debugFile = join(tmpdir(), 'flyenv-debug.log')
+    const debugFile = join(tmpdir(), 'semarenv-debug.log')
     await appendFile(debugFile, `${flag}: ${info}\n`)
   } catch {
     /* empty */

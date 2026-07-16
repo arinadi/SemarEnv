@@ -17,7 +17,7 @@
   "passwordFormatError": "Database password cannot contain Chinese or special characters",
   "savePassword": "Update password",
   "resetPasswordTips": "This operation will change the database root user's password",
-  "savePasswordTips": "Only updates the password stored in FlyEnv, does not change the database root user's password. This password is mainly used to safely stop {app} instances.",
+  "savePasswordTips": "Only updates the password stored in SemarEnv, does not change the database root user's password. This password is mainly used to safely stop {app} instances.",
   "resetPasswordConfirm": "This operation will change the database root user's password, are you sure you want to proceed?",
   "mysqlNeedRunTips": "Please run {app} first",
   "databaseName": "Database name",

@@ -1,5 +1,4 @@
-import aiZH from './ai.json'
-import apacheZH from './apache.json'
+﻿import apacheZH from './apache.json'
 import appLogZH from './appLog.json'
 import asideZH from './aside.json'
 import baseZH from './base.json'
@@ -12,7 +11,6 @@ import menuZH from './menu.json'
 import mysqlZH from './mysql.json'
 import nginxZH from './nginx.json'
 import nodejsZH from './nodejs.json'
-import ollamaZH from './ollama.json'
 import phpZH from './php.json'
 import promptZH from './prompt.json'
 import redisZH from './redis.json'
@@ -30,44 +28,23 @@ import requestTimer from './requestTimer.json'
 import meilisearch from './meilisearch.json'
 import minio from './minio.json'
 import podman from './podman.json'
-import openclaw from './openclaw.json'
-import n8n from './n8n.json'
 import rustfs from './rustfs.json'
 import mkcert from './mkcert.json'
-import hermes from './hermes.json'
 import flutter from './flutter.json'
 import cronZH from './cron.json'
-import kimi from './kimi.json'
-import claudeCode from './claude-code.json'
-import codex from './codex.json'
-import openCode from './opencode.json'
-import antigravity from './antigravity.json'
-import copilotCli from './copilot-cli.json'
 import common from './common.json'
-import mcp from './mcp.json'
 export default {
   zh: {
     common,
-    kimi,
-    claudeCode,
-    codex,
-    openCode,
-    antigravity,
-    copilotCli,
-    mcp,
     cron: cronZH,
     rustfs,
     mkcert,
     flutter,
-    hermes,
-    n8n,
-    openclaw,
     podman,
     minio,
     meilisearch,
     requestTimer,
     licenses: licensesZH,
-    ai: aiZH,
     apache: apacheZH,
     appLog: appLogZH,
     aside: asideZH,
@@ -81,7 +58,6 @@ export default {
     mysql: mysqlZH,
     nginx: nginxZH,
     nodejs: nodejsZH,
-    ollama: ollamaZH,
     php: phpZH,
     prompt: promptZH,
     redis: redisZH,

@@ -30,7 +30,7 @@ const Deno = reactive({
       image: `${mirror}${image}:${Deno.version}`,
       ports: Deno.ports.map((p) => `${p.out}:${p.in}`),
       environment,
-      networks: ['flyenv-network'],
+      networks: ['semarenv-network'],
       working_dir: '/app',
       command: Deno.command
     }

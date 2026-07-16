@@ -1,9 +1,9 @@
 {
-  "checkForUpdates": "Yeniləmələri Yoxla",
-  "update-available-message": "FlyEnv-in daha yeni versiyası mövcuddur, indi yeniləmək istəyirsiniz?",
-  "update-not-available-message": "Tətbiqiniz güncəldir!",
-  "update-downloaded-message": "Quraşdırılmağa hazırdır...",
-  "update-error-message": "Yeniləmə Xətası",
-  "view-update-log": "Yeniləmə jurnalına bax",
-  "download-new-version": "Yeni versiyanı yüklə"
+  "checkForUpdates": "YenilÉ™mÉ™lÉ™ri Yoxla",
+  "update-available-message": "SemarEnv-in daha yeni versiyasÄ± mÃ¶vcuddur, indi yenilÉ™mÉ™k istÉ™yirsiniz?",
+  "update-not-available-message": "TÉ™tbiqiniz gÃ¼ncÉ™ldir!",
+  "update-downloaded-message": "QuraÅŸdÄ±rÄ±lmaÄŸa hazÄ±rdÄ±r...",
+  "update-error-message": "YenilÉ™mÉ™ XÉ™tasÄ±",
+  "view-update-log": "YenilÉ™mÉ™ jurnalÄ±na bax",
+  "download-new-version": "Yeni versiyanÄ± yÃ¼klÉ™"
 }

@@ -39,36 +39,17 @@ function callFork(
  *
  * 设计要点：
  *   - 一次 fork 调用批量拉取多个 flag 的 allInstalledVersions，避免每个 flag 一次往返
- *   - 结果缓存在主进程内存，MCP 查询直接从缓存读
+ *   - 结果缓存在主进程内存
  *   - 安装/卸载后可通过 refresh(flag) 主动刷新
  *   - 单个模块报错不会阻塞其它模块（由 fork 侧 Version.allInstalledVersions 兜底）
  */
-type McpNotifyPayload = { type: string; [key: string]: any }
-type McpNotifyCallback = (payload: McpNotifyPayload) => void
 
 class ServiceVersionManager {
   private forkManager?: ForkManager
   private cache: Record<string, SoftInstalled[]> = {}
-  private notifyCallbacks: McpNotifyCallback[] = []
 
   setForkManager(fm: ForkManager) {
     this.forkManager = fm
-  }
-
-  /** 注册 MCP 需要向渲染进程发送通知的回调 */
-  onMcpNotify(cb: McpNotifyCallback) {
-    this.notifyCallbacks.push(cb)
-  }
-
-  /** MCP 侧通知渲染进程（例如安装完成需要刷新已安装版本） */
-  notifyRenderer(payload: McpNotifyPayload) {
-    for (const cb of this.notifyCallbacks) {
-      try {
-        cb(payload)
-      } catch (e) {
-        console.log('ServiceVersionManager notifyRenderer error: ', e)
-      }
-    }
   }
 
   /** 当前完整缓存（浅拷贝） */

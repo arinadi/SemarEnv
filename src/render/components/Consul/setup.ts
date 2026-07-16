@@ -9,7 +9,7 @@ export const ConsulSetup: {
   dir: {},
   init() {
     localForage
-      .getItem('flyenv-consul-storage-dir')
+      .getItem('semarenv-consul-storage-dir')
       .then((res: Record<string, string>) => {
         if (res) {
           ConsulSetup.dir = reactive(res)
@@ -19,7 +19,7 @@ export const ConsulSetup: {
   },
   save() {
     localForage
-      .setItem('flyenv-consul-storage-dir', JSON.parse(JSON.stringify(ConsulSetup.dir)))
+      .setItem('semarenv-consul-storage-dir', JSON.parse(JSON.stringify(ConsulSetup.dir)))
       .then()
       .catch()
   }

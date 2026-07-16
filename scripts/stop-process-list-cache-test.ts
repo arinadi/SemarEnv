@@ -14,7 +14,7 @@ import {
   type StopProcessListResponse
 } from '../src/shared/StopProcessList'
 
-const firstList: PItem[] = [{ USER: 'user', PID: '10', PPID: '1', COMMAND: '/opt/flyenv/nginx' }]
+const firstList: PItem[] = [{ USER: 'user', PID: '10', PPID: '1', COMMAND: '/opt/semarenv/nginx' }]
 
 let now = 0
 let fetchCount = 0
@@ -51,7 +51,7 @@ assert.strictEqual(await cache.get(), firstList)
 assert.equal(fetchCount, 1)
 
 now = 450
-const secondList: PItem[] = [{ USER: 'user', PID: '11', PPID: '1', COMMAND: '/opt/flyenv/mysql' }]
+const secondList: PItem[] = [{ USER: 'user', PID: '11', PPID: '1', COMMAND: '/opt/semarenv/mysql' }]
 let retryCount = 0
 const retryCache = new StopProcessListCache(
   async () => {

@@ -233,7 +233,7 @@ class App extends Base {
       }
       try {
         const res = await axios({
-          url: `https://raw.githubusercontent.com/xpf0000/FlyEnv/refs/heads/master/${file}`,
+          url: `https://raw.githubusercontent.com/arinadi/SemarEnv/refs/heads/master/${file}`,
           method: 'get',
           proxy: this.getAxiosProxy()
         })
@@ -244,22 +244,22 @@ class App extends Base {
         let name = ''
         if (isMacOS()) {
           if (a === 'x64') {
-            name = `FlyEnv-${version}.dmg`
+            name = `SemarEnv-${version}.dmg`
           } else {
-            name = `FlyEnv-${version}-arm64.dmg`
+            name = `SemarEnv-${version}-arm64.dmg`
           }
         } else if (isLinux()) {
           const isdeb = await isDEB()
           const ext = isdeb ? '.deb' : '.rpm'
           if (a === 'x64') {
-            name = `FlyEnv-${version}-x64${ext}`
+            name = `SemarEnv-${version}-x64${ext}`
           } else {
-            name = `FlyEnv-${version}-arm64${ext}`
+            name = `SemarEnv-${version}-arm64${ext}`
           }
         } else {
-          name = `FlyEnv-Setup-${version}.exe`
+          name = `SemarEnv-Setup-${version}.exe`
         }
-        const url = `https://github.com/xpf0000/FlyEnv/releases/download/v${version}/${name}`
+        const url = `https://github.com/arinadi/SemarEnv/releases/download/v${version}/${name}`
         resolve({
           app: global.Server.APPVersion,
           online: version,

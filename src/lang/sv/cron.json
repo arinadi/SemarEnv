@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Schemalagda uppgifter",
   "add": "Lägg till schemalagd uppgift",
   "name": "Uppgiftsnamn",
@@ -101,7 +101,7 @@
   "allTasks": "Alla uppgifter",
   "systemTasks": "Systemuppgifter",
   "systemTask": "Systemuppgift",
-  "flyenvTask": "FlyEnv-uppgift",
+  "semarenvTask": "SemarEnv-uppgift",
   "otherTask": "Annan uppgift",
   "taskTrigger": "Utlösare",
   "deleteSystemTaskTips": "Ta bort den här schemalagda systemuppgiften?",

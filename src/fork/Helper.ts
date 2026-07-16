@@ -111,10 +111,10 @@ export class Helper {
     }
     process?.send?.({
       on: true,
-      key: 'App-Need-Init-FlyEnv-Helper',
+      key: 'App-Need-Init-SemarEnv-Helper',
       info: {
         code: 200,
-        msg: 'App-Need-Init-FlyEnv-Helper'
+        msg: 'App-Need-Init-SemarEnv-Helper'
       }
     })
   }

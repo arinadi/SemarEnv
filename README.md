@@ -1,23 +1,21 @@
 # SemarEnv
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/xpf0000/FlyEnv/master/build/256x256.png" width="180" alt="SemarEnv Logo" />
+  <img src="https://raw.githubusercontent.com/arinadi/SemarEnv/master/build/256x256.png" width="180" alt="SemarEnv Logo" />
 
-  <h1>Manage Local Dev Stacks, AI Coding CLIs, and MCP Natively</h1>
+  <h1>Native Local Development Environment Manager</h1>
 
   <p>
     <strong>SemarEnv is a desktop app for managing local development environments on Windows, macOS, and Linux.</strong><br>
-    Install and run PHP, Node.js, Python, Java, .NET, Flutter, web servers, databases, queues, AI tools, AI coding CLIs, SSL, local domains, reverse proxies, and cron jobs from one UI.<br>
-    Connect local services and project context to AI clients through the built-in SemarEnv MCP Server.<br>
+    Install and run PHP, Node.js, Python, Java, .NET, Flutter, web servers, databases, queues, SSL, local domains, reverse proxies, and cron jobs from one UI.<br>
     Use native binaries, switch versions per project, and keep your system PATH clean—<strong>no Docker required</strong>.
   </p>
 
 *Best for web, backend, mobile, and full-stack developers who want local services without container overhead.*
 
   <p>
-    <a href="https://github.com/xpf0000/FlyEnv/releases"><img src="https://img.shields.io/github/release/xpf0000/FlyEnv.svg" alt="GitHub release"></a>
-    <a href="https://github.com/xpf0000/FlyEnv/releases"><img src="https://img.shields.io/github/downloads/xpf0000/FlyEnv/total.svg" alt="Total Downloads"></a>
-    <a href="https://ko-fi.com/R5R2OJXTM"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="ko-fi"></a>
+    <a href="https://github.com/arinadi/SemarEnv/releases"><img src="https://img.shields.io/github/release/arinadi/SemarEnv.svg" alt="GitHub release"></a>
+    <a href="https://github.com/arinadi/SemarEnv/releases"><img src="https://img.shields.io/github/downloads/arinadi/SemarEnv/total.svg" alt="Total Downloads"></a>
   </p>
 </div>
 
@@ -26,8 +24,6 @@
 * **Install runtimes on demand:** PHP, Node.js, Python, Java, .NET, Flutter, Go, Rust, Ruby, Bun, Deno, and more.
 * **Run local services:** Nginx, Apache, Caddy, MySQL, PostgreSQL, MongoDB, Redis, RabbitMQ, Elasticsearch, Minio/RustFS, and other common development dependencies.
 * **Manage projects:** Switch runtime versions per project, define start/stop commands, expose projects through local domains, reverse proxies, HTTPS, and Cloudflare Tunnel.
-* **Run AI coding workflows locally:** Install and manage Claude Code, Codex, OpenCode, Kimi, Antigravity CLI, and GitHub Copilot CLI from the same desktop workspace.
-* **Expose your stack to AI agents:** Use the built-in FlyEnv MCP Server to let AI clients inspect services, sites, configs, logs, and selected lifecycle actions.
 * **Handle daily dev tasks:** Edit configs and logs, inspect ports, schedule cron jobs, manage Git, generate certificates, compare diffs, test WebSocket/SSE, and work with JWTs.
 
 Your environment adapts to your project, not the other way around—versions switch automatically as you move between projects:
@@ -39,9 +35,9 @@ cd ~/projects/modern-laravel
 php -v   # PHP 8.3 (auto-switched)
 ```
 
-## Is FlyEnv For You?
+## Is SemarEnv For You?
 
-| Choose FlyEnv if you... | It may not be the best fit if you... |
+| Choose SemarEnv if you... | It may not be the best fit if you... |
 | :--- | :--- |
 | Want XAMPP/MAMP/Herd-style convenience across many stacks | Need exact Docker Compose or Kubernetes parity with production |
 | Work with multiple runtime versions across projects | Only use one runtime and are happy with your system package manager |
@@ -50,20 +46,17 @@ php -v   # PHP 8.3 (auto-switched)
 
 ---
 
-## 🚀 How FlyEnv Fits
+## 🚀 How SemarEnv Fits
 
-Most local dev tools are either too heavy for everyday work (Docker Desktop) or too low-level for full-stack projects (NVM/Homebrew/package managers). FlyEnv sits in the middle: a native desktop manager for the tools and services you actually run while building software.
+Most local dev tools are either too heavy for everyday work (Docker Desktop) or too low-level for full-stack projects (NVM/Homebrew/package managers). SemarEnv sits in the middle: a native desktop manager for the tools and services you actually run while building software.
 
-What changed with FlyEnv 4.16 is that it no longer stops at the runtime and service layer. It now also manages AI coding CLIs and exposes your local environment through MCP, so your agent tools can work with the same projects, services, domains, and configs you already manage in FlyEnv.
-That is the clearest difference versus traditional local-stack tools such as XAMPP, MAMP, or Herd: FlyEnv is not only a runtime manager, but also a local AI coding workspace.
+That is the clearest difference versus traditional local-stack tools such as XAMPP, MAMP, or Herd: SemarEnv is a full-stack environment manager, not just a bundled web stack.
 
-| Capability | FlyEnv | Docker Desktop | XAMPP/MAMP |
+| Capability | SemarEnv | Docker Desktop | XAMPP/MAMP |
 | :--- | :--- | :--- | :--- |
 | **How services run** | Native processes managed from a desktop UI | Containers managed through images and compose files | Native bundled web stack |
 | **Scope** | Runtimes, databases, web servers, project services, and developer tools | Any containerized service or application | Primarily PHP/web-server/database stacks |
 | **Project versions** | Built-in project runtime workflows | Defined in container configuration | Usually global or manual |
-| **AI coding CLI workflow** | Built-in modules for local AI coding clients | Not built in | Not built in |
-| **MCP access to local stack** | Built-in FlyEnv MCP Server | Manual setup | Not built in |
 | **Best suited for** | Native local development across many stacks | Reproducible container-based environments | Traditional local PHP development |
 
 ### Core Benefits
@@ -72,8 +65,7 @@ That is the clearest difference versus traditional local-stack tools such as XAM
 * **Native Processes:** Run installed services directly on your operating system rather than inside Docker containers.
 * **Project Workflows:** Switch Node/PHP environments by project and define project service commands, ports, domains, and HTTPS.
 * **Full-Stack Coverage:** Enable databases, queues, search engines, object storage, AI tools, and scheduled tasks from one app.
-* **AI-Ready Local Workspace:** Manage AI coding CLIs and connect them to your local stack through the built-in FlyEnv MCP Server.
-* **Multilingual UI:** Use FlyEnv in 30+ languages.
+* **Multilingual UI:** Use SemarEnv in 30+ languages.
 
 > **The real power is that everything works together.** A version switcher, a web server manager, a tunnel tool—you can find each of these elsewhere. What you can't find elsewhere is all of them in one window, sharing the same projects, sites, and workflow: `Install → Configure → Run → Reverse proxy → Tunnel → Debug → Ship`. The time you save isn't any one feature being fast. It's never having to leave.
 
@@ -113,33 +105,13 @@ That is the clearest difference versus traditional local-stack tools such as XAM
 
 </details>
 
-<details>
-<summary><strong>🤖 For AI Coding & Agent Workflows</strong></summary>
-
-> * Install and manage Claude Code, Codex, OpenCode, Kimi, Antigravity CLI, and GitHub Copilot CLI from one app.
-> * Register the built-in FlyEnv MCP Server into supported clients without hand-editing every config.
-> * Let AI tools inspect local services, sites, versions, configs, and selected lifecycle actions against the same environment you use for development.
-
-</details>
-
-### AI Workflow at a Glance
-
-![FlyEnv MCP and AI CLI workflow](./flyenv-mcp.jpeg)
-
-The diagram above shows the workflow. The screenshot below shows the real FlyEnv MCP Server interface used to configure the bridge between your local stack and AI coding tools.
-
-![FlyEnv MCP Server screen](./flyenv-mcp-screen.webp)
-
 ---
 
 ## 📦 Supported Modules (On-Demand)
 
-FlyEnv allows you to install **only what you need** from a vast library of supported software:
+SemarEnv allows you to install **only what you need** from a vast library of supported software:
 
-* **AI Coding & MCP**: FlyEnv MCP Server, Claude Code, Codex, OpenCode, Kimi, Antigravity CLI, GitHub Copilot CLI.
-* **AI Integration & Automation**: Hermes Agent, [OpenClaw], [n8n], [Ollama], CliProxyAPI.
 * **Containers**: Podman.
-* **Network Tunnel**: Cloudflared, Cloudflare Tunnel.
 * **Web Servers**: FrankenPHP, [Apache], [Nginx], Caddy, Tomcat.
 * **Databases**: [MySQL], [MariaDB], [PostgreSQL], [MongoDB], Qdrant.
 * **Email Server**: [Mailpit].
@@ -150,13 +122,10 @@ FlyEnv allows you to install **only what you need** from a vast library of suppo
 * **Object Storage**: RustFS, Minio.
 * **Automation & Scheduling**: Cron Jobs.
 * **Utilities**: Git, MkCert, DNS Server, FTP Server, Static HTTP Server.
-* **Custom modules**: Users can add modules on their own, whether as services or commonly used commands. FlyEnv's custom module system ensures that user modules function just like system modules, delivering a seamless user experience.
+* **Custom modules**: Users can add modules on their own, whether as services or commonly used commands. SemarEnv's custom module system ensures that user modules function just like system modules, delivering a seamless user experience.
 
 > *All modules support multi-version co-existence.*
 
-[OpenClaw]: https://youtu.be/j7_B-VzIyEU
-[Ollama]: https://youtu.be/yPk9HQJRvb8
-[n8n]: https://youtu.be/YnA1B3qmDJU
 [Apache]: https://youtu.be/t7nKL45FdVk
 [Nginx]: https://youtu.be/zfdNZFRt3k4
 [MySQL]: https://youtu.be/uWWHAqxhVyk
@@ -179,7 +148,7 @@ FlyEnv allows you to install **only what you need** from a vast library of suppo
 * **Local Domains & SSL:** Create local sites (`myapp.test`) with custom domains and **one-click HTTPS** backed by MkCert/local certificates.
 * **Project Services & Reverse Proxy:** Define custom start/stop commands, ports, reverse proxy rules, and HTTPS for projects in any language.
 * **Cron Jobs:** Schedule global or site-scoped commands with native crontab and Windows Task Scheduler integration.
-* **Config & Logs:** Edit `php.ini` or `my.cnf` directly in FlyEnv. View real-time error logs with highlighting.
+* **Config & Logs:** Edit `php.ini` or `my.cnf` directly in SemarEnv. View real-time error logs with highlighting.
 * **Port Management:** Visualize which apps are using which ports and kill processes instantly.
 * **Toolbox:** Compare text diffs, encode/decode JWTs, calculate cron schedules, and test WebSocket/SSE connections.
 
@@ -195,14 +164,14 @@ FlyEnv allows you to install **only what you need** from a vast library of suppo
 
 Finally, a fast, native environment for Windows developers.
 
-* **Installer:** [FlyEnv-Setup-4.16.2.exe](https://github.com/xpf0000/FlyEnv/releases/download/v4.16.2/FlyEnv-Setup-4.16.2.exe)
-* **Portable:** [FlyEnv-Portable-4.16.2.exe](https://github.com/xpf0000/FlyEnv/releases/download/v4.16.2/FlyEnv-Portable-4.16.2.exe)
+* **Installer:** [SemarEnv-Setup-4.16.2.exe](https://github.com/arinadi/SemarEnv/releases/download/v4.16.2/SemarEnv-Setup-4.16.2.exe)
+* **Portable:** [SemarEnv-Portable-4.16.2.exe](https://github.com/arinadi/SemarEnv/releases/download/v4.16.2/SemarEnv-Portable-4.16.2.exe)
 
 ### macOS
 
-* **Homebrew:** `brew install flyenv`
-* **DMG (Intel):** [FlyEnv-4.16.2.dmg](https://github.com/xpf0000/FlyEnv/releases/download/v4.16.2/FlyEnv-4.16.2.dmg)
-* **DMG (Apple Silicon):** [FlyEnv-4.16.2-arm64.dmg](https://github.com/xpf0000/FlyEnv/releases/download/v4.16.2/FlyEnv-4.16.2-arm64.dmg)
+* **Homebrew:** `brew install semarenv`
+* **DMG (Intel):** [SemarEnv-4.16.2.dmg](https://github.com/arinadi/SemarEnv/releases/download/v4.16.2/SemarEnv-4.16.2.dmg)
+* **DMG (Apple Silicon):** [SemarEnv-4.16.2-arm64.dmg](https://github.com/arinadi/SemarEnv/releases/download/v4.16.2/SemarEnv-4.16.2-arm64.dmg)
 
 ### Linux
 
@@ -210,21 +179,21 @@ Supports Debian/Ubuntu (.deb) and RedHat/CentOS (.rpm).
 
 #### Debian / Ubuntu
 
-- **x86_64**: [FlyEnv-4.16.2-x64.deb](https://github.com/xpf0000/FlyEnv/releases/download/v4.16.2/FlyEnv-4.16.2-x64.deb)
-- **ARM64**: [FlyEnv-4.16.2-arm64.deb](https://github.com/xpf0000/FlyEnv/releases/download/v4.16.2/FlyEnv-4.16.2-arm64.deb)
+- **x86_64**: [SemarEnv-4.16.2-x64.deb](https://github.com/arinadi/SemarEnv/releases/download/v4.16.2/SemarEnv-4.16.2-x64.deb)
+- **ARM64**: [SemarEnv-4.16.2-arm64.deb](https://github.com/arinadi/SemarEnv/releases/download/v4.16.2/SemarEnv-4.16.2-arm64.deb)
 
 #### Red Hat / Fedora / SUSE / CentOS
 
-- **x86_64**: [FlyEnv-4.16.2-x64.rpm](https://github.com/xpf0000/FlyEnv/releases/download/v4.16.2/FlyEnv-4.16.2-x64.rpm)
-- **ARM64**: [FlyEnv-4.16.2-arm64.rpm](https://github.com/xpf0000/FlyEnv/releases/download/v4.16.2/FlyEnv-4.16.2-arm64.rpm)
+- **x86_64**: [SemarEnv-4.16.2-x64.rpm](https://github.com/arinadi/SemarEnv/releases/download/v4.16.2/SemarEnv-4.16.2-x64.rpm)
+- **ARM64**: [SemarEnv-4.16.2-arm64.rpm](https://github.com/arinadi/SemarEnv/releases/download/v4.16.2/SemarEnv-4.16.2-arm64.rpm)
 
 ---
 
 **📦 Build & Transparency**
 
-All FlyEnv installation packages are now built using **[GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
+All SemarEnv installation packages are now built using **[GitHub Actions](https://github.com/arinadi/SemarEnv/actions)**. You can verify the build process and download the artifacts directly from the following links:
 
-* **Global Build History:** [GitHub Actions](https://github.com/xpf0000/FlyEnv/actions)
+* **Global Build History:** [GitHub Actions](https://github.com/arinadi/SemarEnv/actions)
 
 ---
 
@@ -253,11 +222,11 @@ All FlyEnv installation packages are now built using **[GitHub Actions](https://
 
 ## Development & Contribution
 
-We welcome contributions! FlyEnv is built with Node.js & web technologies (Electron/Vue).
+We welcome contributions! SemarEnv is built with Node.js & web technologies (Electron/Vue).
 
 ```bash
-git clone git@github.com:xpf0000/FlyEnv.git
-cd FlyEnv
+git clone git@github.com:arinadi/SemarEnv.git
+cd SemarEnv
 yarn install
 yarn run dev
 ```
@@ -266,10 +235,10 @@ Check out our [Development Guide](./DEV.md) to get started.
 
 ## Community & Support
 
-* **Technical Deep Dive:** [Architecture Analysis](https://deepwiki.com/xpf0000/FlyEnv)
+* **Technical Deep Dive:** [Architecture Analysis](https://deepwiki.com/arinadi/FlyEnv)
 * **Facebook Group:**[Facebook Group](https://www.facebook.com/groups/908637655411162)
 * **Discord:** [Join Community](https://discord.gg/u5SuMGxjPE)
-* **Discussions:** [GitHub Discussions](https://github.com/xpf0000/FlyEnv/discussions)
+* **Discussions:** [GitHub Discussions](https://github.com/arinadi/SemarEnv/discussions)
 * **Website:** [flyenv.com](https://www.flyenv.com)
 
-**License:** Open-source under the [BSD 3-Clause License](https://github.com/xpf0000/FlyEnv/blob/master/LICENSE).
+**License:** Open-source under the [BSD 3-Clause License](https://github.com/arinadi/SemarEnv/blob/master/LICENSE).

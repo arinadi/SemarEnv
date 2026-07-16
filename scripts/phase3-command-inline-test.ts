@@ -9,69 +9,69 @@ const hasBun = (file: string) => /bun(?:\.exe)?$/i.test(file)
 
 const jsWindows = buildCodeRunInlineScript({
   type: 'javascript',
-  runtimePath: 'C:\\FlyEnv\\node',
-  sourceFile: 'C:\\FlyEnv Cache\\main.js',
-  runDir: 'C:\\FlyEnv Cache',
+  runtimePath: 'C:\\SemarEnv\\node',
+  sourceFile: 'C:\\SemarEnv Cache\\main.js',
+  runDir: 'C:\\SemarEnv Cache',
   platform: 'win32',
   exists: hasNode
 })
 assert.ok(jsWindows.includes('$env:PATH'))
-assert.ok(jsWindows.includes('node "C:\\FlyEnv Cache\\main.js"'))
+assert.ok(jsWindows.includes('node "C:\\SemarEnv Cache\\main.js"'))
 assert.ok(!jsWindows.includes('Unblock-File'))
 assert.ok(!jsWindows.includes('.ps1'))
 
 const typescriptUnix = buildCodeRunInlineScript({
   type: 'typescript',
-  runtimePath: '/opt/flyenv/node',
-  sourceFile: '/tmp/flyenv cache/main.ts',
-  runDir: '/tmp/flyenv cache',
+  runtimePath: '/opt/semarenv/node',
+  sourceFile: '/tmp/semarenv cache/main.ts',
+  runDir: '/tmp/semarenv cache',
   platform: 'darwin',
   exists: hasNode
 })
-assert.ok(typescriptUnix.includes('export PATH="/opt/flyenv/node/bin:/opt/flyenv/node:$PATH"'))
-assert.ok(typescriptUnix.includes('tsx "/tmp/flyenv cache/main.ts"'))
+assert.ok(typescriptUnix.includes('export PATH="/opt/semarenv/node/bin:/opt/semarenv/node:$PATH"'))
+assert.ok(typescriptUnix.includes('tsx "/tmp/semarenv cache/main.ts"'))
 assert.ok(!typescriptUnix.includes('.sh'))
 
 const bunWindows = buildCodeRunInlineScript({
   type: 'javascript',
-  runtimePath: 'C:\\FlyEnv\\bun',
-  sourceFile: 'C:\\FlyEnv Cache\\main.js',
-  runDir: 'C:\\FlyEnv Cache',
+  runtimePath: 'C:\\SemarEnv\\bun',
+  sourceFile: 'C:\\SemarEnv Cache\\main.js',
+  runDir: 'C:\\SemarEnv Cache',
   platform: 'win32',
   exists: hasBun
 })
-assert.ok(bunWindows.includes('bun run "C:\\FlyEnv Cache\\main.js"'))
+assert.ok(bunWindows.includes('bun run "C:\\SemarEnv Cache\\main.js"'))
 
 const customerCommand = buildUnixCustomerServiceStartScript({
-  env: 'export PATH="/opt/flyenv/bin:$PATH"',
-  cwd: '/tmp/flyenv project',
+  env: 'export PATH="/opt/semarenv/bin:$PATH"',
+  cwd: '/tmp/semarenv project',
   commandType: 'command',
   command: 'npm run dev',
   commandFile: '',
-  outFile: '/tmp/flyenv out.log',
-  errFile: '/tmp/flyenv err.log',
+  outFile: '/tmp/semarenv out.log',
+  errFile: '/tmp/semarenv err.log',
   shell: '/bin/bash'
 })
-assert.ok(customerCommand.includes('cd "/tmp/flyenv project"'))
+assert.ok(customerCommand.includes('cd "/tmp/semarenv project"'))
 assert.ok(customerCommand.includes("nohup bash -lc 'npm run dev'"))
-assert.ok(customerCommand.includes('> "/tmp/flyenv out.log" 2>"/tmp/flyenv err.log" &'))
+assert.ok(customerCommand.includes('> "/tmp/semarenv out.log" 2>"/tmp/semarenv err.log" &'))
 assert.ok(!customerCommand.includes('.start.sh'))
 assert.ok(!customerCommand.includes('start-'))
 
 const customerFile = buildUnixCustomerServiceStartScript({
   env: '',
-  cwd: '/tmp/flyenv project',
+  cwd: '/tmp/semarenv project',
   commandType: 'file',
   command: '',
-  commandFile: '/tmp/flyenv project/run.sh',
-  outFile: '/tmp/flyenv out.log',
-  errFile: '/tmp/flyenv err.log',
+  commandFile: '/tmp/semarenv project/run.sh',
+  outFile: '/tmp/semarenv out.log',
+  errFile: '/tmp/semarenv err.log',
   shell: '/bin/zsh'
 })
-assert.ok(customerFile.includes('nohup "/tmp/flyenv project/run.sh"'))
+assert.ok(customerFile.includes('nohup "/tmp/semarenv project/run.sh"'))
 assert.ok(!customerFile.includes('.start.sh'))
 
-const terminalScript = buildWindowsTerminalInlineScript("Write-Output 'FlyEnv terminal ok'")
+const terminalScript = buildWindowsTerminalInlineScript("Write-Output 'SemarEnv terminal ok'")
 assert.ok(terminalScript.includes('Start-Process'))
 assert.ok(terminalScript.includes('-EncodedCommand'))
 assert.ok(!/['"]-File['"]/.test(terminalScript))

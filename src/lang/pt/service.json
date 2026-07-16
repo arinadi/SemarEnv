@@ -2,21 +2,21 @@
   "setaliase": "Definir Alias",
   "env": "Env",
   "alias": "Alias",
-  "envTips": "O caminho foi adicionado à variável de ambiente",
+  "envTips": "O caminho foi adicionado Ã  variÃ¡vel de ambiente",
   "aliasTips": "Alias usado no terminal",
-  "useSysPHP": "Usar versão PHP padrão",
-  "setByApp": "Variáveis de ambiente definidas pelo FlyEnv",
-  "setByNoApp": "Variáveis de ambiente não definidas pelo FlyEnv",
-  "ftpdNeedPasswordToStart": "O Pure-FTPd precisa de permissões de administrador para iniciar. Por favor, insira a sua palavra-passe de utilizador atual. Esta palavra-passe será usada para preenchimento automático. Também pode clicar no botão abaixo para a introduzir manualmente no terminal, mas esta mensagem pode aparecer novamente.",
-  "bundleinVersionDelTips": "Esta versão é uma versão integrada, confirmar não exibir?",
-  "customDirVersionDelTips": "Esta versão é uma versão de caminho personalizado, confirmar não exibir?",
+  "useSysPHP": "Usar versÃ£o PHP padrÃ£o",
+  "setByApp": "VariÃ¡veis de ambiente definidas pelo SemarEnv",
+  "setByNoApp": "VariÃ¡veis de ambiente nÃ£o definidas pelo SemarEnv",
+  "ftpdNeedPasswordToStart": "O Pure-FTPd precisa de permissÃµes de administrador para iniciar. Por favor, insira a sua palavra-passe de utilizador atual. Esta palavra-passe serÃ¡ usada para preenchimento automÃ¡tico. TambÃ©m pode clicar no botÃ£o abaixo para a introduzir manualmente no terminal, mas esta mensagem pode aparecer novamente.",
+  "bundleinVersionDelTips": "Esta versÃ£o Ã© uma versÃ£o integrada, confirmar nÃ£o exibir?",
+  "customDirVersionDelTips": "Esta versÃ£o Ã© uma versÃ£o de caminho personalizado, confirmar nÃ£o exibir?",
   "ErrorTips": {
     "VCRuntime": {
-      "title": "Seu sistema está faltando o Redistributável Visual C + (DLLs) necessário para executar esta versão. Por favor, clique no link abaixo para baixar e instalar o VC Runtime no site oficial da Microsoft.",
-      "versionRelation": "Referência de compatibilidade de versão:",
+      "title": "Seu sistema estÃ¡ faltando o RedistributÃ¡vel Visual C + (DLLs) necessÃ¡rio para executar esta versÃ£o. Por favor, clique no link abaixo para baixar e instalar o VC Runtime no site oficial da Microsoft.",
+      "versionRelation": "ReferÃªncia de compatibilidade de versÃ£o:",
       "software": "Software",
-      "versionRange": "Intervalo de versão",
-      "msvsVersion": "Versão MSVC"
+      "versionRange": "Intervalo de versÃ£o",
+      "msvsVersion": "VersÃ£o MSVC"
     }
   }
 }

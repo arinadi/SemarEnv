@@ -515,8 +515,8 @@
         return I18nT('flutter.sourceDefault')
       case 'custom':
         return I18nT('flutter.sourceCustom')
-      case 'flyenv':
-        return I18nT('flutter.sourceFlyenv')
+      case 'semarenv':
+        return I18nT('flutter.sourceSemarenv')
       default:
         return I18nT('flutter.sourceUnknown')
     }

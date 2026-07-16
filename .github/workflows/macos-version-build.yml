@@ -1,22 +1,22 @@
-name: Build FlyEnv macOS Packages
+name: Build SemarEnv macOS Packages
 on:
   push:
     paths:
-      - 'build/macos.build.yml' # 触发路径参考 Linux 配置
+      - 'build/macos.build.yml' # è§¦å‘è·¯å¾„å‚è€ƒ Linux é…ç½®
 
 jobs:
   build-macos:
     name: Build (${{ matrix.arch }})
-    # 使用 strategy matrix 实现分架构并行构建
+    # ä½¿ç”¨ strategy matrix å®žçŽ°åˆ†æž¶æž„å¹¶è¡Œæž„å»º
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         include:
           - arch: x64
-            os: macos-15-intel # Intel 运行环境
+            os: macos-15-intel # Intel è¿è¡ŒçŽ¯å¢ƒ
             target: x64
           - arch: arm64
-            os: macos-latest # Apple Silicon 运行环境
+            os: macos-latest # Apple Silicon è¿è¡ŒçŽ¯å¢ƒ
             target: arm64
     steps:
       - name: Checkout code
@@ -53,11 +53,11 @@ jobs:
           MACOS_CERTIFICATE_PWD: ${{ secrets.MACOS_CERTIFICATE_PWD }}
           AUTH_KEY_BASE64: ${{ secrets.MACOS_AUTH_KEY_BASE64 }}
         run: |
-          # 1. 还原 .p8 文件
+          # 1. è¿˜åŽŸ .p8 æ–‡ä»¶
           mkdir -p build
           echo -n "$AUTH_KEY_BASE64" | base64 --decode -o build/apple_api_key.p8
 
-          # 2. 创建临时钥匙串并导入证书
+          # 2. åˆ›å»ºä¸´æ—¶é’¥åŒ™ä¸²å¹¶å¯¼å…¥è¯ä¹¦
           CERT_PATH=$RUNNER_TEMP/build_cert.p12
           echo -n "$MACOS_CERTIFICATE" | base64 --decode -o "$CERT_PATH"
           KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
@@ -77,18 +77,18 @@ jobs:
         run: |
           cd "$GITHUB_WORKSPACE/src/helper-go"
           chmod +x ./build.sh
-          bash ./build.sh # 脚本会根据当前 matrix 架构自动构建
+          bash ./build.sh # è„šæœ¬ä¼šæ ¹æ®å½“å‰ matrix æž¶æž„è‡ªåŠ¨æž„å»º
 
       - name: Build and Notarize Electron App
         env:
-          # 关键点：增加 Node 内存上限到 8GB
+          # å…³é”®ç‚¹ï¼šå¢žåŠ  Node å†…å­˜ä¸Šé™åˆ° 8GB
           NODE_OPTIONS: "--max-old-space-size=4096"
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CSC_LINK: ${{ secrets.MACOS_CERTIFICATE }}
           CSC_KEY_PASSWORD: ${{ secrets.MACOS_CERTIFICATE_PWD }}
           APPLE_API_ISSUER: ${{ secrets.APPLE_API_ISSUER }}
           APPLE_API_KEY_ID: ${{ secrets.APPLE_API_KEY_ID }}
-          # 核心修复：electron-builder 寻找的是 APPLE_API_KEY
+          # æ ¸å¿ƒä¿®å¤ï¼šelectron-builder å¯»æ‰¾çš„æ˜¯ APPLE_API_KEY
           APPLE_API_KEY: ${{ github.workspace }}/build/apple_api_key.p8
           APPLE_API_KEY_PATH: ${{ github.workspace }}/build/apple_api_key.p8
         run: yarn build
@@ -96,7 +96,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: FlyEnv-macOS-${{ matrix.arch }}
+          name: SemarEnv-macOS-${{ matrix.arch }}
           path: |
             release/*.dmg
             release/*.zip

@@ -1,5 +1,4 @@
-﻿import aiEN from './ai.json'
-import apacheEN from './apache.json'
+﻿import apacheEN from './apache.json'
 import appLogEN from './appLog.json'
 import asideEN from './aside.json'
 import baseEN from './base.json'
@@ -12,7 +11,6 @@ import menuEN from './menu.json'
 import mysqlEN from './mysql.json'
 import nginxEN from './nginx.json'
 import nodejsEN from './nodejs.json'
-import ollamaEN from './ollama.json'
 import phpEN from './php.json'
 import promptEN from './prompt.json'
 import redisEN from './redis.json'
@@ -30,44 +28,23 @@ import requestTimer from './requestTimer.json'
 import meilisearch from './meilisearch.json'
 import minio from './minio.json'
 import podman from './podman.json'
-import openclawEN from './openclaw.json'
-import n8n from './n8n.json'
 import rustfs from './rustfs.json'
 import mkcert from './mkcert.json'
-import hermes from './hermes.json'
 import flutter from './flutter.json'
 import cron from './cron.json'
-import kimi from './kimi.json'
-import claudeCode from './claude-code.json'
-import codex from './codex.json'
-import openCode from './opencode.json'
-import antigravity from './antigravity.json'
-import copilotCli from './copilot-cli.json'
 import common from './common.json'
-import mcp from './mcp.json'
 export default {
   ar: {
     common,
-    kimi,
-    claudeCode,
-    codex,
-    openCode,
-    antigravity,
-    copilotCli,
-    mcp,
     cron,
     rustfs,
     mkcert,
     flutter,
-    hermes,
-    n8n,
-    openclaw: openclawEN,
     podman,
     minio,
     meilisearch,
     requestTimer,
     licenses: licensesEN,
-    ai: aiEN,
     apache: apacheEN,
     appLog: appLogEN,
     aside: asideEN,
@@ -81,7 +58,6 @@ export default {
     mysql: mysqlEN,
     nginx: nginxEN,
     nodejs: nodejsEN,
-    ollama: ollamaEN,
     php: phpEN,
     prompt: promptEN,
     redis: redisEN,

@@ -1,6 +1,6 @@
 {
-  "noBrewFound": "未偵測到 <a href=\"javascript:void();\" onclick=\"openUrl('https://brew.sh/')\">Homebrew</a>\n如需安裝 Homebrew，可點擊安裝按鈕進行安裝\n也可以點擊此連結\n<a href=\"javascript:void();\" onclick=\"openUrl('https://flyenv.com/zh/guide/getting-started.html#macos-1')\">https://flyenv.com/zh/guide/getting-started.html#macos-1</a>\n按照文件說明自行安裝。使用國內連結安裝時，注意不要跳過 Homebrew-Core。需要完整安裝",
-  "noPortFound": "未偵測到 <a href=\"javascript:void();\" onclick=\"openUrl('https://www.macports.org/')\">Macports</a>\n如想安裝 Macports，可點擊此連結\n<a href=\"javascript:void();\" onclick=\"openUrl('https://www.macports.org/install.php')\">https://www.macports.org/install.php</a>\n按照文件說明進行安裝。",
-  "brewErrorTips": "在此位置 {bin}，偵測到 Homebrew 的可執行檔案。\n但是 FlyEnv 無法調用。錯誤訊息：\n{error}",
-  "noSDKMANFound": "未偵測到 <a href=\"javascript:void();\" onclick=\"openUrl('https://sdkman.io/')\">SDKMAN</a>\n如需安裝 SDKMAN，可點擊安裝按鈕進行安裝"
+  "noBrewFound": "æœªåµæ¸¬åˆ° <a href=\"javascript:void();\" onclick=\"openUrl('https://brew.sh/')\">Homebrew</a>\nå¦‚éœ€å®‰è£ Homebrewï¼Œå¯é»žæ“Šå®‰è£æŒ‰éˆ•é€²è¡Œå®‰è£\nä¹Ÿå¯ä»¥é»žæ“Šæ­¤é€£çµ\n<a href=\"javascript:void();\" onclick=\"openUrl('https://flyenv.com/zh/guide/getting-started.html#macos-1')\">https://flyenv.com/zh/guide/getting-started.html#macos-1</a>\næŒ‰ç…§æ–‡ä»¶èªªæ˜Žè‡ªè¡Œå®‰è£ã€‚ä½¿ç”¨åœ‹å…§é€£çµå®‰è£æ™‚ï¼Œæ³¨æ„ä¸è¦è·³éŽ Homebrew-Coreã€‚éœ€è¦å®Œæ•´å®‰è£",
+  "noPortFound": "æœªåµæ¸¬åˆ° <a href=\"javascript:void();\" onclick=\"openUrl('https://www.macports.org/')\">Macports</a>\nå¦‚æƒ³å®‰è£ Macportsï¼Œå¯é»žæ“Šæ­¤é€£çµ\n<a href=\"javascript:void();\" onclick=\"openUrl('https://www.macports.org/install.php')\">https://www.macports.org/install.php</a>\næŒ‰ç…§æ–‡ä»¶èªªæ˜Žé€²è¡Œå®‰è£ã€‚",
+  "brewErrorTips": "åœ¨æ­¤ä½ç½® {bin}ï¼Œåµæ¸¬åˆ° Homebrew çš„å¯åŸ·è¡Œæª”æ¡ˆã€‚\nä½†æ˜¯ SemarEnv ç„¡æ³•èª¿ç”¨ã€‚éŒ¯èª¤è¨Šæ¯ï¼š\n{error}",
+  "noSDKMANFound": "æœªåµæ¸¬åˆ° <a href=\"javascript:void();\" onclick=\"openUrl('https://sdkman.io/')\">SDKMAN</a>\nå¦‚éœ€å®‰è£ SDKMANï¼Œå¯é»žæ“Šå®‰è£æŒ‰éˆ•é€²è¡Œå®‰è£"
 }

@@ -1,9 +1,9 @@
 {
-  "checkForUpdates": "Provjeri Ažuriranja",
-  "update-available-message": "Dostupna je novija verzija FlyEnv-a, ažurirati sada?",
+  "checkForUpdates": "Provjeri AÅ¾uriranja",
+  "update-available-message": "Dostupna je novija verzija SemarEnv-a, aÅ¾urirati sada?",
   "update-not-available-message": "Imate najnoviju verziju!",
   "update-downloaded-message": "Spreman za instalaciju...",
-  "update-error-message": "Greška Ažuriranja",
-  "view-update-log": "Pogledaj Log Ažuriranja",
+  "update-error-message": "GreÅ¡ka AÅ¾uriranja",
+  "view-update-log": "Pogledaj Log AÅ¾uriranja",
   "download-new-version": "Preuzmi Novu Verziju"
 }

@@ -182,7 +182,7 @@ export type AppModuleItem = {
 
 **Directory**: `/src/lang`
 
-FlyEnv supports dynamic loading of language packs.
+SemarEnv supports dynamic loading of language packs.
 Contributors can modify and test language packs locally. Once validated, they can be integrated into the project.
 
 ---

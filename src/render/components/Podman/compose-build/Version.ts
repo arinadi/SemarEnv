@@ -19,7 +19,7 @@ const VersionManager: VersionManagerType = reactiveBindObject({
   async init(image: string) {
     this.fetching[image] = true
     try {
-      const arr: string[] = await StorageGetAsync(`flyenv-podman-image-${image}-versions`)
+      const arr: string[] = await StorageGetAsync(`semarenv-podman-image-${image}-versions`)
       this.versions[image] = reactive(arr)
       delete this.fetching[image]
       return
@@ -38,7 +38,7 @@ const VersionManager: VersionManagerType = reactiveBindObject({
     const arr = this.versions?.[image]
     console.log('save: ', image, arr, arr.length, this.versions)
     if (arr && arr.length) {
-      const key = `flyenv-podman-image-${image}-versions`
+      const key = `semarenv-podman-image-${image}-versions`
       try {
         await StorageSetAsync(key, JSON.parse(JSON.stringify(arr)), 3 * 24 * 60 * 60)
       } catch (e) {

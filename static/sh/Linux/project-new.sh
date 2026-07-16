@@ -23,16 +23,16 @@ if ! command -v composer &> /dev/null; then
     fi
 
     cd "$projectdir" || exit 1
-    "$cachedir"/composer.phar create-project --prefer-dist "$frameworkname" "flyenv-created-project" "$version"
+    "$cachedir"/composer.phar create-project --prefer-dist "$frameworkname" "semarenv-created-project" "$version"
 else
     #command exists
     echo "composer exists"
     composer self-update
     cd "$projectdir" || exit 1
-    composer create-project --prefer-dist "$frameworkname" "flyenv-created-project" "$version"
+    composer create-project --prefer-dist "$frameworkname" "semarenv-created-project" "$version"
 fi
 
-cd flyenv-created-project || exit 1
+cd semarenv-created-project || exit 1
 mv ./* ../
 cd ../
-rm -rf flyenv-created-project
+rm -rf semarenv-created-project

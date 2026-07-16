@@ -25,7 +25,7 @@ const Tomcat = reactive({
     const tomcat: any = {
       image: `${mirror}tomcat:${Tomcat.version}`,
       ports: Tomcat.ports.map((p) => `${p.out}:${p.in}`),
-      networks: ['flyenv-network']
+      networks: ['semarenv-network']
     }
 
     const root = Tomcat.wwwRoot

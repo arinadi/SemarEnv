@@ -810,7 +810,7 @@
       groupDo()
       return
     }
-    IPC.send('APP:FlyEnv-Helper-Check').then((key: string, res: any) => {
+    IPC.send('APP:SemarEnv-Helper-Check').then((key: string, res: any) => {
       if (res?.code === 0 && res?.data) {
         groupDo()
       } else {

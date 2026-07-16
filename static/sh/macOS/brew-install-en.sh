@@ -12,7 +12,7 @@ hasBrew=$(which brew)
 if ! [[ "$hasBrew" == "brew not found" ]]; then
     echo -n "${tty_green}
     Detects that brew is installed, and the installer script exits automatically.${tty_reset}"
-    echo "FlyEnv-End of Homebrew installation"
+    echo "SemarEnv-End of Homebrew installation"
     exit 0
 fi
 
@@ -20,7 +20,7 @@ echo "
               ${tty_green} Starting the Homebrew installer ${tty_reset}
 "
 echo -n "${tty_green}
-->Whether to start executing the script now（Y/N） "
+->Whether to start executing the script nowï¼ˆY/Nï¼‰ "
 read MY_Del_Old
 echo "${tty_reset}"
 case $MY_Del_Old in
@@ -32,10 +32,10 @@ echo "--> Script execution begins"
 ;;
 *)
 echo "You typed $MY_Del_Old and the installation exited. if you continue to run the script you should type Y or y"
-echo "FlyEnv-End of Homebrew installation"
+echo "SemarEnv-End of Homebrew installation"
 exit 0
 ;;
 esac
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo "FlyEnv-End of Homebrew installation"
+echo "SemarEnv-End of Homebrew installation"

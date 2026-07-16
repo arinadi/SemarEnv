@@ -10,10 +10,6 @@ import { buildHelperCheckResponse } from '@shared/WindowsHelperState'
 import OAuth from './OAuth'
 import Capturer from './Capturer'
 import ConfigManager from './ConfigManager'
-import type MCPConfigManager from './MCPConfigManager'
-import type MCPServer from './MCPServer'
-import type MCPBridgeManager from './MCPBridgeManager'
-import MCPAudit from './MCPAudit'
 import type WindowManager from '../ui/WindowManager'
 import type TrayManager from '../ui/TrayManager'
 import type { ForkManager } from './ForkManager'
@@ -26,17 +22,12 @@ import ServiceProcessManager from './ServiceProcess'
 import ServiceVersionManager from './ServiceVersionManager'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
-import { existsSync, readFileSync } from 'node:fs'
-import { startMcpRuntime, stopMcpRuntime } from './MCPLifecycle'
 import CustomerLang from './CustomerLang'
 import { AppI18n } from '@lang/index'
 import { CheckBrewOrPort } from '../utils/CheckBrew'
 
 export interface IPCHandlerDependencies {
   configManager: ConfigManager
-  mcpConfigManager?: MCPConfigManager
-  mcpServer?: MCPServer
-  mcpBridgeManager?: MCPBridgeManager
   windowManager: WindowManager
   trayManager: TrayManager
   forkManager?: ForkManager
@@ -249,14 +240,14 @@ export default class IPCHandler extends EventEmitter {
    */
   private handleRegularCommand(command: string, key: string, ...args: any[]) {
     switch (command) {
-      // FlyEnv Helper 相关
-      case 'APP-FlyEnv-Helper-Install':
+      // SemarEnv Helper 相关
+      case 'APP-SemarEnv-Helper-Install':
         this.handleHelperInstall(command, key)
         break
-      case 'APP:FlyEnv-Helper-Command':
+      case 'APP:SemarEnv-Helper-Command':
         this.handleHelperCommand(command, key)
         break
-      case 'APP:FlyEnv-Helper-Check':
+      case 'APP:SemarEnv-Helper-Check':
         this.handleHelperCheck(command, key)
         break
 
@@ -392,38 +383,12 @@ export default class IPCHandler extends EventEmitter {
         this.handleOAuthLicenseAddBind(command, key, args)
         break
 
-      // MCP Server
-      case 'mcp:start':
-        this.handleMcpStart(command, key)
-        break
-      case 'mcp:stop':
-        this.handleMcpStop(command, key)
-        break
-      case 'mcp:status':
-        this.handleMcpStatus(command, key)
-        break
-      case 'mcp:getConfig':
-        this.handleMcpGetConfig(command, key)
-        break
-      case 'mcp:setConfig':
-        this.handleMcpSetConfig(command, key, args)
-        break
-      case 'mcp:getBridgePath':
-        this.handleMcpGetBridgePath(command, key)
-        break
-      case 'mcp:getAuditLog':
-        this.handleMcpGetAuditLog(command, key)
-        break
-      case 'mcp:getAuditLogFile':
-        this.handleMcpGetAuditLogFile(command, key)
-        break
-
       default:
         console.log('Unknown command:', command)
     }
   }
 
-  // ===== FlyEnv Helper 相关 =====
+  // ===== SemarEnv Helper 相关 =====
 
   private handleHelperInstall(command: string, key: string) {
     AppHelper.initHelper()
@@ -473,7 +438,7 @@ export default class IPCHandler extends EventEmitter {
 
   private handlePasswordCheck(command: string, key: string, args: any[]) {
     const pass = args?.[0] ?? ''
-    execPromiseSudo(['-k', 'echo', 'FlyEnv'], undefined, pass)
+    execPromiseSudo(['-k', 'echo', 'SemarEnv'], undefined, pass)
       .then(() => {
         this.deps.configManager.setConfig('password', pass)
         global.Server.Password = pass
@@ -534,7 +499,7 @@ export default class IPCHandler extends EventEmitter {
 
   private handleOpenDevWindow(command: string, key: string) {
     this.deps.mainWindow?.webContents?.openDevTools()
-    const debugFile = join(tmpdir(), 'flyenv-debug.log')
+    const debugFile = join(tmpdir(), 'semarenv-debug.log')
     shell.showItemInFolder(debugFile)
     this.sendToMainWindow(command, key, true)
   }
@@ -711,100 +676,6 @@ export default class IPCHandler extends EventEmitter {
     OAuth.addBind(args[0], args[1]).then((res) => {
       this.sendToMainWindow(command, key, JSON.parse(JSON.stringify(res)))
     })
-  }
-
-  // ===== MCP Server =====
-
-  private handleMcpStart(command: string, key: string) {
-    const server = this.deps.mcpServer
-    const mcpConfig = this.deps.mcpConfigManager
-    if (!server || !mcpConfig) {
-      this.sendToMainWindow(command, key, { code: 1, msg: 'MCP not initialized' })
-      return
-    }
-    startMcpRuntime(server)
-      .then((res) => {
-        this.sendToMainWindow(command, key, { code: 0, data: res })
-      })
-      .catch((e: any) => {
-        this.sendToMainWindow(command, key, { code: 1, msg: `${e?.message ?? e}` })
-      })
-  }
-
-  private handleMcpStop(command: string, key: string) {
-    const server = this.deps.mcpServer
-    const mcpConfig = this.deps.mcpConfigManager
-    if (!server || !mcpConfig) {
-      this.sendToMainWindow(command, key, { code: 1, msg: 'MCP not initialized' })
-      return
-    }
-    stopMcpRuntime(server)
-      .then((res) => {
-        this.sendToMainWindow(command, key, { code: 0, data: res })
-      })
-      .catch((e: any) => {
-        this.sendToMainWindow(command, key, { code: 1, msg: `${e?.message ?? e}` })
-      })
-  }
-
-  private handleMcpStatus(command: string, key: string) {
-    const server = this.deps.mcpServer
-    if (!server) {
-      this.sendToMainWindow(command, key, { code: 1, msg: 'MCP not initialized' })
-      return
-    }
-    this.sendToMainWindow(command, key, { code: 0, data: server.status() })
-  }
-
-  private handleMcpGetConfig(command: string, key: string) {
-    const mcpConfig = this.deps.mcpConfigManager
-    if (!mcpConfig) {
-      this.sendToMainWindow(command, key, { code: 1, msg: 'MCP not initialized' })
-      return
-    }
-    this.sendToMainWindow(command, key, { code: 0, data: mcpConfig.getConfig() })
-  }
-
-  private handleMcpSetConfig(command: string, key: string, args: any[]) {
-    const mcpConfig = this.deps.mcpConfigManager
-    if (!mcpConfig) {
-      this.sendToMainWindow(command, key, { code: 1, msg: 'MCP not initialized' })
-      return
-    }
-    const patch = args?.[0]
-    if (patch && typeof patch === 'object') {
-      mcpConfig.setConfig(patch)
-    }
-    this.sendToMainWindow(command, key, { code: 0, data: mcpConfig.getConfig() })
-  }
-
-  private handleMcpGetBridgePath(command: string, key: string) {
-    const bridgeManager = this.deps.mcpBridgeManager
-    if (!bridgeManager) {
-      this.sendToMainWindow(command, key, { code: 1, msg: 'MCP bridge not initialized' })
-      return
-    }
-    this.sendToMainWindow(command, key, {
-      code: 0,
-      data: bridgeManager.getBridgePath()
-    })
-  }
-
-  private handleMcpGetAuditLog(command: string, key: string) {
-    const file = MCPAudit.getLogFile()
-    let data = ''
-    try {
-      if (existsSync(file)) {
-        data = readFileSync(file, 'utf-8')
-      }
-    } catch (e) {
-      console.log('handleMcpGetAuditLog error: ', e)
-    }
-    this.sendToMainWindow(command, key, { code: 0, data })
-  }
-
-  private handleMcpGetAuditLogFile(command: string, key: string) {
-    this.sendToMainWindow(command, key, { code: 0, data: MCPAudit.getLogFile() })
   }
 
   // ===== 工具方法 =====

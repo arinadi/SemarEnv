@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Attività pianificate",
   "add": "Aggiungi attività pianificata",
   "name": "Nome attività",
@@ -101,7 +101,7 @@
   "allTasks": "Tutte le attività",
   "systemTasks": "Attività di sistema",
   "systemTask": "Attività di sistema",
-  "flyenvTask": "Attività FlyEnv",
+  "semarenvTask": "Attività SemarEnv",
   "otherTask": "Altra attività",
   "taskTrigger": "Trigger",
   "deleteSystemTaskTips": "Eliminare questa attività pianificata di sistema?",

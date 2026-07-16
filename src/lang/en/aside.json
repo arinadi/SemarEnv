@@ -12,7 +12,7 @@
   "aiCoding": "AI Coding",
   "ai": "AI",
   "objectStorage": "Object Storage",
-  "appExit": "Stop all running services and exit FlyEnv",
+  "appExit": "Stop all running services and exit SemarEnv",
   "groupStart": "One-click start all available services displayed on the panel",
   "networkTunnel": "Network Tunnel",
   "cacheAndQueue": "Cache & Message Queue",

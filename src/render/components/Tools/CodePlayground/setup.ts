@@ -543,7 +543,7 @@ export type CodePlayType = {
   save: () => void
 }
 
-let style: any = localStorage.getItem('FlyEnv-CodePlay-LeftStyle')
+let style: any = localStorage.getItem('SemarEnv-CodePlay-LeftStyle')
 if (style) {
   style = JSON.parse(style)
 }
@@ -558,7 +558,7 @@ const CodePlay: CodePlayType = reactive({
   },
   init() {
     localForage
-      .getItem('flyenv-code-playground')
+      .getItem('semarenv-code-playground')
       .then((res: any) => {
         if (res && res?.langBin) {
           CodePlay.langBin = reactive(res.langBin)
@@ -591,7 +591,7 @@ const CodePlay: CodePlayType = reactive({
         toLang: v.toLang
       }
     }
-    localForage.setItem('flyenv-code-playground', {
+    localForage.setItem('semarenv-code-playground', {
       langBin: { ...CodePlay.langBin },
       tabs
     })

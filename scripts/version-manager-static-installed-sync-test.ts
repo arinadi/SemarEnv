@@ -9,13 +9,13 @@ async function main() {
     {
       name: 'Bun-1.2.23',
       version: '1.2.23',
-      bin: 'C:/FlyEnv/bun/1.2.23/bun.exe',
+      bin: 'C:/SemarEnv/bun/1.2.23/bun.exe',
       installed: false
     },
     {
       name: 'Bun-1.2.22',
       version: '1.2.22',
-      bin: 'C:/FlyEnv/bun/1.2.22/bun.exe',
+      bin: 'C:/SemarEnv/bun/1.2.22/bun.exe',
       installed: false
     }
   ]
@@ -24,8 +24,8 @@ async function main() {
     {
       typeFlag: 'bun',
       version: '1.2.23',
-      bin: 'C:/FlyEnv/bun/1.2.23/bun.exe',
-      path: 'C:/FlyEnv/bun/1.2.23',
+      bin: 'C:/SemarEnv/bun/1.2.23/bun.exe',
+      path: 'C:/SemarEnv/bun/1.2.23',
       num: 102,
       enable: true,
       run: false,

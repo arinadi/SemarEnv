@@ -11,10 +11,10 @@ export default async function (configuration: AfterPackContext) {
 
   const appOutDir = configuration.appOutDir
   // 定位你的 helper 文件
-  const helperPath = join(appOutDir, "resources/app.asar.unpacked/node_modules/helper/flyenv-helper.exe")
+  const helperPath = join(appOutDir, "resources/app.asar.unpacked/node_modules/helper/semarenv-helper.exe")
   if (existsSync(helperPath)) {
     try {
-      const dest = join(appOutDir, "resources/helper/flyenv-helper.exe")
+      const dest = join(appOutDir, "resources/helper/semarenv-helper.exe")
       await mkdirp(dirname(dest))
       await copyFile(helperPath, dest)
       await remove(dirname(helperPath))

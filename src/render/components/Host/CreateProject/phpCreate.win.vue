@@ -249,20 +249,20 @@
       if (form.php && form.composer) {
         command.push(`$env:PATH = "${dirname(form.php)};" + $env:PATH`)
         command.push(
-          `php "${form.composer}" create-project --prefer-dist "${name}" "flyenv-create-project" "${form.version}"`
+          `php "${form.composer}" create-project --prefer-dist "${name}" "semarenv-create-project" "${form.version}"`
         )
       } else if (form.php) {
         command.push(`$env:PATH = "${dirname(form.php)};" + $env:PATH`)
         command.push(
-          `composer create-project --prefer-dist "${name}" "flyenv-create-project" "${form.version}"`
+          `composer create-project --prefer-dist "${name}" "semarenv-create-project" "${form.version}"`
         )
       } else if (form.composer) {
         command.push(
-          `php "${form.composer}" create-project --prefer-dist "${name}" "flyenv-create-project" "${form.version}"`
+          `php "${form.composer}" create-project --prefer-dist "${name}" "semarenv-create-project" "${form.version}"`
         )
       } else {
         command.push(
-          `composer create-project --prefer-dist "${name}" "flyenv-create-project" "${form.version}"`
+          `composer create-project --prefer-dist "${name}" "semarenv-create-project" "${form.version}"`
         )
       }
     }

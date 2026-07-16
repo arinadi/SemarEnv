@@ -364,7 +364,7 @@
   const item = ref<HostEditForm>({
     id: new Date().getTime(),
     type: 'php',
-    name: `flyenv-test-${uuid(8)}.test`.toLowerCase(),
+    name: `semarenv-test-${uuid(8)}.test`.toLowerCase(),
     alias: '',
     useSSL: false,
     autoSSL: false,

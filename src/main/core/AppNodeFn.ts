@@ -324,7 +324,7 @@ X-GNOME-Autostart-enabled=true`
   private async windowsAutoLaunch(autoLaunch: boolean) {
     const exePath = app.getPath('exe')
     console.log('exePath: ', exePath)
-    const taskName = 'FlyEnvStartup'
+    const taskName = 'SemarEnvStartup'
     try {
       await Helper.send('tools', 'setAutoStartWin', autoLaunch, taskName, exePath)
       return true
@@ -367,7 +367,7 @@ X-GNOME-Autostart-enabled=true`
     app.setLoginItemSettings(obj)
     if (!obj.openAtLogin && isMacOS()) {
       try {
-        const name = is.production() ? 'FlyEnv' : 'Electron'
+        const name = is.production() ? 'SemarEnv' : 'Electron'
         Helper.send('tools', 'removeLoginItemMac', name).catch()
       } catch {}
     }

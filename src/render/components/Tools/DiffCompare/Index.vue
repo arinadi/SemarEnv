@@ -26,11 +26,11 @@
     lineNumber: number
   }
 
-  const sampleOriginal = `FlyEnv is an all-in-one local development environment.
+  const sampleOriginal = `SemarEnv is an all-in-one local development environment.
 It supports PHP, Node.js, databases and more.
 JWT and Cron tools are available.`
 
-  const sampleChanged = `FlyEnv is an all-in-one local development environment.
+  const sampleChanged = `SemarEnv is an all-in-one local development environment.
 It supports PHP, Node.js, databases, Redis and more.
 JWT, Cron and Diff tools are available.`
 

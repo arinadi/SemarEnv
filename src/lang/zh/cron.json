@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "定时任务",
   "add": "添加定时任务",
   "name": "任务名称",
@@ -101,7 +101,7 @@
   "allTasks": "全部任务",
   "systemTasks": "系统计划任务",
   "systemTask": "系统任务",
-  "flyenvTask": "FlyEnv 任务",
+  "semarenvTask": "SemarEnv 任务",
   "otherTask": "其他任务",
   "taskTrigger": "触发器",
   "deleteSystemTaskTips": "确定删除这个系统计划任务吗？",

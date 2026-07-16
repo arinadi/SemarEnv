@@ -8,10 +8,10 @@
     "#1": {
       "0409": {
         "identity": {
-          "name": "FlyEnv Helper",
+          "name": "SemarEnv Helper",
           "version": "1.0.0.8"
         },
-        "description": "FlyEnv Helper Service",
+        "description": "SemarEnv Helper Service",
         "minimum-os": "win10",
         "execution-level": "requireAdministrator",
         "ui-access": false,
@@ -40,14 +40,14 @@
           "0409": {
             "Comments": "",
             "CompanyName": "Pengfei Xu",
-            "FileDescription": "FlyEnv Helper - System Service Manager",
+            "FileDescription": "SemarEnv Helper - System Service Manager",
             "FileVersion": "1.0.0.8",
-            "InternalName": "flyenv-helper",
+            "InternalName": "semarenv-helper",
             "LegalCopyright": "Copyright (c) 2026 Pengfei Xu",
             "LegalTrademarks": "",
-            "OriginalFilename": "flyenv-helper.exe",
+            "OriginalFilename": "semarenv-helper.exe",
             "PrivateBuild": "",
-            "ProductName": "FlyEnv",
+            "ProductName": "SemarEnv",
             "ProductVersion": "4.13.1.0",
             "SpecialBuild": ""
           }

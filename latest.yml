@@ -1,8 +1,8 @@
 version: 4.16.2
 files:
-  - url: FlyEnv-Setup-4.16.2.exe
+  - url: SemarEnv-Setup-4.16.2.exe
     sha512: us2r5cM9xAHuvaN9gbVwRJ7HRKeOv9rA5rM0in6jBdQcMu2LcU2O5Q2WcORVTEeo1CckHkHXAJwEIJcobhm/gg==
     size: 148949016
-path: FlyEnv-Setup-4.16.2.exe
+path: SemarEnv-Setup-4.16.2.exe
 sha512: us2r5cM9xAHuvaN9gbVwRJ7HRKeOv9rA5rM0in6jBdQcMu2LcU2O5Q2WcORVTEeo1CckHkHXAJwEIJcobhm/gg==
 releaseDate: '2026-07-12T11:31:31.124Z'

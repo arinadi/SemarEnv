@@ -34,7 +34,7 @@ export const PodmanSetup = reactive<PodmanSetupState>({
   reFetch: () => 0,
   initPodmanBin: () => {
     localForage
-      .getItem<string>('flyenv-podman-bin-dir')
+      .getItem<string>('semarenv-podman-bin-dir')
       .then((res) => {
         if (res) {
           PodmanSetup.podmanBin = res

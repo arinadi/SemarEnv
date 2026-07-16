@@ -1,7 +1,6 @@
 import { createI18n } from 'vue-i18n'
 import type { I18n } from 'vue-i18n'
 
-import type ai from './zh/ai.json'
 import type apache from './zh/apache.json'
 import type appLog from './zh/appLog.json'
 import type aside from './zh/aside.json'
@@ -18,7 +17,6 @@ import type minio from './zh/minio.json'
 import type mysql from './zh/mysql.json'
 import type nginx from './zh/nginx.json'
 import type nodejs from './zh/nodejs.json'
-import type ollama from './zh/ollama.json'
 import type php from './zh/php.json'
 import type podman from './zh/podman.json'
 import type prompt from './zh/prompt.json'
@@ -33,21 +31,11 @@ import type tray from './zh/tray.json'
 import type update from './zh/update.json'
 import type util from './zh/util.json'
 import type versionmanager from './zh/versionmanager.json'
-import type openclaw from './zh/openclaw.json'
-import type hermes from './zh/hermes.json'
-import type kimi from './zh/kimi.json'
-import type n8n from './zh/n8n.json'
 import type rustfs from './zh/rustfs.json'
 import type mkcert from './zh/mkcert.json'
 import type flutter from './zh/flutter.json'
 import type cron from './zh/cron.json'
-import type claudeCode from './zh/claude-code.json'
-import type codex from './zh/codex.json'
-import type openCode from './zh/opencode.json'
-import type antigravity from './zh/antigravity.json'
-import type copilotCli from './zh/copilot-cli.json'
 import type common from './zh/common.json'
-import type mcp from './zh/mcp.json'
 
 import AR from './ar/index'
 import AZ from './az/index'
@@ -95,7 +83,6 @@ type AppendStringToKeys<T extends object, Prefix extends string = ''> = {
 
 type LangKey =
   | AppendStringToKeys<typeof common, 'common'>
-  | AppendStringToKeys<typeof ai, 'ai'>
   | AppendStringToKeys<typeof apache, 'apache'>
   | AppendStringToKeys<typeof appLog, 'appLog'>
   | AppendStringToKeys<typeof aside, 'aside'>
@@ -112,7 +99,6 @@ type LangKey =
   | AppendStringToKeys<typeof mysql, 'mysql'>
   | AppendStringToKeys<typeof nginx, 'nginx'>
   | AppendStringToKeys<typeof nodejs, 'nodejs'>
-  | AppendStringToKeys<typeof ollama, 'ollama'>
   | AppendStringToKeys<typeof php, 'php'>
   | AppendStringToKeys<typeof podman, 'podman'>
   | AppendStringToKeys<typeof prompt, 'prompt'>
@@ -127,20 +113,10 @@ type LangKey =
   | AppendStringToKeys<typeof update, 'update'>
   | AppendStringToKeys<typeof util, 'util'>
   | AppendStringToKeys<typeof versionmanager, 'versionmanager'>
-  | AppendStringToKeys<typeof openclaw, 'openclaw'>
-  | AppendStringToKeys<typeof hermes, 'hermes'>
-  | AppendStringToKeys<typeof kimi, 'kimi'>
-  | AppendStringToKeys<typeof n8n, 'n8n'>
   | AppendStringToKeys<typeof rustfs, 'rustfs'>
   | AppendStringToKeys<typeof mkcert, 'mkcert'>
   | AppendStringToKeys<typeof flutter, 'flutter'>
   | AppendStringToKeys<typeof cron, 'cron'>
-  | AppendStringToKeys<typeof claudeCode, 'claudeCode'>
-  | AppendStringToKeys<typeof codex, 'codex'>
-  | AppendStringToKeys<typeof openCode, 'openCode'>
-  | AppendStringToKeys<typeof antigravity, 'antigravity'>
-  | AppendStringToKeys<typeof copilotCli, 'copilotCli'>
-  | AppendStringToKeys<typeof mcp, 'mcp'>
 
 export const AppAllLang: Record<string, string> = {
   ar: 'العربية',

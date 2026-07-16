@@ -20,10 +20,10 @@ let sslQueue: Promise<unknown> = Promise.resolve()
 
 const initCARoot = () => {
   return new Promise(async (resolve) => {
-    const CARoot = join(global.Server.BaseDir!, 'CA/FlyEnv-Root-CA.crt')
+    const CARoot = join(global.Server.BaseDir!, 'CA/SemarEnv-Root-CA.crt')
     const CADir = dirname(CARoot)
     try {
-      const res = await Helper.send('host', 'sslAddTrustedCert', CADir, 'FlyEnv-Root-CA.crt')
+      const res = await Helper.send('host', 'sslAddTrustedCert', CADir, 'SemarEnv-Root-CA.crt')
       console.log('initCARoot res111: ', res)
     } catch {}
     resolve(true)
@@ -50,11 +50,11 @@ const _makeAutoSSL = (host: AppHost): ForkPromise<{ crt: string; key: string } |
   return new ForkPromise(async (resolve) => {
     try {
       const alias = hostAlias(host)
-      const CARoot = join(global.Server.BaseDir!, 'CA/FlyEnv-Root-CA.crt')
+      const CARoot = join(global.Server.BaseDir!, 'CA/SemarEnv-Root-CA.crt')
       const CADir = dirname(CARoot)
       const hostCADir = join(CADir, `${host.id}`)
-      const rootCA = join(CADir, 'FlyEnv-Root-CA')
-      const caFileName = 'FlyEnv-Root-CA'
+      const rootCA = join(CADir, 'SemarEnv-Root-CA')
+      const caFileName = 'SemarEnv-Root-CA'
 
       if (isWindows()) {
         const openssl = join(global.Server.AppDir!, 'openssl/bin/openssl.exe')
@@ -153,7 +153,7 @@ subjectAltName=@alt_names
           } catch {}
 
           const res: any = await Helper.send('host', 'sslFindCertificate', CADir)
-          if (!res.stdout.includes('FlyEnv-Root-CA') && !res.stderr.includes('FlyEnv-Root-CA')) {
+          if (!res.stdout.includes('SemarEnv-Root-CA') && !res.stderr.includes('SemarEnv-Root-CA')) {
             resolve(false)
             return
           }

@@ -7,7 +7,7 @@ import { SetupStore } from '@/components/Setup/store'
 
 class CapturerSetup {
   key: string[] = []
-  name = 'flyenv-capturer-{timestamp}'
+  name = 'semarenv-capturer-{timestamp}'
   dir = ''
   trialStartTime: number = 0
 
@@ -25,7 +25,7 @@ class CapturerSetup {
   }
 
   init() {
-    localForage.getItem('flyenv-capturer-setup').then((res: any) => {
+    localForage.getItem('semarenv-capturer-setup').then((res: any) => {
       if (res) {
         this.key = res.key
         this.name = res.name
@@ -37,7 +37,7 @@ class CapturerSetup {
   }
 
   save(updateConfig = true) {
-    localForage.setItem('flyenv-capturer-setup', JSON.parse(JSON.stringify(this))).catch()
+    localForage.setItem('semarenv-capturer-setup', JSON.parse(JSON.stringify(this))).catch()
     if (updateConfig) {
       this.onConfigUpdate()
       MessageSuccess(I18nT('base.success'))

@@ -7,14 +7,14 @@ import Helper from '../../Helper'
 
 export function initAllowDir(json: string) {
   return new ForkPromise(async (resolve) => {
-    const jsonFile = join(dirname(global.Server.AppDir!), 'bin/.flyenv.dir')
+    const jsonFile = join(dirname(global.Server.AppDir!), 'bin/.semarenv.dir')
     await mkdirp(dirname(jsonFile))
     await writeFile(jsonFile, json)
     resolve(true)
   })
 }
 
-export function initFlyEnvSH() {
+export function initSemarEnvSH() {
   return new ForkPromise(async (resolve, reject) => {
     const file = join(global.Server.UserHome!, isMacOS() ? '.zshrc' : '.bashrc')
     if (!existsSync(file)) {
@@ -36,9 +36,9 @@ export function initFlyEnvSH() {
     const contentBack = content
 
     if (isMacOS()) {
-      const shfile = `/Applications/FlyEnv.app/Contents/Resources/helper/flyenv.sh`
+      const shfile = `/Applications/SemarEnv.app/Contents/Resources/helper/semarenv.sh`
       if (!existsSync(shfile)) {
-        const fileContent = await readFile(join(global.Server.Static!, 'sh/fly-env.sh'), 'utf-8')
+        const fileContent = await readFile(join(global.Server.Static!, 'sh/semar-env.sh'), 'utf-8')
         try {
           await writeFileByRoot(shfile, fileContent)
         } catch {}
@@ -53,7 +53,7 @@ export function initFlyEnvSH() {
       }
 
       const regex = new RegExp(
-        `^(?!\\s*#)\\s*source\\s*"/Applications/FlyEnv\\.app/Contents/Resources/helper/flyenv\\.sh"`,
+        `^(?!\\s*#)\\s*source\\s*"/Applications/SemarEnv\\.app/Contents/Resources/helper/semarenv\\.sh"`,
         'gmu'
       )
       if (!content.match(regex) && existsSync(file)) {
@@ -61,9 +61,9 @@ export function initFlyEnvSH() {
       }
     } else if (isLinux()) {
       const binDir = PathResolve(global.Server.Static!, '../../../../')
-      const shfile = join(binDir, 'helper/flyenv.sh')
+      const shfile = join(binDir, 'helper/semarenv.sh')
       if (!existsSync(shfile)) {
-        const fileContent = await readFile(join(global.Server.Static!, 'sh/fly-env.sh'), 'utf-8')
+        const fileContent = await readFile(join(global.Server.Static!, 'sh/semar-env.sh'), 'utf-8')
         try {
           await writeFileByRoot(shfile, fileContent)
         } catch {}
@@ -78,7 +78,7 @@ export function initFlyEnvSH() {
       }
 
       const regex = new RegExp(
-        `^(?!\\s*#)\\s*source\\s*"/(.*?)/resources/helper/flyenv\\.sh"`,
+        `^(?!\\s*#)\\s*source\\s*"/(.*?)/resources/helper/semarenv\\.sh"`,
         'gmu'
       )
       if (!content.match(regex) && existsSync(file)) {

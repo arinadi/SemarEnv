@@ -17,7 +17,7 @@ const PHP = reactive({
     const php: any = {
       image: `${mirror}php:${info.version}-fpm`,
       ports: info.ports.map((p) => `${p.out}:${p.in}`),
-      networks: ['flyenv-network']
+      networks: ['semarenv-network']
     }
     const apache = Apache
     if (apache.enable) {

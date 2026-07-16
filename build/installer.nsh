@@ -1,7 +1,7 @@
 RequestExecutionLevel admin
 
 !macro customInit
-    nsExec::Exec 'taskkill /F /IM flyenv-helper.exe'
+    nsExec::Exec 'taskkill /F /IM semarenv-helper.exe'
 !macroend
 
 !macro customInstall
@@ -11,7 +11,7 @@ RequestExecutionLevel admin
     IfFileExists $R1 0 +2
     StrCpy $R1 "powershell.exe"
 
-    nsExec::Exec '$R1 -ExecutionPolicy Bypass -InputFormat None -File "$INSTDIR\resources\helper\flyenv-helper-init.ps1" -instDir "$INSTDIR"'
+    nsExec::Exec '$R1 -ExecutionPolicy Bypass -InputFormat None -File "$INSTDIR\resources\helper\semarenv-helper-init.ps1" -instDir "$INSTDIR"'
 !macroend
 
 !macro customUnInit
@@ -21,6 +21,6 @@ RequestExecutionLevel admin
     IfFileExists $R1 0 +2
     StrCpy $R1 "powershell.exe"
 
-    nsExec::Exec '$R1 -ExecutionPolicy Bypass -Command "schtasks /Delete /TN flyenv-helper /F"'
-    nsExec::Exec 'taskkill /F /IM flyenv-helper.exe'
+    nsExec::Exec '$R1 -ExecutionPolicy Bypass -Command "schtasks /Delete /TN semarenv-helper /F"'
+    nsExec::Exec 'taskkill /F /IM semarenv-helper.exe'
 !macroend

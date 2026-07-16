@@ -54,7 +54,7 @@ export function TaskAddRandomSite(this: any, version?: SoftInstalled, write = tr
       },
       url: '',
       root: dir,
-      mark: 'FlyEnv AI Created',
+      mark: 'SemarEnv AI Created',
       phpVersion: undefined
     }
     if (version?.num) {
@@ -81,10 +81,10 @@ export function TaskAddRandomSite(this: any, version?: SoftInstalled, write = tr
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FlyEnv AI Created</title>
+    <title>SemarEnv AI Created</title>
   </head>
   <body>
-    FlyEnv AI Created
+    SemarEnv AI Created
   </body>
 </html>
 `
@@ -166,7 +166,7 @@ export function TaskAddPhpMyAdminSite(this: any, phpVersion?: number, write = tr
 
       let useSSL = false
       let autoSSL = false
-      const CARoot = join(global.Server.BaseDir!, 'CA/FlyEnv-Root-CA.crt')
+      const CARoot = join(global.Server.BaseDir!, 'CA/SemarEnv-Root-CA.crt')
       if (existsSync(CARoot)) {
         useSSL = true
         autoSSL = true
@@ -196,7 +196,7 @@ export function TaskAddPhpMyAdminSite(this: any, phpVersion?: number, write = tr
         },
         url: '',
         root: siteDir,
-        mark: 'PhpMyAdmin (FlyEnv Auto Created)',
+        mark: 'PhpMyAdmin (SemarEnv Auto Created)',
         phpVersion: undefined
       }
       if (phpVersion) {

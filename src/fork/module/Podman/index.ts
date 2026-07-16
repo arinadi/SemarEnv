@@ -62,7 +62,7 @@ class Podman extends Base {
         }
       }
 
-      // 获取每个虚拟机的详细信息
+      // èŽ·å–æ¯ä¸ªè™šæ‹Ÿæœºçš„è¯¦ç»†ä¿¡æ¯
       for (const m of machine) {
         tmp = join(tmpdir(), `${uuid()}.txt`)
         try {
@@ -79,7 +79,7 @@ class Podman extends Base {
         }
       }
 
-      // 按创建时间倒序排列，最新创建的在最前
+      // æŒ‰åˆ›å»ºæ—¶é—´å€’åºæŽ’åˆ—ï¼Œæœ€æ–°åˆ›å»ºçš„åœ¨æœ€å‰
       machine.sort((a, b) => {
         const timeA = a.info?.Created ? new Date(a.info.Created).getTime() : 0
         const timeB = b.info?.Created ? new Date(b.info.Created).getTime() : 0
@@ -318,7 +318,7 @@ class Podman extends Base {
       try {
         const { name, cpus, memory, rootful } = config
 
-        // 先检查虚拟机是否在运行
+        // å…ˆæ£€æŸ¥è™šæ‹Ÿæœºæ˜¯å¦åœ¨è¿è¡Œ
         let wasRunning = false
         try {
           const tmp = join(tmpdir(), `${uuid()}.txt`)
@@ -334,7 +334,7 @@ class Podman extends Base {
           // ignore
         }
 
-        // 如果正在运行，先停止
+        // å¦‚æžœæ­£åœ¨è¿è¡Œï¼Œå…ˆåœæ­¢
         if (wasRunning) {
           await execPromiseWithEnv(`podman machine stop ${name}`)
         }
@@ -354,7 +354,7 @@ class Podman extends Base {
 
         await execPromiseWithEnv(args.join(' '))
 
-        // 如果之前是运行状态，重新启动
+        // å¦‚æžœä¹‹å‰æ˜¯è¿è¡ŒçŠ¶æ€ï¼Œé‡æ–°å¯åŠ¨
         if (wasRunning) {
           await execPromiseWithEnv(`podman machine start ${name}`)
         }
@@ -399,7 +399,7 @@ class Podman extends Base {
       try {
         let info: any = {}
         if (isLinux()) {
-          // Linux 下没有 machine，info 可返回空对象或本地 Podman 信息
+          // Linux ä¸‹æ²¡æœ‰ machineï¼Œinfo å¯è¿”å›žç©ºå¯¹è±¡æˆ–æœ¬åœ° Podman ä¿¡æ¯
           info = {}
         } else {
           const infoTmp = join(tmpdir(), `${uuid()}.txt`)
@@ -419,9 +419,9 @@ class Podman extends Base {
           }
         }
 
-        // 获取容器列表
+        // èŽ·å–å®¹å™¨åˆ—è¡¨
         const containerRes = await this.fetchContainerList(machineName)
-        // 获取镜像列表
+        // èŽ·å–é•œåƒåˆ—è¡¨
         const imageRes = await this.fetchImageList(machineName)
 
         resolve({
@@ -499,7 +499,7 @@ class Podman extends Base {
     })
   }
 
-  // 假设 composeName 是你的 compose 项目名（通常是 Pod 名）
+  // å‡è®¾ composeName æ˜¯ä½ çš„ compose é¡¹ç›®åï¼ˆé€šå¸¸æ˜¯ Pod åï¼‰
   isComposeRunning(paths: string[], projectName: string, socket?: string) {
     return new ForkPromise(async (resolve, reject) => {
       const tmp = join(tmpdir(), `${uuid()}.txt`)
@@ -589,12 +589,12 @@ class Podman extends Base {
   }
 
   getConfigFiles(_version?: SoftInstalled): Array<{ name: string; path: string }> {
-    // Podman 通过系统 CLI 与 machine 管理容器，FlyEnv 未为其维护独立的配置文件
+    // Podman é€šè¿‡ç³»ç»Ÿ CLI ä¸Ž machine ç®¡ç†å®¹å™¨ï¼ŒSemarEnv æœªä¸ºå…¶ç»´æŠ¤ç‹¬ç«‹çš„é…ç½®æ–‡ä»¶
     return []
   }
 
   getLogFiles(_version?: SoftInstalled): Array<{ name: string; path: string }> {
-    // Podman 通过系统 CLI 与 machine 管理容器，FlyEnv 未为其维护独立的日志文件
+    // Podman é€šè¿‡ç³»ç»Ÿ CLI ä¸Ž machine ç®¡ç†å®¹å™¨ï¼ŒSemarEnv æœªä¸ºå…¶ç»´æŠ¤ç‹¬ç«‹çš„æ—¥å¿—æ–‡ä»¶
     return []
   }
 }

@@ -13,10 +13,6 @@ export const OfficialImages: Partial<
     }
   >
 > = {
-  // AI
-  ollama: {
-    image: 'ollama/ollama'
-  },
   // Web服务器
   apache: {
     image: 'httpd'

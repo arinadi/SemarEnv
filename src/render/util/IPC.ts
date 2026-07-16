@@ -7,7 +7,7 @@ class IPC {
 
   constructor() {
     this.listens = {}
-    window.FlyEnvNodeAPI.ipcReceiveFromMain(
+    window.SemarEnvNodeAPI.ipcReceiveFromMain(
       (e: any, command: string, key: string, ...args: any) => {
         console.log('ipcReceiveFromMain: ', command, key, args)
         if (this.listens[key]) {
@@ -27,7 +27,7 @@ class IPC {
   send(command: string, ...args: any) {
     const key = 'IPC-Key-' + uuid()
     console.log('ipcSendToMain: ', command, key, args)
-    window.FlyEnvNodeAPI.ipcSendToMain(command, key, ...args)
+    window.SemarEnvNodeAPI.ipcSendToMain(command, key, ...args)
     return {
       then: (callback: IPCCallback) => {
         this.listens[key] = callback

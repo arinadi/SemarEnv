@@ -100,7 +100,6 @@ type StateBase = SetupBase & {
   theme?: string
   autoCheck: boolean
   forceStart: boolean
-  showAIRobot: boolean
   showTool?: boolean
   consulBrewInitiated?: boolean
   typesenseBrewInitiated?: boolean
@@ -169,7 +168,6 @@ const state: State = {
       lang: '',
       autoCheck: true,
       forceStart: false,
-      showAIRobot: true,
       phpBrewInitiated: false,
       mongodbBrewInitiated: false,
       editorConfig: EditorBaseConfig,
@@ -334,7 +332,7 @@ export const AppStore = defineStore('app', {
                 })
                 .then(({ response }) => {
                   if (response === 1) {
-                    shell.openExternal('https://github.com/xpf0000/FlyEnv/releases')
+                    shell.openExternal('https://github.com/arinadi/SemarEnv/releases')
                   } else if (response === 2) {
                     shell.openExternal(this.appVersion.url)
                   }

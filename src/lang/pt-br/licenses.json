@@ -1,60 +1,60 @@
 {
-  "description": "A licença é um reconhecimento e apoio ao trabalho árduo do FlyEnv e seus autores. Seu propósito não é restringir usuários, mas lembrá-los de respeitar os esforços dos desenvolvedores e cumprir os termos relevantes ao usar o software. Ao aderir à licença, os usuários não apenas apoiam o desenvolvimento contínuo do projeto, mas também contribuem para o espírito de confiança e colaboração dentro da comunidade de código aberto.",
+  "description": "A licenÃ§a Ã© um reconhecimento e apoio ao trabalho Ã¡rduo do SemarEnv e seus autores. Seu propÃ³sito nÃ£o Ã© restringir usuÃ¡rios, mas lembrÃ¡-los de respeitar os esforÃ§os dos desenvolvedores e cumprir os termos relevantes ao usar o software. Ao aderir Ã  licenÃ§a, os usuÃ¡rios nÃ£o apenas apoiam o desenvolvimento contÃ­nuo do projeto, mas tambÃ©m contribuem para o espÃ­rito de confianÃ§a e colaboraÃ§Ã£o dentro da comunidade de cÃ³digo aberto.",
   "restrictions": {
-    "title": "Usuários sem licença estarão sujeitos às seguintes restrições:",
+    "title": "UsuÃ¡rios sem licenÃ§a estarÃ£o sujeitos Ã s seguintes restriÃ§Ãµes:",
     "items": {
-      "0": "Um máximo de três sites pode ser criado.",
-      "1": "O recurso de chat IA está disponível para um período de teste de apenas três dias.",
-      "2": "Restrições adicionais podem se aplicar a recursos futuros."
+      "0": "Um mÃ¡ximo de trÃªs sites pode ser criado.",
+      "1": "O recurso de chat IA estÃ¡ disponÃ­vel para um perÃ­odo de teste de apenas trÃªs dias.",
+      "2": "RestriÃ§Ãµes adicionais podem se aplicar a recursos futuros."
     }
   },
   "howToObtain": {
-    "title": "Como Obter uma Licença",
-    "description": "FlyEnv fornece maneiras flexíveis de obter uma licença. Os usuários podem escolher qualquer um dos seguintes métodos para aplicar:",
+    "title": "Como Obter uma LicenÃ§a",
+    "description": "SemarEnv fornece maneiras flexÃ­veis de obter uma licenÃ§a. Os usuÃ¡rios podem escolher qualquer um dos seguintes mÃ©todos para aplicar:",
     "methods": {
       "0": {
         "title": "Doar para o Projeto",
-        "description": "Não há valor fixo exigido para doações. Considerando as situações econômicas variadas dos usuários em diferentes países (ex: muitos usuários são estudantes), por favor escolha um valor que se adeque às suas circunstâncias."
+        "description": "NÃ£o hÃ¡ valor fixo exigido para doaÃ§Ãµes. Considerando as situaÃ§Ãµes econÃ´micas variadas dos usuÃ¡rios em diferentes paÃ­ses (ex: muitos usuÃ¡rios sÃ£o estudantes), por favor escolha um valor que se adeque Ã s suas circunstÃ¢ncias."
       },
       "1": {
         "title": "Contribuir para o Desenvolvimento",
-        "description": "Participe do projeto enviando um Pull Request. Independentemente da quantidade de código, desde que melhore positivamente o projeto (ex: corrigir um erro de tradução), qualifica."
+        "description": "Participe do projeto enviando um Pull Request. Independentemente da quantidade de cÃ³digo, desde que melhore positivamente o projeto (ex: corrigir um erro de traduÃ§Ã£o), qualifica."
       },
       "2": {
         "title": "Promover o Projeto",
-        "description": "Promova o FlyEnv publicando artigos, vídeos, blogs, vlogs, ou introduzindo-o em comentários. O conteúdo pode ser em qualquer idioma e em qualquer plataforma, desde que seja publicamente acessível na internet."
+        "description": "Promova o SemarEnv publicando artigos, vÃ­deos, blogs, vlogs, ou introduzindo-o em comentÃ¡rios. O conteÃºdo pode ser em qualquer idioma e em qualquer plataforma, desde que seja publicamente acessÃ­vel na internet."
       }
     }
   },
-  "submitInfo": "Após completar qualquer um dos métodos acima, por favor preencha os resultados na caixa de entrada abaixo e clique no botão 'Solicitar Licença' para enviar sua aplicação. Solicitações de licença são revisadas manualmente, então por favor seja paciente. Elas são geralmente processadas prontamente.",
+  "submitInfo": "ApÃ³s completar qualquer um dos mÃ©todos acima, por favor preencha os resultados na caixa de entrada abaixo e clique no botÃ£o 'Solicitar LicenÃ§a' para enviar sua aplicaÃ§Ã£o. SolicitaÃ§Ãµes de licenÃ§a sÃ£o revisadas manualmente, entÃ£o por favor seja paciente. Elas sÃ£o geralmente processadas prontamente.",
   "messageLabel": "Mensagem",
-  "messagePlaceholder": "Por favor envie o doador, link de doação, ou ID do pedido ao escolher doar.\nPor favor envie o link do PR para aqueles que escolhem participar do desenvolvimento do projeto.\nPor favor envie link do artigo/vídeo se você escolher ajudar a promover o projeto",
-  "requestButton": "Solicitar Licença",
+  "messagePlaceholder": "Por favor envie o doador, link de doaÃ§Ã£o, ou ID do pedido ao escolher doar.\nPor favor envie o link do PR para aqueles que escolhem participar do desenvolvimento do projeto.\nPor favor envie link do artigo/vÃ­deo se vocÃª escolher ajudar a promover o projeto",
+  "requestButton": "Solicitar LicenÃ§a",
   "refreshButton": "Atualizar Estado",
-  "licenseActivated": "Licença ativada",
-  "licenseNoActivated": "Licença não ativada",
-  "licenseInfo": "A licença atualmente fornecida é uma licença permanente, cada computador corresponde a uma licença. Se você trocar de computador, precisa vincular o uuid do novo dispositivo em 'Minhas Licenças' ou solicitar uma nova licença.",
+  "licenseActivated": "LicenÃ§a ativada",
+  "licenseNoActivated": "LicenÃ§a nÃ£o ativada",
+  "licenseInfo": "A licenÃ§a atualmente fornecida Ã© uma licenÃ§a permanente, cada computador corresponde a uma licenÃ§a. Se vocÃª trocar de computador, precisa vincular o uuid do novo dispositivo em 'Minhas LicenÃ§as' ou solicitar uma nova licenÃ§a.",
   "logoutTips": "Tem certeza de que deseja sair?",
-  "delBindTips": "Tem certeza de que deseja desvincular a licença deste UUID?",
-  "addBindTips": "Tem certeza de que deseja vincular a licença a este UUID?",
-  "currentLicenseState": "Status da licença neste dispositivo",
-  "activeState": "Status de Ativação",
-  "myLicense": "Minhas Licenças",
-  "loginTips": "Por favor, faça login primeiro",
+  "delBindTips": "Tem certeza de que deseja desvincular a licenÃ§a deste UUID?",
+  "addBindTips": "Tem certeza de que deseja vincular a licenÃ§a a este UUID?",
+  "currentLicenseState": "Status da licenÃ§a neste dispositivo",
+  "activeState": "Status de AtivaÃ§Ã£o",
+  "myLicense": "Minhas LicenÃ§as",
+  "loginTips": "Por favor, faÃ§a login primeiro",
   "logingTips": "Fazendo login via GitHub...",
-  "licenseNo": "Número da Licença",
+  "licenseNo": "NÃºmero da LicenÃ§a",
   "licenseBindUUID": "UUID Vinculado",
   "delBind": "Desvincular",
   "bindCurrentUUID": "Vincular este Dispositivo",
   "loginFail": "Falha no login",
-  "oauthCanceledTitle": "Autorização Cancelada",
-  "oauthCanceledMessage": "O usuário cancelou o processo de autorização",
-  "oauthFailedTitle": "Autorização Falhou",
-  "oauthFailedMessage": "Autorização falhou. Razão: {error}",
-  "oauthFailedByNoAuthCode": "Código de autorização não recebido",
-  "oauthTimeout": "Tempo de autorização esgotado",
-  "oauthSuccessTitle": "Autorização Bem-sucedida",
-  "oauthSuccessMessage": "Esta página pode ser fechada. Por favor, retorne ao FlyEnv para visualizar as informações da licença.",
-  "trialExpiredTitle": "Licença não ativada",
-  "trialExpiredTips": "Você está usando o FlyEnv há {days} dias. Se o FlyEnv foi útil para você, considere obter uma licença para apoiar o projeto."
+  "oauthCanceledTitle": "AutorizaÃ§Ã£o Cancelada",
+  "oauthCanceledMessage": "O usuÃ¡rio cancelou o processo de autorizaÃ§Ã£o",
+  "oauthFailedTitle": "AutorizaÃ§Ã£o Falhou",
+  "oauthFailedMessage": "AutorizaÃ§Ã£o falhou. RazÃ£o: {error}",
+  "oauthFailedByNoAuthCode": "CÃ³digo de autorizaÃ§Ã£o nÃ£o recebido",
+  "oauthTimeout": "Tempo de autorizaÃ§Ã£o esgotado",
+  "oauthSuccessTitle": "AutorizaÃ§Ã£o Bem-sucedida",
+  "oauthSuccessMessage": "Esta pÃ¡gina pode ser fechada. Por favor, retorne ao SemarEnv para visualizar as informaÃ§Ãµes da licenÃ§a.",
+  "trialExpiredTitle": "LicenÃ§a nÃ£o ativada",
+  "trialExpiredTips": "VocÃª estÃ¡ usando o SemarEnv hÃ¡ {days} dias. Se o SemarEnv foi Ãºtil para vocÃª, considere obter uma licenÃ§a para apoiar o projeto."
 }

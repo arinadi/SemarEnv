@@ -1,4 +1,4 @@
-{
+﻿{
   "tsinghua": "清華大学ダウンロードソース",
   "bfsu": "北京外国語大学ダウンロードソース",
   "tencent": "テンセントダウンロードソース",
@@ -39,10 +39,10 @@
     "licenseTips": "ライセンスが取得されていないため、3つのモジュールとモジュール実行項目のみ作成できます",
     "outputLog": "出力ログ"
   },
-  "flyenvHelper": "FlyEnvヘルパープログラムの修復",
-  "flyenvHelperBtn": "修復",
-  "flyenvHelperFixSuccess": "FlyEnvヘルパープログラムの修復に成功しました",
-  "flyenvHelperInstallFailTips": "FlyEnv ヘルパーのインストールに失敗しました。管理者権限で FlyEnv を実行するか、[OK] ボタンをクリックして開いたフォルダ内の flyenv-helper.exe ヘルパープログラムを手動で実行してください。",
+  "semarenvHelper": "SemarEnvヘルパープログラムの修復",
+  "semarenvHelperBtn": "修復",
+  "semarenvHelperFixSuccess": "SemarEnvヘルパープログラムの修復に成功しました",
+  "semarenvHelperInstallFailTips": "SemarEnv ヘルパーのインストールに失敗しました。管理者権限で SemarEnv を実行するか、[OK] ボタンをクリックして開いたフォルダ内の semarenv-helper.exe ヘルパープログラムを手動で実行してください。",
   "appFont": "UI フォント",
   "appFontTips": "アプリケーションUIに使用するフォントを設定します。デフォルトのシステムフォントを使用する場合は空のままにします。",
   "codeFont": "コードフォント",

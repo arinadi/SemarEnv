@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Detyra të Planifikuara",
   "add": "Shto Detyrë të Planifikuar",
   "name": "Emri i Detyrës",
@@ -101,7 +101,7 @@
   "allTasks": "Bütün tapşırıqlar",
   "systemTasks": "Sistem tapşırıqları",
   "systemTask": "Sistem tapşırığı",
-  "flyenvTask": "FlyEnv tapşırığı",
+  "semarenvTask": "SemarEnv tapşırığı",
   "otherTask": "Digər tapşırıq",
   "taskTrigger": "Tətikləyici",
   "deleteSystemTaskTips": "Bu sistem planlaşdırılmış tapşırığını silmək istəyirsiniz?",

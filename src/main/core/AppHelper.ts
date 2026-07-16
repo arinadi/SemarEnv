@@ -64,10 +64,10 @@ export class AppHelper {
         const uinfo = userInfo()
         const role = `${uinfo.uid}:${uinfo.gid}`
         const binDir = PathResolve(global.Server.Static!, '../../../../')
-        const plist = join(binDir, 'plist/com.flyenv.helper.plist')
-        const bin = join(binDir, 'helper/flyenv-helper')
+        const plist = join(binDir, 'plist/com.semarenv.helper.plist')
+        const bin = join(binDir, 'helper/semarenv-helper')
         const shDir = join(binDir, 'helper')
-        const shFile = join(shDir, 'flyenv-helper-init.sh')
+        const shFile = join(shDir, 'semarenv-helper-init.sh')
 
         const tmpFile = join(tmpDir, `${uuid()}.sh`)
         await copyFile(shFile, tmpFile)
@@ -87,9 +87,9 @@ export class AppHelper {
         const uinfo = userInfo()
         const role = `${uinfo.uid}:${uinfo.gid}`
         const binDir = PathResolve(global.Server.Static!, '../../../../')
-        const bin = join(binDir, 'helper/flyenv-helper')
+        const bin = join(binDir, 'helper/semarenv-helper')
         const shDir = join(binDir, 'helper')
-        const shFile = join(shDir, 'flyenv-helper-init.sh')
+        const shFile = join(shDir, 'semarenv-helper-init.sh')
 
         const tmpFile = join(tmpDir, `${uuid()}.sh`)
         await copyFile(shFile, tmpFile)
@@ -111,11 +111,11 @@ export class AppHelper {
         const binDir = PathResolve(global.Server.Static!, '../../../../')
         const bin = getWindowsHelperBinaryPath()
         const tmpl = await readFile(
-          join(global.Server.Static!, 'sh/flyenv-auto-start-now.ps1'),
+          join(global.Server.Static!, 'sh/semarenv-auto-start-now.ps1'),
           'utf-8'
         )
         const content = tmpl
-          .replace('#TASKNAME#', 'FlyEnvHelperTask')
+          .replace('#TASKNAME#', 'SemarEnvHelperTask')
           .replace('#SRCEXECPATH#', '')
           .replace('#EXECPATH#', bin)
           .replace('#DATAPATH#', dataPath)
@@ -129,19 +129,19 @@ export class AppHelper {
         const uinfo = userInfo()
         const role = `${uinfo.uid}:${uinfo.gid}`
         const helperFile = global.Server.isArmArch
-          ? 'flyenv-helper-darwin-arm64'
-          : 'flyenv-helper-darwin-amd64'
+          ? 'semarenv-helper-darwin-arm64'
+          : 'semarenv-helper-darwin-amd64'
         const binDir = PathResolve(global.Server.Static!, '../../../build/')
-        const plist = join(binDir, 'plist/com.flyenv.helper.plist')
+        const plist = join(binDir, 'plist/com.semarenv.helper.plist')
         const bin = PathResolve(binDir, `../src/helper-go/dist/${helperFile}`)
         const shDir = join(global.Server.Static!, 'sh')
-        const shFile = join(shDir, 'flyenv-helper-init.sh')
+        const shFile = join(shDir, 'semarenv-helper-init.sh')
 
         const tmpFile = join(tmpDir, `${uuid()}.sh`)
         await copyFile(shFile, tmpFile)
         await chmod(tmpFile, '0755')
 
-        const tmpPlist = join(tmpDir, 'com.flyenv.helper.plist')
+        const tmpPlist = join(tmpDir, 'com.semarenv.helper.plist')
         await copyFile(plist, tmpPlist)
         await chmod(tmpPlist, '0755')
 
@@ -155,12 +155,12 @@ export class AppHelper {
         const uinfo = userInfo()
         const role = `${uinfo.uid}:${uinfo.gid}`
         const helperFile = global.Server.isArmArch
-          ? 'flyenv-helper-linux-arm64'
-          : 'flyenv-helper-linux-amd64-v1'
+          ? 'semarenv-helper-linux-arm64'
+          : 'semarenv-helper-linux-amd64-v1'
         const binDir = PathResolve(global.Server.Static!, '../../../build/')
         const bin = PathResolve(binDir, `../src/helper-go/dist/${helperFile}`)
         const shDir = join(global.Server.Static!, 'sh')
-        const shFile = join(shDir, 'flyenv-helper-init.sh')
+        const shFile = join(shDir, 'semarenv-helper-init.sh')
 
         const tmpFile = join(tmpDir, `${uuid()}.sh`)
         await copyFile(shFile, tmpFile)
@@ -182,11 +182,11 @@ export class AppHelper {
         const binDir = PathResolve(global.Server.Static!, '../../../build/')
         const bin = getWindowsHelperBinaryPath()
         const tmpl = await readFile(
-          join(global.Server.Static!, 'sh/flyenv-auto-start-now.ps1'),
+          join(global.Server.Static!, 'sh/semarenv-auto-start-now.ps1'),
           'utf-8'
         )
         const content = tmpl
-          .replace('#TASKNAME#', 'FlyEnvHelperTask')
+          .replace('#TASKNAME#', 'SemarEnvHelperTask')
           .replace('#SRCEXECPATH#', '')
           .replace('#EXECPATH#', bin)
           .replace('#DATAPATH#', dataPath)
@@ -265,7 +265,7 @@ export class AppHelper {
         const { command, icns } = await this.command()
         this.deps
           .sudo(command, {
-            name: 'FlyEnv',
+            name: 'SemarEnv',
             icns: icns
           })
           .then(({ stdout, stderr }) => {

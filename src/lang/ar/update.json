@@ -1,9 +1,9 @@
 {
-  "checkForUpdates": "التحقق من وجود تحديثات",
-  "update-available-message": "يتوفر إصدار أحدث من FlyEnv، هل تريد التحديث الآن؟",
-  "update-not-available-message": "أنت تستخدم أحدث إصدار!",
-  "update-downloaded-message": "جاهز للتثبيت...",
-  "update-error-message": "خطأ في التحديث",
-  "view-update-log": "عرض سجل التحديث",
-  "download-new-version": "تحميل نسخة جديدة"
+  "checkForUpdates": "Ø§Ù„ØªØ­Ù‚Ù‚ Ù…Ù† ÙˆØ¬ÙˆØ¯ ØªØ­Ø¯ÙŠØ«Ø§Øª",
+  "update-available-message": "ÙŠØªÙˆÙØ± Ø¥ØµØ¯Ø§Ø± Ø£Ø­Ø¯Ø« Ù…Ù† SemarEnvØŒ Ù‡Ù„ ØªØ±ÙŠØ¯ Ø§Ù„ØªØ­Ø¯ÙŠØ« Ø§Ù„Ø¢Ù†ØŸ",
+  "update-not-available-message": "Ø£Ù†Øª ØªØ³ØªØ®Ø¯Ù… Ø£Ø­Ø¯Ø« Ø¥ØµØ¯Ø§Ø±!",
+  "update-downloaded-message": "Ø¬Ø§Ù‡Ø² Ù„Ù„ØªØ«Ø¨ÙŠØª...",
+  "update-error-message": "Ø®Ø·Ø£ ÙÙŠ Ø§Ù„ØªØ­Ø¯ÙŠØ«",
+  "view-update-log": "Ø¹Ø±Ø¶ Ø³Ø¬Ù„ Ø§Ù„ØªØ­Ø¯ÙŠØ«",
+  "download-new-version": "ØªØ­Ù…ÙŠÙ„ Ù†Ø³Ø®Ø© Ø¬Ø¯ÙŠØ¯Ø©"
 }

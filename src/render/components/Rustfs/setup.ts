@@ -9,7 +9,7 @@ export const RustfsSetup: {
   dir: {},
   init() {
     localForage
-      .getItem('flyenv-rustfs-storage-dir')
+      .getItem('semarenv-rustfs-storage-dir')
       .then((res: Record<string, string>) => {
         if (res) {
           RustfsSetup.dir = reactive(res)
@@ -19,7 +19,7 @@ export const RustfsSetup: {
   },
   save() {
     localForage
-      .setItem('flyenv-rustfs-storage-dir', JSON.parse(JSON.stringify(RustfsSetup.dir)))
+      .setItem('semarenv-rustfs-storage-dir', JSON.parse(JSON.stringify(RustfsSetup.dir)))
       .then()
       .catch()
   }

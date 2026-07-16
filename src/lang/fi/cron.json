@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Ajoitetut tehtävät",
   "add": "Lisää ajoitettu tehtävä",
   "name": "Tehtävän nimi",
@@ -101,7 +101,7 @@
   "allTasks": "Kaikki tehtävät",
   "systemTasks": "Järjestelmätehtävät",
   "systemTask": "Järjestelmätehtävä",
-  "flyenvTask": "FlyEnv-tehtävä",
+  "semarenvTask": "SemarEnv-tehtävä",
   "otherTask": "Muu tehtävä",
   "taskTrigger": "Laukaisin",
   "deleteSystemTaskTips": "Poistetaanko tämä järjestelmän ajastettu tehtävä?",

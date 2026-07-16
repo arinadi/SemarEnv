@@ -1,22 +1,22 @@
 {
-  "setaliase": "Alias beállítása",
-  "env": "Környezet",
-  "alias": "Álnév",
-  "envTips": "Az útvonal hozzá lett adva a környezeti változóhoz?",
-  "aliasTips": "A terminálban használt álnév",
-  "bundleinVersionDelTips": "Ez egy beépített verzió, biztosan ne jelenjen meg?",
-  "customDirVersionDelTips": "Ez egy egyéni útvonalú verzió, biztosan ne jelenjen meg?",
-  "useSysPHP": "Alapértelmezett PHP verzió használata",
-  "setByApp": "A FlyEnv által beállított környezeti változók",
-  "setByNoApp": "Nem a FlyEnv által beállított környezeti változók",
-  "ftpdNeedPasswordToStart": "A Pure-FTPd indításához sudo jogosultság szükséges. Kérjük, adja meg a felhasználói jelszavát. A jelszó később automatikus kitöltésre kerül. Vagy az alábbi gombra kattintva kézzel is megadhatja a terminálban, de ez az üzenet újra megjelenhet.",
+  "setaliase": "Alias beÃ¡llÃ­tÃ¡sa",
+  "env": "KÃ¶rnyezet",
+  "alias": "ÃlnÃ©v",
+  "envTips": "Az Ãºtvonal hozzÃ¡ lett adva a kÃ¶rnyezeti vÃ¡ltozÃ³hoz?",
+  "aliasTips": "A terminÃ¡lban hasznÃ¡lt Ã¡lnÃ©v",
+  "bundleinVersionDelTips": "Ez egy beÃ©pÃ­tett verziÃ³, biztosan ne jelenjen meg?",
+  "customDirVersionDelTips": "Ez egy egyÃ©ni ÃºtvonalÃº verziÃ³, biztosan ne jelenjen meg?",
+  "useSysPHP": "AlapÃ©rtelmezett PHP verziÃ³ hasznÃ¡lata",
+  "setByApp": "A SemarEnv Ã¡ltal beÃ¡llÃ­tott kÃ¶rnyezeti vÃ¡ltozÃ³k",
+  "setByNoApp": "Nem a SemarEnv Ã¡ltal beÃ¡llÃ­tott kÃ¶rnyezeti vÃ¡ltozÃ³k",
+  "ftpdNeedPasswordToStart": "A Pure-FTPd indÃ­tÃ¡sÃ¡hoz sudo jogosultsÃ¡g szÃ¼ksÃ©ges. KÃ©rjÃ¼k, adja meg a felhasznÃ¡lÃ³i jelszavÃ¡t. A jelszÃ³ kÃ©sÅ‘bb automatikus kitÃ¶ltÃ©sre kerÃ¼l. Vagy az alÃ¡bbi gombra kattintva kÃ©zzel is megadhatja a terminÃ¡lban, de ez az Ã¼zenet Ãºjra megjelenhet.",
   "ErrorTips": {
     "VCRuntime": {
-      "title": "A rendszerből hiányzik a Visual C++ Redistributable (DLL-ek), amelyek szükségesek ennek a verziónak a futtatásához. Kérjük, kattintson az alábbi linkre a VC Runtime letöltéséhez és telepítéséhez a Microsoft hivatalos weboldaláról.",
-      "versionRelation": "Verziókompatibilitási referencia:",
+      "title": "A rendszerbÅ‘l hiÃ¡nyzik a Visual C++ Redistributable (DLL-ek), amelyek szÃ¼ksÃ©gesek ennek a verziÃ³nak a futtatÃ¡sÃ¡hoz. KÃ©rjÃ¼k, kattintson az alÃ¡bbi linkre a VC Runtime letÃ¶ltÃ©sÃ©hez Ã©s telepÃ­tÃ©sÃ©hez a Microsoft hivatalos weboldalÃ¡rÃ³l.",
+      "versionRelation": "VerziÃ³kompatibilitÃ¡si referencia:",
       "software": "Szoftver",
-      "versionRange": "Verziótartomány",
-      "msvsVersion": "MSVC verzió"
+      "versionRange": "VerziÃ³tartomÃ¡ny",
+      "msvsVersion": "MSVC verziÃ³"
     }
   }
 }

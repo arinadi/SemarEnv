@@ -46,7 +46,7 @@ export type MarkdownPreviewType = {
   save: () => void
 }
 
-let style: any = localStorage.getItem('FlyEnv-MarkdownPreview-LeftStyle')
+let style: any = localStorage.getItem('SemarEnv-MarkdownPreview-LeftStyle')
 if (style) {
   style = JSON.parse(style)
 }
@@ -60,7 +60,7 @@ const MarkdownPreview: MarkdownPreviewType = reactive({
   },
   init() {
     localForage
-      .getItem('flyenv-markdown-preview')
+      .getItem('semarenv-markdown-preview')
       .then((res: any) => {
         if (res && res?.tabs) {
           let index = 0
@@ -82,7 +82,7 @@ const MarkdownPreview: MarkdownPreviewType = reactive({
       const v = MarkdownPreview.tabs[k]
       tabs[k] = JSON.parse(JSON.stringify(v))
     }
-    localForage.setItem('flyenv-markdown-preview', {
+    localForage.setItem('semarenv-markdown-preview', {
       tabs
     })
   }

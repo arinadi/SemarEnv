@@ -29,7 +29,7 @@ const Erlang = reactive({
       image: `${mirror}erlang:${Erlang.version}`,
       ports: Erlang.ports.map((p) => `${p.out}:${p.in}`),
       environment,
-      networks: ['flyenv-network'],
+      networks: ['semarenv-network'],
       working_dir: '/app',
       command: Erlang.command
     }

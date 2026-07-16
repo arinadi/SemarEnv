@@ -71,8 +71,8 @@ export default class Launcher extends EventEmitter {
         gpuInfo
       }
       const message = JSON.stringify(payload)
-      logger.error(`[FlyEnv][ChildProcessGone] ${message}`)
-      appDebugLog('[FlyEnv-ChildProcessGone]', message).catch()
+      logger.error(`[SemarEnv][ChildProcessGone] ${message}`)
+      appDebugLog('[SemarEnv-ChildProcessGone]', message).catch()
     })
   }
 
@@ -90,7 +90,7 @@ export default class Launcher extends EventEmitter {
     app.on('activate', () => {
       console.log('app on activate !!!!!!')
       if (global.application) {
-        logger.info('[FlyEnv] activate')
+        logger.info('[SemarEnv] activate')
         global.application.showPage('index')
         if (isMacOS()) {
           app.dock?.show()?.catch()
@@ -105,16 +105,16 @@ export default class Launcher extends EventEmitter {
         return
       }
       this.isQuitting = true
-      logger.info('[FlyEnv] before-quit')
+      logger.info('[SemarEnv] before-quit')
       event.preventDefault()
       try {
         if (global.application) {
           await global.application.stop()
         } else {
-          logger.info('[FlyEnv] global.application is null !!!')
+          logger.info('[SemarEnv] global.application is null !!!')
         }
       } catch (e) {
-        logger.error('[FlyEnv] before-quit stop error:', e)
+        logger.error('[SemarEnv] before-quit stop error:', e)
       }
       app.quit()
     })

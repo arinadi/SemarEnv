@@ -48,8 +48,8 @@ export const SetupStore = defineStore('setup', {
   actions: {
     init() {
       return new Promise<void>((resolve) => {
-        this.message = localStorage.getItem('flyenv-licenses-post-message') ?? ''
-        localForage.getItem('flyenv-user-github').then((res: any) => {
+        this.message = localStorage.getItem('semarenv-licenses-post-message') ?? ''
+        localForage.getItem('semarenv-user-github').then((res: any) => {
           if (res?.githubUser) {
             this.githubUser = reactive(res.githubUser)
           }
@@ -57,10 +57,10 @@ export const SetupStore = defineStore('setup', {
             this.githubLicense = reactive(res.githubLicense)
           }
         })
-        let time = Number(localStorage.getItem('flyenv-init-time') ?? '0')
+        let time = Number(localStorage.getItem('semarenv-init-time') ?? '0')
         if (!time || isNaN(time)) {
           time = Math.round(new Date().getTime() / 1000)
-          localStorage.setItem('flyenv-init-time', `${time}`)
+          localStorage.setItem('semarenv-init-time', `${time}`)
         }
         IPC.send('app-fork:app', 'licensesInit').then((key: string, res?: any) => {
           if (res?.code !== 200) {
@@ -85,9 +85,9 @@ export const SetupStore = defineStore('setup', {
               const maxTime = 7 * 24 * 60 * 60
               if (currentTime - time > maxTime) {
                 const today = new Date().toDateString()
-                const lastAlert = localStorage.getItem('flyenv-license-alert-date')
+                const lastAlert = localStorage.getItem('semarenv-license-alert-date')
                 if (lastAlert !== today) {
-                  localStorage.setItem('flyenv-license-alert-date', today)
+                  localStorage.setItem('semarenv-license-alert-date', today)
                   const days = Math.floor((currentTime - time) / (24 * 60 * 60))
                   const store = AppStore()
                   const isZh = store.config.setup.lang?.startsWith('zh')
@@ -148,7 +148,7 @@ export const SetupStore = defineStore('setup', {
       }
       this.fetching = true
       const msg = this.message.trim()
-      localStorage.setItem('flyenv-licenses-post-message', msg)
+      localStorage.setItem('semarenv-licenses-post-message', msg)
       IPC.send('app-fork:app', 'licensesRequest', msg).then((key: string, res?: any) => {
         IPC.off(key)
         console.log('postRequest: ', res)
@@ -163,7 +163,7 @@ export const SetupStore = defineStore('setup', {
     githubInfoSave() {
       localForage
         .setItem(
-          'flyenv-user-github',
+          'semarenv-user-github',
           JSON.parse(
             JSON.stringify({ githubUser: this.githubUser, githubLicense: this.githubLicense })
           )
@@ -209,7 +209,7 @@ export const SetupStore = defineStore('setup', {
         const store = AppStore()
         store.config.setup.user_uuid = ''
         store.saveConfig().then().catch()
-        localForage.removeItem('flyenv-user-github').catch()
+        localForage.removeItem('semarenv-user-github').catch()
       })
     },
     githubLicenseFetch() {

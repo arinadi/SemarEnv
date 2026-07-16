@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Naplánované úkoly",
   "add": "Přidat naplánovaný úkol",
   "name": "Název úkolu",
@@ -101,7 +101,7 @@
   "allTasks": "Všechny úlohy",
   "systemTasks": "Systémové úlohy",
   "systemTask": "Systémová úloha",
-  "flyenvTask": "Úloha FlyEnv",
+  "semarenvTask": "Úloha SemarEnv",
   "otherTask": "Jiná úloha",
   "taskTrigger": "Spouštěč",
   "deleteSystemTaskTips": "Smazat tuto systémovou naplánovanou úlohu?",

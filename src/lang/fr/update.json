@@ -1,9 +1,9 @@
 {
-  "checkForUpdates": "Vérifier les mises à jour",
-  "update-available-message": "Une nouvelle version de FlyEnv est disponible, mettre à jour maintenant ?",
-  "update-not-available-message": "Vous êtes à jour !",
-  "update-downloaded-message": "Prêt pour l'installation...",
-  "update-error-message": "Erreur de mise à jour",
-  "view-update-log": "Voir le journal de mise à jour",
-  "download-new-version": "Télécharger la nouvelle version"
+  "checkForUpdates": "VÃ©rifier les mises Ã  jour",
+  "update-available-message": "Une nouvelle version de SemarEnv est disponible, mettre Ã  jour maintenant ?",
+  "update-not-available-message": "Vous Ãªtes Ã  jour !",
+  "update-downloaded-message": "PrÃªt pour l'installation...",
+  "update-error-message": "Erreur de mise Ã  jour",
+  "view-update-log": "Voir le journal de mise Ã  jour",
+  "download-new-version": "TÃ©lÃ©charger la nouvelle version"
 }

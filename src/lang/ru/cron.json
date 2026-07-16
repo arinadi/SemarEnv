@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Запланированные задачи",
   "add": "Добавить запланированную задачу",
   "name": "Имя задачи",
@@ -101,7 +101,7 @@
   "allTasks": "Все задачи",
   "systemTasks": "Системные задачи",
   "systemTask": "Системная задача",
-  "flyenvTask": "Задача FlyEnv",
+  "semarenvTask": "Задача SemarEnv",
   "otherTask": "Другая задача",
   "taskTrigger": "Триггер",
   "deleteSystemTaskTips": "Удалить эту системную запланированную задачу?",

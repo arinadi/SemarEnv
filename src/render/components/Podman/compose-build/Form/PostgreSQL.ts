@@ -15,7 +15,7 @@ export const PostgreSQL = reactive({
   volumes: [
     {
       type: 'bind',
-      source: './flyenv-docker-compose/postgresql/data',
+      source: './semarenv-docker-compose/postgresql/data',
       target: '/var/lib/postgresql/data' // Standard PostgreSQL data path
     }
   ],
@@ -47,13 +47,13 @@ export const PostgreSQL = reactive({
       image: `${mirror}postgres:${PostgreSQL.version}`,
       ports: PostgreSQL.ports.map((p) => `${p.out}:${p.in}`),
       environment,
-      networks: ['flyenv-network']
+      networks: ['semarenv-network']
     }
 
     // If persistence is enabled, add volumes and create the local data directory
     if (PostgreSQL.persistence) {
       postgres.volumes = PostgreSQL.volumes
-      await fs.mkdirp(join(dirname(base.dir), 'flyenv-docker-compose/postgresql/data'))
+      await fs.mkdirp(join(dirname(base.dir), 'semarenv-docker-compose/postgresql/data'))
     }
 
     return {

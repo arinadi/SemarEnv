@@ -1,6 +1,6 @@
 #!/bin/bash
 # Homebrew installer script (Linux version)
-# 检测并安装（需要 root）
+# æ£€æµ‹å¹¶å®‰è£…ï¼ˆéœ€è¦ rootï¼‰
 install_packages() {
     if [ $# -eq 0 ]; then
         echo "Usage: install_packages package1 package2 ..."
@@ -24,21 +24,21 @@ install_packages() {
     fi
 }
 
-# 改进：配置环境变量的函数，支持 bash 和 zsh，并防止重复写入
+# æ”¹è¿›ï¼šé…ç½®çŽ¯å¢ƒå˜é‡çš„å‡½æ•°ï¼Œæ”¯æŒ bash å’Œ zshï¼Œå¹¶é˜²æ­¢é‡å¤å†™å…¥
 configure_env() {
     local brew_path="$1"
     local shell_configs=("$HOME/.bashrc" "$HOME/.zshrc")
 
     for config in "${shell_configs[@]}"; do
         if [ -f "$config" ]; then
-            # 检查是否已经包含 eval 语句，避免重复添加
+            # æ£€æŸ¥æ˜¯å¦å·²ç»åŒ…å« eval è¯­å¥ï¼Œé¿å…é‡å¤æ·»åŠ 
             if ! grep -q "$brew_path/bin/brew shellenv" "$config"; then
                 echo -e "${tty_green}Updating $config...${tty_reset}"
                 echo "eval \"\$($brew_path/bin/brew shellenv)\"" >> "$config"
             fi
         fi
     done
-    # 在当前进程立即生效
+    # åœ¨å½“å‰è¿›ç¨‹ç«‹å³ç”Ÿæ•ˆ
     eval "$($brew_path/bin/brew shellenv)"
 }
 
@@ -55,7 +55,7 @@ tty_reset="$(tty_escape 0)"            # Reset color
 # Check if Homebrew is already installed (Linux version)
 if command -v brew &>/dev/null; then
     echo -e "${tty_green}\nDetected that brew is already installed. The installer script will exit automatically.${tty_reset}"
-    echo "FlyEnv-End of Homebrew installation"
+    echo "SemarEnv-End of Homebrew installation"
     exit 0
 fi
 
@@ -71,7 +71,7 @@ case "$user_input" in
         ;;
     *)
         echo "You entered '$user_input'. Installation aborted. To continue, please type Y or y."
-        echo "FlyEnv-End of Homebrew installation"
+        echo "SemarEnv-End of Homebrew installation"
         exit 0
         ;;
 esac
@@ -105,4 +105,4 @@ fi
 
 brew install gcc
 
-echo "FlyEnv-End of Homebrew installation"
+echo "SemarEnv-End of Homebrew installation"

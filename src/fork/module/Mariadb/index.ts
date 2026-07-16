@@ -213,7 +213,7 @@ const supportsMariaDBServerOption = async (version: SoftInstalled, option: strin
 }
 
 const quoteMariaDBArgPath = (file: string) => {
-  // Args are passed to spawn() as an array (no shell), so the path must NOT be quoted —
+  // Args are passed to spawn() as an array (no shell), so the path must NOT be quoted â€”
   // quotes would become part of the literal path. Just normalize separators.
   return pathFixedToUnix(file)
 }
@@ -230,7 +230,7 @@ const generateCertificatePair = () => {
   caCert.validity.notBefore = new Date()
   caCert.validity.notAfter = new Date()
   caCert.validity.notAfter.setFullYear(caCert.validity.notBefore.getFullYear() + 10)
-  const caAttrs = [{ name: 'commonName', value: 'FlyEnv MariaDB Local CA' }]
+  const caAttrs = [{ name: 'commonName', value: 'SemarEnv MariaDB Local CA' }]
   caCert.setSubject(caAttrs)
   caCert.setIssuer(caAttrs)
   caCert.setExtensions([
@@ -507,7 +507,7 @@ class Manager extends Base {
 
         let success = false
         /**
-         * ./mariadb-admin.exe --defaults-file="C:\Program Files\FlyEnv-Data\server\mariadb\my-11.4.cnf" -v --connect-timeout=1 --shutdown-timeout=1 --protocol=tcp --host="127.0.0.1" -uroot -proot001 shutdown
+         * ./mariadb-admin.exe --defaults-file="C:\Program Files\SemarEnv-Data\server\mariadb\my-11.4.cnf" -v --connect-timeout=1 --shutdown-timeout=1 --protocol=tcp --host="127.0.0.1" -uroot -proot001 shutdown
          */
         const command = `"${bin}" --defaults-file="${m}"${mariaDBClientTLSArgs(
           version.version
@@ -638,7 +638,7 @@ datadir=${dataDir}`
             }
           } else {
             // Use the real `mariadbd` (foreground) instead of the `mariadbd-safe`
-            // wrapper that version.bin points to — serviceStartSpawn backgrounds the
+            // wrapper that version.bin points to â€” serviceStartSpawn backgrounds the
             // process itself and needs a foreground server (no fork-and-exit wrapper).
             const serverBin = join(dirname(bin), 'mariadbd')
             const params = [
@@ -1098,7 +1098,7 @@ datadir=${dataDir}`
 
       try {
         await connection.query('FLUSH PRIVILEGES')
-        // 1. 创建数据库
+        // 1. åˆ›å»ºæ•°æ®åº“
         await connection.query(
           `CREATE DATABASE IF NOT EXISTS \`${data.database}\` CHARACTER SET ${data.charset}`
         )
@@ -1119,12 +1119,12 @@ datadir=${dataDir}`
           userExists = true
         }
 
-        // 3. 授予用户对数据库的所有权限
+        // 3. æŽˆäºˆç”¨æˆ·å¯¹æ•°æ®åº“çš„æ‰€æœ‰æƒé™
         await connection.query(
           `GRANT ALL PRIVILEGES ON \`${data.database}\`.* TO '${data.user}'@'localhost'`
         )
 
-        // 4. 刷新权限
+        // 4. åˆ·æ–°æƒé™
         await connection.query('FLUSH PRIVILEGES')
         await connection?.end()
       } catch (e) {

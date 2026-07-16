@@ -26,16 +26,16 @@ const MAX_ALLOWED_ROOTS_FILE_BYTES = 64 * 1024
 const MACHINE_ENV_REGISTRY_PATH =
   'Registry::HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment'
 const ALLOWED_OTHER_ENV_KEYS = new Set(['ERLANG_HOME', 'GRADLE_HOME', 'JAVA_HOME'])
-const ALLOWED_AUTO_START_TASKS = new Set(['FlyEnvHelperTask', 'FlyEnvStartup', 'flyenv-helper'])
+const ALLOWED_AUTO_START_TASKS = new Set(['SemarEnvHelperTask', 'SemarEnvStartup', 'semarenv-helper'])
 const ALLOWED_AUTO_START_BASENAMES = new Set([
   'electron.exe',
-  'flyenv-helper.exe',
-  'flyenv.exe',
+  'semarenv-helper.exe',
+  'semarenv.exe',
   'phpwebstudy.exe'
 ])
 const MANAGED_PATH_FRAGMENTS = [
-  '/flyenv',
-  '/flyenv.app',
+  '/semarenv',
+  '/semarenv.app',
   '/php-web-study',
   '/phpwebstudy',
   '/phpwebstudy-data'
@@ -199,7 +199,7 @@ function isManagedPathByExecutable(targetPath: string): boolean {
   let current = path.win32.normalize(executableDir)
   for (;;) {
     const base = path.win32.basename(current).toLowerCase()
-    if (base.includes('flyenv') || base.includes('phpwebstudy') || base.includes('php-web-study')) {
+    if (base.includes('semarenv') || base.includes('phpwebstudy') || base.includes('php-web-study')) {
       return pathInDir(targetPath, current)
     }
     const parent = path.win32.dirname(current)
@@ -210,7 +210,7 @@ function isManagedPathByExecutable(targetPath: string): boolean {
   }
 }
 
-function isWindowsProgramFilesFlyEnvPath(targetPath: string): boolean {
+function isWindowsProgramFilesSemarEnvPath(targetPath: string): boolean {
   const candidates = [process.env.ProgramFiles, process.env['ProgramFiles(x86)']].filter(
     Boolean
   ) as string[]
@@ -220,7 +220,7 @@ function isWindowsProgramFilesFlyEnvPath(targetPath: string): boolean {
     }
     const normalized = comparePath(targetPath)
     return (
-      normalized.includes('/flyenv') ||
+      normalized.includes('/semarenv') ||
       normalized.includes('/phpwebstudy') ||
       normalized.includes('/php-web-study')
     )
@@ -229,7 +229,7 @@ function isWindowsProgramFilesFlyEnvPath(targetPath: string): boolean {
 
 function allowedRootsFilePath(): string {
   const programData = process.env.ProgramData || 'C:\\ProgramData'
-  return path.win32.join(programData, 'FlyEnv', 'flyenv.allowed-roots')
+  return path.win32.join(programData, 'SemarEnv', 'semarenv.allowed-roots')
 }
 
 function readConfiguredAllowedRoots(): ConfiguredAllowedRoots {
@@ -309,7 +309,7 @@ function isBusinessPathAllowed(targetPath: string): boolean {
     return (
       isManagedPathByName(targetPath) ||
       isManagedPathByExecutable(targetPath) ||
-      isWindowsProgramFilesFlyEnvPath(targetPath)
+      isWindowsProgramFilesSemarEnvPath(targetPath)
     )
   }
   return false
@@ -327,7 +327,7 @@ function validatePathAccess(targetPath: string, label: string, forWrite: boolean
     helperExecutionFailed(`sensitive system path is not allowed: ${targetPath}`)
   }
   if (!isBusinessPathAllowed(clean)) {
-    helperExecutionFailed(`path outside FlyEnv allowed scope: ${targetPath}`)
+    helperExecutionFailed(`path outside SemarEnv allowed scope: ${targetPath}`)
   }
   if (pathHasSymlinkComponent(clean)) {
     helperExecutionFailed(`${label} contains symlink component`)
@@ -382,7 +382,7 @@ function validateSystemEnvKey(key: string, allowWhitelisted: boolean): string {
   if (!ENV_KEY_PATTERN.test(key)) {
     helperExecutionFailed(`invalid environment variable key: ${key}`)
   }
-  if (key.startsWith('FLYENV_')) {
+  if (key.startsWith('SEMARENV_')) {
     return key
   }
   if (allowWhitelisted && ALLOWED_OTHER_ENV_KEYS.has(key)) {
@@ -430,7 +430,7 @@ function validateBase64(value: string, label: string): string {
 
 function buildTempFilePath(kind: WindowsHelperFallbackTempFileKind): string {
   const suffix = kind === 'base64' ? '.b64.txt' : '.txt'
-  return path.join(os.tmpdir(), `flyenv-helper-fallback-${randomUUID()}${suffix}`)
+  return path.join(os.tmpdir(), `semarenv-helper-fallback-${randomUUID()}${suffix}`)
 }
 
 function buildPowerShellPreamble(): string {
@@ -440,12 +440,12 @@ function buildPowerShellPreamble(): string {
 }
 
 function buildNotifyEnvironmentChangedScript(): string {
-  return `Add-Type -Namespace FlyEnvFallback -Name NativeMethods -MemberDefinition @'
+  return `Add-Type -Namespace SemarEnvFallback -Name NativeMethods -MemberDefinition @'
 [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Unicode, SetLastError = true)]
 public static extern System.IntPtr SendMessageTimeout(System.IntPtr hWnd, uint Msg, System.UIntPtr wParam, string lParam, uint fuFlags, uint uTimeout, out System.UIntPtr lpdwResult);
 '@
 $notifyResult = [System.UIntPtr]::Zero
-[FlyEnvFallback.NativeMethods]::SendMessageTimeout(
+[SemarEnvFallback.NativeMethods]::SendMessageTimeout(
   [System.IntPtr]0xffff,
   0x001A,
   [System.UIntPtr]::Zero,
@@ -544,7 +544,7 @@ function validateSetAutoStartArgs(args: unknown[]): ValidatedSetAutoStartArgs {
     helperExecutionFailed(`invalid auto-start executable: ${exeBasename}`)
   }
   if (!isBusinessPathAllowed(exePath) && !isManagedDirectoryByName(exePath)) {
-    helperExecutionFailed(`auto-start executable outside FlyEnv allowed scope: ${exePath}`)
+    helperExecutionFailed(`auto-start executable outside SemarEnv allowed scope: ${exePath}`)
   }
   return { enabled, taskName, exePath }
 }
@@ -636,8 +636,8 @@ foreach ($entry in $otherVars.GetEnumerator()) {
     Set-ItemProperty -LiteralPath ${powerShellString(MACHINE_ENV_REGISTRY_PATH)} -Name $name -Value $value
   }
 }
-New-ItemProperty -LiteralPath ${powerShellString(MACHINE_ENV_REGISTRY_PATH)} -Name 'FLYENV_ENV_FLUSH' -Value '0' -PropertyType String -Force | Out-Null
-Set-ItemProperty -LiteralPath ${powerShellString(MACHINE_ENV_REGISTRY_PATH)} -Name 'FLYENV_ENV_FLUSH' -Value '0'
+New-ItemProperty -LiteralPath ${powerShellString(MACHINE_ENV_REGISTRY_PATH)} -Name 'SEMARENV_ENV_FLUSH' -Value '0' -PropertyType String -Force | Out-Null
+Set-ItemProperty -LiteralPath ${powerShellString(MACHINE_ENV_REGISTRY_PATH)} -Name 'SEMARENV_ENV_FLUSH' -Value '0'
 ${buildNotifyEnvironmentChangedScript()}`
 }
 
@@ -687,7 +687,7 @@ if (-not $${variableName}) {
 }
 
 function buildSetAutoStartScript(args: ValidatedSetAutoStartArgs, tempFilePath?: string): string {
-  const runLevel = args.taskName === 'FlyEnvStartup' ? 'limited' : 'highest'
+  const runLevel = args.taskName === 'SemarEnvStartup' ? 'limited' : 'highest'
   const runtimeSetup = tempFilePath
     ? `$payload = Get-Content -LiteralPath ${powerShellString(tempFilePath)} -Raw | ConvertFrom-Json
 $enabled = [bool]$payload.enabled
@@ -840,7 +840,7 @@ export async function runWindowsHelperFallback(
     if (plan.tempFilePath && plan.tempFileContent !== undefined) {
       await fs.writeFile(plan.tempFilePath, plan.tempFileContent, 'utf8')
     }
-    await Sudo(plan.command, { name: 'FlyEnv' })
+    await Sudo(plan.command, { name: 'SemarEnv' })
     if (module === 'tools' && (fn === 'setSystemEnv' || fn === 'setSystemPath')) {
       EnvSync.clean()
       await EnvSync.sync().catch(() => undefined)

@@ -97,7 +97,7 @@ export function buildUnixCustomerServiceStartScript(
     )
   }
 
-  lines.push('echo "##FlyEnv-Process-ID$!FlyEnv-Process-ID##"')
+  lines.push('echo "##SemarEnv-Process-ID$!SemarEnv-Process-ID##"')
   return lines.join('\n')
 }
 
@@ -130,7 +130,7 @@ export async function serviceStartExec(
   const outFile = join(baseDir, `${typeFlag}-${versionStr}-start-out.log`.split(' ').join(''))
   const errFile = join(baseDir, `${typeFlag}-${versionStr}-start-error.log`.split(' ').join(''))
 
-  let psScript = await readFile(join(global.Server.Static!, 'sh/flyenv-async-exec.sh'), 'utf8')
+  let psScript = await readFile(join(global.Server.Static!, 'sh/semarenv-async-exec.sh'), 'utf8')
 
   psScript = psScript
     .replace('#ENV#', execEnv)
@@ -197,7 +197,7 @@ export async function serviceStartExec(
     }
     let pid = ''
     const stdout = res.stdout.trim() + '\n' + res.stderr.trim()
-    const regex = /FlyEnv-Process-ID(.*?)FlyEnv-Process-ID/g
+    const regex = /SemarEnv-Process-ID(.*?)SemarEnv-Process-ID/g
     const match = regex.exec(stdout)
     if (match) {
       pid = match[1]
@@ -357,7 +357,7 @@ export async function customerServiceStartExec(
   if (!version.pidPath) {
     let pid = ''
     const stdout = res.stdout.trim() + '\n' + res.stderr.trim()
-    const regex = /FlyEnv-Process-ID(.*?)FlyEnv-Process-ID/g
+    const regex = /SemarEnv-Process-ID(.*?)SemarEnv-Process-ID/g
     const match = regex.exec(stdout)
     if (match) {
       pid = match[1]
@@ -451,7 +451,7 @@ export async function serviceStartSpawn(
         ...env,
         ...execEnv
       },
-      windowsHide: true // 隐藏 cmd 窗口
+      windowsHide: true // éšè— cmd çª—å£
     }
     if (isWindows()) {
       if (bin.endsWith('.ps1')) {
@@ -460,30 +460,30 @@ export async function serviceStartSpawn(
         options.shell = true
       }
     }
-    // 2. 启动进程
+    // 2. å¯åŠ¨è¿›ç¨‹
     const cp = spawn(bin, execArgs, options)
-    // 3. 立即关闭父进程中的句柄 (子进程已继承)
+    // 3. ç«‹å³å…³é—­çˆ¶è¿›ç¨‹ä¸­çš„å¥æŸ„ (å­è¿›ç¨‹å·²ç»§æ‰¿)
     closeSync(out)
     closeSync(err)
 
     return new Promise((resolve, reject) => {
-      // 监听启动瞬间的错误（如文件路径不存在、权限不足）
+      // ç›‘å¬å¯åŠ¨çž¬é—´çš„é”™è¯¯ï¼ˆå¦‚æ–‡ä»¶è·¯å¾„ä¸å­˜åœ¨ã€æƒé™ä¸è¶³ï¼‰
       cp.on('error', (err) => {
         reject(err)
       })
 
       let timer: NodeJS.Timeout | undefined = undefined
 
-      // 关键：检测启动后的早期崩溃（例如 Token 错误导致 1-2 秒内退出）
+      // å…³é”®ï¼šæ£€æµ‹å¯åŠ¨åŽçš„æ—©æœŸå´©æºƒï¼ˆä¾‹å¦‚ Token é”™è¯¯å¯¼è‡´ 1-2 ç§’å†…é€€å‡ºï¼‰
       const startupExitHandler = () => {
         clearTimeout(timer)
         reject(new Error(I18nT('fork.startFail')))
       }
       cp.on('exit', startupExitHandler)
 
-      // 如果 2 秒内没退出，我们认为启动基本成功
+      // å¦‚æžœ 2 ç§’å†…æ²¡é€€å‡ºï¼Œæˆ‘ä»¬è®¤ä¸ºå¯åŠ¨åŸºæœ¬æˆåŠŸ
       timer = setTimeout(async () => {
-        cp.off('exit', startupExitHandler) // 移除早期退出监听
+        cp.off('exit', startupExitHandler) // ç§»é™¤æ—©æœŸé€€å‡ºç›‘å¬
 
         if (cp.pid) {
           const pid = `${cp.pid}`
@@ -497,7 +497,7 @@ export async function serviceStartSpawn(
               'APP-On-Log': AppLog('error', `Save PID file failed: ${e}`)
             })
           }
-          cp.unref() // 让子进程独立运行，不挂钩主进程
+          cp.unref() // è®©å­è¿›ç¨‹ç‹¬ç«‹è¿è¡Œï¼Œä¸æŒ‚é’©ä¸»è¿›ç¨‹
           resolve({ 'APP-Service-Start-PID': pid })
         } else {
           reject(new Error(I18nT('fork.startFail')))

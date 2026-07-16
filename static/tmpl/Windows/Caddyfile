@@ -1,4 +1,4 @@
-{
+﻿{
   storage file_system {
       root "##SSL_ROOT##"
   }
@@ -14,7 +14,7 @@
 
   pki {
       ca {
-          name "FlyEnv-Root-CA"
+          name "SemarEnv-Root-CA"
       }
   }
 }

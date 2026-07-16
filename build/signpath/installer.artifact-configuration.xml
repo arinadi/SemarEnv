@@ -1,9 +1,9 @@
 <artifact-configuration xmlns="http://signpath.io/artifact-configuration/v1">
   <zip-file>
-    <pe-file path="FlyEnv-Setup-*.exe" max-matches="unbounded">
+    <pe-file path="SemarEnv-Setup-*.exe" max-matches="unbounded">
       <authenticode-sign/>
     </pe-file>
-    <pe-file path="FlyEnv-Portable-*.exe" max-matches="unbounded">
+    <pe-file path="SemarEnv-Portable-*.exe" max-matches="unbounded">
       <authenticode-sign/>
     </pe-file>
   </zip-file>
