@@ -1,4 +1,4 @@
-﻿name: Build SemarEnv Windows Packages
+name: Build SemarEnv Windows Packages
 on:
   push:
     paths:
@@ -14,8 +14,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      # make is pre-installed on windows-2022 runner; choco not needed
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -46,7 +44,6 @@ jobs:
 
       - name: Install dependencies with Yarn
         run: |
-          # Force link against WinRT runtime objects
           $env:LINK = "runtimeobject.lib"
           yarn install
 
@@ -58,7 +55,6 @@ jobs:
           cd "$env:GITHUB_WORKSPACE/src/helper-go"
           go mod download
           go-winres make
-          # Ã¤Â½Â¿Ã§â€Â¨ PowerShell Ã¨â€žÅ¡Ã¦Å“Â¬Ã¦Å¾â€žÃ¥Â»Âº
           .\build-win.ps1
 
       - name: Build Electron packages with electron-builder
