@@ -81,7 +81,14 @@ const conf: Configuration = {
   },
   afterPack: (...args) => {
     return AfterPack(...args) as any
-  }
+  },
+  publish: [
+    {
+      provider: 'github',
+      owner: 'arinadi',
+      repo: 'SemarEnv'
+    }
+  ]
 }
 
 export default conf

@@ -10,7 +10,7 @@ $BUILD_DIR = "./dist"
 $APP_NAME = "semarenv-helper"
 
 # Determine architecture and set TARGET
-$ARCH = (Get-WmiObject Win32_Processor).Architecture
+$ARCH = (Get-CimInstance Win32_Processor).Architecture
 switch ($ARCH) {
   0 { $ARCH = "x86" }
   9 { $ARCH = "x64" }
@@ -67,15 +67,10 @@ $env:CGO_ENABLED = "0"
 
 # Run the build
 $buildOutput = Join-Path -Path $BUILD_DIR -ChildPath $OUTPUT_FILENAME
-$buildArgs = @(
-  "build",
-  "-ldflags=`"-s -w -H windowsgui`"",
-  "-o",
-  $buildOutput
-)
 
-$process = Start-Process -FilePath "go" -ArgumentList $buildArgs -NoNewWindow -PassThru -Wait
-if ($process.ExitCode -ne 0) {
+$ldflags = "-s -w -H windowsgui"
+& go build -ldflags $ldflags -o $buildOutput 2>&1
+if ($LASTEXITCODE -ne 0) {
   Write-Host "Error: Build failed for ${GOOS_VAL}/${GOARCH_VAL}"
   exit 1
 }

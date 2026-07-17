@@ -3,6 +3,8 @@ on:
   push:
     paths:
       - 'build/linux.build.yml'
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 jobs:
