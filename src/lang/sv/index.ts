@@ -1,4 +1,4 @@
-﻿import apache from './apache.json'
+import apache from './apache.json'
 import appLog from './appLog.json'
 import aside from './aside.json'
 import base from './base.json'

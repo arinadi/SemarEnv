@@ -1,4 +1,4 @@
-﻿import apacheZH from './apache.json'
+import apacheZH from './apache.json'
 import appLogZH from './appLog.json'
 import asideZH from './aside.json'
 import baseZH from './base.json'

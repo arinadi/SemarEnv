@@ -1,4 +1,4 @@
-﻿import apacheHR from './apache.json'
+import apacheHR from './apache.json'
 import appLogHR from './appLog.json'
 import asideHR from './aside.json'
 import baseHR from './base.json'

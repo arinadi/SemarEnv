@@ -1,4 +1,4 @@
-﻿import apacheIT from './apache.json'
+import apacheIT from './apache.json'
 import appLogIT from './appLog.json'
 import asideIT from './aside.json'
 import baseIT from './base.json'

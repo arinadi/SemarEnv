@@ -1,4 +1,4 @@
-﻿import apacheEN from './apache.json'
+import apacheEN from './apache.json'
 import appLogEN from './appLog.json'
 import asideEN from './aside.json'
 import baseEN from './base.json'

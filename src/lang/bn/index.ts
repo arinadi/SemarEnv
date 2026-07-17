@@ -1,4 +1,4 @@
-﻿import apacheBN from './apache.json'
+import apacheBN from './apache.json'
 import appLogBN from './appLog.json'
 import asideBN from './aside.json'
 import baseBN from './base.json'

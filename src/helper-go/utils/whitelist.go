@@ -157,7 +157,7 @@ func readConfiguredAllowedRoots() configuredAllowedRoots {
 	roots := make([]string, 0, len(lines))
 	seen := make(map[string]bool)
 	for _, line := range lines {
-		line = strings.TrimPrefix(line, "﻿")
+		line = strings.TrimPrefix(line, "\uFEFF")
 		line = strings.TrimSpace(line)
 		if line == "" || strings.HasPrefix(line, "#") {
 			continue

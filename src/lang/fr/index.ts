@@ -1,4 +1,4 @@
-﻿import apacheFR from './apache.json'
+import apacheFR from './apache.json'
 import appLogFR from './appLog.json'
 import asideFR from './aside.json'
 import baseFR from './base.json'

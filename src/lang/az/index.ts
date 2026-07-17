@@ -1,4 +1,4 @@
-﻿import apacheAZ from './apache.json'
+import apacheAZ from './apache.json'
 import appLogAZ from './appLog.json'
 import asideAZ from './aside.json'
 import baseAZ from './base.json'
