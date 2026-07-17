@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'build/linux.build.yml'
+  workflow_dispatch:
 
 jobs:
   build-packages:
