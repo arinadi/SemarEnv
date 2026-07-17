@@ -43,7 +43,7 @@ Promise.all([packMain(), packRenderer()])
   .then(async () => {
     const options: any = {
       targets: Platform.current().createTarget(),
-      publish: 'always'
+      publish: process.env.RELEASE_PUBLISH === 'true' ? 'always' : 'never'
     }
     if (isMacOS()) {
       console.log('electron-builder isMacOS !!!')
