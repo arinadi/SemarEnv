@@ -440,6 +440,34 @@ export class Base {
   }
 
   async _fetchOnlineVersion(app: string): Promise<OnlineVersionItem[]> {
+    // First try bundled static/versions.json for instant loading
+    try {
+      const bundlePath = join(global.Server.Static!, 'versions.json')
+      if (existsSync(bundlePath)) {
+        const raw = await readFile(bundlePath, 'utf-8')
+        const bundle = JSON.parse(raw)
+        let osKey: string
+        let archKey: string
+        if (isMacOS()) {
+          osKey = 'mac'
+          archKey = global.Server.Arch === 'x86_64' ? 'x86' : 'arm'
+        } else if (isWindows()) {
+          osKey = 'win'
+          archKey = 'x86'
+        } else {
+          osKey = 'linux'
+          archKey = global.Server.Arch === 'x86_64' ? 'x86' : 'arm'
+        }
+        const items = bundle?.[app]?.[osKey]?.[archKey]
+        if (items && Array.isArray(items) && items.length > 0) {
+          return items
+        }
+      }
+    } catch (e) {
+      console.log('_fetchOnlineVersion bundle read error:', e)
+    }
+
+    // Fallback to API
     let list: OnlineVersionItem[] = []
     try {
       let data: any = {}
