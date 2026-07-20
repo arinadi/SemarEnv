@@ -5,6 +5,7 @@ on:
       - 'build/linux.build.yml'
     tags:
       - 'v*'
+      - 'latest'
   workflow_dispatch:
 
 permissions:
@@ -94,6 +95,7 @@ jobs:
             release/*.yml
 
       - name: Update latest tag
+        if: github.ref_type != 'tag' || github.ref_name != 'latest'
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
