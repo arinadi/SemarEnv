@@ -13,8 +13,6 @@ import { I18nT } from '@lang/index'
 import IPC from '@/util/IPC'
 import { reactive } from 'vue'
 import localForage from 'localforage'
-import { SetupStore } from '@/components/Setup/store'
-import { ElMessageBox } from 'element-plus'
 
 class ImageCompressSetup implements SharpConfig {
   // 基本配置
@@ -432,12 +430,6 @@ class ImageBatchProcess {
   }
 
   doProcess() {
-    const setupStore = SetupStore()
-    if (!setupStore.isActive && this.trialStartTime === 0) {
-      ElMessageBox.alert(I18nT('ai.noLiencesTips')).catch()
-      this.trialStartTime = Math.round(new Date().getTime() / 1000)
-      this.save()
-    }
     if (this.processing) {
       return
     }

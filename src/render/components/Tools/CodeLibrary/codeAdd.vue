@@ -59,14 +59,7 @@
     <template #footer>
       <div class="dialog-footer">
         <el-button @click="show = false">{{ I18nT('base.cancel') }}</el-button>
-        <template v-if="isLock">
-          <el-tooltip placement="right" :content="I18nT('host.licenseTips')">
-            <el-button type="info" :icon="Lock"></el-button>
-          </el-tooltip>
-        </template>
-        <template v-else>
-          <el-button type="primary" @click="doSave">{{ I18nT('base.confirm') }}</el-button>
-        </template>
+        <el-button type="primary" @click="doSave">{{ I18nT('base.confirm') }}</el-button>
       </div>
     </template>
   </el-dialog>
@@ -80,8 +73,7 @@
   import CodeLibrary, { CodeLibraryItemType } from '@/components/Tools/CodeLibrary/setup'
   import { languagesToCheck } from '../CodePlayground/languageDetector'
   import { uuid } from '@/util/Index'
-  import { Plus, Lock } from '@element-plus/icons-vue'
-  import { SetupStore } from '@/components/Setup/store'
+  import { Plus } from '@element-plus/icons-vue'
 
   const { show, onClosed, onSubmit, closedFn, callback } = AsyncComponentSetup()
 
@@ -114,12 +106,6 @@
   if (props.groupID) {
     form.value.groupID = props.groupID
   }
-
-  const setupStore = SetupStore()
-
-  const isLock = computed(() => {
-    return !setupStore.isActive && CodeLibrary.items.length > 2 && !props.item?.id
-  })
 
   const groups = computed(() => {
     return CodeLibrary.group.filter((item) => item.type === form.value.fromType)
