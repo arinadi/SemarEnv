@@ -87,14 +87,22 @@ jobs:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           $tag = "${{ steps.version.outputs.tag }}"
-          # Create annotated tag
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
           git tag -a $tag -m "Release $tag"
-          # Create GitHub Release with tag + assets in one step
-          gh release create $tag `
-            release/*.exe `
-            release/*.msi `
-            release/*.yml `
-            release/*.blockmap `
+
+          # Collect existing release files
+          $assets = @()
+          Get-ChildItem release/*.exe,release/*.yml,release/*.blockmap -ErrorAction SilentlyContinue | ForEach-Object {
+            $assets += $_.FullName
+          }
+          if ($assets.Count -eq 0) {
+            Write-Error "No release files found in release/"
+            exit 1
+          }
+          Write-Output "Uploading assets: $assets"
+
+          gh release create $tag $assets `
             --title "SemarEnv $tag" `
             --notes "Build $(Get-Date -Format 'yyyy-MM-dd')" `
             --repo arinadi/SemarEnv

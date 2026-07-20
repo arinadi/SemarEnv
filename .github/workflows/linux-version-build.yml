@@ -101,11 +101,20 @@ jobs:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           tag="${{ steps.version.outputs.tag }}"
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
           git tag -a "$tag" -m "Release $tag"
-          gh release create "$tag" \
-            release/*.deb \
-            release/*.rpm \
-            release/*.yml \
-            --title "SemarEnv $tag" \
-            --notes "Build $(date +%Y-%m-%d)" \
-            --repo arinadi/SemarEnv
+          assets=$(ls release/*.deb release/*.rpm release/*.yml 2>/dev/null)
+          if [ -z "$assets" ]; then
+            echo "No release files found in release/"
+            exit 1
+          fi
+          echo "Uploading assets: $assets"
+          if gh release view "$tag" --repo arinadi/SemarEnv >/dev/null 2>&1; then
+            gh release upload "$tag" $assets --repo arinadi/SemarEnv --clobber
+          else
+            gh release create "$tag" $assets \
+              --title "SemarEnv $tag" \
+              --notes "Build $(date +%Y-%m-%d)" \
+              --repo arinadi/SemarEnv
+          fi
