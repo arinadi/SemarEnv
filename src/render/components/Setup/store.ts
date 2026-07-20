@@ -92,8 +92,8 @@ export const SetupStore = defineStore('setup', {
                   const store = AppStore()
                   const isZh = store.config.setup.lang?.startsWith('zh')
                   const url = isZh
-                    ? 'https://flyenv.com/zh/guide/about-license.html'
-                    : 'https://flyenv.com/guide/about-license.html'
+                    ? 'https://arinano.work/semarenv/zh/guide/about-license.html'
+                    : 'https://arinano.work/semarenv/guide/about-license.html'
                   setTimeout(() => {
                     ElMessageBox.alert(
                       I18nT('licenses.trialExpiredTips', { days }),

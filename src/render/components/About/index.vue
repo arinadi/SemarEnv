@@ -16,7 +16,7 @@
         </div>
         <div class="mt-5">
           <a target="_blank" href="javascript:" rel="noopener noreferrer" @click="toHome($event)">
-            SemarEnv - https://flyenv.com
+            SemarEnv - https://arinano.work/semarenv
           </a>
         </div>
       </div>
@@ -45,9 +45,9 @@
               target="_blank"
               href="javascript:"
               rel="noopener noreferrer"
-              @click="openUrl($event, 'https://flyenv.com/sponsor.html')"
+              @click="openUrl($event, 'https://arinano.work/semarenv/sponsor.html')"
             >
-              https://flyenv.com/sponsor.html
+              https://arinano.work/semarenv/sponsor.html
             </a>
           </el-col>
         </el-row>
@@ -78,9 +78,9 @@
               target="_blank"
               href="javascript:"
               rel="noopener noreferrer"
-              @click="openUrl($event, 'https://flyenv.com/sponsor.html')"
+              @click="openUrl($event, 'https://arinano.work/semarenv/sponsor.html')"
             >
-              https://flyenv.com/sponsor.html
+              https://arinano.work/semarenv/sponsor.html
             </a>
           </el-col>
         </el-row>
@@ -115,7 +115,7 @@
 
   const toHome = (e: Event) => {
     e.preventDefault()
-    shell.openExternal('https://flyenv.com')
+    shell.openExternal('https://arinano.work/semarenv')
   }
 
   const checkUpdate = () => {

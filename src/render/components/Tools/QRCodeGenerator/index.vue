@@ -12,7 +12,7 @@
 
   const errorCorrectionLevels = ['low', 'medium', 'quartile', 'high']
 
-  const text = ref('https://flyenv.com')
+  const text = ref('https://arinano.work/semarenv')
   const { qrcode } = useQRCode({
     text,
     color: {

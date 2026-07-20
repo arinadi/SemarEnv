@@ -35,9 +35,9 @@ if (-not (Test-IsAdmin)) {
   exit $proc.ExitCode
 }
 
-$bundledGo = "D:\Program Files\PhpWebStudy-Data\app\static-go-1.25.0\bin\go.exe"
-if ($env:FLYENV_GO) {
-  $go = $env:FLYENV_GO
+$bundledGo = "D:\Program Files\SemarEnv-Data\app\static-go-1.25.0\bin\go.exe"
+if ($env:SEMARENV_GO) {
+  $go = $env:SEMARENV_GO
 } elseif (Test-Path $bundledGo) {
   $go = $bundledGo
 } else {

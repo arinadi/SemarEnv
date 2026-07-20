@@ -7,7 +7,7 @@ if (-not [string]::IsNullOrEmpty($newPath)) {
     $newPath,
     [Microsoft.Win32.RegistryValueKind]::ExpandString
   )
-  [Environment]::SetEnvironmentVariable("FLYENV_ENV_FLUSH", "0", "Machine")
+  [Environment]::SetEnvironmentVariable("SEMARENV_ENV_FLUSH", "0", "Machine")
   $env:PATH = $newPath
   Write-Output "Set PATH = $newPath" -ForegroundColor Green
 }

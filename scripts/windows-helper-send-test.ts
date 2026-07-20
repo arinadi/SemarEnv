@@ -89,7 +89,7 @@ async function main() {
   } as any
 
   await assert.rejects(
-    unavailableHelper.send('tools', 'setSystemEnv', 'FLYENV_ALIAS', 'C:\\SemarEnv\\alias'),
+    unavailableHelper.send('tools', 'setSystemEnv', 'SEMARENV_ALIAS', 'C:\\SemarEnv\\alias'),
     (error: any) => {
       assert.equal(error?.code, 'helper_unreachable')
       return true
@@ -124,7 +124,7 @@ async function main() {
   const socketFallbackResult = await socketFallbackHelper.send(
     'tools',
     'setSystemEnv',
-    'FLYENV_ALIAS',
+    'SEMARENV_ALIAS',
     'C:\\SemarEnv\\alias'
   )
   assert.equal(socketFallbackResult, true)

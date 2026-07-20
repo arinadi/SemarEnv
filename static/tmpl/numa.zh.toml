@@ -2,7 +2,7 @@
 bind_addr = "0.0.0.0:53"
 api_port = 5380
 # api_bind_addr = "127.0.0.1"
-data_dir = "#FLYENV_DATA_DIR#"
+data_dir = "#SemarEnv_DATA_DIR#"
 
 [upstream]
 mode = "forward"

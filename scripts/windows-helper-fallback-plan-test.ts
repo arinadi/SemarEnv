@@ -76,7 +76,7 @@ assert.match(tinyBase64LimitPlan.script, /Get-Content -LiteralPath/)
 const setEnvPlan = buildWindowsHelperFallbackPlan(
   'tools',
   'setSystemEnv',
-  ['FLYENV_ALIAS', 'C:/SemarEnv/alias'],
+  ['SEMARENV_ALIAS', 'C:/SemarEnv/alias'],
   6000
 )
 assert.equal(setEnvPlan.mode, 'inline')
@@ -104,7 +104,7 @@ const setHelperAutoStartPlan = buildWindowsHelperFallbackPlan(
 assert.match(setHelperAutoStartPlan.script, /\/rl highest/)
 
 assert.throws(
-  () => buildWindowsHelperFallbackPlan('tools', 'setSystemEnv', ['FLYENV-ALIAS', 'x'], 2000),
+  () => buildWindowsHelperFallbackPlan('tools', 'setSystemEnv', ['SEMARENV-ALIAS', 'x'], 2000),
   (error: unknown) => {
     assert.equal((error as { code?: string }).code, 'helper_execution_failed')
     return true
