@@ -88,6 +88,10 @@ import EN from './en/index'
 
 const lang = { ...EN }
 
+export const AppAllLang: Record<string, string> = {
+  en: 'English'
+}
+
 let i18n: I18n
 export const AppI18n = (l?: string): I18n => {
   if (!i18n) {

@@ -12,7 +12,6 @@ import { join } from 'node:path'
 import { readdir, access as fsAccess } from 'node:fs/promises'
 import Helper from '../../fork/Helper'
 import { resolve as PathResolve, resolve } from 'path'
-import ZH from '@lang/zh'
 import EN from '@lang/en'
 import { AppAllLang, AppI18n } from '@lang/index'
 import { createMarkdownRenderer } from '@/util/markdown/markdown'
@@ -711,7 +710,7 @@ X-GNOME-Autostart-enabled=true`
     await mkdirp(langDir)
     const currentLang = global.Server.Lang!
     await mkdirp(join(langDir, currentLang))
-    const lang: any = currentLang === 'zh' ? ZH.zh : EN.en
+    const lang: any = EN.en
     for (const k in lang) {
       const v: any = lang[k]
       const f = join(langDir, currentLang, `${k}.json`)
