@@ -319,7 +319,7 @@ export class Base {
           const all = ProcessSearch(serverName, false, plist)
             .filter(
               (item) =>
-                item.COMMAND.includes('PhpWebStudy-Data') || item.COMMAND.includes('SemarEnv-Data')
+                item.COMMAND.includes('SemarEnv-Data')
             )
             .map((m) => `${m.PID}`)
           allPid.push(...all)

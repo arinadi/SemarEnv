@@ -3,7 +3,7 @@ import path from 'path'
 import Launcher from './Launcher'
 import { fileURLToPath } from 'node:url'
 import { dirname } from 'node:path'
-import { existsSync } from 'node:fs'
+
 import is from 'electron-is'
 import { isLinux } from '@shared/utils'
 
@@ -14,13 +14,6 @@ if (is.production() && !isLinux()) {
     const portableDataPath = path.join(process.env.PORTABLE_EXECUTABLE_DIR, 'SemarEnv-Data')
     app.setPath('userData', portableDataPath)
     app.setPath('sessionData', portableDataPath)
-  } else {
-    const appData = app.getPath('appData')
-    const oldPath = path.join(appData, 'PhpWebStudy')
-    if (existsSync(oldPath)) {
-      app.setPath('userData', oldPath)
-      app.setPath('sessionData', oldPath)
-    }
   }
 }
 

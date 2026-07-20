@@ -7,7 +7,7 @@ const conf: Configuration = {
   executableName: 'SemarEnv',
   buildVersion: '4.16.2',
   electronVersion: '39.8.7',
-  appId: 'phpstudy.xpfme.com',
+  appId: 'work.arinano.smartenv',
   asar: true,
   directories: {
     output: 'release'

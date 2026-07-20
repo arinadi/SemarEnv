@@ -269,7 +269,7 @@ class Php extends Base {
       }
 
       const ini = join(version.path, 'php.ini')
-      const runIni = join(version.path, `php.phpwebstudy.90${version.num}.ini`)
+      const runIni = join(version.path, `php.semarenv.90${version.num}.ini`)
       if (existsSync(runIni)) {
         await remove(runIni)
       }
@@ -278,7 +278,7 @@ class Php extends Base {
       const bin = join(version.path, 'php-cgi-spawner.exe')
       const pidPath = join(global.Server.PhpDir!, `php${version.num}.pid`)
       const execArgs = [
-        `php-cgi.exe -c php.phpwebstudy.90${version.num}.ini`,
+        `php-cgi.exe -c php.semarenv.90${version.num}.ini`,
         `90${version.num}`,
         '4'
       ]

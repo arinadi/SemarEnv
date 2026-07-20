@@ -306,9 +306,8 @@ class ServiceProcess {
         if (
           item.COMMAND.includes('SemarEnv-Data') ||
           item.COMMAND.includes('SemarEnv-Data') ||
-          item.COMMAND.includes('PhpWebStudy-Data') ||
-          item.COMMAND.includes('pws-app-') ||
-          item.COMMAND.includes('php.phpwebstudy')
+item.COMMAND.includes('senv-app-') ||
+          item.COMMAND.includes('php.semarenv')
         ) {
           if (item.COMMAND.includes('php-cgi-spawner.exe')) {
             fpm.push(item.PID)

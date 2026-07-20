@@ -103,7 +103,7 @@ class Redis extends Base {
         'APP-On-Log': AppLog('info', I18nT('appLog.stopServiceBegin', { service: this.type }))
       })
       const v = version?.version?.split('.')?.[0] ?? ''
-      const appConfName = `pws-app-redis-${v}.conf`
+      const appConfName = `senv-app-redis-${v}.conf`
       const all = await StopProcessListSearch(appConfName, false)
       const arr: Array<string> = []
       all.forEach((item) => {
@@ -144,7 +144,7 @@ class Redis extends Base {
         const v = version?.version?.split('.')?.[0] ?? ''
         const confName = `redis-${v}.conf`
         const conf = join(global.Server.RedisDir!, confName)
-        const appConfName = `pws-app-redis-${v}.conf`
+        const appConfName = `senv-app-redis-${v}.conf`
         const runConf = join(dirname(bin), appConfName)
         await copyFile(conf, runConf)
 
