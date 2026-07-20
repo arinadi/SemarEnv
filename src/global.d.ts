@@ -32,8 +32,7 @@ export interface ServerType {
   SdkmanHome?: string
   ForceStart?: boolean
   UserHome?: string
-  Licenses?: string
-  UserUUID?: string
+UserUUID?: string
   LangCustomer?: any
   isMacOS?: boolean
   isLinux?: boolean

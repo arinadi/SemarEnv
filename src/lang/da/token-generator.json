@@ -1,9 +1,0 @@
-{
-  "title": "Token-generator",
-  "uppercase": "Store (ABC...)",
-  "lowercase": "Lille (abc...)",
-  "numbers": "Tal (123...)",
-  "symbols": "Symboler (!-;...)",
-  "length": "Længde",
-  "tokenPlaceholder": "Token..."
-}

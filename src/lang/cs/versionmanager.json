@@ -1,6 +1,0 @@
-﻿{
-  "noBrewFound": "<a href=\"javascript:void();\" onclick=\"openUrl('https://brew.sh/')\">Homebrew</a> nebyl nalezen\nPro instalaci Homebrew, kliknÄ›te na tlaÄÃ­tko instalace pro pokraÄovÃ¡nÃ­\nMÅ¯Å¾ete takÃ© kliknout na tento odkaz\n<a href=\"javascript:void();\" onclick=\"openUrl('https://arinano.work/semarenv/guide/getting-started.html#macos-1')\">https://arinano.work/semarenv/guide/getting-started.html#macos-1</a>\nPostupujte podle dokumentace pro instalaci.",
-  "noPortFound": "<a href=\"javascript:void();\" onclick=\"openUrl('https://www.macports.org/')\">Macports</a> nebyl nalezen.\nPro instalaci Macports mÅ¯Å¾ete kliknout na tento odkaz\n<a href=\"javascript:void();\" onclick=\"openUrl('https://www.macports.org/install.php')\">https://www.macports.org/install.php</a>\nPostupujte podle dokumentace.",
-  "brewErrorTips": "Na tomto mÃ­stÄ› {bin} byly zjiÅ¡tÄ›ny spustitelnÃ© soubory Homebrew.\nSemarEnv je vÅ¡ak nemÅ¯Å¾e spustit. ZprÃ¡va o chybÄ›:\n{error}",
-  "noSDKMANFound": "<a href=\"javascript:void();\" onclick=\"openUrl('https://sdkman.io/')\">SDKMAN</a> nenalezen\nChcete-li nainstalovat SDKMAN, kliknÄ›te na tlaÄÃ­tko instalace pro pokraÄovÃ¡nÃ­"
-}

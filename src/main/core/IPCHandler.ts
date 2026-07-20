@@ -7,7 +7,6 @@ import HttpServer from './HttpServer'
 import AppHelper from './AppHelper'
 import { AppHelperCheck } from '@shared/AppHelperCheck'
 import { buildHelperCheckResponse } from '@shared/WindowsHelperState'
-import OAuth from './OAuth'
 import Capturer from './Capturer'
 import ConfigManager from './ConfigManager'
 import type WindowManager from '../ui/WindowManager'
@@ -161,19 +160,7 @@ export default class IPCHandler extends EventEmitter {
 
     this.deps.windowManager.sendCommandTo(win, command, key, info)
 
-    // 处理许可证码
-    if (info?.data?.['APP-Licenses-Code']) {
-      const code: string = info.data['APP-Licenses-Code']
-      this.deps.configManager?.setConfig('setup.license', code)
-      this.deps.windowManager.sendCommandTo(
-        this.deps.mainWindow!,
-        'APP-License-Need-Update',
-        'APP-License-Need-Update',
-        true
-      )
-    }
-
-    // 处理日志
+// 处理日志
     if (info?.msg?.['APP-On-Log']) {
       this.deps.windowManager.sendCommandTo(
         this.deps.mainWindow!,
@@ -366,24 +353,7 @@ export default class IPCHandler extends EventEmitter {
         this.handleCustomerLangUpdate(args)
         break
 
-      // OAuth
-      case 'GitHub-OAuth-Start':
-        this.handleOAuthStart(command, key)
-        break
-      case 'GitHub-OAuth-Cancel':
-        this.handleOAuthCancel(command, key)
-        break
-      case 'GitHub-OAuth-License-Fetch':
-        this.handleOAuthLicenseFetch(command, key)
-        break
-      case 'GitHub-OAuth-License-Del-Bind':
-        this.handleOAuthLicenseDelBind(command, key, args)
-        break
-      case 'GitHub-OAuth-License-Add-Bind':
-        this.handleOAuthLicenseAddBind(command, key, args)
-        break
-
-      default:
+default:
         console.log('Unknown command:', command)
     }
   }
@@ -641,44 +611,7 @@ export default class IPCHandler extends EventEmitter {
     AppI18n().global.setLocaleMessage(langKey, langValue)
   }
 
-  // ===== OAuth =====
-
-  private handleOAuthStart(command: string, key: string) {
-    OAuth.startOAuth()
-      .then((res) => {
-        this.sendToMainWindow(command, key, { code: 0, data: res })
-      })
-      .catch((err) => {
-        this.sendToMainWindow(command, key, { code: 1, msg: `${err}` })
-      })
-  }
-
-  private handleOAuthCancel(command: string, key: string) {
-    OAuth.cancel()
-    this.sendToMainWindow(command, key, { code: 0, data: true })
-  }
-
-  private handleOAuthLicenseFetch(command: string, key: string) {
-    OAuth.fetchUserLicense()
-      .then((res) => {
-        this.sendToMainWindow(command, key, JSON.parse(JSON.stringify(res)))
-      })
-      .catch()
-  }
-
-  private handleOAuthLicenseDelBind(command: string, key: string, args: any[]) {
-    OAuth.delBind(args[0], args[1]).then((res) => {
-      this.sendToMainWindow(command, key, JSON.parse(JSON.stringify(res)))
-    })
-  }
-
-  private handleOAuthLicenseAddBind(command: string, key: string, args: any[]) {
-    OAuth.addBind(args[0], args[1]).then((res) => {
-      this.sendToMainWindow(command, key, JSON.parse(JSON.stringify(res)))
-    })
-  }
-
-  // ===== 工具方法 =====
+// ===== 工具方法 =====
 
   private sendToMainWindow(command: string, key: string, data?: any) {
     if (!this.deps.mainWindow) return

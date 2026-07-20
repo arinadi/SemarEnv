@@ -5,7 +5,6 @@ import HelperStore from '@/store/helper'
 import { nativeTheme } from '@/util/NodeFn'
 import { isEqual } from 'lodash-es'
 import { AppStore } from '@/store/app'
-import { SetupStore } from '@/components/Setup/store'
 
 class GlobalIPCOn {
   public inited = false
@@ -29,19 +28,7 @@ class GlobalIPCOn {
       const store = AppStore()
       store.envIndex += 1
     })
-    IPC.on('APP-User-UUID-Need-Update').then((key: string, res: any) => {
-      if (res?.code === 0) {
-        const store = SetupStore()
-        store.githubUser = res?.data?.user
-        store.githubLicense = res?.data?.license
-        store.githubInfoSave()
-      }
-    })
-    IPC.on('APP-License-Need-Update').then(() => {
-      SetupStore().init()
-    })
-
-    IPC.on('APP-SemarEnv-Helper-Notice').then((key: string, res: any) => {
+IPC.on('APP-SemarEnv-Helper-Notice').then((key: string, res: any) => {
       if (res?.code === 0) {
         MessageSuccess(res?.msg)
       } else if (res.code === 1) {

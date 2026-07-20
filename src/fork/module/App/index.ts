@@ -3,8 +3,7 @@ import { machineId } from '../../Fn'
 import { ForkPromise } from '@shared/ForkPromise'
 import { arch } from 'os'
 import axios from 'axios'
-import { publicDecrypt } from 'crypto'
-import { appDebugLog, isLinux, isMacOS, isWindows } from '@shared/utils'
+import { isMacOS, isWindows } from '@shared/utils'
 import YAML from 'yamljs'
 import { compareVersions } from '@shared/compare-versions'
 import type { SoftInstalled } from '@shared/app'
@@ -15,202 +14,52 @@ class App extends Base {
     super()
   }
 
-  private getRSAKey() {
-    const a = '0+u/eiBrB/DAskp9HnoIgq1MDwwbQRv6rNxiBK/qYvvdXJHKBmAtbe0+SW8clzne'
-    const b = 'Kq1BrqQFebPxLEMzQ19yrUyei1nByQwzlX8r3DHbFqE6kV9IcwNh9yeW3umUw05F'
-    const c = 'zwIDAQAB'
-    const d = 'n7Yl8hRd195GT9h48GsW+ekLj2ZyL/O4rmYRlrNDtEAcDNkI0UG0NlG+Bbn2yN1t'
-    const e = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzVJ3axtKGl3lPaUFN82B'
-    const f = 'XZW4pCiCvUTSMIU86DkBT/CmDw5n2fCY/FKMQue+WNkQn0mrRphtLH2x0NzIhg+l'
-    const g = 'Zkm1wi9pNWLJ8ZvugKZnHq+l9ZmOES/xglWjiv3C7/i0nUtp0sTVNaVYWRapFsTL'
-    const arr: string[] = [e, g, b, a, f, d, c]
-
-    const a1 = '-----'
-    const a2 = ' PUBLIC KEY'
-    const a3 = 'BEGIN'
-    const a4 = 'END'
-
-    arr.unshift([a1, a3, a2, a1].join(''))
-    arr.push([a1, a4, a2, a1].join(''))
-
-    return arr.join('\n')
-  }
-
   start(version: string) {
     return new ForkPromise(async (resolve, reject) => {
-      const uuid_new = await machineId()
-      const uuid = '#########'
-
-      let os = ''
-      if (isWindows()) {
-        os = `Windows ${arch()}`
-      } else if (isMacOS()) {
-        os = `macOS ${arch()}`
-      } else {
-        os = `Linux ${arch()}`
+      try {
+        resolve(true)
+      } catch (err) {
+        reject(err)
       }
-
-      const data = {
-        uuid,
-        uuid_new,
-        os,
-        version
-      }
-
-      console.log('data: ', data)
-      axios({
-        url: 'https://api.one-env.com/api/app/start',
-        method: 'post',
-        data,
-        proxy: this.getAxiosProxy()
-      })
-        .then((res) => {
-          if (res?.data?.code === 200) {
-            const license = res?.data?.data?.license ?? ''
-            resolve({
-              'APP-Licenses-Code': license
-            })
-            return
-          }
-
-          resolve(true)
-        })
-        .catch((err) => {
-          reject(err)
-        })
     })
   }
 
   feedback(info: any) {
     return new ForkPromise(async (resolve, reject) => {
-      const uuid = await machineId()
-
-      const data = {
-        uuid,
-        ...info
+      try {
+        resolve(true)
+      } catch (e) {
+        reject(e)
       }
-
-      console.log('data: ', data)
-
-      axios({
-        url: 'https://api.one-env.com/api/app/feedback_app',
-        method: 'post',
-        data,
-        proxy: this.getAxiosProxy()
-      })
-        .then(() => {
-          resolve(true)
-        })
-        .catch((e) => {
-          reject(e)
-        })
     })
   }
 
   licensesInit() {
-    return new ForkPromise(async (resolve, reject, on) => {
-      let uuid = ''
-      try {
-        uuid = await machineId()
-      } catch (e) {
-        appDebugLog(`[machineId][error]`, `${e}`).catch()
-      }
-      const data = {
-        requestSuccess: false,
+    return new ForkPromise(async (resolve) => {
+      const uuid = await machineId()
+      resolve({
+        requestSuccess: true,
         uuid,
-        activeCode: '',
-        isActive: false
-      }
-
-      this.licensesState()
-        .then((res) => {
-          Object.assign(data, res)
-          data.requestSuccess = true
-          on({
-            'APP-Licenses-Code': data?.activeCode ?? ''
-          })
-          resolve(data)
-        })
-        .catch(() => {
-          data.requestSuccess = false
-          const license = global.Server?.Licenses
-          if (license) {
-            const uid = publicDecrypt(
-              this.getRSAKey(),
-              Buffer.from(license, 'base64') as any
-            ).toString('utf-8')
-            data.isActive = uid === uuid
-            data.activeCode = data.isActive ? license : ''
-          }
-          resolve(data)
-        })
+        activeCode: 'free',
+        isActive: true
+      })
     })
   }
 
   licensesState() {
-    return new ForkPromise(async (resolve, reject, on) => {
+    return new ForkPromise(async (resolve) => {
       const uuid = await machineId()
-      const obj = {
+      resolve({
         uuid,
-        activeCode: '',
-        isActive: false
-      }
-      axios({
-        url: 'https://api.one-env.com/api/app/active_code_info',
-        method: 'post',
-        data: {
-          uuid
-        },
-        proxy: this.getAxiosProxy()
+        activeCode: 'free',
+        isActive: true
       })
-        .then((res) => {
-          console.log('licensesState res: ', res)
-          const data = res?.data?.data ?? {}
-          obj.activeCode = data?.code ?? ''
-          if (obj.activeCode) {
-            const uid = publicDecrypt(
-              this.getRSAKey(),
-              Buffer.from(obj.activeCode, 'base64') as any
-            ).toString('utf-8')
-            obj.isActive = uid === uuid
-
-            on({
-              'APP-Licenses-Code': obj.isActive ? obj.activeCode : ''
-            })
-          } else {
-            on({
-              'APP-Licenses-Code': ''
-            })
-          }
-          resolve(obj)
-        })
-        .catch((e) => {
-          console.log('licensesState err: ', e)
-          reject(e)
-        })
     })
   }
 
-  licensesRequest(message: string) {
-    return new ForkPromise(async (resolve, reject) => {
-      const uuid = await machineId()
-      const user_uuid = global.Server?.UserUUID ?? ''
-      axios({
-        url: 'https://api.one-env.com/api/app/active_code_request',
-        method: 'post',
-        data: {
-          uuid,
-          user_uuid,
-          message
-        },
-        proxy: this.getAxiosProxy()
-      })
-        .then(() => {
-          resolve(true)
-        })
-        .catch((e) => {
-          reject(e)
-        })
+  licensesRequest(_message: string) {
+    return new ForkPromise(async (resolve, _reject) => {
+      resolve(true)
     })
   }
 
@@ -224,7 +73,9 @@ class App extends Base {
         } else {
           file = 'latest-mac-arm64.yml'
         }
-      } else if (isLinux()) {
+      } else if (isWindows()) {
+        file = 'latest.yml'
+      } else {
         if (a === 'x64') {
           file = 'latest-linux.yml'
         } else {
@@ -248,7 +99,9 @@ class App extends Base {
           } else {
             name = `SemarEnv-${version}-arm64.dmg`
           }
-        } else if (isLinux()) {
+        } else if (isWindows()) {
+          name = `SemarEnv-Setup-${version}.exe`
+        } else {
           const isdeb = await isDEB()
           const ext = isdeb ? '.deb' : '.rpm'
           if (a === 'x64') {
@@ -256,8 +109,6 @@ class App extends Base {
           } else {
             name = `SemarEnv-${version}-arm64${ext}`
           }
-        } else {
-          name = `SemarEnv-Setup-${version}.exe`
         }
         const url = `https://github.com/arinadi/SemarEnv/releases/download/v${version}/${name}`
         resolve({
@@ -273,12 +124,10 @@ class App extends Base {
   }
 
   getConfigFiles(_version?: SoftInstalled): Array<{ name: string; path: string }> {
-    // App 模块负责启动上报/许可证/更新检查，不管理任何服务的配置文件
     return []
   }
 
   getLogFiles(_version?: SoftInstalled): Array<{ name: string; path: string }> {
-    // App 模块没有独立的运行时日志文件
     return []
   }
 }

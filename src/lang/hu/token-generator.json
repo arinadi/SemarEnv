@@ -1,9 +1,0 @@
-{
-  "title": "Token generátor",
-  "uppercase": "Nagybetűk (ABC...)",
-  "lowercase": "Kisbetűk (abc...)",
-  "numbers": "Számok (123...)",
-  "symbols": "Szimbólumok (!-;...)",
-  "length": "Hossz",
-  "tokenPlaceholder": "A token..."
-}

@@ -110,5 +110,4 @@
   "siteTask": "Site Task",
   "siteRequired": "Please select a site",
   "runHistory": "Run History",
-  "licenseTips": "Without a license, only one cron job can be created."
 }

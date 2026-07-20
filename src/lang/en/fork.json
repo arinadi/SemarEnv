@@ -8,6 +8,5 @@
   "versionNotFound": "Failed to get software version, operation failed.",
   "postgresqlInit": "Service started successfully\nData Dir is {dir}\nInitial User is root, Password is root",
   "downloadFileFail": "Download file failed!",
-  "trialEnd": "The trial has expired. To continue using this feature, please obtain a license",
-  "noEPMD": "The epmd process was not found. Please reset the Erlang environment variables"
+"noEPMD": "The epmd process was not found. Please reset the Erlang environment variables"
 }

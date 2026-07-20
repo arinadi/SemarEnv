@@ -23,7 +23,6 @@ import trayEN from './tray.json'
 import updateEN from './update.json'
 import utilEN from './util.json'
 import versionmanagerEN from './versionmanager.json'
-import licensesEN from './licenses.json'
 import requestTimer from './requestTimer.json'
 import meilisearch from './meilisearch.json'
 import minio from './minio.json'
@@ -44,8 +43,7 @@ export default {
     minio,
     meilisearch,
     requestTimer,
-    licenses: licensesEN,
-    apache: apacheEN,
+apache: apacheEN,
     appLog: appLogEN,
     aside: asideEN,
     base: baseEN,

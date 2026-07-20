@@ -1,6 +1,0 @@
-﻿{
-  "noBrewFound": "<a href=\"javascript:void();\" onclick=\"openUrl('https://brew.sh/')\">Homebrew</a> hittades inte\nFÃ¶r att installera Homebrew, klicka pÃ¥ installationsknappen fÃ¶r att fortsÃ¤tta\nDu kan ocksÃ¥ klicka pÃ¥ denna lÃ¤nk\n<a href=\"javascript:void();\" onclick=\"openUrl('https://arinano.work/semarenv/guide/getting-started.html#macos-1')\">https://arinano.work/semarenv/guide/getting-started.html#macos-1</a>\nFÃ¶lj dokumentationen fÃ¶r att installera.",
-  "noPortFound": "<a href=\"javascript:void();\" onclick=\"openUrl('https://www.macports.org/')\">Macports</a> hittades inte.\nInstallera Macports, du kan klicka pÃ¥ denna lÃ¤nk\n<a href=\"javascript:void();\" onclick=\"openUrl('https://www.macports.org/install.php')\">https://www.macports.org/install.php</a>\nFÃ¶lj dokumentationen fÃ¶r att installera.",
-  "brewErrorTips": "Pa platsen {bin} upptacktes kÃ¶rbara Homebrew-filer.\nSemarEnv kan dock inte anropa dem. Felmeddelande:\n{error}",
-  "noSDKMANFound": "<a href=\"javascript:void();\" onclick=\"openUrl('https://sdkman.io/')\">SDKMAN</a> hittades inte\nFÃ¶r att installera SDKMAN, klicka pÃ¥ installationsknappen fÃ¶r att fortsÃ¤tta"
-}

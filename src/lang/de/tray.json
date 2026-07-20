@@ -1,9 +1,0 @@
-{
-  "showMainWin": "Hauptfenster anzeigen",
-  "exit": "Beenden",
-  "notRun": "Nicht aktiv",
-  "trayMenuBarStyle": "Modus für das Kontextmenü",
-  "classic": "Klassisch",
-  "modern": "Modern",
-  "trayMenuBarStyleTips": "Wählen Sie den Stil für das Kontextmenü aus. Auf einigen Linux-Desktop-Computern kann der moderne Stil Probleme haben, so dass Sie stattdessen den klassischen Stil wählen können."
-}

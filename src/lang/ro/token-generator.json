@@ -1,9 +1,0 @@
-{
-  "title": "Generator de simboluri",
-  "uppercase": "Majuscule (ABC...)",
-  "lowercase": "Carcasă mică (abc...)",
-  "numbers": "Numere (123,..)",
-  "symbols": "Simboluri (!-;...)",
-  "length": "Lungime",
-  "tokenPlaceholder": "Token..."
-}

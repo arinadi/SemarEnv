@@ -1,9 +1,0 @@
-{
-  "title": "Tokenin Generointi",
-  "uppercase": "Isokirjain (ABC...)",
-  "lowercase": "Pienaakkoset (abc...)",
-  "numbers": "Numerot (123...)",
-  "symbols": "Symbolit (!-;...)",
-  "length": "Pituus",
-  "tokenPlaceholder": "Tunnuksen..."
-}

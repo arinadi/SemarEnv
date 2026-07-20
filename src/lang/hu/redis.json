@@ -1,6 +1,0 @@
-{
-  "timeout": "Inaktív kapcsolat időtúllépése, 0 folyamatos nyitva tartást jelent",
-  "databases": "Adatbázisok száma",
-  "requirepass": "Redis jelszó",
-  "maxmemory": "Bájt, maximális memóriahasználat, 0 korlátlant jelent"
-}

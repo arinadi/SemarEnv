@@ -1,9 +1,0 @@
-{
-  "showMainWin": "Visa huvudfönstret",
-  "exit": "Avsluta",
-  "notRun": "Kör inte",
-  "trayMenuBarStyle": "Popup-fönsterstil",
-  "classic": "Klassisk",
-  "modern": "Modern",
-  "trayMenuBarStyleTips": "Välj stil för popup-fönstret. På vissa Linux-skrivbord kan den moderna stilen orsaka problem, så du kan välja den klassiska stilen istället."
-}

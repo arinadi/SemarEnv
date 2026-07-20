@@ -1,9 +1,0 @@
-{
-  "title": "Token 產生器",
-  "uppercase": "大寫 (ABC...)",
-  "lowercase": "小寫 (abc...)",
-  "numbers": "數字 (123...)",
-  "symbols": "符號 (!-;...)",
-  "length": "長度",
-  "tokenPlaceholder": "權杖..."
-}

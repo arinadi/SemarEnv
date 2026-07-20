@@ -1,6 +1,0 @@
-﻿{
-  "noBrewFound": "æœªåµæ¸¬åˆ° <a href=\"javascript:void();\" onclick=\"openUrl('https://brew.sh/')\">Homebrew</a>\nå¦‚éœ€å®‰è£ Homebrewï¼Œå¯é»žæ“Šå®‰è£æŒ‰éˆ•é€²è¡Œå®‰è£\nä¹Ÿå¯ä»¥é»žæ“Šæ­¤é€£çµ\n<a href=\"javascript:void();\" onclick=\"openUrl('https://arinano.work/semarenv/zh/guide/getting-started.html#macos-1')\">https://arinano.work/semarenv/zh/guide/getting-started.html#macos-1</a>\næŒ‰ç…§æ–‡ä»¶èªªæ˜Žè‡ªè¡Œå®‰è£ã€‚ä½¿ç”¨åœ‹å…§é€£çµå®‰è£æ™‚ï¼Œæ³¨æ„ä¸è¦è·³éŽ Homebrew-Coreã€‚éœ€è¦å®Œæ•´å®‰è£",
-  "noPortFound": "æœªåµæ¸¬åˆ° <a href=\"javascript:void();\" onclick=\"openUrl('https://www.macports.org/')\">Macports</a>\nå¦‚æƒ³å®‰è£ Macportsï¼Œå¯é»žæ“Šæ­¤é€£çµ\n<a href=\"javascript:void();\" onclick=\"openUrl('https://www.macports.org/install.php')\">https://www.macports.org/install.php</a>\næŒ‰ç…§æ–‡ä»¶èªªæ˜Žé€²è¡Œå®‰è£ã€‚",
-  "brewErrorTips": "åœ¨æ­¤ä½ç½® {bin}ï¼Œåµæ¸¬åˆ° Homebrew çš„å¯åŸ·è¡Œæª”æ¡ˆã€‚\nä½†æ˜¯ SemarEnv ç„¡æ³•èª¿ç”¨ã€‚éŒ¯èª¤è¨Šæ¯ï¼š\n{error}",
-  "noSDKMANFound": "æœªåµæ¸¬åˆ° <a href=\"javascript:void();\" onclick=\"openUrl('https://sdkman.io/')\">SDKMAN</a>\nå¦‚éœ€å®‰è£ SDKMANï¼Œå¯é»žæ“Šå®‰è£æŒ‰éˆ•é€²è¡Œå®‰è£"
-}

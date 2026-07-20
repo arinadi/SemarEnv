@@ -1,7 +1,0 @@
-{
-  "Timeout": "A másodpercek száma a fogadási és küldési időtúllépés előtt.",
-  "KeepAlive": "Engedélyezze-e a tartós kapcsolatokat",
-  "KeepAliveTimeout": "Ennyi másodpercig várjon a következő kérésre ugyanattól az ügyféltől ugyanazon a kapcsolaton.",
-  "MaxKeepAliveRequests": "A tartós kapcsolaton engedélyezett kérések maximális száma.\n0 érték esetén korlátlan mennyiség engedélyezett.\nA maximális teljesítmény érdekében ajánlott ezt az értéket magasan hagyni.",
-  "LimitRequestBody": "Bájt. Fájlfeltöltési méretkorlát. 0: nincs korlát"
-}

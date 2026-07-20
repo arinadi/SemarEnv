@@ -1,6 +1,0 @@
-{
-  "timeout": "Thời gian chờ kết nối không hoạt động, 0 nghĩa là luôn mở",
-  "databases": "Số lượng cơ sở dữ liệu",
-  "requirepass": "Mật khẩu Redis",
-  "maxmemory": "Byte, dung lượng bộ nhớ tối đa, 0 nghĩa là không giới hạn"
-}

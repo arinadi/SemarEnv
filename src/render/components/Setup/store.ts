@@ -1,23 +1,4 @@
 import { defineStore } from 'pinia'
-import IPC from '@/util/IPC'
-import { ElMessage, ElMessageBox } from 'element-plus'
-import { I18nT } from '@lang/index'
-import { AppStore } from '@/store/app'
-import { MessageError } from '@/util/Element'
-import { reactive } from 'vue'
-import localForage from 'localforage'
-import { shell } from '@/util/NodeFn'
-
-type GitHubUser = {
-  uuid: string
-  avatar_url: string
-  login: string
-}
-
-type GitHubLicenseItem = {
-  uuid: string
-  license: string
-}
 
 interface State {
   tab: string
@@ -27,16 +8,13 @@ interface State {
   message: string
   fetching: boolean
   githubAuthing: boolean
-
-  githubUser?: GitHubUser
-  githubLicense?: GitHubLicenseItem[]
 }
 
 const state: State = {
   tab: 'base',
   uuid: '',
-  activeCode: '',
-  isActive: false,
+  activeCode: 'free',
+  isActive: true,
   message: '',
   fetching: false,
   githubAuthing: false
@@ -47,232 +25,16 @@ export const SetupStore = defineStore('setup', {
   getters: {},
   actions: {
     init() {
-      return new Promise<void>((resolve) => {
-        this.message = localStorage.getItem('semarenv-licenses-post-message') ?? ''
-        localForage.getItem('semarenv-user-github').then((res: any) => {
-          if (res?.githubUser) {
-            this.githubUser = reactive(res.githubUser)
-          }
-          if (res?.githubLicense) {
-            this.githubLicense = reactive(res.githubLicense)
-          }
-        })
-        let time = Number(localStorage.getItem('semarenv-init-time') ?? '0')
-        if (!time || isNaN(time)) {
-          time = Math.round(new Date().getTime() / 1000)
-          localStorage.setItem('semarenv-init-time', `${time}`)
-        }
-        IPC.send('app-fork:app', 'licensesInit').then((key: string, res?: any) => {
-          if (res?.code !== 200) {
-            IPC.off(key)
-          }
-          console.log('licensesInit: ', res)
-          if (res?.code === 0) {
-            const data: any = res?.data
-            if (data.requestSuccess) {
-              Object.assign(this, res?.data)
-              const store = AppStore()
-              store.config.setup.license = this.activeCode
-              store.saveConfig().then().catch()
-            } else {
-              this.uuid = data.uuid
-              this.isActive = data.isActive
-              this.activeCode = data.activeCode
-            }
-
-            if (!this.isActive) {
-              const currentTime = Math.round(new Date().getTime() / 1000)
-              const maxTime = 7 * 24 * 60 * 60
-              if (currentTime - time > maxTime) {
-                const today = new Date().toDateString()
-                const lastAlert = localStorage.getItem('semarenv-license-alert-date')
-                if (lastAlert !== today) {
-                  localStorage.setItem('semarenv-license-alert-date', today)
-                  const days = Math.floor((currentTime - time) / (24 * 60 * 60))
-                  const store = AppStore()
-                  const isZh = store.config.setup.lang?.startsWith('zh')
-                  const url = isZh
-                    ? 'https://arinano.work/semarenv/zh/guide/about-license.html'
-                    : 'https://arinano.work/semarenv/guide/about-license.html'
-                  setTimeout(() => {
-                    ElMessageBox.alert(
-                      I18nT('licenses.trialExpiredTips', { days }),
-                      I18nT('licenses.trialExpiredTitle'),
-                      {
-                        confirmButtonText: I18nT('base.confirm'),
-                        type: 'warning',
-                        showClose: false,
-                        closeOnClickModal: false,
-                        closeOnPressEscape: false
-                      }
-                    )
-                      .then(() => {
-                        shell.openExternal(url)
-                      })
-                      .catch(() => {})
-                  }, 3000)
-                }
-              }
-            }
-          }
-          resolve()
-        })
-      })
+      return Promise.resolve()
     },
-    refreshState() {
-      if (this.fetching) {
-        return
-      }
-      this.fetching = true
-      IPC.send('app-fork:app', 'licensesState').then((key: string, res?: any) => {
-        if (res?.code !== 200) {
-          IPC.off(key)
-        }
-        if (res?.code === 1) {
-          this.fetching = false
-          MessageError(res?.msg ?? I18nT('base.fail'))
-          return
-        }
-        console.log('refreshState: ', res)
-        Object.assign(this, res?.data)
-        const store = AppStore()
-        store.config.setup.license = this.activeCode
-        store.saveConfig().then().catch()
-        this.fetching = false
-        this.githubLicenseFetch()
-      })
-    },
-    postRequest() {
-      if (this.fetching) {
-        return
-      }
-      this.fetching = true
-      const msg = this.message.trim()
-      localStorage.setItem('semarenv-licenses-post-message', msg)
-      IPC.send('app-fork:app', 'licensesRequest', msg).then((key: string, res?: any) => {
-        IPC.off(key)
-        console.log('postRequest: ', res)
-        this.fetching = false
-        if (res?.code === 1) {
-          MessageError(res?.msg ?? I18nT('base.fail'))
-          return
-        }
-        ElMessage.success(I18nT('setup.requestedTips'))
-      })
-    },
-    githubInfoSave() {
-      localForage
-        .setItem(
-          'semarenv-user-github',
-          JSON.parse(
-            JSON.stringify({ githubUser: this.githubUser, githubLicense: this.githubLicense })
-          )
-        )
-        .catch()
-    },
-    githubAuthStart() {
-      if (this.githubAuthing) {
-        return
-      }
-      this.githubAuthing = true
-      IPC.send('GitHub-OAuth-Start').then((key, res?: any) => {
-        IPC.off(key)
-        this.githubAuthing = false
-        if (res?.code === 1) {
-          MessageError(res?.msg ?? I18nT('base.fail'))
-          return
-        }
-        const user = reactive(res?.data?.user ?? {})
-        const license = reactive(res?.data?.license ?? [])
-        this.githubUser = user
-        this.githubLicense = license
-        const store = AppStore()
-        store.config.setup.user_uuid = user?.uuid
-        store.saveConfig().then().catch()
-        this.githubInfoSave()
-      })
-    },
-    githubAuthCancel() {
-      IPC.send('GitHub-OAuth-Cancel').then((key) => {
-        IPC.off(key)
-        this.githubAuthing = false
-      })
-    },
-    githubAuthLogout() {
-      ElMessageBox.confirm(I18nT('licenses.logoutTips'), {
-        confirmButtonText: I18nT('base.confirm'),
-        cancelButtonText: I18nT('base.cancel'),
-        type: 'warning'
-      }).then(() => {
-        this.githubUser = undefined
-        this.githubLicense = undefined
-        const store = AppStore()
-        store.config.setup.user_uuid = ''
-        store.saveConfig().then().catch()
-        localForage.removeItem('semarenv-user-github').catch()
-      })
-    },
-    githubLicenseFetch() {
-      if (this.githubAuthing || !this.githubUser?.uuid) {
-        return
-      }
-      this.githubAuthing = true
-      IPC.send('GitHub-OAuth-License-Fetch').then((key, res: any) => {
-        IPC.off(key)
-        this.githubAuthing = false
-        if (res?.code === 0) {
-          this.githubLicense = reactive(res?.data ?? [])
-          this.githubInfoSave()
-        } else if (res?.code === 1) {
-          MessageError(res?.msg ?? I18nT('base.fail'))
-        }
-      })
-    },
-    githubAuthDelBind(uuid: string, license: string) {
-      ElMessageBox.confirm(I18nT('licenses.delBindTips'), {
-        confirmButtonText: I18nT('base.confirm'),
-        cancelButtonText: I18nT('base.cancel'),
-        type: 'warning'
-      }).then(() => {
-        this.githubAuthing = true
-        IPC.send('GitHub-OAuth-License-Del-Bind', uuid, license).then((key: string, res: any) => {
-          IPC.off(key)
-          this.githubAuthing = false
-          if (res?.code === 0) {
-            this.githubLicense = reactive(res?.data ?? [])
-            this.githubInfoSave()
-            if (uuid === this.uuid) {
-              const store = AppStore()
-              store.config.setup.license = ''
-              store.saveConfig().then().catch()
-              this.isActive = false
-              window.Server.UserUUID = ''
-            }
-          } else if (res?.code === 1) {
-            MessageError(res?.msg ?? I18nT('base.fail'))
-          }
-        })
-      })
-    },
-    githubAuthAddBind(uuid: string, license: string) {
-      ElMessageBox.confirm(I18nT('licenses.addBindTips'), {
-        confirmButtonText: I18nT('base.confirm'),
-        cancelButtonText: I18nT('base.cancel'),
-        type: 'warning'
-      }).then(() => {
-        this.githubAuthing = true
-        IPC.send('GitHub-OAuth-License-Add-Bind', uuid, license).then((key: string, res: any) => {
-          IPC.off(key)
-          this.githubAuthing = false
-          if (res?.code === 0) {
-            this.githubLicense = reactive(res?.data ?? [])
-            this.githubInfoSave()
-            this.refreshState()
-          } else if (res?.code === 1) {
-            MessageError(res?.msg ?? I18nT('base.fail'))
-          }
-        })
-      })
-    }
+    refreshState() {},
+    postRequest() {},
+    githubInfoSave() {},
+    githubAuthStart() {},
+    githubAuthCancel() {},
+    githubAuthLogout() {},
+    githubLicenseFetch() {},
+    githubAuthDelBind(_uuid: string, _license: string) {},
+    githubAuthAddBind(_uuid: string, _license: string) {}
   }
 })

@@ -1,6 +1,0 @@
-{
-  "timeout": "Tidsavbrudd for aktiv tilkobling, 0 indikerer kontinuerlig åpning",
-  "databases": "Antall databaser",
-  "requirepass": "Redis passord",
-  "maxmemory": "Byte, maksimal minnebruk, 0 indikerer ingen grense"
-}

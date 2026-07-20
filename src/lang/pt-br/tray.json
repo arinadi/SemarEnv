@@ -1,9 +1,0 @@
-{
-  "showMainWin": "Mostrar janela principal",
-  "exit": "Sair",
-  "notRun": "Não em execução",
-  "trayMenuBarStyle": "Estilo do menu da bandeja",
-  "classic": "Clássico",
-  "modern": "Moderno",
-  "trayMenuBarStyleTips": "Escolha o estilo da janela pop-up da bandeja. Em alguns ambientes de desktop Linux, o estilo moderno pode ter problemas, você pode escolher o estilo clássico."
-}

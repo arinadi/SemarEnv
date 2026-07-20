@@ -3,7 +3,6 @@
     <div class="setup-common">
       <div class="row-2">
         <div class="col">
-          <LangeSet />
         </div>
         <div class="col">
           <theme-set />
@@ -68,7 +67,6 @@
   import BrewSrc from './BrewSrc/index.vue'
   import RestPassword from './RestPassword/index.vue'
   import ProxySet from './ProxySet/index.vue'
-  import LangeSet from './LangSet/index.vue'
   import AutoUpdate from './AutoUpdate/index.vue'
   import { AppStore } from '@/store/app'
   import { computed, watch } from 'vue'

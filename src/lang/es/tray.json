@@ -1,9 +1,0 @@
-{
-  "showMainWin": "Mostrar Ventana Principal",
-  "exit": "Salir",
-  "notRun": "No está en ejecución",
-  "trayMenuBarStyle": "Estilo de Menú Emergente en la Bandeja",
-  "classic": "Clásico",
-  "modern": "Moderno",
-  "trayMenuBarStyleTips": "Elige el estilo del menú emergente en la bandeja. En algunos escritorios Linux, el estilo moderno puede tener problemas, por lo que puedes seleccionar el estilo clásico."
-}

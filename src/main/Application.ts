@@ -18,7 +18,6 @@ import AppNodeFnManager from './core/AppNodeFn'
 import ServiceProcessManager from './core/ServiceProcess'
 import { AppHelperRoleFix } from '@shared/AppHelperCheck'
 import Helper from '../fork/Helper'
-import OAuth from './core/OAuth'
 import ConfigManager from './core/ConfigManager'
 import ServerManager from './core/ServerManager'
 import IPCHandler from './core/IPCHandler'
@@ -347,16 +346,6 @@ export default class Application extends EventEmitter {
       )
 
       global.Server.UserUUID = this.configManager?.getConfig('setup.user_uuid')
-      OAuth.fetchUser()
-        .then((res) => {
-          this.windowManager.sendCommandTo(
-            win,
-            'APP-User-UUID-Need-Update',
-            'APP-User-UUID-Need-Update',
-            JSON.parse(JSON.stringify(res))
-          )
-        })
-        .catch()
     })
 
     ScreenManager.initWindow(win)
@@ -537,12 +526,7 @@ export default class Application extends EventEmitter {
     } catch (e) {
       console.log('SiteSuckerManager.destroy e: ', e)
     }
-    try {
-      OAuth.cancel()
-    } catch (e) {
-      console.log('OAuth.cancel e: ', e)
-    }
-    try {
+try {
       NodePTY.exitAllPty()
     } catch (e) {
       console.log('NodePTY.exitAllPty e: ', e)

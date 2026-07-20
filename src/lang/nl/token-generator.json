@@ -1,9 +1,0 @@
-{
-  "title": "Tokengenerator",
-  "uppercase": "Hoofdletters (ABC...)",
-  "lowercase": "Kleine letter (abc...)",
-  "numbers": "Nummers (123...)",
-  "symbols": "Symbolen (!-;...)",
-  "length": "longueur",
-  "tokenPlaceholder": "De token..."
-}
