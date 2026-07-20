@@ -1,10 +1,5 @@
 name: Build SemarEnv Windows Packages
 on:
-  push:
-    paths:
-      - 'build/windows.build.yml'
-    tags:
-      - 'v*'
   workflow_dispatch:
 
 permissions:
@@ -19,6 +14,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -65,23 +62,44 @@ jobs:
       - name: Build Electron packages with electron-builder
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
-          RELEASE_PUBLISH: 'true'
+          RELEASE_PUBLISH: 'false'
         run: |
           cd "$env:GITHUB_WORKSPACE"
           yarn build
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: SemarEnv-Windows-x64
-          path: |
-            release/*.exe
-            release/*.msi
-            release/*.yml
-            release/*.blockmap
+      - name: Determine next version tag
+        id: version
+        run: |
+          $existing = git tag --list 'v*' --sort=-v:refname
+          if ($existing) {
+            $latest = $existing[0] -replace '^v', ''
+            $parts = $latest -split '\.'
+            $minor = [int]$parts[1] + 1
+            $new = "v$($parts[0]).$minor.0"
+          } else {
+            $new = "v4.0.0"
+          }
+          echo "tag=$new" >> $env:GITHUB_OUTPUT
+          echo "New version tag: $new"
+
+      - name: Create tag, release, and upload assets
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          $tag = "${{ steps.version.outputs.tag }}"
+          # Create annotated tag
+          git tag -a $tag -m "Release $tag"
+          # Create GitHub Release with tag + assets in one step
+          gh release create $tag `
+            release/*.exe `
+            release/*.msi `
+            release/*.yml `
+            release/*.blockmap `
+            --title "SemarEnv $tag" `
+            --notes "Build $(Get-Date -Format 'yyyy-MM-dd')" `
+            --repo arinadi/SemarEnv
 
       - name: Update latest tag
-        if: github.ref_type != 'tag' || github.ref_name != 'latest'
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |

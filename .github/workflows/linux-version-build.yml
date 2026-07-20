@@ -1,10 +1,5 @@
 name: Build SemarEnv Linux Packages
 on:
-  push:
-    paths:
-      - 'build/linux.build.yml'
-    tags:
-      - 'v*'
   workflow_dispatch:
 
 permissions:
@@ -27,6 +22,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install Electron build dependencies
         run: |
@@ -79,26 +76,36 @@ jobs:
       - name: Build Electron packages with electron-builder
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
-          RELEASE_PUBLISH: 'true'
+          RELEASE_PUBLISH: 'false'
         run: |
           cd "$GITHUB_WORKSPACE"
           yarn build
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: packages-${{ matrix.arch }}
-          path: |
-            release/*.deb
-            release/*.rpm
-            release/*.yml
-
-      - name: Update latest tag
-        if: github.ref_type != 'tag' || github.ref_name != 'latest'
-        env:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+      - name: Determine next version tag
+        id: version
         run: |
-          git remote set-url origin "https://x-access-token:${PAT_TOKEN}@github.com/arinadi/SemarEnv.git"
-          git push origin --delete latest 2>/dev/null || true
-          git tag -f latest
-          git push origin latest
+          existing=$(git tag --list 'v*' --sort=-v:refname)
+          if [ -n "$existing" ]; then
+            latest=$(echo "$existing" | head -1 | sed 's/^v//')
+            major=$(echo "$latest" | cut -d. -f1)
+            minor=$(echo "$latest" | cut -d. -f2)
+            new="v${major}.$((minor + 1)).0"
+          else
+            new="v4.0.0"
+          fi
+          echo "tag=$new" >> $GITHUB_OUTPUT
+          echo "New version tag: $new"
+
+      - name: Create tag, release, and upload assets
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          tag="${{ steps.version.outputs.tag }}"
+          git tag -a "$tag" -m "Release $tag"
+          gh release create "$tag" \
+            release/*.deb \
+            release/*.rpm \
+            release/*.yml \
+            --title "SemarEnv $tag" \
+            --notes "Build $(date +%Y-%m-%d)" \
+            --repo arinadi/SemarEnv
