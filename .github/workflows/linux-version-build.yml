@@ -92,3 +92,12 @@ jobs:
             release/*.deb
             release/*.rpm
             release/*.yml
+
+      - name: Update latest tag
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git remote set-url origin "https://x-access-token:${PAT_TOKEN}@github.com/arinadi/SemarEnv.git"
+          git push origin --delete latest 2>/dev/null || true
+          git tag -f latest
+          git push origin latest

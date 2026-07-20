@@ -79,3 +79,12 @@ jobs:
             release/*.msi
             release/*.yml
             release/*.blockmap
+
+      - name: Update latest tag
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git remote set-url origin "https://x-access-token:$env:PAT_TOKEN@github.com/arinadi/SemarEnv.git"
+          git push origin --delete latest 2>$null
+          git tag -f latest
+          git push origin latest
