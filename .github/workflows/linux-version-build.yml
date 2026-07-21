@@ -136,6 +136,7 @@ jobs:
           fi
 
       - name: Update latest tag
+        continue-on-error: true
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
