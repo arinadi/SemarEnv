@@ -98,6 +98,7 @@ class ForkItem {
       report
     })
     appendFile(join(global.Server.BaseDir!, 'fork.error.txt'), `\n${error}`).then()
+    const cbCount = Object.keys(this.callback).length
     for (const k in this.callback) {
       const fn = this.callback?.[k]
       if (fn) {
@@ -108,7 +109,9 @@ class ForkItem {
       }
       delete this.callback?.[k]
     }
-    this.taskFlag.pop()
+    for (let i = 0; i < cbCount; i++) {
+      this.taskFlag.pop()
+    }
     this.waitDestroy()
   }
 
@@ -116,6 +119,27 @@ class ForkItem {
     this.childExited = true
     this.pid = undefined
     this.loading = false
+    // Resolve all pending callbacks so the UI doesn't hang forever
+    const exitError = JSON.stringify({
+      type: 'exit',
+      location: 'ForkItem',
+      report: 'Fork process exited unexpectedly'
+    })
+    for (const k in this.callback) {
+      const fn = this.callback?.[k]
+      if (fn) {
+        fn.resolve({
+          code: 1,
+          msg: exitError
+        })
+      }
+      delete this.callback?.[k]
+    }
+    this.taskFlag = []
+    if (this.destroyTimer) {
+      clearTimeout(this.destroyTimer)
+      this.destroyTimer = undefined
+    }
   }
 
   onSpawn() {

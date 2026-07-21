@@ -227,6 +227,7 @@ export function downloadFile(url: string, savepath: string) {
       method: 'get',
       url: url,
       responseType: 'stream',
+      timeout: 120000,
       proxy: proxy,
       onDownloadProgress: (progress) => {
         if (progress.total) {

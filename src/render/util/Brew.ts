@@ -121,11 +121,23 @@ export const fetchVerion = (typeFlag: AllAppModule): Promise<OnlineVersionItem[]
         }
       }
     }
+    let settled = false
+    const timeout = setTimeout(() => {
+      if (!settled) {
+        settled = true
+        console.error(`fetchVerion timeout for ${typeFlag} after 20s`)
+        resolve([])
+      }
+    }, 20000)
+
     IPC.send(`app-fork:${typeFlag}`, 'fetchAllOnlineVersion').then((key: string, res: any) => {
+      if (settled) return
+      settled = true
+      clearTimeout(timeout)
       IPC.off(key)
-      if (res.code === 0) {
+      if (res?.code === 0) {
         const list = res.data
-        if (Object.keys(list).length > 0) {
+        if (list && Object.keys(list).length > 0) {
           localStorage.setItem(
             `fetchVerion-${typeFlag}`,
             JSON.stringify({
@@ -134,9 +146,12 @@ export const fetchVerion = (typeFlag: AllAppModule): Promise<OnlineVersionItem[]
             })
           )
         }
-        resolve(list)
-      } else if (res.code === 1) {
-        MessageError(res.msg)
+        resolve(list ?? [])
+      } else {
+        // code === 1 (error) or any unexpected code
+        if (res?.msg) {
+          MessageError(res.msg)
+        }
         resolve([])
       }
     })
