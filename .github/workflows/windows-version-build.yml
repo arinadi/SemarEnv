@@ -74,7 +74,8 @@ jobs:
           echo "Computed version: $fullVersion (commit: $shortHash)"
 
           # Temporarily set full version for electron-builder artifact naming
-          $pkgContent = $pkgContent -replace '"version":\s*"\d+\.\d+\.\d+"', '"version": "' + $fullVersion + '"'
+          $newVersionStr = '"version": "' + $fullVersion + '"'
+          $pkgContent = $pkgContent -replace '"version":\s*"\d+\.\d+\.\d+"', $newVersionStr
           Set-Content package.json $pkgContent -NoNewline
 
           echo "tag=v$fullVersion" >> $env:GITHUB_OUTPUT
