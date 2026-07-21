@@ -67,21 +67,16 @@ jobs:
           cd "$env:GITHUB_WORKSPACE"
           yarn build
 
-      - name: Determine next version tag
+      - name: Determine version from build config
         id: version
         run: |
-          $existing = @(git tag --list 'v*' --sort=-v:refname | Where-Object { $_ -match '^v\d+\.\d+\.\d+$' })
-          if ($existing.Count -gt 0) {
-            $latest = $existing[0] -replace '^v', ''
-            $parts = $latest -split '\.'
-            $major = [int]$parts[0]
-            $minor = [int]$parts[1] + 1
-            $new = "v$major.$minor.0"
-          } else {
-            $new = "v4.0.0"
-          }
+          $configFile = "configs/electron-builder.win.ts"
+          $match = Select-String -Path $configFile -Pattern "buildVersion:\s*'([^']+)'"
+          $current = $match.Matches[0].Groups[1].Value
+          echo "Current buildVersion: $current"
+          $new = "v$current"
           echo "tag=$new" >> $env:GITHUB_OUTPUT
-          echo "New version tag: $new"
+          echo "Version tag: $new"
 
       - name: Create tag, release, and upload assets
         env:
@@ -107,6 +102,27 @@ jobs:
             --title "SemarEnv $tag" `
             --notes "Build $(Get-Date -Format 'yyyy-MM-dd')" `
             --repo arinadi/SemarEnv
+
+      - name: Bump patch version in build config
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          $configFile = "configs/electron-builder.win.ts"
+          $content = Get-Content $configFile -Raw
+          $match = [regex]::Match($content, "buildVersion:\s*'(\d+)\.(\d+)\.(\d+)'")
+          $major = $match.Groups[1].Value
+          $minor = $match.Groups[2].Value
+          $patch = [int]$match.Groups[3].Value + 1
+          $newVersion = "$major.$minor.$patch"
+          $content = $content -replace "buildVersion:\s*'\d+\.\d+\.\d+'", "buildVersion: '$newVersion'"
+          Set-Content $configFile $content -NoNewline
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git remote set-url origin "https://x-access-token:$env:PAT_TOKEN@github.com/arinadi/SemarEnv.git"
+          git add $configFile
+          git commit -m "CI: bump buildVersion to $newVersion [skip ci]"
+          git push
+          echo "Bumped buildVersion: $($match.Value) -> $newVersion"
 
       - name: Update latest tag
         env:

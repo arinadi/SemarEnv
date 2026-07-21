@@ -81,20 +81,14 @@ jobs:
           cd "$GITHUB_WORKSPACE"
           yarn build
 
-      - name: Determine next version tag
+      - name: Determine version from build config
         id: version
         run: |
-          existing=$(git tag --list 'v*' --sort=-v:refname)
-          if [ -n "$existing" ]; then
-            latest=$(echo "$existing" | head -1 | sed 's/^v//')
-            major=$(echo "$latest" | cut -d. -f1)
-            minor=$(echo "$latest" | cut -d. -f2)
-            new="v${major}.$((minor + 1)).0"
-          else
-            new="v4.0.0"
-          fi
+          current=$(grep -oP "buildVersion:\s*'\K[^']+" configs/electron-builder.linux.ts)
+          echo "Current buildVersion: $current"
+          new="v$current"
           echo "tag=$new" >> $GITHUB_OUTPUT
-          echo "New version tag: $new"
+          echo "Version tag: $new"
 
       - name: Create tag, release, and upload assets
         env:
