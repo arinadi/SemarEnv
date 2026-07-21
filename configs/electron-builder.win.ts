@@ -5,7 +5,7 @@ import AfterPackSign, { customSign } from '../build/afterPackSign'
 const conf: Configuration = {
   productName: 'SemarEnv',
   executableName: 'SemarEnv',
-  buildVersion: '4.16.3',
+  buildVersion: '4.16.4',
   electronVersion: '39.8.7',
   appId: 'work.arinano.smartenv',
   asar: true,
