@@ -70,12 +70,13 @@ jobs:
       - name: Determine next version tag
         id: version
         run: |
-          $existing = git tag --list 'v*' --sort=-v:refname
-          if ($existing) {
+          $existing = @(git tag --list 'v*' --sort=-v:refname | Where-Object { $_ -match '^v\d+\.\d+\.\d+$' })
+          if ($existing.Count -gt 0) {
             $latest = $existing[0] -replace '^v', ''
             $parts = $latest -split '\.'
+            $major = [int]$parts[0]
             $minor = [int]$parts[1] + 1
-            $new = "v$($parts[0]).$minor.0"
+            $new = "v$major.$minor.0"
           } else {
             $new = "v4.0.0"
           }
