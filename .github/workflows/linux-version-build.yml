@@ -56,22 +56,26 @@ jobs:
             **/node_modules
             .yarn/cache
             ~/.cache/node-gyp
-          key: ${{ runner.os }}-${{ matrix.arch }}-node-${{ hashFiles('**/package.json') }}
+          key: ${{ runner.os }}-${{ matrix.arch }}-node-${{ hashFiles('package.json', 'yarn.lock') }}
 
-      - name: Install Yarn and build tools
+      - name: Install deps and build Go helper (parallel)
         run: |
+          # Build Go helper in background
+          (
+            cd src/helper-go
+            chmod +x ./build-os.sh
+            bash ./build-os.sh
+          ) &
+          GO_PID=$!
+
+          # Install tools and deps in parallel
           npm install -g yarn node-gyp
           python3 -m pip install --upgrade pip
-
-      - name: Install dependencies with Yarn
-        run: |
           yarn install
 
-      - name: Build Go helper
-        run: |
-          cd "$GITHUB_WORKSPACE/src/helper-go"
-          chmod +x ./build-os.sh
-          bash ./build-os.sh
+          # Wait for Go build to finish
+          wait $GO_PID
+          echo "Go helper build completed successfully"
 
       - name: Compute version and set package.json
         id: version
