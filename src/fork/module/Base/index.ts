@@ -14,6 +14,7 @@ import {
   zipUnpack,
   chmod
 } from '../../Fn'
+import { appDebugLog } from '@shared/utils'
 import { ForkPromise } from '@shared/ForkPromise'
 import axios from 'axios'
 import * as http from 'http'
@@ -440,9 +441,14 @@ export class Base {
   }
 
   async _fetchOnlineVersion(app: string): Promise<OnlineVersionItem[]> {
+    const tag = `[fetchVer:${app}]`
+    console.log(`${tag} start, staticDir=${global.Server.Static}`)
+
     // First try bundled static/versions.json for instant loading
     try {
       const bundlePath = join(global.Server.Static!, 'versions.json')
+      console.log(`${tag} checking bundle: ${bundlePath}`)
+      appDebugLog(tag, `checking bundle: ${bundlePath}`).catch(() => {})
       if (existsSync(bundlePath)) {
         const raw = await readFile(bundlePath, 'utf-8')
         const bundle = JSON.parse(raw)
@@ -459,15 +465,23 @@ export class Base {
           archKey = global.Server.Arch === 'x86_64' ? 'x86' : 'arm'
         }
         const items = bundle?.[app]?.[osKey]?.[archKey]
+        console.log(`${tag} os=${osKey} arch=${archKey} found=${!!items} count=${items?.length ?? 0}`)
         if (items && Array.isArray(items) && items.length > 0) {
+          console.log(`${tag} returning ${items.length} versions from bundle`)
           return items
         }
+        console.log(`${tag} app "${app}" not found in bundle (keys: ${Object.keys(bundle).filter(k => bundle[k]?.[osKey]).join(',')})`)
+      } else {
+        console.log(`${tag} bundle file NOT FOUND at ${bundlePath}`)
+        appDebugLog(tag, `BUNDLE NOT FOUND: ${bundlePath}`).catch(() => {})
       }
     } catch (e) {
-      console.log('_fetchOnlineVersion bundle read error:', e)
+      console.log(`${tag} bundle read error:`, e)
+      appDebugLog(tag, `bundle error: ${e}`).catch(() => {})
     }
 
     // Fallback to API
+    console.log(`${tag} falling back to API`)
     let list: OnlineVersionItem[] = []
     try {
       let data: any = {}
@@ -490,20 +504,24 @@ export class Base {
           arch: global.Server.Arch === 'x86_64' ? 'x86' : 'arm'
         }
       }
+      console.log(`${tag} API request to one-env.com with data:`, JSON.stringify(data))
       const res = await axios({
         url: 'https://api.one-env.com/api/version/fetch',
         method: 'post',
         data,
-        timeout: 30000,
+        timeout: 10000,
         withCredentials: false,
         httpAgent: new http.Agent({ keepAlive: false }),
         httpsAgent: new https.Agent({ keepAlive: false }),
         proxy: this.getAxiosProxy()
       })
       list = res?.data?.data ?? []
+      console.log(`${tag} API returned ${list.length} versions`)
     } catch (e) {
-      console.log('_fetchOnlineVersion: err', e)
+      console.log(`${tag} API error:`, e)
+      appDebugLog(tag, `API error: ${e}`).catch(() => {})
     }
+    console.log(`${tag} done, total versions: ${list.length}`)
     return list
   }
 

@@ -61,9 +61,11 @@ class Manager extends Base {
   allVersion() {
     return new ForkPromise(async (resolve) => {
       const url = 'https://nodejs.org/dist/'
+      console.log('[fetchVer:nodejs] fetching from nodejs.org')
       const res = await axios({
         method: 'get',
         url: url,
+        timeout: 15000,
         proxy: this.getAxiosProxy()
       })
       const html = res.data

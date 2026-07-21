@@ -17,13 +17,13 @@ const dist: BuildOptions = {
   platform: 'node',
   entryPoints: ['src/main/index.ts'],
   outfile: 'dist/electron/main.mjs',
-  minify: true,
+  minify: false,
   bundle: true,
   packages: 'external',
   format: 'esm',
   target: 'esnext',
   plugins: [BuildPlugin()],
-  drop: ['debugger', 'console']
+  // drop: ['debugger', 'console']  // DEBUG: disabled for diagnostics
 }
 
 const devFork: BuildOptions = {
@@ -42,13 +42,13 @@ const distFork: BuildOptions = {
   platform: 'node',
   entryPoints: ['src/fork/index.ts'],
   outfile: 'dist/electron/fork.mjs',
-  minify: true,
+  minify: false,
   bundle: true,
   packages: 'external',
   format: 'esm',
   target: 'esnext',
   plugins: [],
-  drop: ['debugger', 'console']
+  // drop: ['debugger', 'console']  // DEBUG: disabled for diagnostics
 }
 
 export default {

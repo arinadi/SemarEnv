@@ -147,9 +147,11 @@ class Manager extends Base {
   allVersion(tool: 'fnm' | 'nvm') {
     return new ForkPromise(async (resolve) => {
       const url = 'https://nodejs.org/dist/'
+      console.log('[fetchVer:nodejs:win] fetching from nodejs.org')
       const res = await axios({
         method: 'get',
-        url: url
+        url: url,
+        timeout: 15000
       })
       // console.log('res: ', res)
       const html = res.data
