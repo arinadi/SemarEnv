@@ -1,5 +1,6 @@
 import type { Configuration } from 'electron-builder'
 import AfterPack from '../build/afterPack'
+import pkg from '../package.json'
 
 // electron-builder 的 ${arch} 宏对 deb/rpm 会转成各包格式的原生架构名
 // (deb: x64→amd64, rpm: x64→x86_64 / arm64→aarch64)，无法得到统一的 x64/arm64。
@@ -35,7 +36,7 @@ const desktop: any = {
 const conf: Configuration = {
   productName: 'SemarEnv',
   executableName: 'SemarEnv',
-  buildVersion: '4.16.2',
+  buildVersion: pkg.version,
   electronVersion: '39.8.7',
   appId: 'work.arinano.smartenv',
   asar: true,

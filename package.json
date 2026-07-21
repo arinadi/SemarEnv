@@ -1,6 +1,6 @@
 {
   "name": "SemarEnv",
-  "version": "4.16.2",
+  "version": "4.0.0",
   "description": "All-In-One Full-Stack Environment Management Tool (SemarEnv)",
   "author": "Pengfei Xu <250881478@qq.com>",
   "scripts": {

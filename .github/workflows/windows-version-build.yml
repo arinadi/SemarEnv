@@ -59,6 +59,28 @@ jobs:
           go-winres make
           .\build-win.ps1
 
+      - name: Compute version and set package.json
+        id: version
+        run: |
+          $pkgContent = Get-Content package.json -Raw
+          # Save original to restore later
+          Set-Content package.json.bak $pkgContent -NoNewline
+
+          $majorMatch = [regex]::Match($pkgContent, '"version":\s*"(\d+)\.\d+\.\d+"')
+          $major = $majorMatch.Groups[1].Value
+          $runNumber = $env:GITHUB_RUN_NUMBER
+          $shortHash = (git rev-parse --short=7 HEAD)
+          $fullVersion = "$major.$runNumber.0"
+          echo "Computed version: $fullVersion (commit: $shortHash)"
+
+          # Temporarily set full version for electron-builder artifact naming
+          $pkgContent = $pkgContent -replace '"version":\s*"\d+\.\d+\.\d+"', '"version": "' + $fullVersion + '"'
+          Set-Content package.json $pkgContent -NoNewline
+
+          echo "tag=v$fullVersion" >> $env:GITHUB_OUTPUT
+          echo "version=$fullVersion" >> $env:GITHUB_OUTPUT
+          echo "shortHash=$shortHash" >> $env:GITHUB_OUTPUT
+
       - name: Build Electron packages with electron-builder
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
@@ -67,22 +89,20 @@ jobs:
           cd "$env:GITHUB_WORKSPACE"
           yarn build
 
-      - name: Determine version from build config
-        id: version
+      - name: Revert package.json to base version
+        if: always()
         run: |
-          $configFile = "configs/electron-builder.win.ts"
-          $match = Select-String -Path $configFile -Pattern "buildVersion:\s*'([^']+)'"
-          $current = $match.Matches[0].Groups[1].Value
-          echo "Current buildVersion: $current"
-          $new = "v$current"
-          echo "tag=$new" >> $env:GITHUB_OUTPUT
-          echo "Version tag: $new"
+          if (Test-Path package.json.bak) {
+            Copy-Item package.json.bak package.json -Force
+            Remove-Item package.json.bak
+          }
 
       - name: Create tag, release, and upload assets
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           $tag = "${{ steps.version.outputs.tag }}"
+          $shortHash = "${{ steps.version.outputs.shortHash }}"
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git tag -a $tag -m "Release $tag"
@@ -100,29 +120,8 @@ jobs:
 
           gh release create $tag $assets `
             --title "SemarEnv $tag" `
-            --notes "Build $(Get-Date -Format 'yyyy-MM-dd')" `
+            --notes "Build $(Get-Date -Format 'yyyy-MM-dd') | commit: $shortHash" `
             --repo arinadi/SemarEnv
-
-      - name: Bump patch version in build config
-        env:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
-        run: |
-          $configFile = "configs/electron-builder.win.ts"
-          $content = Get-Content $configFile -Raw
-          $match = [regex]::Match($content, "buildVersion:\s*'(\d+)\.(\d+)\.(\d+)'")
-          $major = $match.Groups[1].Value
-          $minor = $match.Groups[2].Value
-          $patch = [int]$match.Groups[3].Value + 1
-          $newVersion = "$major.$minor.$patch"
-          $content = $content -replace "buildVersion:\s*'\d+\.\d+\.\d+'", "buildVersion: '$newVersion'"
-          Set-Content $configFile $content -NoNewline
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git remote set-url origin "https://x-access-token:$env:PAT_TOKEN@github.com/arinadi/SemarEnv.git"
-          git add $configFile
-          git commit -m "CI: bump buildVersion to $newVersion [skip ci]"
-          git push
-          echo "Bumped buildVersion: $($match.Value) -> $newVersion"
 
       - name: Update latest tag
         env:

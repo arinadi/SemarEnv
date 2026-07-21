@@ -2,6 +2,7 @@ import type { Configuration } from 'electron-builder'
 import PublishConfig from './publish'
 import AfterPack from '../build/afterPack'
 import Notarize from '../build/notarize'
+import pkg from '../package.json'
 
 // 获取当前 Node.js 运行环境的架构
 const currentArch = process.arch === 'arm64' ? 'arm64' : 'x64'
@@ -33,7 +34,7 @@ const ptyPrebuildExcludes = [
 const conf: Configuration = {
   productName: 'SemarEnv',
   executableName: 'SemarEnv',
-  buildVersion: '4.16.2',
+  buildVersion: pkg.version,
   electronVersion: '39.8.7',
   appId: 'work.arinano.smartenv',
   asar: true,

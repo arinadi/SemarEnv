@@ -73,6 +73,25 @@ jobs:
           chmod +x ./build-os.sh
           bash ./build-os.sh
 
+      - name: Compute version and set package.json
+        id: version
+        run: |
+          # Save original to restore later
+          cp package.json package.json.bak
+
+          major=$(grep -oP '"version":\s*"\K\d+' package.json)
+          runNumber=$GITHUB_RUN_NUMBER
+          shortHash=$(git rev-parse --short=7 HEAD)
+          fullVersion="$major.$runNumber.0"
+          echo "Computed version: $fullVersion (commit: $shortHash)"
+
+          # Temporarily set full version for electron-builder artifact naming
+          sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$fullVersion\"/" package.json
+
+          echo "tag=v$fullVersion" >> $GITHUB_OUTPUT
+          echo "version=$fullVersion" >> $GITHUB_OUTPUT
+          echo "shortHash=$shortHash" >> $GITHUB_OUTPUT
+
       - name: Build Electron packages with electron-builder
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
@@ -81,20 +100,19 @@ jobs:
           cd "$GITHUB_WORKSPACE"
           yarn build
 
-      - name: Determine version from build config
-        id: version
+      - name: Revert package.json to base version
+        if: always()
         run: |
-          current=$(grep -oP "buildVersion:\s*'\K[^']+" configs/electron-builder.linux.ts)
-          echo "Current buildVersion: $current"
-          new="v$current"
-          echo "tag=$new" >> $GITHUB_OUTPUT
-          echo "Version tag: $new"
+          if [ -f package.json.bak ]; then
+            mv package.json.bak package.json
+          fi
 
       - name: Create tag, release, and upload assets
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           tag="${{ steps.version.outputs.tag }}"
+          shortHash="${{ steps.version.outputs.shortHash }}"
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git tag -a "$tag" -m "Release $tag"
@@ -109,6 +127,15 @@ jobs:
           else
             gh release create "$tag" $assets \
               --title "SemarEnv $tag" \
-              --notes "Build $(date +%Y-%m-%d)" \
+              --notes "Build $(date +%Y-%m-%d) | commit: $shortHash" \
               --repo arinadi/SemarEnv
           fi
+
+      - name: Update latest tag
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git remote set-url origin "https://x-access-token:${PAT_TOKEN}@github.com/arinadi/SemarEnv.git"
+          git push origin --delete latest 2>/dev/null || true
+          git tag -f latest
+          git push origin latest

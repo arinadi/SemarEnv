@@ -1,11 +1,12 @@
 import type { Configuration } from 'electron-builder'
 import AfterSign from '../build/afterSign'
 import AfterPackSign, { customSign } from '../build/afterPackSign'
+import pkg from '../package.json'
 
 const conf: Configuration = {
   productName: 'SemarEnv',
   executableName: 'SemarEnv',
-  buildVersion: '4.16.5',
+  buildVersion: pkg.version,
   electronVersion: '39.8.7',
   appId: 'work.arinano.smartenv',
   asar: true,
